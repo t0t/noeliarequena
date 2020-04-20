@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Noelia Requena" />
+    <a href="https://www.instagram.com/noelia__requena/" target="_blank">
+    More on Instagram
+    </a>
   </div>
 </template>
 
