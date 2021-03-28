@@ -5031,7 +5031,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (365:4) {#each productos as producto, i}
+    // (355:4) {#each productos as producto, i}
     function create_each_block$1(ctx) {
     	let productitem;
     	let current;
@@ -5081,7 +5081,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(365:4) {#each productos as producto, i}",
+    		source: "(355:4) {#each productos as producto, i}",
     		ctx
     	});
 
@@ -5139,20 +5139,20 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h2, "class", "svelte-1reu6kh");
-    			add_location(h2, file$8, 354, 4, 5616);
-    			attr_dev(br0, "class", "svelte-1reu6kh");
-    			add_location(br0, file$8, 356, 900, 6542);
-    			attr_dev(br1, "class", "svelte-1reu6kh");
-    			add_location(br1, file$8, 358, 791, 7339);
-    			attr_dev(i, "class", "svelte-1reu6kh");
-    			add_location(i, file$8, 359, 8, 7352);
-    			attr_dev(p, "class", "svelte-1reu6kh");
-    			add_location(p, file$8, 355, 4, 5638);
-    			attr_dev(div, "class", "ObrasContainer svelte-1reu6kh");
-    			add_location(div, file$8, 363, 4, 7426);
-    			attr_dev(section, "class", "LayoutObras svelte-1reu6kh");
-    			add_location(section, file$8, 352, 0, 5577);
+    			attr_dev(h2, "class", "svelte-1klfh8g");
+    			add_location(h2, file$8, 344, 4, 5455);
+    			attr_dev(br0, "class", "svelte-1klfh8g");
+    			add_location(br0, file$8, 346, 900, 6381);
+    			attr_dev(br1, "class", "svelte-1klfh8g");
+    			add_location(br1, file$8, 348, 791, 7178);
+    			attr_dev(i, "class", "svelte-1klfh8g");
+    			add_location(i, file$8, 349, 8, 7191);
+    			attr_dev(p, "class", "svelte-1klfh8g");
+    			add_location(p, file$8, 345, 4, 5477);
+    			attr_dev(div, "class", "ObrasContainer svelte-1klfh8g");
+    			add_location(div, file$8, 353, 4, 7265);
+    			attr_dev(section, "class", "LayoutObras svelte-1klfh8g");
+    			add_location(section, file$8, 342, 0, 5416);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
