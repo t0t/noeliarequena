@@ -1,11 +1,11 @@
 // ****************************************
 // @TODH FONT
 // ****************************************
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,400;0,700;1,400&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
 
 // $secondary_font: 'Cantarell', sans-serif;
-$secondary_font: 'Montserrat', sans-serif;
+$secondary_font: 'Josefin Sans', sans-serif;
 
 // ****************************************
 // @TODH GLOBAL SIZES
@@ -78,7 +78,7 @@ small {
 }
 
 i {
-  color: $highlight;
+  // color: $highlight;
   font-style: italic;
 }
 

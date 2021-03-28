@@ -2,10 +2,10 @@ export const data = [
     {
       id: "0",
       block: "Cover",
-      title: "+0+1234",
-      subtitle: "Hermenéutica Holística",
-      text: "Descifrando la Creación, en la intersección del arte, la tecnología y los saberes tradicionales. Un cierto tipo de orden que conforma un cierto tipo de conexión.",
-      img: "../img/cover3.jpg"
+      title: "Noelia Requena",
+      subtitle: "Paintings",
+      text: "aqui el texto...",
+      img: "../img/bg4.jpg"
     },
     {
       id: "1",
@@ -23,17 +23,17 @@ export const data = [
     {
       id: "3",
       block: "Product Gallery",
-      title: "Art works",
-      subtitle: "Cuadros tridimensionales de 1 metro de diámetro que representan fuerzas y vibraciones aplicadas sobre la superficie del agua. Me interesa recrear las condiciones necesarias para que las leyes de la física y el tiempo puedan quedar atrapadas en una forma.",
+      title: "Review ",
+      author_review: "Román Bayarri",
     },
     {
       id: "4",
-      block: "Chat-Whatsapp",
-      title: "¿Deseas más información?",
-      subtitle: "Puedes ponerte en contacto conmigo por Whatsapp e indicarme la referencia de la pieza que te gusta",
-      buttontext: "Chat-Whatsapp",
-      buttonurl: "https://api.whatsapp.com/send?phone=+34619549032",
-      img: "../img/cover4.jpg"
+      block: "",
+      title: "More info",
+      subtitle: "Información adicional, descargar Currículum en PDF, dirección, Showroom...",
+      buttontext: "Download Resume",
+      buttonurl: "#",
+      img: "../img/bg2.jpg"
     },
     {
       id: "5",
@@ -59,46 +59,46 @@ export const data = [
     {
       id: "8",
       block: "phi",
-      title: "La Divina Proporción",
-      subtitle: "Sentir el Orden da Forma a la Conexión. Diseño generativo en <code>JS</code> y <code>SVG</code> de la proporción áurea. <br> <small><i>Basado en una demo de Tan Li Hau.</i></small>"
+      title: "bla, bla, bla",
+      subtitle: ""
     },
     {
       id: "9",
       block: "youtube",
       title: "Videos",
-      subtitle: "Haciendo mis pinitos como 'Youtuber' :) Vuelco mis reflexiones en cápsulas en torno a metafísica, arte, símbolos, etc. Y, por supuesto desde la Hermenéutica +0+1234",
+      subtitle: "bla, bla, bla",
       buttontext: "Visitar Canal",
       buttonurl: "https://www.youtube.com/channel/UC9C6HRn2RDG3bmWC4Soxtcw"
     },
     {
       id: "10",
       block: "aboutme",
-      title: "About me",
-      subtitle: "Cursé estudios de Artes Aplicadas y procedimientos pictóricos, luego Arte Electrónico y Diseño Digital. Desde 1999 ejerciendo como Diseñador Gráfico y Web. En 2010 me centré en Prototipado Frontend y desarrollo de UI. En 2020 incorporo la impresión 3D en mi proceso creativo y desarrollo una Hermenéutica Holística de la Creación (+0+1234) como vía trascendental y de autorealización.",
+      title: "Noelia Requena",
+      subtitle: "'Cuando uno toma conciencia del misterio de la existencia y no lo entiende, pero por pura sinceridad y coherencia interior necesita respuestas hasta el dolor, entonces uno encuentra su dorado y maravilloso hilo de Ariadna'<br><i>Cyrano</i>",
       img: "../img/avatar.jpg"
     },
     {
       id: "11",
       block: "playground",
       title: "Playground",
-      subtitle: "Frontend design laboratory",
-      text: "Pequeños ejercicios de programación en los que pongo en práctica ideas",
+      subtitle: "",
+      text: "",
       img: "../img/bg1.jpg"
     },
     {
       id: "12",
       block: "artwork",
       title: "Artwork",
-      subtitle: "3D printed art",
+      subtitle: "Paintings",
       text: "Obra plástica",
       img: "../img/bg2.jpg"
     },
     {
       id: "13",
       block: "about",
-      title: "Sergio Forés",
-      subtitle: "Hacia el encuentro con lo que Es",
-      text: "Siento que todo está unido y también imbricado por una paradoja tan sutil como rotunda. No distingo entre pintura, impresión 3D, diseño web, código o poesía. Lo que Es es todo a la vez y en eso consiste el proceso de toda la Creación. ",
+      title: "Noelia Requena",
+      subtitle: "pagina about me...",
+      text: "xxxx",
       img: "../img/bg4.jpg"
     }
   ]

@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-    <title>Sergio Forés - {current_page_name}</title>
+    <title>Noelia Requena - {current_page_name}</title>
 </svelte:head>
 
 <Layout id={current_page_name}>
@@ -32,23 +32,10 @@
         img={data[12].img}
     />
 
-    <SectionHalf variante={1} title={data[2].title} text={data[2].subtitle}>
-        <span slot="hasvideo">
-            <video poster="/img/cover3.jpg" loop playsinline controls="controls">
-                <source
-                    src="/img/desdelapoesiadelamateria.webm"
-                    type="video/webm" />
-                <source
-                    src="/img/desdelapoesiadelamateria.mp4"
-                    type="video/mp4" />
-                <p>Ups! Su navegador no soporta vídeos HTML5.</p>
-            </video>
-        </span>
-    </SectionHalf>
-
     <ProductGallery
         titulo={data[3].title}
         texto={data[3].subtitle}
+        author_review={data[3].author_review}
         {productos}
     />
 

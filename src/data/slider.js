@@ -3,24 +3,24 @@ export const slides = [
     id: 0,
     href: "../img/bg1.jpg",
     text:
-      "'Aquel que sabe contar hasta cuatro puede conocer el universo entero' <br> __Pitágoras"
+      "'cuando uno toma conciencia del misterio de la existencia y no lo entiende, pero por pura sinceridad y coherencia interior necesita respuestas hasta el dolor, entonces uno encuentra su dorado y maravilloso hilo de Ariadna' <br> __Cyrano"
   },
   {
     id: 1,
     href: "../img/bg2.jpg",
     text:
-      "Del griego hermeneutikos; <strong>Hermeneuo</strong> <i>(Yo descifro)</i> y <strong>Tekné</strong> <i>(Arte, técnica, tejer)</i>. La Hermenéutica nace como 'el arte o la técnica de explicar, descifrar o interpretar'"
+      "El cuerpo es un templo de tensiones. Un templo hermético, abierto y cerrado al mismo tiempo."
   },
   {
     id: 2,
     href: "../img/bg3.jpg",
     text:
-      "El fundamento de la Creación radica en un orden arquetípico universal. ...Percibir ese orden conforma un tipo de conexión trascendental."
+      "La orfebrería del óleo lo captura como a un insecto la resina. Congelado pero todavía palpitando. Anhelo cifrado como un enigma de muchas dimensiones."
   },
   {
     id: 3,
     href: "../img/bg4.jpg",
     text:
-      ""
+      "La existencia se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en la luz que entra por la ventana. Y en este marco, en este espacio, celebramos el misterio de la vida."
   }
 ];

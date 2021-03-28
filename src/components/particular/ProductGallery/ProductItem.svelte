@@ -42,7 +42,7 @@
     @use "../../../sass/_index.scss"as *;
 
     .Obra {
-        border-radius: 50%;
+        /* border-radius: 50%; */
 
         &:hover {
             cursor: help;

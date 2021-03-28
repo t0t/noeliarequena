@@ -6,7 +6,7 @@
     let innerWidth, innerHeight, scrollY, alphascroll, topescroll;
 
     $: if ( scrollY < (innerHeight / 2) ) {
-        topescroll = scrollY + 75
+        topescroll = scrollY + 150
     }
 </script>
 
@@ -14,22 +14,23 @@
     @use "../../sass/_index.scss" as *;
 
     .Cover {
-        height: 100vh;
+        height: 50vh;
         padding: $h3;
         color: $white;
         background-size: 100%;
         background-attachment: fixed;
         background-position: center;
         position: relative;
-        background-color: #010101;
+        background-color: $grey_5;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
+        background-repeat: no-repeat;
         
         @include media(s1) {
+            height: 100vh;
             background-position: center;
-            background-repeat: no-repeat;
             background-size: 75vw;
             display: grid;
             align-items: end;
@@ -50,7 +51,7 @@
             @include media(s3) {
                 margin-top: $h1;
             }
-            color: $grey_0;
+            color: $grey_5;
             text-shadow: none;
         }
         .CoverText {

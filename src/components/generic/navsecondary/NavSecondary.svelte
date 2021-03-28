@@ -7,16 +7,12 @@
 <nav>
     <!-- <button on:click={() => push('/artwork')}>Go somewhere</button> -->
     <a href="/artwork" use:link use:active>
-        <h2>Artwork</h2>
-        <p>3D-Printed Paintings</p>
-    </a>
-    <a href="/playground" use:link use:active>
-        <h2>Playground</h2>
-        <p>Frontend Laboratory</p>
+        <h2>Obra plástica</h2>
+        <p>Artwork</p>
     </a>
     <a href="/about" use:link use:active>
-        <h2>Philosophy</h2>
-        <p>About me and +0+1234</p>
+        <h2>Biografía</h2>
+        <p>Biography</p>
     </a>
 </nav>
 
@@ -25,21 +21,22 @@
 
     nav {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 300px);
+        grid-template-columns: repeat(auto-fill, minmax($h8, 1fr));
         gap: $h4;
         justify-content: center;
         align-content: center;
         background-color: $highlight;
         width: 100%;
-        padding: $h4 0;
+        padding: $h4;
         margin-left: auto;
         margin-right: auto;
         
         a {
+            padding: $h4;
             text-align: center;
-            /* display: block; */
+            display: block;
+            border: 1px dashed black;
             width: 100%;
-            border: none;
             color: $grey_5;
             p {
                 text-align: center;

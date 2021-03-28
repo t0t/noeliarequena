@@ -97,13 +97,10 @@
         href="/" 
         use:link 
         use:active
-        > Presentation </a>
+        > Home </a>
 
         <a class="NavItem" id="1" role="navigation" 
         href="/artwork" use:link use:active> Artwork </a>
-
-        <a class="NavItem" id="2" role="navigation" 
-        href="/playground" use:link use:active> Playground </a>
         
         <a class="NavItem" id="3" role="navigation" 
         href="/about" use:link use:active> About </a>

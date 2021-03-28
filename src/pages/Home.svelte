@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-  <title>Sergio Forés - {current_page_name}</title>
+  <title>Noelia Requena - {current_page_name}</title>
 </svelte:head>
 
 <Layout id={current_page_name}>
