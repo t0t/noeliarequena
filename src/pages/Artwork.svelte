@@ -1,7 +1,7 @@
 <script>
     import { onMount, onDestroy } from 'svelte';
     import { data } from '../data/data.js';
-    import { productos } from '../data/productos.js';
+    // import { productos } from '../data/productos.js';
 
     import Layout from '../_Layout.svelte';
     import ProductGallery from '../components/particular/ProductGallery/ProductGallery.svelte';
@@ -36,7 +36,6 @@
         titulo={data[3].title}
         texto={data[3].subtitle}
         author_review={data[3].author_review}
-        {productos}
     />
 
     <SectionHalf
