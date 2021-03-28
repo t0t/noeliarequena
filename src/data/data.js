@@ -91,7 +91,7 @@ export const data = [
       title: "Artwork",
       subtitle: "Paintings",
       text: "Obra plástica",
-      img: "../img/bg2.jpg"
+      img: "../img/bg5.jpg"
     },
     {
       id: "13",

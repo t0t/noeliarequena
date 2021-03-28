@@ -1,7 +1,7 @@
 export const slides = [
   {
     id: 0,
-    href: "../img/bg1.jpg",
+    href: "../img/bg6.jpg",
     text:
       "'cuando uno toma conciencia del misterio de la existencia y no lo entiende, pero por pura sinceridad y coherencia interior necesita respuestas hasta el dolor, entonces uno encuentra su dorado y maravilloso hilo de Ariadna' <br> __Cyrano"
   },
