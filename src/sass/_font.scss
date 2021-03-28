@@ -1,0 +1,181 @@
+// ****************************************
+// @TODH FONT
+// ****************************************
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
+
+// $secondary_font: 'Cantarell', sans-serif;
+$secondary_font: 'Montserrat', sans-serif;
+
+// ****************************************
+// @TODH GLOBAL SIZES
+// ****************************************
+
+$basesize: 16px;
+
+$weight_thin: 400;
+$weight_normal: 500;
+$weight_strong: 600;
+
+$base_letter_spacing: 0;
+
+// ****************************************
+// @TODH VERTICAL RHYTHM
+// ****************************************
+$base_font_size: $basesize;
+$base_line_height: $base_font_size * 1.62;
+
+// 6 Escalas de tamaño
+$size-scales: (
+  -2: $h-1,
+  -1: $h0,
+  0: $h1,
+  1: $h2,
+  2: $h3,
+  3: $h4,
+  4: $h5,
+  5: $h6,
+  6: $h6
+);
+@function font-scale($level) {
+  @return map-get($size-scales, $level);
+}
+
+// 5 Escalas de alto de linea
+$line-heights: (
+  -2: $base-line-height / 2.62,
+  -1: $base-line-height / 1.62,
+  0: $base-line-height,
+  1: $base-line-height * 1.42,
+  2: $base-line-height * 2,
+  3: $base-line-height * 3,
+  4: $base-line-height * 5,
+  5: $base-line-height * 5,
+  6: $base-line-height * 6
+);
+
+@function line-height($level) {
+  @return map-get($line-heights, $level);
+}
+
+// Funcion magica :)))
+@mixin type-setting($level:0) {
+  font-size: font-scale($level);
+  line-height: line-height($level);
+}
+
+@function size($level) {
+  @return map-get($size-scales, $level);
+}
+
+main,
+header,
+small {
+  font-family: $secondary_font;
+  letter-spacing: $base_letter_spacing;
+  font-weight: $weight_normal;
+  color: $grey_1;
+}
+
+i {
+  color: $highlight;
+  font-style: italic;
+}
+
+// a,
+// a:visited {
+//   color:red;
+// }
+
+em {
+  color: $grey_2;
+  font-weight: $weight_normal;
+}
+
+strong {
+  font-weight: $weight_strong;
+}
+
+h1 {
+  @include type-setting(1);
+  font-weight: bold;
+  @include media(s1) {
+    @include type-setting(2);
+  }
+  @include media(s2) {
+    @include type-setting(3);
+  }
+  @include media(s3) {
+    @include type-setting(4);
+  }
+  @include media(s5) {
+    @include type-setting(5);
+  }
+}
+
+h2 {
+  font-weight: $weight_normal;
+  @include type-setting(0);
+  @include media(s1) {
+    @include type-setting(1);
+  }
+  @include media(s5) {
+    @include type-setting(2);
+    margin-left: $h5;
+    margin-right: $h5;
+  }
+}
+
+h3,
+h4 {
+  @include type-setting(-1);
+  @include media(s1) {
+    @include type-setting(0);
+  }
+}
+
+small,
+p {
+  text-align: left;
+  @include type-setting(0);
+}
+
+p,
+h4 {
+  @include media(s1) {
+    max-width: $bp2;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+blockquote {
+  @include type-setting(0);
+  @include media(s1) {
+    @include type-setting(1);
+  }
+}
+
+blockquote {
+  @include media(s1) {
+    margin-left: $h3;
+    margin-right: $h3;
+  }
+  @include media(s2) {
+    max-width: $bp1;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+sub {
+  color: $grey_5;
+  font-weight: $weight_normal;
+  padding-left: 2px;
+  padding-top: 0px;
+  @include type-setting(-1);
+}
+
+figcaption {
+  text-align: left;
+}

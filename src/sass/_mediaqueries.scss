@@ -1,0 +1,50 @@
+// ****************************************
+// @TODH BREAK POINTS
+// ****************************************
+$bp1: 600px;
+$bp2: 850px;
+$bp3: 1024px;
+$bp4: 1400px;
+$bp5: 2140px;
+
+// ****************************************
+// BASE MEDIAQUERIES
+// ****************************************
+
+/* Uso:
+@include media( s + scaling factor ) {
+  property: value;
+}
+*/
+@mixin media($media) {
+    @if $media == 0 {
+      @media (max-width: $bp1) {
+        @content;
+      }
+    } @else if $media == s1 {
+      @media (min-width: $bp1) {
+        @content;
+      }
+    } @else if $media == s2 {
+      @media (min-width: $bp2) {
+        @content;
+      }
+    } @else if $media == s3 {
+      @media (min-width: $bp3) {
+        @content;
+      }
+    } @else if $media == s4 {
+      @media (min-width: $bp4) {
+        @content;
+      }
+    } @else if $media == s5 {
+      @media (min-width: $bp5) {
+        @content;
+      }
+    } @else if $media == s6 {
+      @media (min-width: $bp6) {
+        @content;
+      }
+    }
+  }
+

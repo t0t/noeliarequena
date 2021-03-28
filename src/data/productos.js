@@ -1,0 +1,50 @@
+export let productos = [
+    {
+      "id": 0,
+      "referencia": "071120",
+      "title": "Tiempo cristalizado",
+      "imagen": "img/obra/img0.jpg",
+      "thumb": "img/obra/img0.jpg",
+      "description": "Arenas y óxidos. ø100cm."
+    },
+    {
+      "id": 1,
+      "referencia": "020320",
+      "title": "Océano de leche primordial",
+      "description": "3D Print ø100cm.",
+      "imagen": "img/obra/img1.jpg",
+      "thumb": "img/obra/img1.jpg"
+    },
+    {
+      "id": 2,
+      "referencia": "110120",
+      "title": "Lámpara de oscuridad",
+      "description": "Arena y vinilo sobre lienzo. ø100cm.",
+      "imagen": "img/obra/img2.jpg",
+      "thumb": "img/obra/img2.jpg"
+    },
+    {
+      "id": 4,
+      "referencia": "220520",
+      "title": "Corriente de formas",
+      "description": "Arenas y óxidos. ø100cm.",
+      "imagen": "img/obra/img4.jpg",
+      "thumb": "img/obra/img4.jpg"
+    },
+    {
+      "id": 5,
+      "referencia": "30120",
+      "title": "Sin título",
+      "description": "3D Print + beach sand ø100cm.",
+      "imagen": "img/obra/img5.jpg",
+      "thumb": "img/obra/img5.jpg"
+    },
+    {
+      "id": 6,
+      "referencia": "100220",
+      "title": "Sin título",
+      "description": "3D Print + beach sand ø100cm.",
+      "imagen": "img/obra/img6.jpg",
+      "thumb": "img/obra/img6.jpg"
+    }
+];

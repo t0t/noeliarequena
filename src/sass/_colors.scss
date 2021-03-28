@@ -1,0 +1,39 @@
+// B/N
+$black: black;
+$white: white;
+
+// Greys
+$grey_0: #e5e5e5;
+$grey_1: #b4b4b4;
+$grey_2: #6c6c6c;
+$grey_3: #414141;
+$grey_4: #2a2929;
+$grey_5: #070707;
+
+// Main colors
+$primary: $grey_1;
+$secondary: $grey_2;
+$tertiary: $grey_3;
+$quaternary: $grey_5;
+
+// Specials
+$highlight: #e5a96b;
+
+
+/* GRADIENT LISTS
+============================================= */
+
+$list1: $primary, $secondary, $tertiary; 
+
+$list2: $primary 0%,$primary 33%,$secondary 33%,$secondary 66%, $tertiary 66%, $tertiary 100%; 
+
+$list3: $primary 0%,$primary 10%,$secondary 25%,$secondary 39%,$tertiary 79%,$tertiary 100%; 
+
+$list4: $primary, $secondary, $tertiary, $primary, $secondary, $tertiary, $primary, $secondary, $tertiary; 
+
+@mixin gradient($direction, $list) { 
+  background: linear-gradient($direction, $list);  
+}
+
+
+

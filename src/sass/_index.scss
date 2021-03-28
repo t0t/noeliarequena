@@ -1,0 +1,28 @@
+// ****************************************
+// @TODH BASE IMPORTS
+// ****************************************
+@forward "_animation.scss";
+
+@forward "_reset.scss";
+@import "_mediaqueries.scss";
+@import "_colors.scss";
+@import "_sizes.scss";
+@import "_font.scss";
+@import "_forms.scss";
+@import "_nav.scss";
+// @import "_svg.scss";
+
+// Accesibility
+*:focus {
+    outline-color: $grey_2;
+    outline-style: dashed;
+    outline-width: 1px;
+    outline-style: dotted;
+}
+
+::selection { 
+    color: $black; 
+    background-color: $white; 
+    text-shadow: none;
+}
+

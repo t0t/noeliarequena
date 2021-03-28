@@ -1,0 +1,37 @@
+
+//PHI based scaling ratio
+$h13: 321.916rem;
+$h12: 198.959rem;
+$h11: 122.966rem;
+$h10: 75.999rem;
+$h9: 46.971rem;
+$h8: 29.03rem;
+$h7: 17.942rem;
+$h6: 11.089rem;
+$h5: 6.854rem;
+$h4: 4.236rem;
+$h3: 2.618rem;
+$h2: 1.618rem;
+$h1: 1rem;
+$h0: 0.618rem;
+$h-1: 0.382rem;
+$h-2: 0.236rem;
+$h-3: 0.146rem;
+$h-4: 0.09rem;
+
+// Padding top
+@mixin padding-top($level: 0) {
+    padding-top: size($level);
+}
+// Padding bottom
+@mixin padding-bottom($level: 0) {
+    padding-bottom: size($level);
+}
+// Margin top
+@mixin margin-top($level:0) {
+    margin-top: size($level);
+}
+// Margin bottom
+@mixin margin-bottom($level: 0) {
+    margin-bottom: size($level);
+}
