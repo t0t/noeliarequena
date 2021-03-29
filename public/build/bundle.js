@@ -4746,25 +4746,59 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (47:2) {#if selected}
+    // (28:2) {#if selected}
     function create_if_block$3(ctx) {
+    	let nav;
+    	let button0;
+    	let t1;
+    	let button1;
+    	let t3;
     	let img;
     	let img_src_value;
     	let img_intro;
     	let img_outro;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	const block = {
     		c: function create() {
+    			nav = element("nav");
+    			button0 = element("button");
+    			button0.textContent = "prev";
+    			t1 = space();
+    			button1 = element("button");
+    			button1.textContent = "next";
+    			t3 = space();
     			img = element("img");
+    			attr_dev(button0, "class", "svelte-6gj2li");
+    			add_location(button0, file$7, 29, 4, 566);
+    			attr_dev(button1, "class", "svelte-6gj2li");
+    			add_location(button1, file$7, 37, 4, 749);
+    			attr_dev(nav, "class", "svelte-6gj2li");
+    			add_location(nav, file$7, 28, 2, 556);
     			if (img.src !== (img_src_value = /*selected*/ ctx[2])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Imagen");
-    			attr_dev(img, "class", "svelte-dxet3o");
-    			add_location(img, file$7, 47, 4, 941);
+    			attr_dev(img, "class", "svelte-6gj2li");
+    			add_location(img, file$7, 46, 4, 941);
     		},
     		m: function mount(target, anchor) {
+    			insert_dev(target, nav, anchor);
+    			append_dev(nav, button0);
+    			append_dev(nav, t1);
+    			append_dev(nav, button1);
+    			insert_dev(target, t3, anchor);
     			insert_dev(target, img, anchor);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button0, "click", /*click_handler*/ ctx[7], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_1*/ ctx[8], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
@@ -4790,8 +4824,12 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
+    			if (detaching) detach_dev(nav);
+    			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(img);
     			if (detaching && img_outro) img_outro.end();
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -4799,14 +4837,14 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(47:2) {#if selected}",
+    		source: "(28:2) {#if selected}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (57:4) {#each productos as d (d.title)}
+    // (56:4) {#each productos as d (d.title)}
     function create_each_block$1(key_1, ctx) {
     	let div;
     	let div_data_selected_value;
@@ -4825,10 +4863,10 @@ var app = (function () {
     			attr_dev(div, "role", "img");
     			attr_dev(div, "aria-label", /*d*/ ctx[12].title);
     			attr_dev(div, "data-selected", div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[12].imagen);
-    			attr_dev(div, "class", "image svelte-dxet3o");
+    			attr_dev(div, "class", "image svelte-6gj2li");
     			set_style(div, "background-image", "url(" + /*d*/ ctx[12].imagen + ")");
     			toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[12].imagen);
-    			add_location(div, file$7, 57, 6, 1187);
+    			add_location(div, file$7, 56, 6, 1187);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -4861,7 +4899,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(57:4) {#each productos as d (d.title)}",
+    		source: "(56:4) {#each productos as d (d.title)}",
     		ctx
     	});
 
@@ -4870,29 +4908,24 @@ var app = (function () {
 
     function create_fragment$a(ctx) {
     	let div1;
-    	let nav;
-    	let button0;
-    	let t1;
-    	let button1;
-    	let t3;
-    	let t4;
+    	let t0;
     	let div0;
     	let each_blocks = [];
     	let each_1_lookup = new Map();
-    	let t5;
+    	let t1;
     	let section;
     	let h2;
-    	let t6;
-    	let t7;
+    	let t2;
+    	let t3;
     	let p;
-    	let t8;
+    	let t4;
     	let br0;
-    	let t9;
+    	let t5;
     	let br1;
-    	let t10;
+    	let t6;
     	let i;
-    	let t11;
-    	let t12;
+    	let t7;
+    	let t8;
     	let current;
     	let mounted;
     	let dispose;
@@ -4911,72 +4944,54 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div1 = element("div");
-    			nav = element("nav");
-    			button0 = element("button");
-    			button0.textContent = "prev";
-    			t1 = space();
-    			button1 = element("button");
-    			button1.textContent = "next";
-    			t3 = space();
     			if (if_block) if_block.c();
-    			t4 = space();
+    			t0 = space();
     			div0 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t5 = space();
+    			t1 = space();
     			section = element("section");
     			h2 = element("h2");
-    			t6 = text(/*titulo*/ ctx[0]);
-    			t7 = space();
+    			t2 = text(/*titulo*/ ctx[0]);
+    			t3 = space();
     			p = element("p");
-    			t8 = text("\"Un cuerpo en el espacio. Un temblor en el tiempo. Un proceso de luz y\n    sombra. El cuerpo se desvela deconstruyéndose, desmoronándose. La\n    cristalización espontánea de una dinámica de contrastes. Claroscuro de\n    fragilidad y fortaleza, de frío y calor. El cuerpo es un templo de\n    tensiones. Un templo hermético, abierto y cerrado al mismo tiempo. Tan sólo\n    puede existir en una lógica de membranas. Atravesado por la luz, reflejado\n    como la sombra nerviosa de algo más. La orfebrería del óleo lo captura como\n    a un insecto la resina. Congelado pero todavía palpitando. Anhelo cifrado\n    como un enigma de muchas dimensiones. El trazo, grácil y preciso (caligrafía\n    de misterios), deshilvana el misterio inagotable de la belleza. Hilo de\n    Ariadna enredado. Oficio de tinieblas. Belleza del horror y horror de la\n    belleza. Necesitamos el contraste. El equilibrio en la contradicción.\n    Siempre el claroscuro...\n    ");
+    			t4 = text("\"Un cuerpo en el espacio. Un temblor en el tiempo. Un proceso de luz y\n    sombra. El cuerpo se desvela deconstruyéndose, desmoronándose. La\n    cristalización espontánea de una dinámica de contrastes. Claroscuro de\n    fragilidad y fortaleza, de frío y calor. El cuerpo es un templo de\n    tensiones. Un templo hermético, abierto y cerrado al mismo tiempo. Tan sólo\n    puede existir en una lógica de membranas. Atravesado por la luz, reflejado\n    como la sombra nerviosa de algo más. La orfebrería del óleo lo captura como\n    a un insecto la resina. Congelado pero todavía palpitando. Anhelo cifrado\n    como un enigma de muchas dimensiones. El trazo, grácil y preciso (caligrafía\n    de misterios), deshilvana el misterio inagotable de la belleza. Hilo de\n    Ariadna enredado. Oficio de tinieblas. Belleza del horror y horror de la\n    belleza. Necesitamos el contraste. El equilibrio en la contradicción.\n    Siempre el claroscuro...\n    ");
     			br0 = element("br");
-    			t9 = text("\n    Como en la técnica japonesa kintsugi, el barniz de la pintura repara las fracturas\n    de la cerámica rota que es el cuerpo. Hay una belleza en la fractura, como un\n    signo latente de su vida interior: vórtice de una herida que se despliega en\n    el exterior. La tela recubre la forma como a una gasa el molde. La piel como impasto.\n    La vida como un continuo instante de incertidumbre. ¿Somos libres o estamos encerrados,\n    confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación,\n    de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia\n    se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en\n    la luz que entra por la ventana. Y en este marco, en este espacio, celebramos\n    el misterio de la vida.\"\n    ");
+    			t5 = text("\n    Como en la técnica japonesa kintsugi, el barniz de la pintura repara las fracturas\n    de la cerámica rota que es el cuerpo. Hay una belleza en la fractura, como un\n    signo latente de su vida interior: vórtice de una herida que se despliega en\n    el exterior. La tela recubre la forma como a una gasa el molde. La piel como impasto.\n    La vida como un continuo instante de incertidumbre. ¿Somos libres o estamos encerrados,\n    confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación,\n    de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia\n    se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en\n    la luz que entra por la ventana. Y en este marco, en este espacio, celebramos\n    el misterio de la vida.\"\n    ");
     			br1 = element("br");
-    			t10 = space();
+    			t6 = space();
     			i = element("i");
-    			t11 = text("-- ");
-    			t12 = text(/*author_review*/ ctx[1]);
-    			attr_dev(button0, "class", "svelte-dxet3o");
-    			add_location(button0, file$7, 28, 4, 548);
-    			attr_dev(button1, "class", "svelte-dxet3o");
-    			add_location(button1, file$7, 36, 4, 731);
-    			attr_dev(nav, "class", "svelte-dxet3o");
-    			add_location(nav, file$7, 27, 2, 538);
+    			t7 = text("-- ");
+    			t8 = text(/*author_review*/ ctx[1]);
     			attr_dev(div0, "role", "group");
-    			attr_dev(div0, "class", "gallery svelte-dxet3o");
+    			attr_dev(div0, "class", "gallery svelte-6gj2li");
     			attr_dev(div0, "tabindex", 0);
-    			add_location(div0, file$7, 55, 2, 1076);
-    			attr_dev(div1, "class", "image-viewer svelte-dxet3o");
-    			add_location(div1, file$7, 19, 0, 413);
-    			attr_dev(h2, "class", "svelte-dxet3o");
-    			add_location(h2, file$7, 71, 2, 1519);
-    			attr_dev(br0, "class", "svelte-dxet3o");
-    			add_location(br0, file$7, 86, 4, 2492);
-    			attr_dev(br1, "class", "svelte-dxet3o");
-    			add_location(br1, file$7, 97, 4, 3327);
-    			attr_dev(i, "class", "svelte-dxet3o");
-    			add_location(i, file$7, 98, 4, 3338);
-    			attr_dev(p, "class", "svelte-dxet3o");
-    			add_location(p, file$7, 72, 2, 1539);
-    			attr_dev(section, "class", "LayoutObras svelte-dxet3o");
-    			add_location(section, file$7, 70, 0, 1487);
+    			add_location(div0, file$7, 54, 2, 1076);
+    			attr_dev(div1, "class", "image-viewer svelte-6gj2li");
+    			add_location(div1, file$7, 19, 0, 414);
+    			attr_dev(h2, "class", "svelte-6gj2li");
+    			add_location(h2, file$7, 70, 2, 1519);
+    			attr_dev(br0, "class", "svelte-6gj2li");
+    			add_location(br0, file$7, 85, 4, 2492);
+    			attr_dev(br1, "class", "svelte-6gj2li");
+    			add_location(br1, file$7, 96, 4, 3327);
+    			attr_dev(i, "class", "svelte-6gj2li");
+    			add_location(i, file$7, 97, 4, 3338);
+    			attr_dev(p, "class", "svelte-6gj2li");
+    			add_location(p, file$7, 71, 2, 1539);
+    			attr_dev(section, "class", "LayoutObras svelte-6gj2li");
+    			add_location(section, file$7, 69, 0, 1487);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
-    			append_dev(div1, nav);
-    			append_dev(nav, button0);
-    			append_dev(nav, t1);
-    			append_dev(nav, button1);
-    			append_dev(div1, t3);
     			if (if_block) if_block.m(div1, null);
-    			append_dev(div1, t4);
+    			append_dev(div1, t0);
     			append_dev(div1, div0);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -4984,29 +4999,24 @@ var app = (function () {
     			}
 
     			/*div0_binding*/ ctx[10](div0);
-    			insert_dev(target, t5, anchor);
+    			insert_dev(target, t1, anchor);
     			insert_dev(target, section, anchor);
     			append_dev(section, h2);
-    			append_dev(h2, t6);
-    			append_dev(section, t7);
+    			append_dev(h2, t2);
+    			append_dev(section, t3);
     			append_dev(section, p);
-    			append_dev(p, t8);
+    			append_dev(p, t4);
     			append_dev(p, br0);
-    			append_dev(p, t9);
+    			append_dev(p, t5);
     			append_dev(p, br1);
-    			append_dev(p, t10);
+    			append_dev(p, t6);
     			append_dev(p, i);
-    			append_dev(i, t11);
-    			append_dev(i, t12);
+    			append_dev(i, t7);
+    			append_dev(i, t8);
     			current = true;
 
     			if (!mounted) {
-    				dispose = [
-    					listen_dev(button0, "click", /*click_handler*/ ctx[7], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_1*/ ctx[8], false, false, false),
-    					listen_dev(div1, "click", /*click_handler_3*/ ctx[11], false, false, false)
-    				];
-
+    				dispose = listen_dev(div1, "click", /*click_handler_3*/ ctx[11], false, false, false);
     				mounted = true;
     			}
     		},
@@ -5022,7 +5032,7 @@ var app = (function () {
     					if_block = create_if_block$3(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
-    					if_block.m(div1, t4);
+    					if_block.m(div1, t0);
     				}
     			} else if (if_block) {
     				group_outros();
@@ -5041,8 +5051,8 @@ var app = (function () {
     				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value, each_1_lookup, div0, destroy_block, create_each_block$1, null, get_each_context$1);
     			}
 
-    			if (!current || dirty & /*titulo*/ 1) set_data_dev(t6, /*titulo*/ ctx[0]);
-    			if (!current || dirty & /*author_review*/ 2) set_data_dev(t12, /*author_review*/ ctx[1]);
+    			if (!current || dirty & /*titulo*/ 1) set_data_dev(t2, /*titulo*/ ctx[0]);
+    			if (!current || dirty & /*author_review*/ 2) set_data_dev(t8, /*author_review*/ ctx[1]);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -5062,10 +5072,10 @@ var app = (function () {
     			}
 
     			/*div0_binding*/ ctx[10](null);
-    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(section);
     			mounted = false;
-    			run_all(dispose);
+    			dispose();
     		}
     	};
 
@@ -5088,7 +5098,7 @@ var app = (function () {
     	let { author_review = "" } = $$props;
     	let selected = "";
     	let gallery;
-    	const [send, receive] = crossfade({ duration: () => 350, fallback: fade });
+    	const [send, receive] = crossfade({ duration: () => 2000, fallback: fade });
     	const writable_props = ["titulo", "author_review"];
 
     	Object.keys($$props).forEach(key => {

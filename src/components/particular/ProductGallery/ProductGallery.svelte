@@ -8,7 +8,7 @@
   let selected = "";
   let gallery;
   const [send, receive] = crossfade({
-    duration: () => 350,
+    duration: () => 2000,
     fallback: fade,
   });
 
@@ -25,6 +25,7 @@
     }
   }}
 >
+  {#if selected}
   <nav>
     <button
       on:click={() => {
@@ -43,8 +44,6 @@
       next
     </button>
   </nav>
-
-  {#if selected}
     <img
       in:receive={{ key: selected }}
       out:send={{ key: selected }}
@@ -107,9 +106,9 @@
   }
   .image-viewer {
     position: relative;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: $h1;
+    display: flex;
+    // grid-template-columns: 2fr 1fr;
+    // gap: $h1;
     padding-top: 0;
     padding-right: $h4;
     padding-bottom: 0;
@@ -117,6 +116,7 @@
     width: 100%;
     img {
       max-width: $h8;
+      margin-right: $h4;
     }
   }
   .image {
@@ -127,25 +127,26 @@
 
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 100px );
+    grid-template-columns: repeat(auto-fit, 92px );
+    justify-content: space-evenly;
     gap: $h1;
-    border: 1px solid white;
     width: 100%;
-    height: 50vh;
+    height: $h7;
     overflow-y: auto;
-    padding: $h1;
+    padding: $h2;
+    background-color: $grey_5;
   }
 
   .gallery > .image {
-    width: 100px;
+    width: 100%;
     height: 100px;
   }
 
   nav {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: $h7;
+    right: 17%;
+    // width: 100%;
     text-align: center;
   }
   .active {
