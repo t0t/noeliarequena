@@ -34,7 +34,6 @@
 
     <ProductGallery
         titulo={data[3].title}
-        texto={data[3].subtitle}
         author_review={data[3].author_review}
     />
 

@@ -1,12 +1,8 @@
 <script>
-  // import ProductItem from "./ProductItem.svelte"
   import { productos } from "../../../data/productos.js";
-  // export let productos;
-  import { tick } from "svelte";
   import { crossfade, fade } from "svelte/transition";
 
   export let titulo = "";
-  export let texto = "";
   export let author_review = "";
 
   let selected = "";
@@ -16,45 +12,20 @@
     fallback: fade,
   });
 
-  const handlePreviewClick = (imageURL) => {
-    selected = imageURL;
-    console.log(selected)
-  };
-
   $: currentIdx = selected
     ? productos.findIndex((d) => d.imagen === selected)
     : -1;
-
-
 </script>
 
-<div class="gallery-container">
-  {#each productos as d (d.imagen)}
-    <div>
-      {#if d.imagen !== selected}
-        <div
-          role="img"
-          aria-label={d.title}
-          out:send={{ key: d.imagen }}
-          in:receive={{ key: d.imagen }}
-          on:click={() => handlePreviewClick(d.imagen)}
-          class="image"
-          style="background-image: url({d.imagen});"
-        />
-      {/if}
-    </div>
-  {/each}
-</div>
-
-{#if selected}
-  <div
-    class="image-viewer"
-    on:click={(e) => {
-      if (e.target === e.currentTarget) {
-        selected = "";
-      }
-    }}
-  >
+<div
+  class="image-viewer"
+  on:click={(e) => {
+    if (e.target === e.currentTarget) {
+      selected = "";
+    }
+  }}
+>
+  <nav>
     <button
       on:click={() => {
         const nextIdx = (currentIdx - 1) % productos.length;
@@ -71,38 +42,31 @@
     >
       next
     </button>
+  </nav>
+
+  {#if selected}
     <img
       in:receive={{ key: selected }}
       out:send={{ key: selected }}
       src={selected}
+      alt="Imagen"
     />
-    <div
-      aria-label="圖片檢視器，可用鍵盤左右鍵導覽"
-      role="group"
-      bind:this={gallery}
-      class="gallery"
-      tabindex={0}
-    >
-      {#each productos as d (d.title)}
-        <div
-          role="img"
-          aria-label={d.title}
-          data-selected={selected === d.imagen}
-          class:active={selected === d.imagen}
-          on:click={() => (selected = d.imagen)}
-          class="image"
-          style="background-image:url({d.imagen})"
-        />
-      {/each}
-    </div>
-  </div>
-{/if}
-
-<p class="visually-hidden" aria-atomic={true} aria-live="assertive">
-  {#if productos[currentIdx]}
-    xxx: {productos[currentIdx].title}
   {/if}
-</p>
+
+  <div role="group" bind:this={gallery} class="gallery" tabindex={0}>
+    {#each productos as d (d.title)}
+      <div
+        role="img"
+        aria-label={d.title}
+        data-selected={selected === d.imagen}
+        class:active={selected === d.imagen}
+        on:click={() => (selected = d.imagen)}
+        class="image"
+        style="background-image:url({d.imagen})"
+      />
+    {/each}
+  </div>
+</div>
 
 <section class="LayoutObras">
   <h2>{titulo}</h2>
@@ -119,38 +83,42 @@
     de misterios), deshilvana el misterio inagotable de la belleza. Hilo de
     Ariadna enredado. Oficio de tinieblas. Belleza del horror y horror de la
     belleza. Necesitamos el contraste. El equilibrio en la contradicción.
-    Siempre el claroscuro...<br />
-
-    Como en la técnica japonesa kintsugi, el barniz de la pintura repara las
-    fracturas de la cerámica rota que es el cuerpo. Hay una belleza en la
-    fractura, como un signo latente de su vida interior: vórtice de una herida
-    que se despliega en el exterior. La tela recubre la forma como a una gasa el
-    molde. La piel como impasto. La vida como un continuo instante de
-    incertidumbre. ¿Somos libres o estamos encerrados, confinados en las
-    coordenadas del azar? Este es el misterio de un cuerpo en una habitación, de
-    un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia
-    se desnuda como una pregunta en el vacío, derramándose sobre el aire de la
-    mañana, reflejándose en la luz que entra por la ventana. Y en este marco, en
-    este espacio, celebramos el misterio de la vida."<br />
+    Siempre el claroscuro...
+    <br />
+    Como en la técnica japonesa kintsugi, el barniz de la pintura repara las fracturas
+    de la cerámica rota que es el cuerpo. Hay una belleza en la fractura, como un
+    signo latente de su vida interior: vórtice de una herida que se despliega en
+    el exterior. La tela recubre la forma como a una gasa el molde. La piel como impasto.
+    La vida como un continuo instante de incertidumbre. ¿Somos libres o estamos encerrados,
+    confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación,
+    de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia
+    se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en
+    la luz que entra por la ventana. Y en este marco, en este espacio, celebramos
+    el misterio de la vida."
+    <br />
     <i>-- {author_review}</i>
   </p>
 </section>
 
 <style lang="scss">
   @use "../../../sass/_index.scss" as *;
-
-  .gallery-container {
+  .LayoutObras {
+    padding: $h4;
+  }
+  .image-viewer {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax($h2, 100px));
-    justify-content: center;
-    grid-gap: $h1;
-    padding: $h1;
-    background-color: $highlight;
-    div {
-        align-self: center;
+    grid-template-columns: 2fr 1fr;
+    gap: $h1;
+    padding-top: 0;
+    padding-right: $h4;
+    padding-bottom: 0;
+    padding-left: $h4;
+    width: 100%;
+    img {
+      max-width: $h8;
     }
   }
-
   .image {
     width: 50%;
     height: 70px;
@@ -158,36 +126,29 @@
   }
 
   .gallery {
-    display: inline-flex;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100px );
+    gap: $h1;
+    border: 1px solid white;
     width: 100%;
-    overflow-x: auto;
+    height: 50vh;
+    overflow-y: auto;
+    padding: $h1;
   }
 
   .gallery > .image {
-    flex-shrink: 0;
-    margin-right: 8px;
     width: 100px;
     height: 100px;
   }
 
-  .image-viewer {
-    padding: $h4;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    bottom: 0;
-    right: 0;
+  nav {
+    position: absolute;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    left: 0;
+    width: 100%;
+    text-align: center;
   }
-
   .active {
-    border: $h1 solid $highlight;
-  }
-
-  .image-viewer > img {
-    max-height: 70%;
+    border: $h0 solid $highlight;
   }
 </style>
