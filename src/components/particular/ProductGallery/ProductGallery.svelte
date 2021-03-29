@@ -100,7 +100,7 @@
 
 <p class="visually-hidden" aria-atomic={true} aria-live="assertive">
   {#if productos[currentIdx]}
-    您現在正在查看: {productos[currentIdx].title}
+    xxx: {productos[currentIdx].title}
   {/if}
 </p>
 
@@ -141,17 +141,19 @@
 
   .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax($h3, 100px));
-    grid-gap: 10px;
-  }
-
-  .visually-hidden {
-    visibility: hidden;
+    grid-template-columns: repeat(auto-fit, minmax($h2, 100px));
+    justify-content: center;
+    grid-gap: $h1;
+    padding: $h1;
+    background-color: $highlight;
+    div {
+        align-self: center;
+    }
   }
 
   .image {
-    width: 100%;
-    height: 100px;
+    width: 50%;
+    height: 70px;
     background: center / cover no-repeat;
   }
 
@@ -178,7 +180,7 @@
     bottom: 0;
     right: 0;
     top: 0;
-    background-color: rgba(100, 100, 100, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   .active {

@@ -4777,7 +4777,7 @@ var app = (function () {
     			div = element("div");
     			attr_dev(div, "role", "img");
     			attr_dev(div, "aria-label", /*d*/ ctx[15].title);
-    			attr_dev(div, "class", "image svelte-1yqublq");
+    			attr_dev(div, "class", "image svelte-pd1xh5");
     			set_style(div, "background-image", "url(" + /*d*/ ctx[15].imagen + ")");
     			add_location(div, file$7, 34, 8, 774);
     		},
@@ -4842,7 +4842,7 @@ var app = (function () {
     			div = element("div");
     			if (if_block) if_block.c();
     			t = space();
-    			attr_dev(div, "class", "svelte-1yqublq");
+    			attr_dev(div, "class", "svelte-pd1xh5");
     			add_location(div, file$7, 32, 4, 726);
     			this.first = div;
     		},
@@ -4950,19 +4950,19 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(button0, "class", "svelte-1yqublq");
+    			attr_dev(button0, "class", "svelte-pd1xh5");
     			add_location(button0, file$7, 57, 4, 1254);
-    			attr_dev(button1, "class", "svelte-1yqublq");
+    			attr_dev(button1, "class", "svelte-pd1xh5");
     			add_location(button1, file$7, 65, 4, 1437);
     			if (img.src !== (img_src_value = /*selected*/ ctx[2])) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "svelte-1yqublq");
+    			attr_dev(img, "class", "svelte-pd1xh5");
     			add_location(img, file$7, 73, 4, 1620);
     			attr_dev(div0, "aria-label", "圖片檢視器，可用鍵盤左右鍵導覽");
     			attr_dev(div0, "role", "group");
-    			attr_dev(div0, "class", "gallery svelte-1yqublq");
+    			attr_dev(div0, "class", "gallery svelte-pd1xh5");
     			attr_dev(div0, "tabindex", 0);
     			add_location(div0, file$7, 78, 4, 1729);
-    			attr_dev(div1, "class", "image-viewer svelte-1yqublq");
+    			attr_dev(div1, "class", "image-viewer svelte-pd1xh5");
     			add_location(div1, file$7, 49, 2, 1113);
     		},
     		m: function mount(target, anchor) {
@@ -5066,7 +5066,7 @@ var app = (function () {
     			attr_dev(div, "role", "img");
     			attr_dev(div, "aria-label", /*d*/ ctx[15].title);
     			attr_dev(div, "data-selected", div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[15].imagen);
-    			attr_dev(div, "class", "image svelte-1yqublq");
+    			attr_dev(div, "class", "image svelte-pd1xh5");
     			set_style(div, "background-image", "url(" + /*d*/ ctx[15].imagen + ")");
     			toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[15].imagen);
     			add_location(div, file$7, 86, 8, 1908);
@@ -5117,7 +5117,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t0 = text("您現在正在查看: ");
+    			t0 = text("xxx: ");
     			t1 = text(t1_value);
     		},
     		m: function mount(target, anchor) {
@@ -5207,24 +5207,24 @@ var app = (function () {
     			i = element("i");
     			t8 = text("-- ");
     			t9 = text(/*author_review*/ ctx[1]);
-    			attr_dev(div, "class", "gallery-container svelte-1yqublq");
+    			attr_dev(div, "class", "gallery-container svelte-pd1xh5");
     			add_location(div, file$7, 30, 0, 654);
-    			attr_dev(p0, "class", "visually-hidden svelte-1yqublq");
+    			attr_dev(p0, "class", "visually-hidden svelte-pd1xh5");
     			attr_dev(p0, "aria-atomic", true);
     			attr_dev(p0, "aria-live", "assertive");
     			add_location(p0, file$7, 100, 0, 2236);
-    			attr_dev(h2, "class", "svelte-1yqublq");
-    			add_location(h2, file$7, 107, 2, 2424);
-    			attr_dev(br0, "class", "svelte-1yqublq");
-    			add_location(br0, file$7, 121, 28, 3392);
-    			attr_dev(br1, "class", "svelte-1yqublq");
-    			add_location(br1, file$7, 133, 53, 4227);
-    			attr_dev(i, "class", "svelte-1yqublq");
-    			add_location(i, file$7, 134, 4, 4238);
-    			attr_dev(p1, "class", "svelte-1yqublq");
-    			add_location(p1, file$7, 108, 2, 2444);
-    			attr_dev(section, "class", "LayoutObras svelte-1yqublq");
-    			add_location(section, file$7, 106, 0, 2392);
+    			attr_dev(h2, "class", "svelte-pd1xh5");
+    			add_location(h2, file$7, 107, 2, 2420);
+    			attr_dev(br0, "class", "svelte-pd1xh5");
+    			add_location(br0, file$7, 121, 28, 3388);
+    			attr_dev(br1, "class", "svelte-pd1xh5");
+    			add_location(br1, file$7, 133, 53, 4223);
+    			attr_dev(i, "class", "svelte-pd1xh5");
+    			add_location(i, file$7, 134, 4, 4234);
+    			attr_dev(p1, "class", "svelte-pd1xh5");
+    			add_location(p1, file$7, 108, 2, 2440);
+    			attr_dev(section, "class", "LayoutObras svelte-pd1xh5");
+    			add_location(section, file$7, 106, 0, 2388);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
