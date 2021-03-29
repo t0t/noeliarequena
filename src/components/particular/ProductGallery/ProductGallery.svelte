@@ -5,7 +5,7 @@
 
   export let titulo = "";
   export let author_review = "";
-
+  let description = "";
   let selected = "";
   let gallery;
   const [send, receive] = crossfade({
@@ -24,6 +24,7 @@
     if (e.target === e.currentTarget) {
       selected = "";
     }
+    
   }}
 >
   {#if selected}
@@ -32,19 +33,23 @@
     on:click={() => {
         const nextIdx = (currentIdx - 1) % productos.length;
         selected = productos[nextIdx].imagen;
-    }}/>
-    <Button variante={4} text="⤞" 
-    on:click={() => {
+        description = productos[nextIdx].description
+      }}/>
+      <Button variante={4} text="⤞" 
+      on:click={() => {
         const nextIdx = (currentIdx + 1) % productos.length;
         selected = productos[nextIdx].imagen;
+        description = productos[nextIdx].description
     }}/>
   </nav>
-    <img
-      in:receive={{ key: selected }}
-      out:send={{ key: selected }}
-      src={selected}
-      alt="Imagen"
-    />
+    <figure>
+      <img in:receive={{ key: selected }} out:send={{ key: selected }}
+      src={selected} alt="{productos[currentIdx].description}"/>
+      <figcaption>
+        REF: {productos[currentIdx].ref}
+        {productos[currentIdx].description}
+      </figcaption>
+    </figure>
   {/if}
 
   <div role="group" bind:this={gallery} class="gallery" tabindex={0}>
@@ -78,38 +83,39 @@
     Ariadna enredado. Oficio de tinieblas. Belleza del horror y horror de la
     belleza. Necesitamos el contraste. El equilibrio en la contradicción.
     Siempre el claroscuro...
-    <br />
+  </p>
+  <p>
     Como en la técnica japonesa kintsugi, el barniz de la pintura repara las fracturas
     de la cerámica rota que es el cuerpo. Hay una belleza en la fractura, como un
     signo latente de su vida interior: vórtice de una herida que se despliega en
     el exterior. La tela recubre la forma como a una gasa el molde. La piel como impasto.
-    La vida como un continuo instante de incertidumbre. ¿Somos libres o estamos encerrados,
-    confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación,
-    de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia
-    se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en
-    la luz que entra por la ventana. Y en este marco, en este espacio, celebramos
-    el misterio de la vida."
-    <br />
-    <i>-- {author_review}</i>
+    La vida como un continuo instante de incertidumbre. ¿Somos libres o estamos encerrados, confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación, de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en la luz que entra por la ventana. Y en este marco, en este espacio, celebramos el misterio de la vida."
   </p>
+  <p> —{author_review}</p>
 </section>
 
 <style lang="scss">
   @use "../../../sass/_index.scss" as *;
+
   .LayoutObras {
     padding: $h4;
   }
   .image-viewer {
     position: relative;
-    display: flex;
-    padding-top: 0;
-    padding-right: $h4;
-    padding-bottom: 0;
-    padding-left: $h4;
+    padding: 0 $h2;
     width: 100%;
+    margin-top: -$h5;
+    @include media(s1) {
+      padding: 0 $h4;
+      margin-top: 0;
+      display: flex;
+    }
     img {
-      max-width: $h8;
-      margin-right: $h4;
+      max-width: 100%;
+      @include media(s1) {
+        max-width: $h8;
+        margin-right: $h4;
+      }
     }
   }
   .image {
@@ -117,32 +123,43 @@
     height: 70px;
     background: center / cover no-repeat;
   }
+  figcaption {
+    margin-bottom: $h2;
+    margin-top: $h1;
+  }
 
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 92px );
-    justify-content: space-evenly;
     gap: $h1;
-    width: 100%;
-    height: $h7;
-    overflow-y: auto;
-    padding: $h2;
     background-color: $grey_5;
+    grid-template-columns: repeat(auto-fit, 92px );
+    padding: $h2;
+    @include media(s1) {
+      grid-template-columns: repeat(auto-fit, 92px );
+      width: 100%;
+      height: $h7;
+      overflow-y: auto;
+      justify-content: space-evenly;
+    }
   }
 
   .gallery > .image {
     width: 100%;
     height: 100px;
+    background-color: #fff;
   }
 
   nav {
-    position: absolute;
-    top: $h7 - $h1;
-    right: 12.5%;
     display: flex;
     justify-content: space-between;
-    width: $h6;
+    width: $h5;
     padding-top: 0;
+
+    @include media(s1) {
+      position: absolute;
+      top: $h7 - $h1;
+      right: 12.5%;
+    }
   }
   .active {
     border: $h0 solid $highlight;

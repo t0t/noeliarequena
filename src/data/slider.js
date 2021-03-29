@@ -19,7 +19,7 @@ export const slides = [
   },
   {
     id: 3,
-    href: "../img/bg4.jpg",
+    href: "../img/bg8.jpg",
     text:
       "La existencia se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en la luz que entra por la ventana. Y en este marco, en este espacio, celebramos el misterio de la vida."
   }

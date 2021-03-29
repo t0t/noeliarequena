@@ -78,7 +78,7 @@ small {
 }
 
 i {
-  // color: $highlight;
+  color: $grey_4;
   font-style: italic;
 }
 
@@ -135,20 +135,33 @@ h4 {
 }
 
 small,
-p {
+p,
+dl {
   text-align: left;
   @include type-setting(0);
 }
-
+p {
+  margin-bottom: $h0;
+}
+// p:not(:first-child) {
+//   background-color: red;
+// }
 p,
-h4 {
+h4,
+dl {
   @include media(s1) {
     max-width: $bp2;
     margin-left: auto;
     margin-right: auto;
   }
 }
-
+dt {
+  color: $grey_3;
+  margin-top: $h1;
+}
+dd {
+  color: $grey_2;
+}
 blockquote {
   @include type-setting(0);
   @include media(s1) {

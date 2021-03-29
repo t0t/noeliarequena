@@ -1,205 +1,205 @@
 export let productos = [
     {
-      "referencia": "042019",
-      "title": "Sin título1",
-      "description": "42x29.5cm",
+      "ref": "042019",
+      "title": "Sin título 0",
+      "description": "Oleo sobre lienzo 42x29.5cm",
       "imagen": "img/obra/img1.jpg",
-      "thumb": "img/obra/img1.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042020",
+      "ref": "042020",
       "title": "Sin título2",
-      "description": "31x23cm",
+      "description": "Oleo sobre lienzo. 31x23cm",
       "imagen": "img/obra/img2.jpg",
-      "thumb": "img/obra/img2.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042021",
+      "ref": "042021",
       "title": "Sin título3",
-      "description": "31x23cm",
+      "description": "Oleo sobre lienzo. 31x23cm",
       "imagen": "img/obra/img3.jpg",
-      "thumb": "img/obra/img3.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042022(repetido???)",
+      "ref": "042022(repetido???)",
       "title": "Sin título4",
-      "description": "31x21cm",
+      "description": "Oleo sobre lienzo. 31x21cm",
       "imagen": "img/obra/img4.jpg",
-      "thumb": "img/obra/img4.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042022",
+      "ref": "042022",
       "title": "Sin título5",
-      "description": "61x50cm",
+      "description": "Oleo sobre lienzo. 61x50cm",
       "imagen": "img/obra/img5.jpg",
-      "thumb": "img/obra/img5.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042023",
+      "ref": "042023",
       "title": "Sin título6",
-      "description": "41x33cm",
+      "description": "Oleo sobre lienzo. 41x33cm",
       "imagen": "img/obra/img6.jpg",
-      "thumb": "img/obra/img6.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "????????",
+      "ref": "????????",
       "title": "Sin título7",
-      "description": "--",
+      "description": "Oleo sobre lienzo. --",
       "imagen": "img/obra/img7.jpg",
-      "thumb": "img/obra/img7.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042024",
+      "ref": "042024",
       "title": "Sin título8",
-      "description": "50x50cm",
+      "description": "Oleo sobre lienzo. 50x50cm",
       "imagen": "img/obra/img8.jpg",
-      "thumb": "img/obra/img8.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042025",
+      "ref": "042025",
       "title": "Sin título9",
-      "description": "100x100cm",
+      "description": "Oleo sobre lienzo. 100x100cm",
       "imagen": "img/obra/img9.jpg",
-      "thumb": "img/obra/img9.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042026",
+      "ref": "042026",
       "title": "Sin título10",
-      "description": "no tengo el dato????",
+      "description": "Oleo sobre lienzo. no tengo el dato????",
       "imagen": "img/obra/img10.jpg",
-      "thumb": "img/obra/img10.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042027",
+      "ref": "042027",
       "title": "Sin título11",
-      "description": "??????????",
+      "description": "Oleo sobre lienzo. ??????????",
       "imagen": "img/obra/img11.jpg",
-      "thumb": "img/obra/img11.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042028",
+      "ref": "042028",
       "title": "Sin título12",
-      "description": "80x65cm",
+      "description": "Oleo sobre lienzo. 80x65cm",
       "imagen": "img/obra/img12.jpg",
-      "thumb": "img/obra/img12.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042029",
+      "ref": "042029",
       "title": "Sin título13",
-      "description": "73x55cm",
+      "description": "Oleo sobre lienzo. 73x55cm",
       "imagen": "img/obra/img13.jpg",
-      "thumb": "img/obra/img13.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042030",
+      "ref": "042030",
       "title": "Sin título14",
-      "description": "92x73cm",
+      "description": "Oleo sobre lienzo. 92x73cm",
       "imagen": "img/obra/img14.jpg",
-      "thumb": "img/obra/img14.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042031",
+      "ref": "042031",
       "title": "Sin título15",
-      "description": "92x73cm",
+      "description": "Oleo sobre lienzo. 92x73cm",
       "imagen": "img/obra/img15.jpg",
-      "thumb": "img/obra/img15.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042032",
+      "ref": "042032",
       "title": "Sin título16",
-      "description": "81x116cm",
+      "description": "Oleo sobre lienzo. 81x116cm",
       "imagen": "img/obra/img16.jpg",
-      "thumb": "img/obra/img16.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "??????????",
+      "ref": "??????????",
       "title": "Sin título17",
-      "description": "???????",
+      "description": "Oleo sobre lienzo. ???????",
       "imagen": "img/obra/img17.jpg",
-      "thumb": "img/obra/img17.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042033",
+      "ref": "042033",
       "title": "Sin título18",
-      "description": "116x81cm",
+      "description": "Oleo sobre lienzo. 116x81cm",
       "imagen": "img/obra/img18.jpg",
-      "thumb": "img/obra/img18.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042034",
+      "ref": "042034",
       "title": "Sin título19",
-      "description": "100x100cm",
+      "description": "Oleo sobre lienzo. 100x100cm",
       "imagen": "img/obra/img19.jpg",
-      "thumb": "img/obra/img19.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042035",
+      "ref": "042035",
       "title": "Sin título20",
-      "description": "100x100cm",
+      "description": "Oleo sobre lienzo. 100x100cm",
       "imagen": "img/obra/img20.jpg",
-      "thumb": "img/obra/img20.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042036",
+      "ref": "042036",
       "title": "Sin título21",
-      "description": "????????",
+      "description": "Oleo sobre lienzo. ????????",
       "imagen": "img/obra/img21.jpg",
-      "thumb": "img/obra/img21.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042038",
+      "ref": "042038",
       "title": "Sin título22",
-      "description": "100x40cm.",
+      "description": "Oleo sobre lienzo. 100x40cm.",
       "imagen": "img/obra/img22.jpg",
-      "thumb": "img/obra/img22.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042039",
+      "ref": "042039",
       "title": "Sin título23",
-      "description": "58x44cm.",
+      "description": "Oleo sobre lienzo. 58x44cm.",
       "imagen": "img/obra/img23.jpg",
-      "thumb": "img/obra/img23.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042040",
+      "ref": "042040",
       "title": "Sin título24",
-      "description": "122x60.5cm.",
+      "description": "Oleo sobre lienzo. 122x60.5cm.",
       "imagen": "img/obra/img24.jpg",
-      "thumb": "img/obra/img24.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042041",
+      "ref": "042041",
       "title": "Sin título25",
-      "description": "90x73cm.",
+      "description": "Oleo sobre lienzo. 90x73cm.",
       "imagen": "img/obra/img25.jpg",
-      "thumb": "img/obra/img25.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042042",
+      "ref": "042042",
       "title": "Sin título26",
-      "description": "100x100cm.",
+      "description": "Oleo sobre lienzo. 100x100cm.",
       "imagen": "img/obra/img26.jpg",
-      "thumb": "img/obra/img26.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042043",
+      "ref": "042043",
       "title": "Sin título27",
-      "description": "120x80cm.",
+      "description": "Oleo sobre lienzo. 120x80cm.",
       "imagen": "img/obra/img27.jpg",
-      "thumb": "img/obra/img27.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042044",
+      "ref": "042044",
       "title": "Sin título28",
-      "description": "120x80cm.",
+      "description": "Oleo sobre lienzo. 120x80cm.",
       "imagen": "img/obra/img28.jpg",
-      "thumb": "img/obra/img28.jpg"
+      "thumb": ""
     },
     {
-      "referencia": "042037",
+      "ref": "042037",
       "title": "Sin título29",
-      "description": "122x60.5cm",
+      "description": "Oleo sobre lienzo. 122x60.5cm",
       "imagen": "img/obra/img29.jpg",
-      "thumb": "img/obra/img29.jpg"
+      "thumb": ""
     }
 ];

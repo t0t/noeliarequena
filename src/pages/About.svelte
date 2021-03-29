@@ -19,7 +19,7 @@
 
     <!-- <Cover title={data[13].title} subtitle={data[13].subtitle} text={data[13].text} img={data[13].img} /> -->
 
-    <BannerTexto header={data[10].title} texto={data[10].subtitle} img={data[10].img} />
+    <BannerTexto header={data[10].title} texto={data[10].subtitle} img={data[10].img}/>
 
     <SectionHalf
         variante={1}

@@ -7,7 +7,7 @@
 <nav>
     <!-- <button on:click={() => push('/artwork')}>Go somewhere</button> -->
     <a href="/artwork" use:link use:active>
-        <h2>Obra plástica</h2>
+        <h2>Obra plástica 2020-2021</h2>
         <p>Artwork</p>
     </a>
     <a href="/about" use:link use:active>

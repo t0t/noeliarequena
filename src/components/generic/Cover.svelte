@@ -3,11 +3,11 @@
     export let subtitle = ""
     export let text = ""
     export let img = ""
-    let innerWidth, innerHeight, scrollY, alphascroll, topescroll;
+    let innerWidth, innerHeight, scrollY, alphascroll;
 
-    $: if ( scrollY < (innerHeight / 2) ) {
-        topescroll = scrollY + 150
-    }
+    // $: if ( scrollY < (innerHeight / 2) ) {
+    //     topescroll = scrollY + 150
+    // }
 </script>
 
 <style lang="scss">
@@ -17,9 +17,9 @@
         height: 50vh;
         padding: $h3;
         color: $white;
-        background-size: 100%;
+        background-size: cover;
         background-attachment: fixed;
-        background-position: center;
+        background-position: top center;
         position: relative;
         background-color: $grey_5;
         display: flex;
@@ -31,7 +31,6 @@
         @include media(s1) {
             height: 100vh;
             background-position: center;
-            background-size: 75vw;
             display: grid;
             align-items: end;
             grid-template-areas: 
@@ -48,10 +47,7 @@
             }
         }
         .CoverSubTitle {
-            @include media(s3) {
-                margin-top: $h1;
-            }
-            // color: $highlight_1;
+            margin-top: 0;
             text-shadow: none;
         }
         .CoverText {
@@ -68,7 +64,6 @@
 
 <header class="Cover" style="
                     background-image: url({img});
-                    background-size: {topescroll}vw;
                     opacity: {1 - Math.max(0, scrollY / (innerHeight/2))};">
     <h1 class="CoverTitle">
         {title} <br>

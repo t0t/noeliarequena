@@ -2131,7 +2131,7 @@ var app = (function () {
       },
       {
         id: 3,
-        href: "../img/bg4.jpg",
+        href: "../img/bg8.jpg",
         text:
           "La existencia se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en la luz que entra por la ventana. Y en este marco, en este espacio, celebramos el misterio de la vida."
       }
@@ -2163,8 +2163,8 @@ var app = (function () {
     	let t5;
     	let mounted;
     	let dispose;
-    	add_render_callback(/*onwindowresize*/ ctx[8]);
-    	add_render_callback(/*onwindowscroll*/ ctx[9]);
+    	add_render_callback(/*onwindowresize*/ ctx[7]);
+    	add_render_callback(/*onwindowscroll*/ ctx[8]);
 
     	const block = {
     		c: function create() {
@@ -2180,21 +2180,20 @@ var app = (function () {
     			t4 = space();
     			p = element("p");
     			t5 = text(/*text*/ ctx[2]);
-    			attr_dev(br, "class", "svelte-2lxkvz");
-    			add_location(br, file, 377, 16, 6340);
-    			attr_dev(h2, "class", "CoverSubTitle svelte-2lxkvz");
-    			add_location(h2, file, 379, 12, 6372);
-    			attr_dev(span, "class", "svelte-2lxkvz");
-    			add_location(span, file, 378, 8, 6353);
-    			attr_dev(h1, "class", "CoverTitle svelte-2lxkvz");
-    			add_location(h1, file, 376, 4, 6300);
-    			attr_dev(p, "class", "CoverText svelte-2lxkvz");
-    			add_location(p, file, 382, 4, 6446);
-    			attr_dev(header, "class", "Cover svelte-2lxkvz");
+    			attr_dev(br, "class", "svelte-5dssa9");
+    			add_location(br, file, 387, 16, 6328);
+    			attr_dev(h2, "class", "CoverSubTitle svelte-5dssa9");
+    			add_location(h2, file, 389, 12, 6360);
+    			attr_dev(span, "class", "svelte-5dssa9");
+    			add_location(span, file, 388, 8, 6341);
+    			attr_dev(h1, "class", "CoverTitle svelte-5dssa9");
+    			add_location(h1, file, 386, 4, 6288);
+    			attr_dev(p, "class", "CoverText svelte-5dssa9");
+    			add_location(p, file, 392, 4, 6434);
+    			attr_dev(header, "class", "Cover svelte-5dssa9");
     			set_style(header, "background-image", "url(" + /*img*/ ctx[3] + ")");
-    			set_style(header, "background-size", /*topescroll*/ ctx[7] + "vw");
-    			set_style(header, "opacity", 1 - Math.max(0, /*scrollY*/ ctx[5] / (/*innerHeight*/ ctx[4] / 2)));
-    			add_location(header, file, 372, 0, 6086);
+    			set_style(header, "opacity", 1 - Math.max(0, /*scrollY*/ ctx[6] / (/*innerHeight*/ ctx[5] / 2)));
+    			add_location(header, file, 383, 0, 6127);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2215,12 +2214,12 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(window, "resize", /*onwindowresize*/ ctx[8]),
+    					listen_dev(window, "resize", /*onwindowresize*/ ctx[7]),
     					listen_dev(window, "scroll", () => {
     						scrolling = true;
     						clearTimeout(scrolling_timeout);
     						scrolling_timeout = setTimeout(clear_scrolling, 100);
-    						/*onwindowscroll*/ ctx[9]();
+    						/*onwindowscroll*/ ctx[8]();
     					})
     				];
 
@@ -2228,10 +2227,10 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*scrollY*/ 32 && !scrolling) {
+    			if (dirty & /*scrollY*/ 64 && !scrolling) {
     				scrolling = true;
     				clearTimeout(scrolling_timeout);
-    				scrollTo(window.pageXOffset, /*scrollY*/ ctx[5]);
+    				scrollTo(window.pageXOffset, /*scrollY*/ ctx[6]);
     				scrolling_timeout = setTimeout(clear_scrolling, 100);
     			}
 
@@ -2243,12 +2242,8 @@ var app = (function () {
     				set_style(header, "background-image", "url(" + /*img*/ ctx[3] + ")");
     			}
 
-    			if (dirty & /*topescroll*/ 128) {
-    				set_style(header, "background-size", /*topescroll*/ ctx[7] + "vw");
-    			}
-
-    			if (dirty & /*scrollY, innerHeight*/ 48) {
-    				set_style(header, "opacity", 1 - Math.max(0, /*scrollY*/ ctx[5] / (/*innerHeight*/ ctx[4] / 2)));
+    			if (dirty & /*scrollY, innerHeight*/ 96) {
+    				set_style(header, "opacity", 1 - Math.max(0, /*scrollY*/ ctx[6] / (/*innerHeight*/ ctx[5] / 2)));
     			}
     		},
     		i: noop,
@@ -2278,7 +2273,7 @@ var app = (function () {
     	let { subtitle = "" } = $$props;
     	let { text = "" } = $$props;
     	let { img = "" } = $$props;
-    	let innerWidth, innerHeight, scrollY, alphascroll, topescroll;
+    	let innerWidth, innerHeight, scrollY, alphascroll;
     	const writable_props = ["title", "subtitle", "text", "img"];
 
     	Object.keys($$props).forEach(key => {
@@ -2286,12 +2281,12 @@ var app = (function () {
     	});
 
     	function onwindowresize() {
-    		$$invalidate(6, innerWidth = window.innerWidth);
-    		$$invalidate(4, innerHeight = window.innerHeight);
+    		$$invalidate(4, innerWidth = window.innerWidth);
+    		$$invalidate(5, innerHeight = window.innerHeight);
     	}
 
     	function onwindowscroll() {
-    		$$invalidate(5, scrollY = window.pageYOffset);
+    		$$invalidate(6, scrollY = window.pageYOffset);
     	}
 
     	$$self.$$set = $$props => {
@@ -2309,8 +2304,7 @@ var app = (function () {
     		innerWidth,
     		innerHeight,
     		scrollY,
-    		alphascroll,
-    		topescroll
+    		alphascroll
     	});
 
     	$$self.$inject_state = $$props => {
@@ -2318,34 +2312,24 @@ var app = (function () {
     		if ("subtitle" in $$props) $$invalidate(1, subtitle = $$props.subtitle);
     		if ("text" in $$props) $$invalidate(2, text = $$props.text);
     		if ("img" in $$props) $$invalidate(3, img = $$props.img);
-    		if ("innerWidth" in $$props) $$invalidate(6, innerWidth = $$props.innerWidth);
-    		if ("innerHeight" in $$props) $$invalidate(4, innerHeight = $$props.innerHeight);
-    		if ("scrollY" in $$props) $$invalidate(5, scrollY = $$props.scrollY);
+    		if ("innerWidth" in $$props) $$invalidate(4, innerWidth = $$props.innerWidth);
+    		if ("innerHeight" in $$props) $$invalidate(5, innerHeight = $$props.innerHeight);
+    		if ("scrollY" in $$props) $$invalidate(6, scrollY = $$props.scrollY);
     		if ("alphascroll" in $$props) alphascroll = $$props.alphascroll;
-    		if ("topescroll" in $$props) $$invalidate(7, topescroll = $$props.topescroll);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*scrollY, innerHeight*/ 48) {
-    			if (scrollY < innerHeight / 2) {
-    				$$invalidate(7, topescroll = scrollY + 150);
-    			}
-    		}
-    	};
-
     	return [
     		title,
     		subtitle,
     		text,
     		img,
+    		innerWidth,
     		innerHeight,
     		scrollY,
-    		innerWidth,
-    		topescroll,
     		onwindowresize,
     		onwindowscroll
     	];
@@ -2423,7 +2407,7 @@ var app = (function () {
 
     const file$1 = "src/components/generic/Button.svelte";
 
-    // (414:0) {:else}
+    // (430:0) {:else}
     function create_else_block$1(ctx) {
     	let button;
     	let t;
@@ -2436,8 +2420,8 @@ var app = (function () {
     			button = element("button");
     			t = text(/*text*/ ctx[0]);
     			attr_dev(button, "type", "submit");
-    			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-95htw0"));
-    			add_location(button, file$1, 414, 4, 6503);
+    			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-17odm9"));
+    			add_location(button, file$1, 430, 4, 6635);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -2451,7 +2435,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			if (dirty & /*text*/ 1) set_data_dev(t, /*text*/ ctx[0]);
 
-    			if (dirty & /*variante*/ 8 && button_class_value !== (button_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-95htw0"))) {
+    			if (dirty & /*variante*/ 8 && button_class_value !== (button_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-17odm9"))) {
     				attr_dev(button, "class", button_class_value);
     			}
     		},
@@ -2466,14 +2450,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(414:0) {:else}",
+    		source: "(430:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (410:0) {#if url}
+    // (426:0) {#if url}
     function create_if_block$1(ctx) {
     	let a;
     	let t;
@@ -2485,8 +2469,8 @@ var app = (function () {
     			t = text(/*text*/ ctx[0]);
     			attr_dev(a, "href", /*url*/ ctx[1]);
     			attr_dev(a, "target", /*target*/ ctx[2]);
-    			attr_dev(a, "class", a_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-95htw0"));
-    			add_location(a, file$1, 410, 4, 6400);
+    			attr_dev(a, "class", a_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-17odm9"));
+    			add_location(a, file$1, 426, 4, 6532);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -2503,7 +2487,7 @@ var app = (function () {
     				attr_dev(a, "target", /*target*/ ctx[2]);
     			}
 
-    			if (dirty & /*variante*/ 8 && a_class_value !== (a_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-95htw0"))) {
+    			if (dirty & /*variante*/ 8 && a_class_value !== (a_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-17odm9"))) {
     				attr_dev(a, "class", a_class_value);
     			}
     		},
@@ -2516,7 +2500,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(410:0) {#if url}",
+    		source: "(426:0) {#if url}",
     		ctx
     	});
 
@@ -2693,9 +2677,9 @@ var app = (function () {
     			article = element("article");
     			h2 = element("h2");
     			t = space();
-    			attr_dev(h2, "class", "Caption svelte-1crsyrj");
+    			attr_dev(h2, "class", "Caption svelte-19njbrl");
     			add_location(h2, file$2, 46, 16, 1582);
-    			attr_dev(article, "class", "Slide svelte-1crsyrj");
+    			attr_dev(article, "class", "Slide svelte-19njbrl");
     			attr_dev(article, "id", article_id_value = /*slide*/ ctx[5].id);
     			set_style(article, "background-image", "url(" + /*slide*/ ctx[5].href + ")");
     			set_style(article, "width", /*ancho_slides*/ ctx[1] + "px");
@@ -2792,11 +2776,11 @@ var app = (function () {
     			t = space();
     			nav = element("nav");
     			create_component(button.$$.fragment);
-    			attr_dev(section, "class", "SlidesGroup svelte-1crsyrj");
+    			attr_dev(section, "class", "SlidesGroup svelte-19njbrl");
     			add_location(section, file$2, 35, 4, 1235);
-    			attr_dev(nav, "class", "SliderNav svelte-1crsyrj");
+    			attr_dev(nav, "class", "SliderNav svelte-19njbrl");
     			add_location(nav, file$2, 52, 4, 1722);
-    			attr_dev(main, "class", "SliderContainer svelte-1crsyrj");
+    			attr_dev(main, "class", "SliderContainer svelte-19njbrl");
     			add_location(main, file$2, 34, 0, 1200);
     		},
     		l: function claim(nodes) {
@@ -3290,7 +3274,7 @@ var app = (function () {
     			nav = element("nav");
     			a0 = element("a");
     			h20 = element("h2");
-    			h20.textContent = "Obra plástica";
+    			h20.textContent = "Obra plástica 2020-2021";
     			t1 = space();
     			p0 = element("p");
     			p0.textContent = "Artwork";
@@ -3301,21 +3285,21 @@ var app = (function () {
     			t5 = space();
     			p1 = element("p");
     			p1.textContent = "Biography";
-    			attr_dev(h20, "class", "svelte-o96gjh");
+    			attr_dev(h20, "class", "svelte-1o3vg1s");
     			add_location(h20, file$4, 9, 8, 293);
-    			attr_dev(p0, "class", "svelte-o96gjh");
-    			add_location(p0, file$4, 10, 8, 324);
+    			attr_dev(p0, "class", "svelte-1o3vg1s");
+    			add_location(p0, file$4, 10, 8, 334);
     			attr_dev(a0, "href", "/artwork");
-    			attr_dev(a0, "class", "svelte-o96gjh");
+    			attr_dev(a0, "class", "svelte-1o3vg1s");
     			add_location(a0, file$4, 8, 4, 245);
-    			attr_dev(h21, "class", "svelte-o96gjh");
-    			add_location(h21, file$4, 13, 8, 398);
-    			attr_dev(p1, "class", "svelte-o96gjh");
-    			add_location(p1, file$4, 14, 8, 425);
+    			attr_dev(h21, "class", "svelte-1o3vg1s");
+    			add_location(h21, file$4, 13, 8, 408);
+    			attr_dev(p1, "class", "svelte-1o3vg1s");
+    			add_location(p1, file$4, 14, 8, 435);
     			attr_dev(a1, "href", "/about");
-    			attr_dev(a1, "class", "svelte-o96gjh");
-    			add_location(a1, file$4, 12, 4, 352);
-    			attr_dev(nav, "class", "svelte-o96gjh");
+    			attr_dev(a1, "class", "svelte-1o3vg1s");
+    			add_location(a1, file$4, 12, 4, 362);
+    			attr_dev(nav, "class", "svelte-1o3vg1s");
     			add_location(nav, file$4, 6, 0, 158);
     		},
     		l: function claim(nodes) {
@@ -3394,7 +3378,446 @@ var app = (function () {
 
     /* src/components/generic/BannerTexto.svelte generated by Svelte v3.32.1 */
 
+    const { console: console_1$1 } = globals;
     const file$5 = "src/components/generic/BannerTexto.svelte";
+
+    // (398:37) {:else}
+    function create_else_block_1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Español");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_1.name,
+    		type: "else",
+    		source: "(398:37) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (398:11) {#if idioma_switch}
+    function create_if_block_1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("English");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(398:11) {#if idioma_switch}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (434:4) {:else}
+    function create_else_block$2(ctx) {
+    	let dl;
+    	let dt0;
+    	let dt1;
+    	let dd0;
+    	let dt2;
+    	let dd1;
+    	let dt3;
+    	let dd2;
+    	let dt4;
+    	let dd3;
+    	let dt5;
+    	let dd4;
+    	let dd5;
+    	let dt6;
+    	let dd6;
+    	let dt7;
+    	let dd7;
+    	let dt8;
+    	let dd8;
+    	let dd9;
+    	let dd10;
+
+    	const block = {
+    		c: function create() {
+    			dl = element("dl");
+    			dt0 = element("dt");
+    			dt0.textContent = "I was born in Vic (Barcelona) in 1976.";
+    			dt1 = element("dt");
+    			dt1.textContent = "1985-1991";
+    			dd0 = element("dd");
+    			dd0.textContent = "in my childhood... me formé en la Escola de dibuix i art Masferrer de Vic con los profesores Pere Isern Puntí, Eduard Xandri Calvet, Lluis Bres Oliva, Lluis Gros Pujol…";
+    			dt2 = element("dt");
+    			dt2.textContent = "1994-1995";
+    			dd1 = element("dd");
+    			dd1.textContent = "Estudié en Escola d´arts aplicades i oficis artistics de Vic.";
+    			dt3 = element("dt");
+    			dt3.textContent = "1997-2001";
+    			dd2 = element("dd");
+    			dd2.textContent = "Estudié el grado de Diseño de Moda en Escola Superior de Disseny Bau de Barcelona.";
+    			dt4 = element("dt");
+    			dt4.textContent = "2000-2001";
+    			dd3 = element("dd");
+    			dd3.textContent = "Taller de sombrerería  en Barcelona  con Nina Pawloswsky.";
+    			dt5 = element("dt");
+    			dt5.textContent = "1999 -2004";
+    			dd4 = element("dd");
+    			dd4.textContent = "Empiezo a trabajar para la marca de moda para mujer Gimenez&Zuazo y su otra marca Boba by G&Z, con distribución en el mercado nacional e internacional en 250 puntos de venta canal multi marca en España, Francia, Italia, Japón...";
+    			dd5 = element("dd");
+    			dd5.textContent = "Bajo la dirección de los socios, co-dirijo el departamento de diseño. Me encargaba de todo el proceso de diseño y las ilustraciones, desarrollo de las colecciones, búsqueda de referencias y tendencias, diseño, elaboración y supervisión de fichas técnicas, coordinación con el equipo de patronaje, manejo de fornituras y materiales, coordinación con las empresas de estampación y producción.";
+    			dt6 = element("dt");
+    			dt6.textContent = "2004-2010";
+    			dd6 = element("dd");
+    			dd6.textContent = "Directora creativa y socia fundadora de la marca de moda para mujer Obvia: desarrollo de la idea de negocio, dirección de la compañía con un equipo de personas, codirección del departamento de diseño, directora de producción, dirección de ventas. Distribución en el mercado nacional con puntos de venta canal multi marca en España. Fabricación de proximidad.";
+    			dt7 = element("dt");
+    			dt7.textContent = "2010-2018";
+    			dd7 = element("dd");
+    			dd7.textContent = "Freelance Textile Graphic Designer. Diseñadora de estampados para mujer, hombre, niñ@s  en Padma Diseño S.L., Zara, Pull&Bear, Bershka, Mango, Replay, Springfield, Blue Inc., Studio F Women / STF Group Colombia…";
+    			dt8 = element("dt");
+    			dt8.textContent = "2019";
+    			dd8 = element("dd");
+    			dd8.textContent = "Decido dejar el mundo de la moda y de la ilustración para empezar a buscar una expresión más íntima.";
+    			dd9 = element("dd");
+    			dd9.textContent = "Paralelamente a mi actividad profesional mantengo una formación continua en el mundo del arte, con incursiones en diversas técnicas como esmalte, cerámica, escultura, pintura al óleo, arte para niños, libros de artista, así como astrología y educación activa.";
+    			dd10 = element("dd");
+    			dd10.textContent = "Actualmente vivo en pareja con el artista multidisciplinar Sergio Forés. Soy madre de dos hijos y, buscando formas alternativas de vida y educación, me trasladé en 2014 a un pequeño pueblo del Alt Penedès rodeado de viñedos y naturaleza.";
+    			attr_dev(dt0, "class", "svelte-c98a3m");
+    			add_location(dt0, file$5, 435, 8, 9173);
+    			attr_dev(dt1, "class", "svelte-c98a3m");
+    			add_location(dt1, file$5, 437, 8, 9234);
+    			attr_dev(dd0, "class", "svelte-c98a3m");
+    			add_location(dd0, file$5, 438, 8, 9261);
+    			attr_dev(dt2, "class", "svelte-c98a3m");
+    			add_location(dt2, file$5, 440, 8, 9452);
+    			attr_dev(dd1, "class", "svelte-c98a3m");
+    			add_location(dd1, file$5, 441, 8, 9479);
+    			attr_dev(dt3, "class", "svelte-c98a3m");
+    			add_location(dt3, file$5, 443, 8, 9563);
+    			attr_dev(dd2, "class", "svelte-c98a3m");
+    			add_location(dd2, file$5, 444, 8, 9591);
+    			attr_dev(dt4, "class", "svelte-c98a3m");
+    			add_location(dt4, file$5, 446, 8, 9697);
+    			attr_dev(dd3, "class", "svelte-c98a3m");
+    			add_location(dd3, file$5, 447, 8, 9725);
+    			attr_dev(dt5, "class", "svelte-c98a3m");
+    			add_location(dt5, file$5, 449, 8, 9805);
+    			attr_dev(dd4, "class", "svelte-c98a3m");
+    			add_location(dd4, file$5, 450, 8, 9834);
+    			attr_dev(dd5, "class", "svelte-c98a3m");
+    			add_location(dd5, file$5, 451, 8, 10080);
+    			attr_dev(dt6, "class", "svelte-c98a3m");
+    			add_location(dt6, file$5, 453, 8, 10495);
+    			attr_dev(dd6, "class", "svelte-c98a3m");
+    			add_location(dd6, file$5, 454, 8, 10523);
+    			attr_dev(dt7, "class", "svelte-c98a3m");
+    			add_location(dt7, file$5, 456, 8, 10904);
+    			attr_dev(dd7, "class", "svelte-c98a3m");
+    			add_location(dd7, file$5, 457, 8, 10932);
+    			attr_dev(dt8, "class", "svelte-c98a3m");
+    			add_location(dt8, file$5, 459, 8, 11166);
+    			attr_dev(dd8, "class", "svelte-c98a3m");
+    			add_location(dd8, file$5, 460, 8, 11189);
+    			attr_dev(dd9, "class", "svelte-c98a3m");
+    			add_location(dd9, file$5, 462, 8, 11312);
+    			attr_dev(dd10, "class", "svelte-c98a3m");
+    			add_location(dd10, file$5, 464, 8, 11594);
+    			attr_dev(dl, "class", "svelte-c98a3m");
+    			add_location(dl, file$5, 434, 4, 9160);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, dl, anchor);
+    			append_dev(dl, dt0);
+    			append_dev(dl, dt1);
+    			append_dev(dl, dd0);
+    			append_dev(dl, dt2);
+    			append_dev(dl, dd1);
+    			append_dev(dl, dt3);
+    			append_dev(dl, dd2);
+    			append_dev(dl, dt4);
+    			append_dev(dl, dd3);
+    			append_dev(dl, dt5);
+    			append_dev(dl, dd4);
+    			append_dev(dl, dd5);
+    			append_dev(dl, dt6);
+    			append_dev(dl, dd6);
+    			append_dev(dl, dt7);
+    			append_dev(dl, dd7);
+    			append_dev(dl, dt8);
+    			append_dev(dl, dd8);
+    			append_dev(dl, dd9);
+    			append_dev(dl, dd10);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(dl);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$2.name,
+    		type: "else",
+    		source: "(434:4) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (401:4) {#if idioma_switch}
+    function create_if_block$2(ctx) {
+    	let dl;
+    	let dt0;
+    	let dt1;
+    	let dd0;
+    	let t2;
+    	let i0;
+    	let t4;
+    	let dt2;
+    	let dd1;
+    	let t6;
+    	let i1;
+    	let t8;
+    	let dt3;
+    	let dd2;
+    	let t10;
+    	let i2;
+    	let t12;
+    	let dt4;
+    	let dd3;
+    	let t14;
+    	let i3;
+    	let t16;
+    	let dt5;
+    	let dd4;
+    	let t18;
+    	let i4;
+    	let t20;
+    	let i5;
+    	let t22;
+    	let dd5;
+    	let dt6;
+    	let dd6;
+    	let t25;
+    	let i6;
+    	let t27;
+    	let dt7;
+    	let dd7;
+    	let t29;
+    	let i7;
+    	let t31;
+    	let dt8;
+    	let dd8;
+    	let dd9;
+    	let dt9;
+
+    	const block = {
+    		c: function create() {
+    			dl = element("dl");
+    			dt0 = element("dt");
+    			dt0.textContent = "Nací en Vic (Barcelona) en 1976.";
+    			dt1 = element("dt");
+    			dt1.textContent = "1985-1991";
+    			dd0 = element("dd");
+    			t2 = text("Durante mi infancia me formé en la ");
+    			i0 = element("i");
+    			i0.textContent = "Escola de dibuix i art Masferrer";
+    			t4 = text(" de Vic con los profesores Pere Isern Puntí, Eduard Xandri Calvet, Lluis Bres Oliva, Lluis Gros Pujol...");
+    			dt2 = element("dt");
+    			dt2.textContent = "1994-1995";
+    			dd1 = element("dd");
+    			t6 = text("Estudié en ");
+    			i1 = element("i");
+    			i1.textContent = "Escola d´arts aplicades i oficis artistics";
+    			t8 = text(" de Vic.");
+    			dt3 = element("dt");
+    			dt3.textContent = "1997-2001";
+    			dd2 = element("dd");
+    			t10 = text("Estudié el grado de Diseño de Moda en ");
+    			i2 = element("i");
+    			i2.textContent = "Escola Superior de Disseny Bau";
+    			t12 = text(" de Barcelona.");
+    			dt4 = element("dt");
+    			dt4.textContent = "2000-2001";
+    			dd3 = element("dd");
+    			t14 = text("Taller de sombrerería  en Barcelona con ");
+    			i3 = element("i");
+    			i3.textContent = "Nina Pawloswsky";
+    			t16 = text(".");
+    			dt5 = element("dt");
+    			dt5.textContent = "1999 -2004";
+    			dd4 = element("dd");
+    			t18 = text("Empiezo a trabajar para la marca de moda para mujer ");
+    			i4 = element("i");
+    			i4.textContent = "Gimenez&Zuazo";
+    			t20 = text(" y su otra marca ");
+    			i5 = element("i");
+    			i5.textContent = "Boba by G&Z";
+    			t22 = text(", con distribución en el mercado nacional e internacional en 250 puntos de venta canal multi marca en España, Francia, Italia, Japón...");
+    			dd5 = element("dd");
+    			dd5.textContent = "Bajo la dirección de los socios, co-dirijo el departamento de diseño. Me encargaba de todo el proceso de diseño y las ilustraciones, desarrollo de las colecciones, búsqueda de referencias y tendencias, diseño, elaboración y supervisión de fichas técnicas, coordinación con el equipo de patronaje, manejo de fornituras y materiales, coordinación con las empresas de estampación y producción.";
+    			dt6 = element("dt");
+    			dt6.textContent = "2004-2010";
+    			dd6 = element("dd");
+    			t25 = text("Directora creativa y socia fundadora de la marca de moda para mujer ");
+    			i6 = element("i");
+    			i6.textContent = "Obvia";
+    			t27 = text(": desarrollo de la idea de negocio, dirección de la compañía con un equipo de personas, codirección del departamento de diseño, directora de producción, dirección de ventas. Distribución en el mercado nacional con puntos de venta canal multi marca en España. Fabricación de proximidad.");
+    			dt7 = element("dt");
+    			dt7.textContent = "2010-2018";
+    			dd7 = element("dd");
+    			t29 = text("Freelance Textile Graphic Designer. Diseñadora de estampados para mujer, hombre, niñ@s en ");
+    			i7 = element("i");
+    			i7.textContent = "Padma Diseño S.L., Zara, Pull&Bear, Bershka, Mango, Replay, Springfield, Blue Inc., Studio F Women / STF Group Colombia";
+    			t31 = text("...");
+    			dt8 = element("dt");
+    			dt8.textContent = "2019";
+    			dd8 = element("dd");
+    			dd8.textContent = "Decido dejar el mundo de la moda y de la ilustración para empezar a buscar una expresión más íntima.";
+    			dd9 = element("dd");
+    			dd9.textContent = "Paralelamente a mi actividad profesional mantengo una formación continua en el mundo del arte, con incursiones en diversas técnicas como esmalte, cerámica, escultura, pintura al óleo, arte para niños, libros de artista, así como astrología y educación activa.";
+    			dt9 = element("dt");
+    			dt9.textContent = "Actualmente vivo en pareja con el artista multidisciplinar Sergio Forés. Soy madre de dos hijos y, buscando formas alternativas de vida y educación, me trasladé en 2014 a un pequeño pueblo del Alt Penedès rodeado de viñedos y naturaleza.";
+    			attr_dev(dt0, "class", "svelte-c98a3m");
+    			add_location(dt0, file$5, 402, 8, 6413);
+    			attr_dev(dt1, "class", "svelte-c98a3m");
+    			add_location(dt1, file$5, 404, 8, 6468);
+    			attr_dev(i0, "class", "svelte-c98a3m");
+    			add_location(i0, file$5, 405, 47, 6534);
+    			attr_dev(dd0, "class", "svelte-c98a3m");
+    			add_location(dd0, file$5, 405, 8, 6495);
+    			attr_dev(dt2, "class", "svelte-c98a3m");
+    			add_location(dt2, file$5, 407, 8, 6696);
+    			attr_dev(i1, "class", "svelte-c98a3m");
+    			add_location(i1, file$5, 408, 23, 6738);
+    			attr_dev(dd1, "class", "svelte-c98a3m");
+    			add_location(dd1, file$5, 408, 8, 6723);
+    			attr_dev(dt3, "class", "svelte-c98a3m");
+    			add_location(dt3, file$5, 410, 8, 6814);
+    			attr_dev(i2, "class", "svelte-c98a3m");
+    			add_location(i2, file$5, 411, 50, 6884);
+    			attr_dev(dd2, "class", "svelte-c98a3m");
+    			add_location(dd2, file$5, 411, 8, 6842);
+    			attr_dev(dt4, "class", "svelte-c98a3m");
+    			add_location(dt4, file$5, 413, 8, 6955);
+    			attr_dev(i3, "class", "svelte-c98a3m");
+    			add_location(i3, file$5, 414, 52, 7027);
+    			attr_dev(dd3, "class", "svelte-c98a3m");
+    			add_location(dd3, file$5, 414, 8, 6983);
+    			attr_dev(dt5, "class", "svelte-c98a3m");
+    			add_location(dt5, file$5, 416, 8, 7069);
+    			attr_dev(i4, "class", "svelte-c98a3m");
+    			add_location(i4, file$5, 417, 64, 7154);
+    			attr_dev(i5, "class", "svelte-c98a3m");
+    			add_location(i5, file$5, 417, 101, 7191);
+    			attr_dev(dd4, "class", "svelte-c98a3m");
+    			add_location(dd4, file$5, 417, 8, 7098);
+    			attr_dev(dd5, "class", "svelte-c98a3m");
+    			add_location(dd5, file$5, 418, 8, 7358);
+    			attr_dev(dt6, "class", "svelte-c98a3m");
+    			add_location(dt6, file$5, 420, 8, 7773);
+    			attr_dev(i6, "class", "svelte-c98a3m");
+    			add_location(i6, file$5, 421, 80, 7873);
+    			attr_dev(dd6, "class", "svelte-c98a3m");
+    			add_location(dd6, file$5, 421, 8, 7801);
+    			attr_dev(dt7, "class", "svelte-c98a3m");
+    			add_location(dt7, file$5, 423, 8, 8189);
+    			attr_dev(i7, "class", "svelte-c98a3m");
+    			add_location(i7, file$5, 424, 102, 8311);
+    			attr_dev(dd7, "class", "svelte-c98a3m");
+    			add_location(dd7, file$5, 424, 8, 8217);
+    			attr_dev(dt8, "class", "svelte-c98a3m");
+    			add_location(dt8, file$5, 426, 8, 8459);
+    			attr_dev(dd8, "class", "svelte-c98a3m");
+    			add_location(dd8, file$5, 427, 8, 8482);
+    			attr_dev(dd9, "class", "svelte-c98a3m");
+    			add_location(dd9, file$5, 429, 8, 8605);
+    			attr_dev(dt9, "class", "svelte-c98a3m");
+    			add_location(dt9, file$5, 431, 8, 8887);
+    			attr_dev(dl, "class", "svelte-c98a3m");
+    			add_location(dl, file$5, 401, 4, 6400);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, dl, anchor);
+    			append_dev(dl, dt0);
+    			append_dev(dl, dt1);
+    			append_dev(dl, dd0);
+    			append_dev(dd0, t2);
+    			append_dev(dd0, i0);
+    			append_dev(dd0, t4);
+    			append_dev(dl, dt2);
+    			append_dev(dl, dd1);
+    			append_dev(dd1, t6);
+    			append_dev(dd1, i1);
+    			append_dev(dd1, t8);
+    			append_dev(dl, dt3);
+    			append_dev(dl, dd2);
+    			append_dev(dd2, t10);
+    			append_dev(dd2, i2);
+    			append_dev(dd2, t12);
+    			append_dev(dl, dt4);
+    			append_dev(dl, dd3);
+    			append_dev(dd3, t14);
+    			append_dev(dd3, i3);
+    			append_dev(dd3, t16);
+    			append_dev(dl, dt5);
+    			append_dev(dl, dd4);
+    			append_dev(dd4, t18);
+    			append_dev(dd4, i4);
+    			append_dev(dd4, t20);
+    			append_dev(dd4, i5);
+    			append_dev(dd4, t22);
+    			append_dev(dl, dd5);
+    			append_dev(dl, dt6);
+    			append_dev(dl, dd6);
+    			append_dev(dd6, t25);
+    			append_dev(dd6, i6);
+    			append_dev(dd6, t27);
+    			append_dev(dl, dt7);
+    			append_dev(dl, dd7);
+    			append_dev(dd7, t29);
+    			append_dev(dd7, i7);
+    			append_dev(dd7, t31);
+    			append_dev(dl, dt8);
+    			append_dev(dl, dd8);
+    			append_dev(dl, dd9);
+    			append_dev(dl, dt9);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(dl);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$2.name,
+    		type: "if",
+    		source: "(401:4) {#if idioma_switch}",
+    		ctx
+    	});
+
+    	return block;
+    }
 
     function create_fragment$6(ctx) {
     	let section;
@@ -3408,45 +3831,27 @@ var app = (function () {
     	let t3;
     	let span;
     	let t4;
-    	let p0;
-    	let t6;
-    	let h30;
-    	let t8;
-    	let p1;
-    	let t10;
-    	let h31;
-    	let t12;
-    	let p2;
-    	let t14;
-    	let h32;
-    	let t16;
-    	let p3;
-    	let t18;
-    	let h33;
-    	let t20;
-    	let p4;
-    	let t22;
-    	let h34;
-    	let t24;
-    	let p5;
-    	let t26;
-    	let p6;
-    	let t28;
-    	let h35;
-    	let t30;
-    	let p7;
-    	let t32;
-    	let h36;
-    	let t34;
-    	let p8;
-    	let t36;
-    	let h37;
-    	let t38;
-    	let p9;
-    	let t40;
-    	let p10;
-    	let t42;
-    	let p11;
+    	let div;
+    	let button;
+    	let t5;
+    	let mounted;
+    	let dispose;
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*idioma_switch*/ ctx[3]) return create_if_block_1;
+    		return create_else_block_1;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block0 = current_block_type(ctx);
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (/*idioma_switch*/ ctx[3]) return create_if_block$2;
+    		return create_else_block$2;
+    	}
+
+    	let current_block_type_1 = select_block_type_1(ctx);
+    	let if_block1 = current_block_type_1(ctx);
 
     	const block = {
     		c: function create() {
@@ -3460,117 +3865,27 @@ var app = (function () {
     			t3 = space();
     			span = element("span");
     			t4 = space();
-    			p0 = element("p");
-    			p0.textContent = "Nací en Vic (Barcelona) en 1976.";
-    			t6 = space();
-    			h30 = element("h3");
-    			h30.textContent = "1985-1991";
-    			t8 = space();
-    			p1 = element("p");
-    			p1.textContent = "Durante mi infancia me formé en la Escola de dibuix i art Masferrer de Vic con los profesores Pere Isern Puntí, Eduard Xandri Calvet, Lluis Bres Oliva, Lluis Gros Pujol…";
-    			t10 = space();
-    			h31 = element("h3");
-    			h31.textContent = "1994-1995";
-    			t12 = space();
-    			p2 = element("p");
-    			p2.textContent = "Estudié en Escola d´arts aplicades i oficis artistics de Vic.";
-    			t14 = space();
-    			h32 = element("h3");
-    			h32.textContent = "1997-2001";
-    			t16 = space();
-    			p3 = element("p");
-    			p3.textContent = "Estudié el grado de Diseño de Moda en Escola Superior de Disseny Bau de Barcelona.";
-    			t18 = text(" \n\n    ");
-    			h33 = element("h3");
-    			h33.textContent = "2000-2001";
-    			t20 = space();
-    			p4 = element("p");
-    			p4.textContent = "Taller de sombrerería  en Barcelona  con Nina Pawloswsky.";
-    			t22 = space();
-    			h34 = element("h3");
-    			h34.textContent = "1999 -2004";
-    			t24 = space();
-    			p5 = element("p");
-    			p5.textContent = "Empiezo a trabajar para la marca de moda para mujer Gimenez&Zuazo y su otra marca Boba by G&Z, con distribución en el mercado nacional e internacional en 250 puntos de venta canal multi marca en España, Francia, Italia, Japón...";
-    			t26 = space();
-    			p6 = element("p");
-    			p6.textContent = "Bajo la dirección de los socios, co-dirijo el departamento de diseño. Me encargaba de todo el proceso de diseño y las ilustraciones, desarrollo de las colecciones, búsqueda de referencias y tendencias, diseño, elaboración y supervisión de fichas técnicas, coordinación con el equipo de patronaje, manejo de fornituras y materiales, coordinación con las empresas de estampación y producción.";
-    			t28 = text("  \n\n    ");
-    			h35 = element("h3");
-    			h35.textContent = "2004-2010";
-    			t30 = space();
-    			p7 = element("p");
-    			p7.textContent = "Directora creativa y socia fundadora de la marca de moda para mujer Obvia: desarrollo de la idea de negocio, dirección de la compañía con un equipo de personas, codirección del departamento de diseño, directora de producción, dirección de ventas. Distribución en el mercado nacional con puntos de venta canal multi marca en España. Fabricación de proximidad.";
-    			t32 = space();
-    			h36 = element("h3");
-    			h36.textContent = "2010-2018";
-    			t34 = space();
-    			p8 = element("p");
-    			p8.textContent = "Freelance Textile Graphic Designer. Diseñadora de estampados para mujer, hombre, niñ@s  en Padma Diseño S.L., Zara, Pull&Bear, Bershka, Mango, Replay, Springfield, Blue Inc., Studio F Women / STF Group Colombia…";
-    			t36 = space();
-    			h37 = element("h3");
-    			h37.textContent = "2019";
-    			t38 = space();
-    			p9 = element("p");
-    			p9.textContent = "Decido dejar el mundo de la moda y de la ilustración para empezar a buscar una expresión más íntima.";
-    			t40 = space();
-    			p10 = element("p");
-    			p10.textContent = "Paralelamente a mi actividad profesional mantengo una formación continua en el mundo del arte, con incursiones en diversas técnicas como esmalte, cerámica, escultura, pintura al óleo, arte para niños, libros de artista, así como astrología y educación activa.";
-    			t42 = space();
-    			p11 = element("p");
-    			p11.textContent = "Actualmente soy madre de dos hijos y, buscando formas alternativas de vida y educación, me trasladé en 2014 a un pequeño pueblo del Alt Penedès rodeado de viñedos y naturaleza.";
-    			attr_dev(img_1, "class", "Avatar svelte-db3zld");
+    			div = element("div");
+    			button = element("button");
+    			if_block0.c();
+    			t5 = space();
+    			if_block1.c();
+    			attr_dev(img_1, "class", "Avatar svelte-c98a3m");
     			if (img_1.src !== (img_1_src_value = /*img*/ ctx[2])) attr_dev(img_1, "src", img_1_src_value);
     			attr_dev(img_1, "alt", "");
-    			add_location(img_1, file$5, 345, 4, 5410);
-    			attr_dev(br, "class", "svelte-db3zld");
-    			add_location(br, file$5, 347, 17, 5500);
-    			attr_dev(span, "class", "BannerTextoText svelte-db3zld");
-    			add_location(span, file$5, 348, 8, 5513);
-    			attr_dev(h2, "class", "BannerTextoHeader svelte-db3zld");
-    			add_location(h2, file$5, 346, 4, 5452);
-    			attr_dev(p0, "class", "svelte-db3zld");
-    			add_location(p0, file$5, 350, 4, 5578);
-    			attr_dev(h30, "class", "svelte-db3zld");
-    			add_location(h30, file$5, 354, 4, 5637);
-    			attr_dev(p1, "class", "svelte-db3zld");
-    			add_location(p1, file$5, 355, 4, 5661);
-    			attr_dev(h31, "class", "svelte-db3zld");
-    			add_location(h31, file$5, 357, 4, 5843);
-    			attr_dev(p2, "class", "svelte-db3zld");
-    			add_location(p2, file$5, 357, 23, 5862);
-    			attr_dev(h32, "class", "svelte-db3zld");
-    			add_location(h32, file$5, 359, 4, 5936);
-    			attr_dev(p3, "class", "svelte-db3zld");
-    			add_location(p3, file$5, 359, 23, 5955);
-    			attr_dev(h33, "class", "svelte-db3zld");
-    			add_location(h33, file$5, 361, 4, 6051);
-    			attr_dev(p4, "class", "svelte-db3zld");
-    			add_location(p4, file$5, 361, 23, 6070);
-    			attr_dev(h34, "class", "svelte-db3zld");
-    			add_location(h34, file$5, 363, 4, 6140);
-    			attr_dev(p5, "class", "svelte-db3zld");
-    			add_location(p5, file$5, 363, 24, 6160);
-    			attr_dev(p6, "class", "svelte-db3zld");
-    			add_location(p6, file$5, 364, 4, 6400);
-    			attr_dev(h35, "class", "svelte-db3zld");
-    			add_location(h35, file$5, 366, 4, 6805);
-    			attr_dev(p7, "class", "svelte-db3zld");
-    			add_location(p7, file$5, 366, 23, 6824);
-    			attr_dev(h36, "class", "svelte-db3zld");
-    			add_location(h36, file$5, 368, 4, 7195);
-    			attr_dev(p8, "class", "svelte-db3zld");
-    			add_location(p8, file$5, 368, 23, 7214);
-    			attr_dev(h37, "class", "svelte-db3zld");
-    			add_location(h37, file$5, 370, 4, 7438);
-    			attr_dev(p9, "class", "svelte-db3zld");
-    			add_location(p9, file$5, 370, 18, 7452);
-    			attr_dev(p10, "class", "svelte-db3zld");
-    			add_location(p10, file$5, 372, 4, 7565);
-    			attr_dev(p11, "class", "svelte-db3zld");
-    			add_location(p11, file$5, 374, 4, 7837);
-    			attr_dev(section, "class", "BannerTexto svelte-db3zld");
-    			add_location(section, file$5, 344, 0, 5376);
+    			add_location(img_1, file$5, 386, 4, 5981);
+    			attr_dev(br, "class", "svelte-c98a3m");
+    			add_location(br, file$5, 389, 17, 6072);
+    			attr_dev(span, "class", "BannerTextoText svelte-c98a3m");
+    			add_location(span, file$5, 390, 8, 6085);
+    			attr_dev(h2, "class", "BannerTextoHeader svelte-c98a3m");
+    			add_location(h2, file$5, 388, 4, 6024);
+    			attr_dev(button, "class", "svelte-c98a3m");
+    			add_location(button, file$5, 394, 8, 6187);
+    			attr_dev(div, "class", "idioma_switch svelte-c98a3m");
+    			add_location(div, file$5, 393, 4, 6151);
+    			attr_dev(section, "class", "BannerTexto svelte-c98a3m");
+    			add_location(section, file$5, 384, 0, 5946);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3587,45 +3902,16 @@ var app = (function () {
     			append_dev(h2, span);
     			span.innerHTML = /*texto*/ ctx[1];
     			append_dev(section, t4);
-    			append_dev(section, p0);
-    			append_dev(section, t6);
-    			append_dev(section, h30);
-    			append_dev(section, t8);
-    			append_dev(section, p1);
-    			append_dev(section, t10);
-    			append_dev(section, h31);
-    			append_dev(section, t12);
-    			append_dev(section, p2);
-    			append_dev(section, t14);
-    			append_dev(section, h32);
-    			append_dev(section, t16);
-    			append_dev(section, p3);
-    			append_dev(section, t18);
-    			append_dev(section, h33);
-    			append_dev(section, t20);
-    			append_dev(section, p4);
-    			append_dev(section, t22);
-    			append_dev(section, h34);
-    			append_dev(section, t24);
-    			append_dev(section, p5);
-    			append_dev(section, t26);
-    			append_dev(section, p6);
-    			append_dev(section, t28);
-    			append_dev(section, h35);
-    			append_dev(section, t30);
-    			append_dev(section, p7);
-    			append_dev(section, t32);
-    			append_dev(section, h36);
-    			append_dev(section, t34);
-    			append_dev(section, p8);
-    			append_dev(section, t36);
-    			append_dev(section, h37);
-    			append_dev(section, t38);
-    			append_dev(section, p9);
-    			append_dev(section, t40);
-    			append_dev(section, p10);
-    			append_dev(section, t42);
-    			append_dev(section, p11);
+    			append_dev(section, div);
+    			append_dev(div, button);
+    			if_block0.m(button, null);
+    			append_dev(section, t5);
+    			if_block1.m(section, null);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[4], false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*img*/ 4 && img_1.src !== (img_1_src_value = /*img*/ ctx[2])) {
@@ -3633,11 +3919,35 @@ var app = (function () {
     			}
 
     			if (dirty & /*header*/ 1) set_data_dev(t1, /*header*/ ctx[0]);
-    			if (dirty & /*texto*/ 2) span.innerHTML = /*texto*/ ctx[1];		},
+    			if (dirty & /*texto*/ 2) span.innerHTML = /*texto*/ ctx[1];
+    			if (current_block_type !== (current_block_type = select_block_type(ctx))) {
+    				if_block0.d(1);
+    				if_block0 = current_block_type(ctx);
+
+    				if (if_block0) {
+    					if_block0.c();
+    					if_block0.m(button, null);
+    				}
+    			}
+
+    			if (current_block_type_1 !== (current_block_type_1 = select_block_type_1(ctx))) {
+    				if_block1.d(1);
+    				if_block1 = current_block_type_1(ctx);
+
+    				if (if_block1) {
+    					if_block1.c();
+    					if_block1.m(section, null);
+    				}
+    			}
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(section);
+    			if_block0.d();
+    			if_block1.d();
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -3658,11 +3968,17 @@ var app = (function () {
     	let { header = "" } = $$props;
     	let { texto = "" } = $$props;
     	let { img = "" } = $$props;
+    	let idioma_switch = true;
     	const writable_props = ["header", "texto", "img"];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<BannerTexto> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$1.warn(`<BannerTexto> was created with unknown prop '${key}'`);
     	});
+
+    	const click_handler = () => {
+    		$$invalidate(3, idioma_switch = !idioma_switch);
+    		console.log(idioma_switch);
+    	};
 
     	$$self.$$set = $$props => {
     		if ("header" in $$props) $$invalidate(0, header = $$props.header);
@@ -3670,19 +3986,20 @@ var app = (function () {
     		if ("img" in $$props) $$invalidate(2, img = $$props.img);
     	};
 
-    	$$self.$capture_state = () => ({ header, texto, img });
+    	$$self.$capture_state = () => ({ header, texto, img, idioma_switch });
 
     	$$self.$inject_state = $$props => {
     		if ("header" in $$props) $$invalidate(0, header = $$props.header);
     		if ("texto" in $$props) $$invalidate(1, texto = $$props.texto);
     		if ("img" in $$props) $$invalidate(2, img = $$props.img);
+    		if ("idioma_switch" in $$props) $$invalidate(3, idioma_switch = $$props.idioma_switch);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [header, texto, img];
+    	return [header, texto, img, idioma_switch, click_handler];
     }
 
     class BannerTexto extends SvelteComponentDev {
@@ -3936,7 +4253,7 @@ var app = (function () {
     const get_hasimage_slot_context = ctx => ({});
 
     // (11:8) {#if img}
-    function create_if_block$2(ctx) {
+    function create_if_block$3(ctx) {
     	let current;
     	const hasimage_slot_template = /*#slots*/ ctx[6].hasimage;
     	const hasimage_slot = create_slot(hasimage_slot_template, ctx, /*$$scope*/ ctx[5], get_hasimage_slot_context);
@@ -3980,7 +4297,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$2.name,
+    		id: create_if_block$3.name,
     		type: "if",
     		source: "(11:8) {#if img}",
     		ctx
@@ -3999,7 +4316,7 @@ var app = (function () {
     			img_1 = element("img");
     			if (img_1.src !== (img_1_src_value = /*img*/ ctx[2])) attr_dev(img_1, "src", img_1_src_value);
     			attr_dev(img_1, "alt", "Imagen");
-    			attr_dev(img_1, "class", "svelte-1mp771b");
+    			attr_dev(img_1, "class", "svelte-1yb1foe");
     			add_location(img_1, file$6, 12, 16, 342);
     		},
     		m: function mount(target, anchor) {
@@ -4040,7 +4357,7 @@ var app = (function () {
     	let t5;
     	let section_class_value;
     	let current;
-    	let if_block = /*img*/ ctx[2] && create_if_block$2(ctx);
+    	let if_block = /*img*/ ctx[2] && create_if_block$3(ctx);
     	const hasvideo_slot_template = /*#slots*/ ctx[6].hasvideo;
     	const hasvideo_slot = create_slot(hasvideo_slot_template, ctx, /*$$scope*/ ctx[5], get_hasvideo_slot_context);
     	const hasSVG_slot_template = /*#slots*/ ctx[6].hasSVG;
@@ -4065,15 +4382,15 @@ var app = (function () {
     			p = element("p");
     			t5 = space();
     			if (default_slot) default_slot.c();
-    			attr_dev(div0, "class", "BannerMedia svelte-1mp771b");
+    			attr_dev(div0, "class", "BannerMedia svelte-1yb1foe");
     			add_location(div0, file$6, 9, 4, 247);
-    			attr_dev(h2, "class", "svelte-1mp771b");
+    			attr_dev(h2, "class", "svelte-1yb1foe");
     			add_location(h2, file$6, 20, 8, 535);
-    			attr_dev(p, "class", "svelte-1mp771b");
+    			attr_dev(p, "class", "svelte-1yb1foe");
     			add_location(p, file$6, 21, 8, 560);
-    			attr_dev(div1, "class", "SectionHalfText svelte-1mp771b");
+    			attr_dev(div1, "class", "SectionHalfText svelte-1yb1foe");
     			add_location(div1, file$6, 19, 4, 497);
-    			attr_dev(section, "class", section_class_value = "SectionHalf " + /*modificador*/ ctx[4][/*variante*/ ctx[3]] + " svelte-1mp771b");
+    			attr_dev(section, "class", section_class_value = "SectionHalf " + /*modificador*/ ctx[4][/*variante*/ ctx[3]] + " svelte-1yb1foe");
     			add_location(section, file$6, 8, 0, 189);
     		},
     		l: function claim(nodes) {
@@ -4119,7 +4436,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$2(ctx);
+    					if_block = create_if_block$3(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div0, t0);
@@ -4154,7 +4471,7 @@ var app = (function () {
     				}
     			}
 
-    			if (!current || dirty & /*variante*/ 8 && section_class_value !== (section_class_value = "SectionHalf " + /*modificador*/ ctx[4][/*variante*/ ctx[3]] + " svelte-1mp771b")) {
+    			if (!current || dirty & /*variante*/ 8 && section_class_value !== (section_class_value = "SectionHalf " + /*modificador*/ ctx[4][/*variante*/ ctx[3]] + " svelte-1yb1foe")) {
     				attr_dev(section, "class", section_class_value);
     			}
     		},
@@ -4533,207 +4850,207 @@ var app = (function () {
 
     let productos = [
         {
-          "referencia": "042019",
-          "title": "Sin título1",
-          "description": "42x29.5cm",
+          "ref": "042019",
+          "title": "Sin título 0",
+          "description": "Oleo sobre lienzo 42x29.5cm",
           "imagen": "img/obra/img1.jpg",
-          "thumb": "img/obra/img1.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042020",
+          "ref": "042020",
           "title": "Sin título2",
-          "description": "31x23cm",
+          "description": "Oleo sobre lienzo. 31x23cm",
           "imagen": "img/obra/img2.jpg",
-          "thumb": "img/obra/img2.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042021",
+          "ref": "042021",
           "title": "Sin título3",
-          "description": "31x23cm",
+          "description": "Oleo sobre lienzo. 31x23cm",
           "imagen": "img/obra/img3.jpg",
-          "thumb": "img/obra/img3.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042022(repetido???)",
+          "ref": "042022(repetido???)",
           "title": "Sin título4",
-          "description": "31x21cm",
+          "description": "Oleo sobre lienzo. 31x21cm",
           "imagen": "img/obra/img4.jpg",
-          "thumb": "img/obra/img4.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042022",
+          "ref": "042022",
           "title": "Sin título5",
-          "description": "61x50cm",
+          "description": "Oleo sobre lienzo. 61x50cm",
           "imagen": "img/obra/img5.jpg",
-          "thumb": "img/obra/img5.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042023",
+          "ref": "042023",
           "title": "Sin título6",
-          "description": "41x33cm",
+          "description": "Oleo sobre lienzo. 41x33cm",
           "imagen": "img/obra/img6.jpg",
-          "thumb": "img/obra/img6.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "????????",
+          "ref": "????????",
           "title": "Sin título7",
-          "description": "--",
+          "description": "Oleo sobre lienzo. --",
           "imagen": "img/obra/img7.jpg",
-          "thumb": "img/obra/img7.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042024",
+          "ref": "042024",
           "title": "Sin título8",
-          "description": "50x50cm",
+          "description": "Oleo sobre lienzo. 50x50cm",
           "imagen": "img/obra/img8.jpg",
-          "thumb": "img/obra/img8.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042025",
+          "ref": "042025",
           "title": "Sin título9",
-          "description": "100x100cm",
+          "description": "Oleo sobre lienzo. 100x100cm",
           "imagen": "img/obra/img9.jpg",
-          "thumb": "img/obra/img9.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042026",
+          "ref": "042026",
           "title": "Sin título10",
-          "description": "no tengo el dato????",
+          "description": "Oleo sobre lienzo. no tengo el dato????",
           "imagen": "img/obra/img10.jpg",
-          "thumb": "img/obra/img10.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042027",
+          "ref": "042027",
           "title": "Sin título11",
-          "description": "??????????",
+          "description": "Oleo sobre lienzo. ??????????",
           "imagen": "img/obra/img11.jpg",
-          "thumb": "img/obra/img11.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042028",
+          "ref": "042028",
           "title": "Sin título12",
-          "description": "80x65cm",
+          "description": "Oleo sobre lienzo. 80x65cm",
           "imagen": "img/obra/img12.jpg",
-          "thumb": "img/obra/img12.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042029",
+          "ref": "042029",
           "title": "Sin título13",
-          "description": "73x55cm",
+          "description": "Oleo sobre lienzo. 73x55cm",
           "imagen": "img/obra/img13.jpg",
-          "thumb": "img/obra/img13.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042030",
+          "ref": "042030",
           "title": "Sin título14",
-          "description": "92x73cm",
+          "description": "Oleo sobre lienzo. 92x73cm",
           "imagen": "img/obra/img14.jpg",
-          "thumb": "img/obra/img14.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042031",
+          "ref": "042031",
           "title": "Sin título15",
-          "description": "92x73cm",
+          "description": "Oleo sobre lienzo. 92x73cm",
           "imagen": "img/obra/img15.jpg",
-          "thumb": "img/obra/img15.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042032",
+          "ref": "042032",
           "title": "Sin título16",
-          "description": "81x116cm",
+          "description": "Oleo sobre lienzo. 81x116cm",
           "imagen": "img/obra/img16.jpg",
-          "thumb": "img/obra/img16.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "??????????",
+          "ref": "??????????",
           "title": "Sin título17",
-          "description": "???????",
+          "description": "Oleo sobre lienzo. ???????",
           "imagen": "img/obra/img17.jpg",
-          "thumb": "img/obra/img17.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042033",
+          "ref": "042033",
           "title": "Sin título18",
-          "description": "116x81cm",
+          "description": "Oleo sobre lienzo. 116x81cm",
           "imagen": "img/obra/img18.jpg",
-          "thumb": "img/obra/img18.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042034",
+          "ref": "042034",
           "title": "Sin título19",
-          "description": "100x100cm",
+          "description": "Oleo sobre lienzo. 100x100cm",
           "imagen": "img/obra/img19.jpg",
-          "thumb": "img/obra/img19.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042035",
+          "ref": "042035",
           "title": "Sin título20",
-          "description": "100x100cm",
+          "description": "Oleo sobre lienzo. 100x100cm",
           "imagen": "img/obra/img20.jpg",
-          "thumb": "img/obra/img20.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042036",
+          "ref": "042036",
           "title": "Sin título21",
-          "description": "????????",
+          "description": "Oleo sobre lienzo. ????????",
           "imagen": "img/obra/img21.jpg",
-          "thumb": "img/obra/img21.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042038",
+          "ref": "042038",
           "title": "Sin título22",
-          "description": "100x40cm.",
+          "description": "Oleo sobre lienzo. 100x40cm.",
           "imagen": "img/obra/img22.jpg",
-          "thumb": "img/obra/img22.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042039",
+          "ref": "042039",
           "title": "Sin título23",
-          "description": "58x44cm.",
+          "description": "Oleo sobre lienzo. 58x44cm.",
           "imagen": "img/obra/img23.jpg",
-          "thumb": "img/obra/img23.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042040",
+          "ref": "042040",
           "title": "Sin título24",
-          "description": "122x60.5cm.",
+          "description": "Oleo sobre lienzo. 122x60.5cm.",
           "imagen": "img/obra/img24.jpg",
-          "thumb": "img/obra/img24.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042041",
+          "ref": "042041",
           "title": "Sin título25",
-          "description": "90x73cm.",
+          "description": "Oleo sobre lienzo. 90x73cm.",
           "imagen": "img/obra/img25.jpg",
-          "thumb": "img/obra/img25.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042042",
+          "ref": "042042",
           "title": "Sin título26",
-          "description": "100x100cm.",
+          "description": "Oleo sobre lienzo. 100x100cm.",
           "imagen": "img/obra/img26.jpg",
-          "thumb": "img/obra/img26.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042043",
+          "ref": "042043",
           "title": "Sin título27",
-          "description": "120x80cm.",
+          "description": "Oleo sobre lienzo. 120x80cm.",
           "imagen": "img/obra/img27.jpg",
-          "thumb": "img/obra/img27.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042044",
+          "ref": "042044",
           "title": "Sin título28",
-          "description": "120x80cm.",
+          "description": "Oleo sobre lienzo. 120x80cm.",
           "imagen": "img/obra/img28.jpg",
-          "thumb": "img/obra/img28.jpg"
+          "thumb": ""
         },
         {
-          "referencia": "042037",
+          "ref": "042037",
           "title": "Sin título29",
-          "description": "122x60.5cm",
+          "description": "Oleo sobre lienzo. 122x60.5cm",
           "imagen": "img/obra/img29.jpg",
-          "thumb": "img/obra/img29.jpg"
+          "thumb": ""
         }
     ];
 
@@ -4742,21 +5059,31 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[13] = list[i];
     	return child_ctx;
     }
 
-    // (29:2) {#if selected}
-    function create_if_block$3(ctx) {
+    // (30:2) {#if selected}
+    function create_if_block$4(ctx) {
     	let nav;
     	let button0;
     	let t0;
     	let button1;
     	let t1;
+    	let figure;
     	let img;
     	let img_src_value;
+    	let img_alt_value;
     	let img_intro;
     	let img_outro;
+    	let t2;
+    	let figcaption;
+    	let t3;
+    	let t4_value = productos[/*currentIdx*/ ctx[5]].ref + "";
+    	let t4;
+    	let t5;
+    	let t6_value = productos[/*currentIdx*/ ctx[5]].description + "";
+    	let t6;
     	let current;
 
     	button0 = new Button({
@@ -4764,14 +5091,14 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*click_handler*/ ctx[7]);
+    	button0.$on("click", /*click_handler*/ ctx[8]);
 
     	button1 = new Button({
     			props: { variante: 4, text: "⤞" },
     			$$inline: true
     		});
 
-    	button1.$on("click", /*click_handler_1*/ ctx[8]);
+    	button1.$on("click", /*click_handler_1*/ ctx[9]);
 
     	const block = {
     		c: function create() {
@@ -4780,13 +5107,24 @@ var app = (function () {
     			t0 = space();
     			create_component(button1.$$.fragment);
     			t1 = space();
+    			figure = element("figure");
     			img = element("img");
-    			attr_dev(nav, "class", "svelte-1fcdnee");
-    			add_location(nav, file$7, 29, 2, 614);
+    			t2 = space();
+    			figcaption = element("figcaption");
+    			t3 = text("REF: ");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			t6 = text(t6_value);
+    			attr_dev(nav, "class", "svelte-ft5rmq");
+    			add_location(nav, file$7, 30, 2, 642);
     			if (img.src !== (img_src_value = /*selected*/ ctx[2])) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", "Imagen");
-    			attr_dev(img, "class", "svelte-1fcdnee");
-    			add_location(img, file$7, 41, 4, 979);
+    			attr_dev(img, "alt", img_alt_value = productos[/*currentIdx*/ ctx[5]].description);
+    			attr_dev(img, "class", "svelte-ft5rmq");
+    			add_location(img, file$7, 45, 6, 1134);
+    			attr_dev(figcaption, "class", "svelte-ft5rmq");
+    			add_location(figcaption, file$7, 47, 6, 1270);
+    			attr_dev(figure, "class", "svelte-ft5rmq");
+    			add_location(figure, file$7, 44, 4, 1119);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, nav, anchor);
@@ -4794,7 +5132,14 @@ var app = (function () {
     			append_dev(nav, t0);
     			mount_component(button1, nav, null);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, img, anchor);
+    			insert_dev(target, figure, anchor);
+    			append_dev(figure, img);
+    			append_dev(figure, t2);
+    			append_dev(figure, figcaption);
+    			append_dev(figcaption, t3);
+    			append_dev(figcaption, t4);
+    			append_dev(figcaption, t5);
+    			append_dev(figcaption, t6);
     			current = true;
     		},
     		p: function update(new_ctx, dirty) {
@@ -4803,6 +5148,13 @@ var app = (function () {
     			if (!current || dirty & /*selected*/ 4 && img.src !== (img_src_value = /*selected*/ ctx[2])) {
     				attr_dev(img, "src", img_src_value);
     			}
+
+    			if (!current || dirty & /*currentIdx*/ 32 && img_alt_value !== (img_alt_value = productos[/*currentIdx*/ ctx[5]].description)) {
+    				attr_dev(img, "alt", img_alt_value);
+    			}
+
+    			if ((!current || dirty & /*currentIdx*/ 32) && t4_value !== (t4_value = productos[/*currentIdx*/ ctx[5]].ref + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty & /*currentIdx*/ 32) && t6_value !== (t6_value = productos[/*currentIdx*/ ctx[5]].description + "")) set_data_dev(t6, t6_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -4811,7 +5163,7 @@ var app = (function () {
 
     			add_render_callback(() => {
     				if (img_outro) img_outro.end(1);
-    				if (!img_intro) img_intro = create_in_transition(img, /*receive*/ ctx[6], { key: /*selected*/ ctx[2] });
+    				if (!img_intro) img_intro = create_in_transition(img, /*receive*/ ctx[7], { key: /*selected*/ ctx[2] });
     				img_intro.start();
     			});
 
@@ -4821,7 +5173,7 @@ var app = (function () {
     			transition_out(button0.$$.fragment, local);
     			transition_out(button1.$$.fragment, local);
     			if (img_intro) img_intro.invalidate();
-    			img_outro = create_out_transition(img, /*send*/ ctx[5], { key: /*selected*/ ctx[2] });
+    			img_outro = create_out_transition(img, /*send*/ ctx[6], { key: /*selected*/ ctx[2] });
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -4829,23 +5181,23 @@ var app = (function () {
     			destroy_component(button0);
     			destroy_component(button1);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(img);
+    			if (detaching) detach_dev(figure);
     			if (detaching && img_outro) img_outro.end();
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block$4.name,
     		type: "if",
-    		source: "(29:2) {#if selected}",
+    		source: "(30:2) {#if selected}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (51:4) {#each productos as d (d.title)}
+    // (56:4) {#each productos as d (d.title)}
     function create_each_block$1(key_1, ctx) {
     	let div;
     	let div_data_selected_value;
@@ -4853,7 +5205,7 @@ var app = (function () {
     	let dispose;
 
     	function click_handler_2() {
-    		return /*click_handler_2*/ ctx[9](/*d*/ ctx[12]);
+    		return /*click_handler_2*/ ctx[10](/*d*/ ctx[13]);
     	}
 
     	const block = {
@@ -4862,12 +5214,12 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "role", "img");
-    			attr_dev(div, "aria-label", /*d*/ ctx[12].title);
-    			attr_dev(div, "data-selected", div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[12].imagen);
-    			attr_dev(div, "class", "image svelte-1fcdnee");
-    			set_style(div, "background-image", "url(" + /*d*/ ctx[12].imagen + ")");
-    			toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[12].imagen);
-    			add_location(div, file$7, 51, 6, 1225);
+    			attr_dev(div, "aria-label", /*d*/ ctx[13].title);
+    			attr_dev(div, "data-selected", div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[13].imagen);
+    			attr_dev(div, "class", "image svelte-ft5rmq");
+    			set_style(div, "background-image", "url(" + /*d*/ ctx[13].imagen + ")");
+    			toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[13].imagen);
+    			add_location(div, file$7, 56, 6, 1524);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -4881,12 +5233,12 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*selected*/ 4 && div_data_selected_value !== (div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[12].imagen)) {
+    			if (dirty & /*selected*/ 4 && div_data_selected_value !== (div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[13].imagen)) {
     				attr_dev(div, "data-selected", div_data_selected_value);
     			}
 
     			if (dirty & /*selected, productos*/ 4) {
-    				toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[12].imagen);
+    				toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[13].imagen);
     			}
     		},
     		d: function destroy(detaching) {
@@ -4900,7 +5252,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(51:4) {#each productos as d (d.title)}",
+    		source: "(56:4) {#each productos as d (d.title)}",
     		ctx
     	});
 
@@ -4918,22 +5270,20 @@ var app = (function () {
     	let h2;
     	let t2;
     	let t3;
-    	let p;
-    	let t4;
-    	let br0;
+    	let p0;
     	let t5;
-    	let br1;
-    	let t6;
-    	let i;
+    	let p1;
     	let t7;
+    	let p2;
     	let t8;
+    	let t9;
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*selected*/ ctx[2] && create_if_block$3(ctx);
+    	let if_block = /*selected*/ ctx[2] && create_if_block$4(ctx);
     	let each_value = productos;
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*d*/ ctx[12].title;
+    	const get_key = ctx => /*d*/ ctx[13].title;
     	validate_each_keys(ctx, each_value, get_each_context$1, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -4958,33 +5308,31 @@ var app = (function () {
     			h2 = element("h2");
     			t2 = text(/*titulo*/ ctx[0]);
     			t3 = space();
-    			p = element("p");
-    			t4 = text("\"Un cuerpo en el espacio. Un temblor en el tiempo. Un proceso de luz y\n    sombra. El cuerpo se desvela deconstruyéndose, desmoronándose. La\n    cristalización espontánea de una dinámica de contrastes. Claroscuro de\n    fragilidad y fortaleza, de frío y calor. El cuerpo es un templo de\n    tensiones. Un templo hermético, abierto y cerrado al mismo tiempo. Tan sólo\n    puede existir en una lógica de membranas. Atravesado por la luz, reflejado\n    como la sombra nerviosa de algo más. La orfebrería del óleo lo captura como\n    a un insecto la resina. Congelado pero todavía palpitando. Anhelo cifrado\n    como un enigma de muchas dimensiones. El trazo, grácil y preciso (caligrafía\n    de misterios), deshilvana el misterio inagotable de la belleza. Hilo de\n    Ariadna enredado. Oficio de tinieblas. Belleza del horror y horror de la\n    belleza. Necesitamos el contraste. El equilibrio en la contradicción.\n    Siempre el claroscuro...\n    ");
-    			br0 = element("br");
-    			t5 = text("\n    Como en la técnica japonesa kintsugi, el barniz de la pintura repara las fracturas\n    de la cerámica rota que es el cuerpo. Hay una belleza en la fractura, como un\n    signo latente de su vida interior: vórtice de una herida que se despliega en\n    el exterior. La tela recubre la forma como a una gasa el molde. La piel como impasto.\n    La vida como un continuo instante de incertidumbre. ¿Somos libres o estamos encerrados,\n    confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación,\n    de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia\n    se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en\n    la luz que entra por la ventana. Y en este marco, en este espacio, celebramos\n    el misterio de la vida.\"\n    ");
-    			br1 = element("br");
-    			t6 = space();
-    			i = element("i");
-    			t7 = text("-- ");
-    			t8 = text(/*author_review*/ ctx[1]);
+    			p0 = element("p");
+    			p0.textContent = "\"Un cuerpo en el espacio. Un temblor en el tiempo. Un proceso de luz y\n    sombra. El cuerpo se desvela deconstruyéndose, desmoronándose. La\n    cristalización espontánea de una dinámica de contrastes. Claroscuro de\n    fragilidad y fortaleza, de frío y calor. El cuerpo es un templo de\n    tensiones. Un templo hermético, abierto y cerrado al mismo tiempo. Tan sólo\n    puede existir en una lógica de membranas. Atravesado por la luz, reflejado\n    como la sombra nerviosa de algo más. La orfebrería del óleo lo captura como\n    a un insecto la resina. Congelado pero todavía palpitando. Anhelo cifrado\n    como un enigma de muchas dimensiones. El trazo, grácil y preciso (caligrafía\n    de misterios), deshilvana el misterio inagotable de la belleza. Hilo de\n    Ariadna enredado. Oficio de tinieblas. Belleza del horror y horror de la\n    belleza. Necesitamos el contraste. El equilibrio en la contradicción.\n    Siempre el claroscuro...";
+    			t5 = space();
+    			p1 = element("p");
+    			p1.textContent = "Como en la técnica japonesa kintsugi, el barniz de la pintura repara las fracturas\n    de la cerámica rota que es el cuerpo. Hay una belleza en la fractura, como un\n    signo latente de su vida interior: vórtice de una herida que se despliega en\n    el exterior. La tela recubre la forma como a una gasa el molde. La piel como impasto.\n    La vida como un continuo instante de incertidumbre. ¿Somos libres o estamos encerrados, confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación, de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en la luz que entra por la ventana. Y en este marco, en este espacio, celebramos el misterio de la vida.\"";
+    			t7 = space();
+    			p2 = element("p");
+    			t8 = text("—");
+    			t9 = text(/*author_review*/ ctx[1]);
     			attr_dev(div0, "role", "group");
-    			attr_dev(div0, "class", "gallery svelte-1fcdnee");
+    			attr_dev(div0, "class", "gallery svelte-ft5rmq");
     			attr_dev(div0, "tabindex", 0);
-    			add_location(div0, file$7, 49, 2, 1114);
-    			attr_dev(div1, "class", "image-viewer svelte-1fcdnee");
-    			add_location(div1, file$7, 20, 0, 472);
-    			attr_dev(h2, "class", "svelte-1fcdnee");
-    			add_location(h2, file$7, 65, 2, 1557);
-    			attr_dev(br0, "class", "svelte-1fcdnee");
-    			add_location(br0, file$7, 80, 4, 2530);
-    			attr_dev(br1, "class", "svelte-1fcdnee");
-    			add_location(br1, file$7, 91, 4, 3365);
-    			attr_dev(i, "class", "svelte-1fcdnee");
-    			add_location(i, file$7, 92, 4, 3376);
-    			attr_dev(p, "class", "svelte-1fcdnee");
-    			add_location(p, file$7, 66, 2, 1577);
-    			attr_dev(section, "class", "LayoutObras svelte-1fcdnee");
-    			add_location(section, file$7, 64, 0, 1525);
+    			add_location(div0, file$7, 54, 2, 1413);
+    			attr_dev(div1, "class", "image-viewer svelte-ft5rmq");
+    			add_location(div1, file$7, 20, 0, 495);
+    			attr_dev(h2, "class", "svelte-ft5rmq");
+    			add_location(h2, file$7, 70, 2, 1856);
+    			attr_dev(p0, "class", "svelte-ft5rmq");
+    			add_location(p0, file$7, 71, 2, 1876);
+    			attr_dev(p1, "class", "svelte-ft5rmq");
+    			add_location(p1, file$7, 86, 2, 2834);
+    			attr_dev(p2, "class", "svelte-ft5rmq");
+    			add_location(p2, file$7, 93, 2, 3651);
+    			attr_dev(section, "class", "LayoutObras svelte-ft5rmq");
+    			add_location(section, file$7, 69, 0, 1824);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4999,25 +5347,23 @@ var app = (function () {
     				each_blocks[i].m(div0, null);
     			}
 
-    			/*div0_binding*/ ctx[10](div0);
+    			/*div0_binding*/ ctx[11](div0);
     			insert_dev(target, t1, anchor);
     			insert_dev(target, section, anchor);
     			append_dev(section, h2);
     			append_dev(h2, t2);
     			append_dev(section, t3);
-    			append_dev(section, p);
-    			append_dev(p, t4);
-    			append_dev(p, br0);
-    			append_dev(p, t5);
-    			append_dev(p, br1);
-    			append_dev(p, t6);
-    			append_dev(p, i);
-    			append_dev(i, t7);
-    			append_dev(i, t8);
+    			append_dev(section, p0);
+    			append_dev(section, t5);
+    			append_dev(section, p1);
+    			append_dev(section, t7);
+    			append_dev(section, p2);
+    			append_dev(p2, t8);
+    			append_dev(p2, t9);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(div1, "click", /*click_handler_3*/ ctx[11], false, false, false);
+    				dispose = listen_dev(div1, "click", /*click_handler_3*/ ctx[12], false, false, false);
     				mounted = true;
     			}
     		},
@@ -5030,7 +5376,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$3(ctx);
+    					if_block = create_if_block$4(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div1, t0);
@@ -5053,7 +5399,7 @@ var app = (function () {
     			}
 
     			if (!current || dirty & /*titulo*/ 1) set_data_dev(t2, /*titulo*/ ctx[0]);
-    			if (!current || dirty & /*author_review*/ 2) set_data_dev(t8, /*author_review*/ ctx[1]);
+    			if (!current || dirty & /*author_review*/ 2) set_data_dev(t9, /*author_review*/ ctx[1]);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -5072,7 +5418,7 @@ var app = (function () {
     				each_blocks[i].d();
     			}
 
-    			/*div0_binding*/ ctx[10](null);
+    			/*div0_binding*/ ctx[11](null);
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(section);
     			mounted = false;
@@ -5097,6 +5443,7 @@ var app = (function () {
     	validate_slots("ProductGallery", slots, []);
     	let { titulo = "" } = $$props;
     	let { author_review = "" } = $$props;
+    	let description = "";
     	let selected = "";
     	let gallery;
     	const [send, receive] = crossfade({ duration: () => 2000, fallback: fade });
@@ -5109,11 +5456,13 @@ var app = (function () {
     	const click_handler = () => {
     		const nextIdx = (currentIdx - 1) % productos.length;
     		$$invalidate(2, selected = productos[nextIdx].imagen);
+    		$$invalidate(3, description = productos[nextIdx].description);
     	};
 
     	const click_handler_1 = () => {
     		const nextIdx = (currentIdx + 1) % productos.length;
     		$$invalidate(2, selected = productos[nextIdx].imagen);
+    		$$invalidate(3, description = productos[nextIdx].description);
     	};
 
     	const click_handler_2 = d => $$invalidate(2, selected = d.imagen);
@@ -5121,7 +5470,7 @@ var app = (function () {
     	function div0_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			gallery = $$value;
-    			$$invalidate(3, gallery);
+    			$$invalidate(4, gallery);
     		});
     	}
 
@@ -5143,6 +5492,7 @@ var app = (function () {
     		Button,
     		titulo,
     		author_review,
+    		description,
     		selected,
     		gallery,
     		send,
@@ -5153,9 +5503,10 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ("titulo" in $$props) $$invalidate(0, titulo = $$props.titulo);
     		if ("author_review" in $$props) $$invalidate(1, author_review = $$props.author_review);
+    		if ("description" in $$props) $$invalidate(3, description = $$props.description);
     		if ("selected" in $$props) $$invalidate(2, selected = $$props.selected);
-    		if ("gallery" in $$props) $$invalidate(3, gallery = $$props.gallery);
-    		if ("currentIdx" in $$props) $$invalidate(4, currentIdx = $$props.currentIdx);
+    		if ("gallery" in $$props) $$invalidate(4, gallery = $$props.gallery);
+    		if ("currentIdx" in $$props) $$invalidate(5, currentIdx = $$props.currentIdx);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -5164,7 +5515,7 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*selected*/ 4) {
-    			$$invalidate(4, currentIdx = selected
+    			$$invalidate(5, currentIdx = selected
     			? productos.findIndex(d => d.imagen === selected)
     			: -1);
     		}
@@ -5174,6 +5525,7 @@ var app = (function () {
     		titulo,
     		author_review,
     		selected,
+    		description,
     		gallery,
     		currentIdx,
     		send,
@@ -5218,7 +5570,7 @@ var app = (function () {
 
     /* src/pages/Artwork.svelte generated by Svelte v3.32.1 */
 
-    const { console: console_1$1 } = globals;
+    const { console: console_1$2 } = globals;
 
     // (40:4) <SectionHalf         variante={1}         title={data[4].title}         text={data[4].subtitle}         img={data[4].img}     >
     function create_default_slot_1$1(ctx) {
@@ -5472,7 +5824,7 @@ var app = (function () {
     	const writable_props = ["current_page_name"];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$1.warn(`<Artwork> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$2.warn(`<Artwork> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$$set = $$props => {
@@ -5652,48 +6004,48 @@ var app = (function () {
     			attr_dev(circle0, "cx", "25");
     			attr_dev(circle0, "cy", "25");
     			attr_dev(circle0, "r", "25");
-    			attr_dev(circle0, "class", "svelte-rzt5ab");
-    			add_location(circle0, file$9, 327, 8, 4989);
+    			attr_dev(circle0, "class", "svelte-pb8day");
+    			add_location(circle0, file$9, 343, 8, 5121);
     			attr_dev(circle1, "cx", "12.5");
     			attr_dev(circle1, "cy", "25");
     			attr_dev(circle1, "r", "12.5");
-    			attr_dev(circle1, "class", "svelte-rzt5ab");
-    			add_location(circle1, file$9, 329, 12, 5047);
+    			attr_dev(circle1, "class", "svelte-pb8day");
+    			add_location(circle1, file$9, 345, 12, 5179);
     			attr_dev(circle2, "cx", "38");
     			attr_dev(circle2, "cy", "25");
     			attr_dev(circle2, "r", "12.5");
-    			attr_dev(circle2, "class", "svelte-rzt5ab");
-    			add_location(circle2, file$9, 330, 12, 5097);
-    			attr_dev(g0, "class", "svelte-rzt5ab");
-    			add_location(g0, file$9, 328, 8, 5031);
+    			attr_dev(circle2, "class", "svelte-pb8day");
+    			add_location(circle2, file$9, 346, 12, 5229);
+    			attr_dev(g0, "class", "svelte-pb8day");
+    			add_location(g0, file$9, 344, 8, 5163);
     			attr_dev(circle3, "cx", "6.5");
     			attr_dev(circle3, "cy", "25");
     			attr_dev(circle3, "r", "6.25");
-    			attr_dev(circle3, "class", "svelte-rzt5ab");
-    			add_location(circle3, file$9, 333, 12, 5170);
+    			attr_dev(circle3, "class", "svelte-pb8day");
+    			add_location(circle3, file$9, 349, 12, 5302);
     			attr_dev(circle4, "cx", "19");
     			attr_dev(circle4, "cy", "25");
     			attr_dev(circle4, "r", "6.25");
-    			attr_dev(circle4, "class", "svelte-rzt5ab");
-    			add_location(circle4, file$9, 334, 12, 5219);
+    			attr_dev(circle4, "class", "svelte-pb8day");
+    			add_location(circle4, file$9, 350, 12, 5351);
     			attr_dev(circle5, "cx", "31.5");
     			attr_dev(circle5, "cy", "25");
     			attr_dev(circle5, "r", "6.25");
-    			attr_dev(circle5, "class", "svelte-rzt5ab");
-    			add_location(circle5, file$9, 335, 12, 5267);
+    			attr_dev(circle5, "class", "svelte-pb8day");
+    			add_location(circle5, file$9, 351, 12, 5399);
     			attr_dev(circle6, "cx", "44");
     			attr_dev(circle6, "cy", "25");
     			attr_dev(circle6, "r", "6.25");
-    			attr_dev(circle6, "class", "svelte-rzt5ab");
-    			add_location(circle6, file$9, 336, 12, 5317);
-    			attr_dev(g1, "class", "svelte-rzt5ab");
-    			add_location(g1, file$9, 332, 8, 5154);
-    			attr_dev(g2, "class", "svelte-rzt5ab");
-    			add_location(g2, file$9, 326, 4, 4977);
-    			attr_dev(svg, "class", "logo svelte-rzt5ab");
+    			attr_dev(circle6, "class", "svelte-pb8day");
+    			add_location(circle6, file$9, 352, 12, 5449);
+    			attr_dev(g1, "class", "svelte-pb8day");
+    			add_location(g1, file$9, 348, 8, 5286);
+    			attr_dev(g2, "class", "svelte-pb8day");
+    			add_location(g2, file$9, 342, 4, 5109);
+    			attr_dev(svg, "class", "logo svelte-pb8day");
     			attr_dev(svg, "width", "51");
     			attr_dev(svg, "height", "51");
-    			add_location(svg, file$9, 325, 0, 4931);
+    			add_location(svg, file$9, 341, 0, 5063);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5799,32 +6151,32 @@ var app = (function () {
     			t4 = space();
     			a2 = element("a");
     			a2.textContent = "About";
-    			attr_dev(div0, "class", "ButtonNav svelte-1587f2y");
-    			add_location(div0, file$a, 398, 4, 6348);
-    			attr_dev(a0, "class", "NavItem svelte-1587f2y");
+    			attr_dev(div0, "class", "ButtonNav svelte-10fuv87");
+    			add_location(div0, file$a, 414, 4, 6480);
+    			attr_dev(a0, "class", "NavItem svelte-10fuv87");
     			attr_dev(a0, "id", "0");
     			attr_dev(a0, "role", "navigation");
     			attr_dev(a0, "href", "/");
     			toggle_class(a0, "active", active$1);
-    			add_location(a0, file$a, 403, 8, 6528);
-    			attr_dev(a1, "class", "NavItem svelte-1587f2y");
+    			add_location(a0, file$a, 419, 8, 6660);
+    			attr_dev(a1, "class", "NavItem svelte-10fuv87");
     			attr_dev(a1, "id", "1");
     			attr_dev(a1, "role", "navigation");
     			attr_dev(a1, "href", "/artwork");
-    			add_location(a1, file$a, 413, 8, 6705);
-    			attr_dev(a2, "class", "NavItem svelte-1587f2y");
+    			add_location(a1, file$a, 429, 8, 6837);
+    			attr_dev(a2, "class", "NavItem svelte-10fuv87");
     			attr_dev(a2, "id", "3");
     			attr_dev(a2, "role", "navigation");
     			attr_dev(a2, "href", "/about");
-    			add_location(a2, file$a, 416, 8, 6825);
+    			add_location(a2, file$a, 432, 8, 6957);
 
     			attr_dev(nav, "class", nav_class_value = "" + (null_to_empty(/*activemenu*/ ctx[1]
     			? "MainNav MainNavVisible"
-    			: "MainNav") + " svelte-1587f2y"));
+    			: "MainNav") + " svelte-10fuv87"));
 
-    			add_location(nav, file$a, 402, 4, 6454);
-    			attr_dev(div1, "class", "svelte-1587f2y");
-    			add_location(div1, file$a, 396, 0, 6285);
+    			add_location(nav, file$a, 418, 4, 6586);
+    			attr_dev(div1, "class", "svelte-10fuv87");
+    			add_location(div1, file$a, 412, 0, 6417);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5874,7 +6226,7 @@ var app = (function () {
 
     			if (!current || dirty & /*activemenu*/ 2 && nav_class_value !== (nav_class_value = "" + (null_to_empty(/*activemenu*/ ctx[1]
     			? "MainNav MainNavVisible"
-    			: "MainNav") + " svelte-1587f2y"))) {
+    			: "MainNav") + " svelte-10fuv87"))) {
     				attr_dev(nav, "class", nav_class_value);
     			}
     		},
@@ -6016,36 +6368,36 @@ var app = (function () {
     			circle = svg_element("circle");
     			path0 = svg_element("path");
     			path1 = svg_element("path");
-    			attr_dev(small, "class", "svelte-xhtvja");
-    			add_location(small, file$b, 345, 4, 5373);
-    			attr_dev(title, "class", "svelte-xhtvja");
-    			add_location(title, file$b, 350, 12, 5607);
+    			attr_dev(small, "class", "svelte-x2m2mr");
+    			add_location(small, file$b, 361, 4, 5505);
+    			attr_dev(title, "class", "svelte-x2m2mr");
+    			add_location(title, file$b, 366, 12, 5739);
     			attr_dev(circle, "cx", "12.145");
     			attr_dev(circle, "cy", "3.892");
     			attr_dev(circle, "r", "0.96");
-    			attr_dev(circle, "class", "svelte-xhtvja");
-    			add_location(circle, file$b, 351, 12, 5644);
+    			attr_dev(circle, "class", "svelte-x2m2mr");
+    			add_location(circle, file$b, 367, 12, 5776);
     			attr_dev(path0, "d", "M8,12c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S10.206,12,8,12zM8,6C6.897,6,6,6.897,6,8s0.897,2,2,2s2-0.897,2-2S9.103,6,8,6z");
-    			attr_dev(path0, "class", "svelte-xhtvja");
-    			add_location(path0, file$b, 352, 12, 5699);
+    			attr_dev(path0, "class", "svelte-x2m2mr");
+    			add_location(path0, file$b, 368, 12, 5831);
     			attr_dev(path1, "d", "M12,16H4c-2.056,0-4-1.944-4-4V4c0-2.056,1.944-4,4-4h8c2.056,0,4,1.944,4,4v8C16,14.056,14.056,16,12,16zM4,2C3.065,2,2,3.065,2,4v8c0,0.953,1.047,2,2,2h8c0.935,0,2-1.065,2-2V4c0-0.935-1.065-2-2-2H4z");
-    			attr_dev(path1, "class", "svelte-xhtvja");
-    			add_location(path1, file$b, 353, 12, 5852);
+    			attr_dev(path1, "class", "svelte-x2m2mr");
+    			add_location(path1, file$b, 369, 12, 5984);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "viewBox", "0 0 16 16");
-    			attr_dev(svg, "class", "svelte-xhtvja");
-    			add_location(svg, file$b, 349, 10, 5534);
+    			attr_dev(svg, "class", "svelte-x2m2mr");
+    			add_location(svg, file$b, 365, 10, 5666);
     			attr_dev(a, "href", "https://www.instagram.com/noelia__requena/");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener");
-    			attr_dev(a, "class", "svelte-xhtvja");
-    			add_location(a, file$b, 348, 8, 5439);
-    			attr_dev(li, "class", "svelte-xhtvja");
-    			add_location(li, file$b, 347, 6, 5426);
-    			attr_dev(ul, "class", "svelte-xhtvja");
-    			add_location(ul, file$b, 346, 4, 5415);
-    			attr_dev(aside, "class", "Links svelte-xhtvja");
-    			add_location(aside, file$b, 344, 0, 5347);
+    			attr_dev(a, "class", "svelte-x2m2mr");
+    			add_location(a, file$b, 364, 8, 5571);
+    			attr_dev(li, "class", "svelte-x2m2mr");
+    			add_location(li, file$b, 363, 6, 5558);
+    			attr_dev(ul, "class", "svelte-x2m2mr");
+    			add_location(ul, file$b, 362, 4, 5547);
+    			attr_dev(aside, "class", "Links svelte-x2m2mr");
+    			add_location(aside, file$b, 360, 0, 5479);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6148,47 +6500,47 @@ var app = (function () {
     			attr_dev(circle0, "cx", "100");
     			attr_dev(circle0, "cy", "100");
     			attr_dev(circle0, "r", "50");
-    			attr_dev(circle0, "class", "svelte-techbs");
-    			add_location(circle0, file$c, 353, 8, 5514);
+    			attr_dev(circle0, "class", "svelte-1r1ae3d");
+    			add_location(circle0, file$c, 369, 8, 5646);
     			attr_dev(circle1, "cx", "62.5");
     			attr_dev(circle1, "cy", "100");
     			attr_dev(circle1, "r", "12.5");
-    			attr_dev(circle1, "class", "svelte-techbs");
-    			add_location(circle1, file$c, 355, 8, 5559);
+    			attr_dev(circle1, "class", "svelte-1r1ae3d");
+    			add_location(circle1, file$c, 371, 8, 5691);
     			attr_dev(circle2, "cx", "88");
     			attr_dev(circle2, "cy", "100");
     			attr_dev(circle2, "r", "12.5");
-    			attr_dev(circle2, "class", "svelte-techbs");
-    			add_location(circle2, file$c, 356, 8, 5606);
+    			attr_dev(circle2, "class", "svelte-1r1ae3d");
+    			add_location(circle2, file$c, 372, 8, 5738);
     			attr_dev(circle3, "cx", "112.5");
     			attr_dev(circle3, "cy", "100");
     			attr_dev(circle3, "r", "12.5");
-    			attr_dev(circle3, "class", "svelte-techbs");
-    			add_location(circle3, file$c, 357, 8, 5651);
+    			attr_dev(circle3, "class", "svelte-1r1ae3d");
+    			add_location(circle3, file$c, 373, 8, 5783);
     			attr_dev(circle4, "cx", "138");
     			attr_dev(circle4, "cy", "100");
     			attr_dev(circle4, "r", "12.5");
-    			attr_dev(circle4, "class", "svelte-techbs");
-    			add_location(circle4, file$c, 358, 8, 5699);
+    			attr_dev(circle4, "class", "svelte-1r1ae3d");
+    			add_location(circle4, file$c, 374, 8, 5831);
     			attr_dev(circle5, "cx", "75");
     			attr_dev(circle5, "cy", "100");
     			attr_dev(circle5, "r", "25");
-    			attr_dev(circle5, "class", "svelte-techbs");
-    			add_location(circle5, file$c, 360, 8, 5754);
+    			attr_dev(circle5, "class", "svelte-1r1ae3d");
+    			add_location(circle5, file$c, 376, 8, 5886);
     			attr_dev(circle6, "cx", "125");
     			attr_dev(circle6, "cy", "100");
     			attr_dev(circle6, "r", "25");
-    			attr_dev(circle6, "class", "svelte-techbs");
-    			add_location(circle6, file$c, 361, 8, 5797);
+    			attr_dev(circle6, "class", "svelte-1r1ae3d");
+    			add_location(circle6, file$c, 377, 8, 5929);
     			attr_dev(text_1, "x", "85");
     			attr_dev(text_1, "y", "230");
-    			attr_dev(text_1, "class", "svelte-techbs");
-    			add_location(text_1, file$c, 363, 8, 5842);
+    			attr_dev(text_1, "class", "svelte-1r1ae3d");
+    			add_location(text_1, file$c, 379, 8, 5974);
     			attr_dev(svg, "viewBox", "0 0 300 300");
-    			attr_dev(svg, "class", "svelte-techbs");
-    			add_location(svg, file$c, 352, 4, 5478);
-    			attr_dev(div, "class", "Loading svelte-techbs");
-    			add_location(div, file$c, 351, 0, 5452);
+    			attr_dev(svg, "class", "svelte-1r1ae3d");
+    			add_location(svg, file$c, 368, 4, 5610);
+    			attr_dev(div, "class", "Loading svelte-1r1ae3d");
+    			add_location(div, file$c, 367, 0, 5584);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6279,11 +6631,11 @@ var app = (function () {
 
     /* src/App.svelte generated by Svelte v3.32.1 */
 
-    const { console: console_1$2 } = globals;
+    const { console: console_1$3 } = globals;
     const file$d = "src/App.svelte";
 
-    // (363:1) {:else}
-    function create_else_block$2(ctx) {
+    // (379:1) {:else}
+    function create_else_block$3(ctx) {
     	let loading_1;
     	let current;
     	loading_1 = new Loading({ $$inline: true });
@@ -6313,17 +6665,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$2.name,
+    		id: create_else_block$3.name,
     		type: "else",
-    		source: "(363:1) {:else}",
+    		source: "(379:1) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (356:1) {#if loaded}
-    function create_if_block$4(ctx) {
+    // (372:1) {#if loaded}
+    function create_if_block$5(ctx) {
     	let nav;
     	let t0;
     	let router;
@@ -6380,9 +6732,9 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$4.name,
+    		id: create_if_block$5.name,
     		type: "if",
-    		source: "(356:1) {#if loaded}",
+    		source: "(372:1) {#if loaded}",
     		ctx
     	});
 
@@ -6400,7 +6752,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	const if_block_creators = [create_if_block$4, create_else_block$2];
+    	const if_block_creators = [create_if_block$5, create_else_block$3];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -6421,18 +6773,18 @@ var app = (function () {
     			if_block.c();
     			attr_dev(meta0, "property", "og:title");
     			attr_dev(meta0, "content", "Sergio Forés");
-    			attr_dev(meta0, "class", "svelte-th6ip8");
-    			add_location(meta0, file$d, 348, 2, 5514);
+    			attr_dev(meta0, "class", "svelte-oobgq5");
+    			add_location(meta0, file$d, 364, 2, 5646);
     			attr_dev(meta1, "property", "og:type");
     			attr_dev(meta1, "content", "website");
-    			attr_dev(meta1, "class", "svelte-th6ip8");
-    			add_location(meta1, file$d, 349, 2, 5568);
+    			attr_dev(meta1, "class", "svelte-oobgq5");
+    			add_location(meta1, file$d, 365, 2, 5700);
     			attr_dev(meta2, "property", "og:url");
     			attr_dev(meta2, "content", "sergiofores.es");
-    			attr_dev(meta2, "class", "svelte-th6ip8");
-    			add_location(meta2, file$d, 350, 2, 5616);
-    			attr_dev(main, "class", "svelte-th6ip8");
-    			add_location(main, file$d, 354, 0, 5720);
+    			attr_dev(meta2, "class", "svelte-oobgq5");
+    			add_location(meta2, file$d, 366, 2, 5748);
+    			attr_dev(main, "class", "svelte-oobgq5");
+    			add_location(main, file$d, 370, 0, 5852);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6530,7 +6882,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$2.warn(`<App> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$3.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
