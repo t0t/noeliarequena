@@ -23,7 +23,7 @@
       padding-top: $h1;
       margin-left: $h-1;
       margin-right: $h-1;
-      fill: $grey_3;
+      fill: $grey_2;
       &:hover {
         fill: $highlight;
       }
@@ -33,13 +33,13 @@
       }
     }
     small {
-      color: $grey_3;
+      color: $grey_2;
     }
   }
 </style>
 
 <aside class="Links">
-    <small>Follow me at:</small>
+    <small>Follow me at Instagram</small>
     <ul>
       <li>
         <a href="https://www.instagram.com/noelia__requena/" target="_blank" rel="noopener">

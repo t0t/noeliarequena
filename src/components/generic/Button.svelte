@@ -77,8 +77,8 @@
         }
     }
     .ColoredInvert {
-        color: $grey_3;
-        border-color: $grey_3;
+        color: $grey_1;
+        border-color: $grey_1;
         &:hover {
             color: $grey_5;
             background-color: $grey_0;
@@ -88,7 +88,7 @@
     .UnicodeIcon {
         color: $highlight;
         border: none;
-        @include type-setting(3);
+        @include type-setting(2);
         &:hover {
             color: $grey_0;
         }

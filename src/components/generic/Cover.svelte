@@ -51,7 +51,7 @@
             @include media(s3) {
                 margin-top: $h1;
             }
-            color: $grey_5;
+            // color: $highlight_1;
             text-shadow: none;
         }
         .CoverText {

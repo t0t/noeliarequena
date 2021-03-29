@@ -1,6 +1,7 @@
 <script>
-  import { productos } from "../../../data/productos.js";
-  import { crossfade, fade } from "svelte/transition";
+    import { crossfade, fade } from "svelte/transition";
+    import { productos } from "../../../data/productos.js";
+    import Button from "../../generic/Button.svelte";
 
   export let titulo = "";
   export let author_review = "";
@@ -27,22 +28,16 @@
 >
   {#if selected}
   <nav>
-    <button
-      on:click={() => {
+    <Button variante={4} text="⤝" 
+    on:click={() => {
         const nextIdx = (currentIdx - 1) % productos.length;
         selected = productos[nextIdx].imagen;
-      }}
-    >
-      prev
-    </button>
-    <button
-      on:click={() => {
+    }}/>
+    <Button variante={4} text="⤞" 
+    on:click={() => {
         const nextIdx = (currentIdx + 1) % productos.length;
         selected = productos[nextIdx].imagen;
-      }}
-    >
-      next
-    </button>
+    }}/>
   </nav>
     <img
       in:receive={{ key: selected }}
@@ -107,8 +102,6 @@
   .image-viewer {
     position: relative;
     display: flex;
-    // grid-template-columns: 2fr 1fr;
-    // gap: $h1;
     padding-top: 0;
     padding-right: $h4;
     padding-bottom: 0;
@@ -144,10 +137,12 @@
 
   nav {
     position: absolute;
-    top: $h7;
-    right: 17%;
-    // width: 100%;
-    text-align: center;
+    top: $h7 - $h1;
+    right: 12.5%;
+    display: flex;
+    justify-content: space-between;
+    width: $h6;
+    padding-top: 0;
   }
   .active {
     border: $h0 solid $highlight;
