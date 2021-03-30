@@ -21,17 +21,21 @@
 
     nav {
         padding: $h1 0;
-        justify-content: center;
-        align-content: center;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
         background-color: $white;
         
         @include media(s1) {
+            /* background-color: $highlight; */
+            /* padding: $h3; */
+        }
+        @include media(s2) {
+            display: grid;
+            align-content: center;
+            justify-content: center;
             background-color: $highlight;
             padding: $h4;
-            display: grid;
             grid-template-columns: repeat(auto-fill, minmax($h8, 1fr));
             gap: $h4;
         }
@@ -51,7 +55,7 @@
                 margin-bottom: 0;
                 color: $grey_1;
             }
-            @include media(s1) {
+            @include media(s2) {
                 padding: $h4;
                 border: 1px dashed black;
             }

@@ -116,7 +116,11 @@
     }
     img {
       max-width: 100%;
-      @include media(s1) {
+      /* @include media(s1) {
+        max-width: $h8;
+        margin-right: $h4;
+      } */
+      @include media(s2) {
         max-width: $h8;
         margin-right: $h4;
       }
@@ -129,12 +133,11 @@
   }
   figure {
     height: 470px;
+
+    overflow-x: hidden;
     overflow-y: auto;
     @include media(s1) {
       height: 490px;
-    }
-    @include media(s2) {
-      background-color: red;
     }
   }
   figcaption {

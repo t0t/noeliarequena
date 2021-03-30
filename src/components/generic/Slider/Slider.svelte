@@ -84,11 +84,14 @@
         place-content: center;
         background-size: cover;
         background-position: center;
-        mask: linear-gradient(to right,transparent, black 40%,black 70%,transparent);
-        -webkit-mask: linear-gradient(to right,transparent, black 40%,black 70%,transparent);
         
         @include media(s1) {
+            height: 420px;
+        }
+        @include media(s2) {
             height: 600px;
+            mask: linear-gradient(to right,transparent, black 40%,black 70%,transparent);
+            -webkit-mask: linear-gradient(to right,transparent, black 40%,black 70%,transparent);
         }
 
         .Caption {
@@ -100,6 +103,11 @@
                 text-align: center;
             }
             @include media(s1) {
+                width: 95vw;
+                padding-left: $h1;
+                padding-right: $h1;
+            }
+            @include media(s2) {
                 max-width: 50vw;
                 padding-left: $h2;
                 padding-right: $h2;
