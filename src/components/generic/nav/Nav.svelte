@@ -97,13 +97,16 @@
         href="/" 
         use:link 
         use:active
+        on:click={contraeMainMenu}
         > Home </a>
 
         <a class="NavItem" id="1" role="navigation" 
-        href="/artwork" use:link use:active> Artwork </a>
+        href="/artwork" use:link use:active
+        on:click={contraeMainMenu}> Artwork </a>
         
         <a class="NavItem" id="3" role="navigation" 
-        href="/about" use:link use:active> About </a>
+        href="/about" use:link use:active
+        on:click={contraeMainMenu}> About </a>
     </nav>
 
 </div>

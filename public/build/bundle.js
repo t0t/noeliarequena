@@ -5996,30 +5996,30 @@ var app = (function () {
     			attr_dev(circle0, "cx", "26.5");
     			attr_dev(circle0, "cy", "26.5");
     			attr_dev(circle0, "r", "25.5");
-    			attr_dev(circle0, "class", "svelte-rzdpi4");
-    			add_location(circle0, file$9, 344, 8, 5131);
+    			attr_dev(circle0, "class", "svelte-yf48om");
+    			add_location(circle0, file$9, 344, 8, 5140);
     			attr_dev(circle1, "cx", "26.83");
     			attr_dev(circle1, "cy", "17.83");
     			attr_dev(circle1, "r", "16.83");
-    			attr_dev(circle1, "class", "svelte-rzdpi4");
-    			add_location(circle1, file$9, 345, 8, 5178);
+    			attr_dev(circle1, "class", "svelte-yf48om");
+    			add_location(circle1, file$9, 345, 8, 5187);
     			attr_dev(circle2, "cx", "26.83");
     			attr_dev(circle2, "cy", "35.17");
     			attr_dev(circle2, "r", "16.83");
-    			attr_dev(circle2, "class", "svelte-rzdpi4");
-    			add_location(circle2, file$9, 346, 8, 5228);
+    			attr_dev(circle2, "class", "svelte-yf48om");
+    			add_location(circle2, file$9, 346, 8, 5237);
     			attr_dev(circle3, "cx", "27.25");
     			attr_dev(circle3, "cy", "26.25");
     			attr_dev(circle3, "r", "8.25");
-    			attr_dev(circle3, "class", "svelte-rzdpi4");
-    			add_location(circle3, file$9, 347, 8, 5278);
-    			attr_dev(g, "class", "svelte-rzdpi4");
-    			add_location(g, file$9, 343, 4, 5119);
-    			attr_dev(svg, "class", "logo svelte-rzdpi4");
+    			attr_dev(circle3, "class", "svelte-yf48om");
+    			add_location(circle3, file$9, 347, 8, 5287);
+    			attr_dev(g, "class", "svelte-yf48om");
+    			add_location(g, file$9, 343, 4, 5128);
+    			attr_dev(svg, "class", "logo svelte-yf48om");
     			attr_dev(svg, "width", "53");
     			attr_dev(svg, "height", "53");
     			attr_dev(svg, "viewBox", "0 0 53 53");
-    			add_location(svg, file$9, 341, 0, 5047);
+    			add_location(svg, file$9, 341, 0, 5056);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6133,12 +6133,12 @@ var app = (function () {
     			attr_dev(a1, "id", "1");
     			attr_dev(a1, "role", "navigation");
     			attr_dev(a1, "href", "/artwork");
-    			add_location(a1, file$a, 423, 8, 6745);
+    			add_location(a1, file$a, 424, 8, 6780);
     			attr_dev(a2, "class", "NavItem svelte-8ur80c");
     			attr_dev(a2, "id", "3");
     			attr_dev(a2, "role", "navigation");
     			attr_dev(a2, "href", "/about");
-    			add_location(a2, file$a, 426, 8, 6865);
+    			add_location(a2, file$a, 428, 8, 6935);
 
     			attr_dev(nav, "class", nav_class_value = "" + (null_to_empty(/*activemenu*/ ctx[1]
     			? "MainNav MainNavVisible"
@@ -6175,10 +6175,13 @@ var app = (function () {
     					listen_dev(div0, "click", /*click_handler*/ ctx[4], false, false, false),
     					action_destroyer(link.call(null, a0)),
     					action_destroyer(active$1.call(null, a0)),
+    					listen_dev(a0, "click", /*contraeMainMenu*/ ctx[2], false, false, false),
     					action_destroyer(link.call(null, a1)),
     					action_destroyer(active$1.call(null, a1)),
+    					listen_dev(a1, "click", /*contraeMainMenu*/ ctx[2], false, false, false),
     					action_destroyer(link.call(null, a2)),
     					action_destroyer(active$1.call(null, a2)),
+    					listen_dev(a2, "click", /*contraeMainMenu*/ ctx[2], false, false, false),
     					action_destroyer(clickOutside.call(null, div1)),
     					listen_dev(div1, "click_outside", /*contraeMainMenu*/ ctx[2], false, false, false)
     				];
@@ -6338,36 +6341,36 @@ var app = (function () {
     			circle = svg_element("circle");
     			path0 = svg_element("path");
     			path1 = svg_element("path");
-    			attr_dev(small, "class", "svelte-1b9t2pz");
-    			add_location(small, file$b, 361, 4, 5508);
-    			attr_dev(title, "class", "svelte-1b9t2pz");
-    			add_location(title, file$b, 366, 12, 5742);
+    			attr_dev(small, "class", "svelte-4f1sky");
+    			add_location(small, file$b, 361, 4, 5515);
+    			attr_dev(title, "class", "svelte-4f1sky");
+    			add_location(title, file$b, 366, 12, 5749);
     			attr_dev(circle, "cx", "12.145");
     			attr_dev(circle, "cy", "3.892");
     			attr_dev(circle, "r", "0.96");
-    			attr_dev(circle, "class", "svelte-1b9t2pz");
-    			add_location(circle, file$b, 367, 12, 5779);
+    			attr_dev(circle, "class", "svelte-4f1sky");
+    			add_location(circle, file$b, 367, 12, 5786);
     			attr_dev(path0, "d", "M8,12c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S10.206,12,8,12zM8,6C6.897,6,6,6.897,6,8s0.897,2,2,2s2-0.897,2-2S9.103,6,8,6z");
-    			attr_dev(path0, "class", "svelte-1b9t2pz");
-    			add_location(path0, file$b, 368, 12, 5834);
+    			attr_dev(path0, "class", "svelte-4f1sky");
+    			add_location(path0, file$b, 368, 12, 5841);
     			attr_dev(path1, "d", "M12,16H4c-2.056,0-4-1.944-4-4V4c0-2.056,1.944-4,4-4h8c2.056,0,4,1.944,4,4v8C16,14.056,14.056,16,12,16zM4,2C3.065,2,2,3.065,2,4v8c0,0.953,1.047,2,2,2h8c0.935,0,2-1.065,2-2V4c0-0.935-1.065-2-2-2H4z");
-    			attr_dev(path1, "class", "svelte-1b9t2pz");
-    			add_location(path1, file$b, 369, 12, 5987);
+    			attr_dev(path1, "class", "svelte-4f1sky");
+    			add_location(path1, file$b, 369, 12, 5994);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "viewBox", "0 0 16 16");
-    			attr_dev(svg, "class", "svelte-1b9t2pz");
-    			add_location(svg, file$b, 365, 10, 5669);
+    			attr_dev(svg, "class", "svelte-4f1sky");
+    			add_location(svg, file$b, 365, 10, 5676);
     			attr_dev(a, "href", "https://www.instagram.com/noelia__requena/");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener");
-    			attr_dev(a, "class", "svelte-1b9t2pz");
-    			add_location(a, file$b, 364, 8, 5574);
-    			attr_dev(li, "class", "svelte-1b9t2pz");
-    			add_location(li, file$b, 363, 6, 5561);
-    			attr_dev(ul, "class", "svelte-1b9t2pz");
-    			add_location(ul, file$b, 362, 4, 5550);
-    			attr_dev(aside, "class", "Links svelte-1b9t2pz");
-    			add_location(aside, file$b, 360, 0, 5482);
+    			attr_dev(a, "class", "svelte-4f1sky");
+    			add_location(a, file$b, 364, 8, 5581);
+    			attr_dev(li, "class", "svelte-4f1sky");
+    			add_location(li, file$b, 363, 6, 5568);
+    			attr_dev(ul, "class", "svelte-4f1sky");
+    			add_location(ul, file$b, 362, 4, 5557);
+    			attr_dev(aside, "class", "Links svelte-4f1sky");
+    			add_location(aside, file$b, 360, 0, 5489);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

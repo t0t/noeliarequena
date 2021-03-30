@@ -4,21 +4,21 @@
 <style lang="scss">
     @use "../../sass/_index.scss" as *;
     svg {
-        fill: $white;
+        fill: none;
         &:hover {
-            fill: none;
+            fill: $white;
             circle {
                 stroke: $grey_1;
             }
         }
     }
     circle {
-        stroke: $black;
+        stroke: $grey_1;
         &:nth-child(3) {
             fill: none;
         }
         &:nth-child(4) {
-            fill: $black;
+            /* fill: $black; */
         }
     }
 </style>
