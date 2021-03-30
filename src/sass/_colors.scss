@@ -19,8 +19,10 @@ $quaternary: $grey_5;
 // Specials
 $highlight: #e8b28a;
 $highlight_1: $highlight;
-$highlight_2: #c6926b;
-// $highlight: #e5a96b;
+$highlight_2: lighten( $highlight, 10% );
+$highlight_3: darken( $highlight, 10% );
+
+$highlight_alpha: rgba( $highlight_2, .45 );
 
 
 /* GRADIENT LISTS

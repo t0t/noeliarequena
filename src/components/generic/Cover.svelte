@@ -15,7 +15,7 @@
 
     .Cover {
         height: 19vh;
-        color: $white;
+        color: $highlight_2;
         background-size: cover;
         background-position: top center;
         position: relative;
@@ -24,8 +24,8 @@
         flex-direction: column;
         align-items: start;
         background-repeat: no-repeat;
-        padding-top: 39px;
-        padding-left: 50px;
+        padding-top: 40px;
+        padding-left: 90px;
         
         /* Mobiles normales */
         @include media(s1) { 
@@ -50,7 +50,6 @@
         }
         
         .CoverTitle {
-            margin-left: $h3;
             @include media(s1) {
                 grid-area: title;
                 display: flex;

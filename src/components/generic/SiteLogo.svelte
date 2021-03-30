@@ -8,12 +8,13 @@
         &:hover {
             fill: $white;
             circle {
-                stroke: $grey_1;
+                stroke: $black;
             }
         }
     }
     circle {
-        stroke: $grey_1;
+        stroke: $highlight_2;
+        stroke-width: 2px;
         &:nth-child(3) {
             fill: none;
         }

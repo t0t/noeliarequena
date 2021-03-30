@@ -52,7 +52,9 @@
             }
             @include media(s2) {
                 padding: $h4;
-                border: 4px double black;
+                border: 4px double $highlight_2;
+                border-top-right-radius: $h2;
+                border-bottom-left-radius: $h2;
             }
             p {
                 text-align: center;
