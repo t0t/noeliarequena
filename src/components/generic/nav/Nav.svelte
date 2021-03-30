@@ -36,13 +36,21 @@
         display: none;
         position: fixed;
         top: $h4 + $h1;
-        left: $h0;
+        left: 0;
         z-index: 500;
         list-style: none;
-        padding-top: $h0;
+        padding-top: $h1;
         padding-bottom: $h0;
-        @include type-setting(0);
-        background-color: rgba(0,0,0,0.75);
+        @include type-setting(1);
+        background-color: $black;
+        border-top-right-radius: $h1;
+        border-bottom-right-radius: $h1;
+        
+        @include media(s2) {
+            @include type-setting(0);
+            /* background-color: red; */
+            /* left: $h0; */
+        }
 
         .NavItem {
             text-decoration: none;

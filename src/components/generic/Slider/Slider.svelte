@@ -90,8 +90,8 @@
         }
         @include media(s2) {
             height: 600px;
-            mask: linear-gradient(to right,transparent, black 40%,black 70%,transparent);
-            -webkit-mask: linear-gradient(to right,transparent, black 40%,black 70%,transparent);
+            mask: linear-gradient(to top,transparent, black 40%,black 70%,transparent);
+            -webkit-mask: linear-gradient(to top,transparent, black 40%,black 70%,transparent);
         }
 
         .Caption {
@@ -99,6 +99,8 @@
             user-select: none;
             padding-left: $h4;
             padding-right: $h4;
+            text-align: center;
+            font-style: italic;
             @include media(s0) {
                 text-align: center;
             }

@@ -121,17 +121,15 @@
     }
     img {
       max-width: 100%;
-      /* @include media(s1) {
-        max-width: $h8;
-        margin-right: $h4;
-      } */
+
       @include media(s2) {
-        max-width: $h8;
+        width: $h9;
         margin-right: $h4;
       }
     }
   }
   .image {
+    border-radius: 50%;
     width: 50%;
     height: 70px;
     background: center / cover no-repeat;

@@ -33,7 +33,7 @@ export const data = [
       subtitle: "Información adicional, descargar Currículum en PDF, dirección, Showroom...",
       buttontext: "Download Resume",
       buttonurl: "#",
-      img: "../img/bg2.jpg"
+      img: "../img/bg5.jpg"
     },
     {
       id: "5",
@@ -74,7 +74,7 @@ export const data = [
       id: "10",
       block: "aboutme",
       title: "Noelia Requena",
-      subtitle: "'Cuando uno toma conciencia del misterio de la existencia y no lo entiende, pero por pura sinceridad y coherencia interior necesita respuestas hasta el dolor, entonces uno encuentra su dorado y maravilloso hilo de Ariadna'<br><i>Cyrano</i>",
+      subtitle: "'Cuando uno toma conciencia del misterio de la existencia y no lo entiende, pero por pura sinceridad y coherencia interior necesita respuestas hasta el dolor, entonces uno encuentra su dorado y maravilloso hilo de Ariadna'<br><i>—Cyrano</i>",
       img: "../img/avatar.jpg"
     },
     {

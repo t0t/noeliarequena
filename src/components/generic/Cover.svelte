@@ -83,7 +83,7 @@
 
 <header class="Cover" style="
                     background-image: url({img});
-                    opacity: {1 - Math.max(0, scrollY / (innerHeight/2))};">
+                    opacity: {1 - Math.max(0, scrollY / (innerHeight/1.5))};">
     <h1 class="CoverTitle">
         {title} <br>
         <span>

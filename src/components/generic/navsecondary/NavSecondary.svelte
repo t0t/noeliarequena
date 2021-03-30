@@ -50,14 +50,17 @@
             &:nth-child(1) {
                 margin-bottom: $h0;
             }
+            @include media(s2) {
+                padding: $h4;
+                border: 4px double black;
+            }
             p {
                 text-align: center;
                 margin-bottom: 0;
                 color: $grey_1;
-            }
-            @include media(s2) {
-                padding: $h4;
-                border: 1px dashed black;
+                @include media(s2) {
+                    color: $grey_2;
+                }
             }
         }
     }
