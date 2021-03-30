@@ -91,7 +91,7 @@
     el exterior. La tela recubre la forma como a una gasa el molde. La piel como impasto.
     La vida como un continuo instante de incertidumbre. ¿Somos libres o estamos encerrados, confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación, de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en la luz que entra por la ventana. Y en este marco, en este espacio, celebramos el misterio de la vida."
   </p>
-  <p> —{author_review}</p>
+  <p>—{author_review}</p>
 </section>
 
 <style lang="scss">
@@ -112,7 +112,7 @@
     margin-top: -50px;
     
     @include media(s1) {
-      margin-top: -221px;
+      margin-top: -200px;
     }
     @include media(s2) {
       padding: 0 $h4;
@@ -129,13 +129,18 @@
     }
   }
   .image {
-    border-radius: 50%;
+    /* border-radius: 50%; */
     width: 50%;
     height: 70px;
     background: center / cover no-repeat;
+    &:hover {
+      cursor: pointer;
+      border: 4px double $highlight;
+    }
   }
   figure {
     height: 470px;
+    margin-bottom: $h1;
 
     overflow-x: hidden;
     overflow-y: auto;
@@ -150,23 +155,28 @@
 
   .gallery {
     display: grid;
-    background-color: $grey_5;
+    /* background-color: $grey_5; */
     grid-template-columns: repeat(4, 73px );
-    height: $h7;
-    overflow-y: auto;
+    height: 200px;
+    overflow-x: hidden;
     gap: $h0;
+    /* mask: linear-gradient(to top,transparent, black 40%,black 70%,transparent);
+    -webkit-mask: linear-gradient(to top,transparent, black 40%,black 70%,transparent); */
     
-    /* @include media(s1) {
-      grid-template-columns: repeat(5, 73px );
-    } */
+    @include media(s1) {
+      grid-template-columns: repeat(auto-fill, 73px );
+    }
     @include media(s2) {
       gap: $h1;
       padding: $h2;
       overflow-y: auto;
       grid-template-columns: repeat(auto-fit, 92px );
-      width: 100%;
-      height: $h7;
+      width: 500px;
+      height: 50vh;
       justify-content: space-evenly;
+    }
+    @include media(s3) {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 73px) );
     }
   }
 

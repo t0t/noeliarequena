@@ -15,7 +15,7 @@
 
     .Cover {
         height: 19vh;
-        color: $highlight_2;
+        color: $white;
         background-size: cover;
         background-position: top center;
         position: relative;
