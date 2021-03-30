@@ -4,7 +4,8 @@
 <style lang="scss">
     @use "../../sass/_index.scss" as *;
     svg {
-        fill: $black;
+        mix-blend-mode: multiply;
+        fill: none;
         &:hover {
             fill: $white;
             circle {
@@ -13,21 +14,18 @@
         }
     }
     circle {
-        stroke: $grey_1;
+        stroke: $grey_2;
+        &:nth-child(3) {
+            fill: none;
+        }
     }
 </style>
-<svg class="logo" width="51" height="51">
+<svg class="logo" width="53" height="53" viewBox="0 0 53 53">
+    >
     <g>
-        <circle cx="25" cy="25" r="25" />
-        <g>
-            <circle cx="12.5" cy="25" r="12.5" />
-            <circle cx="38" cy="25" r="12.5" />
-        </g>
-        <g>
-            <circle cx="6.5" cy="25" r="6.25" />
-            <circle cx="19" cy="25" r="6.25" />
-            <circle cx="31.5" cy="25" r="6.25" />
-            <circle cx="44" cy="25" r="6.25" />
-        </g>
+        <circle cx="26.5" cy="26.5" r="25.5"/>
+        <circle cx="26.83" cy="17.83" r="16.83"/>
+        <circle cx="26.83" cy="35.17" r="16.83"/>
+        <circle cx="27.25" cy="26.25" r="8.25"/>
     </g>
 </svg>

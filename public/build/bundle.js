@@ -5977,91 +5977,61 @@ var app = (function () {
 
     function create_fragment$d(ctx) {
     	let svg;
-    	let g2;
+    	let t;
+    	let g;
     	let circle0;
-    	let g0;
     	let circle1;
     	let circle2;
-    	let g1;
     	let circle3;
-    	let circle4;
-    	let circle5;
-    	let circle6;
 
     	const block = {
     		c: function create() {
     			svg = svg_element("svg");
-    			g2 = svg_element("g");
+    			t = text(">\n    ");
+    			g = svg_element("g");
     			circle0 = svg_element("circle");
-    			g0 = svg_element("g");
     			circle1 = svg_element("circle");
     			circle2 = svg_element("circle");
-    			g1 = svg_element("g");
     			circle3 = svg_element("circle");
-    			circle4 = svg_element("circle");
-    			circle5 = svg_element("circle");
-    			circle6 = svg_element("circle");
-    			attr_dev(circle0, "cx", "25");
-    			attr_dev(circle0, "cy", "25");
-    			attr_dev(circle0, "r", "25");
-    			attr_dev(circle0, "class", "svelte-pb8day");
-    			add_location(circle0, file$9, 343, 8, 5121);
-    			attr_dev(circle1, "cx", "12.5");
-    			attr_dev(circle1, "cy", "25");
-    			attr_dev(circle1, "r", "12.5");
-    			attr_dev(circle1, "class", "svelte-pb8day");
-    			add_location(circle1, file$9, 345, 12, 5179);
-    			attr_dev(circle2, "cx", "38");
-    			attr_dev(circle2, "cy", "25");
-    			attr_dev(circle2, "r", "12.5");
-    			attr_dev(circle2, "class", "svelte-pb8day");
-    			add_location(circle2, file$9, 346, 12, 5229);
-    			attr_dev(g0, "class", "svelte-pb8day");
-    			add_location(g0, file$9, 344, 8, 5163);
-    			attr_dev(circle3, "cx", "6.5");
-    			attr_dev(circle3, "cy", "25");
-    			attr_dev(circle3, "r", "6.25");
-    			attr_dev(circle3, "class", "svelte-pb8day");
-    			add_location(circle3, file$9, 349, 12, 5302);
-    			attr_dev(circle4, "cx", "19");
-    			attr_dev(circle4, "cy", "25");
-    			attr_dev(circle4, "r", "6.25");
-    			attr_dev(circle4, "class", "svelte-pb8day");
-    			add_location(circle4, file$9, 350, 12, 5351);
-    			attr_dev(circle5, "cx", "31.5");
-    			attr_dev(circle5, "cy", "25");
-    			attr_dev(circle5, "r", "6.25");
-    			attr_dev(circle5, "class", "svelte-pb8day");
-    			add_location(circle5, file$9, 351, 12, 5399);
-    			attr_dev(circle6, "cx", "44");
-    			attr_dev(circle6, "cy", "25");
-    			attr_dev(circle6, "r", "6.25");
-    			attr_dev(circle6, "class", "svelte-pb8day");
-    			add_location(circle6, file$9, 352, 12, 5449);
-    			attr_dev(g1, "class", "svelte-pb8day");
-    			add_location(g1, file$9, 348, 8, 5286);
-    			attr_dev(g2, "class", "svelte-pb8day");
-    			add_location(g2, file$9, 342, 4, 5109);
-    			attr_dev(svg, "class", "logo svelte-pb8day");
-    			attr_dev(svg, "width", "51");
-    			attr_dev(svg, "height", "51");
-    			add_location(svg, file$9, 341, 0, 5063);
+    			attr_dev(circle0, "cx", "26.5");
+    			attr_dev(circle0, "cy", "26.5");
+    			attr_dev(circle0, "r", "25.5");
+    			attr_dev(circle0, "class", "svelte-ic74o2");
+    			add_location(circle0, file$9, 348, 8, 5212);
+    			attr_dev(circle1, "cx", "26.83");
+    			attr_dev(circle1, "cy", "17.83");
+    			attr_dev(circle1, "r", "16.83");
+    			attr_dev(circle1, "class", "svelte-ic74o2");
+    			add_location(circle1, file$9, 349, 8, 5259);
+    			attr_dev(circle2, "cx", "26.83");
+    			attr_dev(circle2, "cy", "35.17");
+    			attr_dev(circle2, "r", "16.83");
+    			attr_dev(circle2, "class", "svelte-ic74o2");
+    			add_location(circle2, file$9, 350, 8, 5309);
+    			attr_dev(circle3, "cx", "27.25");
+    			attr_dev(circle3, "cy", "26.25");
+    			attr_dev(circle3, "r", "8.25");
+    			attr_dev(circle3, "class", "svelte-ic74o2");
+    			add_location(circle3, file$9, 351, 8, 5359);
+    			attr_dev(g, "class", "svelte-ic74o2");
+    			add_location(g, file$9, 347, 4, 5200);
+    			attr_dev(svg, "class", "logo svelte-ic74o2");
+    			attr_dev(svg, "width", "53");
+    			attr_dev(svg, "height", "53");
+    			attr_dev(svg, "viewBox", "0 0 53 53");
+    			add_location(svg, file$9, 345, 0, 5128);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
-    			append_dev(svg, g2);
-    			append_dev(g2, circle0);
-    			append_dev(g2, g0);
-    			append_dev(g0, circle1);
-    			append_dev(g0, circle2);
-    			append_dev(g2, g1);
-    			append_dev(g1, circle3);
-    			append_dev(g1, circle4);
-    			append_dev(g1, circle5);
-    			append_dev(g1, circle6);
+    			append_dev(svg, t);
+    			append_dev(svg, g);
+    			append_dev(g, circle0);
+    			append_dev(g, circle1);
+    			append_dev(g, circle2);
+    			append_dev(g, circle3);
     		},
     		p: noop,
     		i: noop,
