@@ -2,12 +2,16 @@
   @use "../../sass/_index.scss" as *;
 
   .Links {
-    padding-top: $h5;
-    padding-bottom: $h5;
+    padding-top: 0;
+    padding-bottom: $h2;
     background-color: $grey_5;
     display: grid;
     justify-items: center;
     align-content:center;
+    @include media(s2) {
+      padding-top: $h5;
+      padding-bottom: $h5;
+    }
 
     ul {
       width: 100%;
@@ -23,7 +27,7 @@
       padding-top: $h1;
       margin-left: $h-1;
       margin-right: $h-1;
-      fill: $grey_2;
+      fill: $grey_1;
       &:hover {
         fill: $highlight;
       }
@@ -33,7 +37,7 @@
       }
     }
     small {
-      color: $grey_2;
+      color: $grey_1;
     }
   }
 </style>

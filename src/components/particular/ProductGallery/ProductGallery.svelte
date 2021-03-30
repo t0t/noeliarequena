@@ -98,7 +98,12 @@
   @use "../../../sass/_index.scss" as *;
 
   .LayoutObras {
-    padding: $h4;
+    padding: $h2;
+    @include media(s1) {
+    }
+    @include media(s2) {
+      padding: $h4;
+    }
   }
   .image-viewer {
     position: relative;
@@ -107,7 +112,7 @@
     margin-top: -50px;
     
     @include media(s1) {
-      margin-top: -250px;
+      margin-top: -216px;
     }
     @include media(s2) {
       padding: 0 $h4;
@@ -150,12 +155,12 @@
     background-color: $grey_5;
     grid-template-columns: repeat(4, 73px );
     height: $h7;
-    overflow: auto;
+    overflow-y: auto;
     gap: $h0;
     
-    @include media(s1) {
+    /* @include media(s1) {
       grid-template-columns: repeat(5, 73px );
-    }
+    } */
     @include media(s2) {
       gap: $h1;
       padding: $h2;

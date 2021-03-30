@@ -2180,20 +2180,20 @@ var app = (function () {
     			t4 = space();
     			p = element("p");
     			t5 = text(/*text*/ ctx[2]);
-    			attr_dev(br, "class", "svelte-1n5jkig");
-    			add_location(br, file, 411, 16, 6728);
-    			attr_dev(h2, "class", "CoverSubTitle svelte-1n5jkig");
-    			add_location(h2, file, 413, 12, 6760);
-    			attr_dev(span, "class", "svelte-1n5jkig");
-    			add_location(span, file, 412, 8, 6741);
-    			attr_dev(h1, "class", "CoverTitle svelte-1n5jkig");
-    			add_location(h1, file, 410, 4, 6688);
-    			attr_dev(p, "class", "CoverText svelte-1n5jkig");
-    			add_location(p, file, 416, 4, 6834);
-    			attr_dev(header, "class", "Cover svelte-1n5jkig");
+    			attr_dev(br, "class", "svelte-1boudcv");
+    			add_location(br, file, 405, 16, 6636);
+    			attr_dev(h2, "class", "CoverSubTitle svelte-1boudcv");
+    			add_location(h2, file, 407, 12, 6668);
+    			attr_dev(span, "class", "svelte-1boudcv");
+    			add_location(span, file, 406, 8, 6649);
+    			attr_dev(h1, "class", "CoverTitle svelte-1boudcv");
+    			add_location(h1, file, 404, 4, 6596);
+    			attr_dev(p, "class", "CoverText svelte-1boudcv");
+    			add_location(p, file, 410, 4, 6742);
+    			attr_dev(header, "class", "Cover svelte-1boudcv");
     			set_style(header, "background-image", "url(" + /*img*/ ctx[3] + ")");
     			set_style(header, "opacity", 1 - Math.max(0, /*scrollY*/ ctx[6] / (/*innerHeight*/ ctx[5] / 2)));
-    			add_location(header, file, 407, 0, 6527);
+    			add_location(header, file, 401, 0, 6435);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2407,7 +2407,7 @@ var app = (function () {
 
     const file$1 = "src/components/generic/Button.svelte";
 
-    // (435:0) {:else}
+    // (429:0) {:else}
     function create_else_block$1(ctx) {
     	let button;
     	let t;
@@ -2420,8 +2420,8 @@ var app = (function () {
     			button = element("button");
     			t = text(/*text*/ ctx[0]);
     			attr_dev(button, "type", "submit");
-    			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-bhiogc"));
-    			add_location(button, file$1, 435, 4, 6704);
+    			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-4ard6j"));
+    			add_location(button, file$1, 429, 4, 6612);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -2435,7 +2435,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			if (dirty & /*text*/ 1) set_data_dev(t, /*text*/ ctx[0]);
 
-    			if (dirty & /*variante*/ 8 && button_class_value !== (button_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-bhiogc"))) {
+    			if (dirty & /*variante*/ 8 && button_class_value !== (button_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-4ard6j"))) {
     				attr_dev(button, "class", button_class_value);
     			}
     		},
@@ -2450,14 +2450,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(435:0) {:else}",
+    		source: "(429:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (431:0) {#if url}
+    // (425:0) {#if url}
     function create_if_block$1(ctx) {
     	let a;
     	let t;
@@ -2469,8 +2469,8 @@ var app = (function () {
     			t = text(/*text*/ ctx[0]);
     			attr_dev(a, "href", /*url*/ ctx[1]);
     			attr_dev(a, "target", /*target*/ ctx[2]);
-    			attr_dev(a, "class", a_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-bhiogc"));
-    			add_location(a, file$1, 431, 4, 6601);
+    			attr_dev(a, "class", a_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-4ard6j"));
+    			add_location(a, file$1, 425, 4, 6509);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -2487,7 +2487,7 @@ var app = (function () {
     				attr_dev(a, "target", /*target*/ ctx[2]);
     			}
 
-    			if (dirty & /*variante*/ 8 && a_class_value !== (a_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-bhiogc"))) {
+    			if (dirty & /*variante*/ 8 && a_class_value !== (a_class_value = "" + (null_to_empty(/*modificador*/ ctx[4][/*variante*/ ctx[3]]) + " svelte-4ard6j"))) {
     				attr_dev(a, "class", a_class_value);
     			}
     		},
@@ -2500,7 +2500,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(431:0) {#if url}",
+    		source: "(425:0) {#if url}",
     		ctx
     	});
 
@@ -2677,9 +2677,9 @@ var app = (function () {
     			article = element("article");
     			h2 = element("h2");
     			t = space();
-    			attr_dev(h2, "class", "Caption svelte-s1519j");
+    			attr_dev(h2, "class", "Caption svelte-zddw58");
     			add_location(h2, file$2, 46, 16, 1582);
-    			attr_dev(article, "class", "Slide svelte-s1519j");
+    			attr_dev(article, "class", "Slide svelte-zddw58");
     			attr_dev(article, "id", article_id_value = /*slide*/ ctx[5].id);
     			set_style(article, "background-image", "url(" + /*slide*/ ctx[5].href + ")");
     			set_style(article, "width", /*ancho_slides*/ ctx[1] + "px");
@@ -2776,11 +2776,11 @@ var app = (function () {
     			t = space();
     			nav = element("nav");
     			create_component(button.$$.fragment);
-    			attr_dev(section, "class", "SlidesGroup svelte-s1519j");
+    			attr_dev(section, "class", "SlidesGroup svelte-zddw58");
     			add_location(section, file$2, 35, 4, 1235);
-    			attr_dev(nav, "class", "SliderNav svelte-s1519j");
+    			attr_dev(nav, "class", "SliderNav svelte-zddw58");
     			add_location(nav, file$2, 52, 4, 1722);
-    			attr_dev(main, "class", "SliderContainer svelte-s1519j");
+    			attr_dev(main, "class", "SliderContainer svelte-zddw58");
     			add_location(main, file$2, 34, 0, 1200);
     		},
     		l: function claim(nodes) {
@@ -3285,21 +3285,21 @@ var app = (function () {
     			t5 = space();
     			p1 = element("p");
     			p1.textContent = "Biography";
-    			attr_dev(h20, "class", "svelte-1t972h9");
+    			attr_dev(h20, "class", "svelte-1df2dge");
     			add_location(h20, file$4, 9, 8, 293);
-    			attr_dev(p0, "class", "svelte-1t972h9");
+    			attr_dev(p0, "class", "svelte-1df2dge");
     			add_location(p0, file$4, 10, 8, 324);
     			attr_dev(a0, "href", "/artwork");
-    			attr_dev(a0, "class", "svelte-1t972h9");
+    			attr_dev(a0, "class", "svelte-1df2dge");
     			add_location(a0, file$4, 8, 4, 245);
-    			attr_dev(h21, "class", "svelte-1t972h9");
+    			attr_dev(h21, "class", "svelte-1df2dge");
     			add_location(h21, file$4, 13, 8, 398);
-    			attr_dev(p1, "class", "svelte-1t972h9");
+    			attr_dev(p1, "class", "svelte-1df2dge");
     			add_location(p1, file$4, 14, 8, 425);
     			attr_dev(a1, "href", "/about");
-    			attr_dev(a1, "class", "svelte-1t972h9");
+    			attr_dev(a1, "class", "svelte-1df2dge");
     			add_location(a1, file$4, 12, 4, 352);
-    			attr_dev(nav, "class", "svelte-1t972h9");
+    			attr_dev(nav, "class", "svelte-1df2dge");
     			add_location(nav, file$4, 6, 0, 158);
     		},
     		l: function claim(nodes) {
@@ -3381,7 +3381,7 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$5 = "src/components/generic/BannerTexto.svelte";
 
-    // (398:37) {:else}
+    // (392:37) {:else}
     function create_else_block_1(ctx) {
     	let t;
 
@@ -3401,14 +3401,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(398:37) {:else}",
+    		source: "(392:37) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (398:11) {#if idioma_switch}
+    // (392:11) {#if idioma_switch}
     function create_if_block_1(ctx) {
     	let t;
 
@@ -3428,14 +3428,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(398:11) {#if idioma_switch}",
+    		source: "(392:11) {#if idioma_switch}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (434:4) {:else}
+    // (428:4) {:else}
     function create_else_block$2(ctx) {
     	let dl;
     	let dt0;
@@ -3502,48 +3502,48 @@ var app = (function () {
     			dd9.textContent = "Paralelamente a mi actividad profesional mantengo una formación continua en el mundo del arte, con incursiones en diversas técnicas como esmalte, cerámica, escultura, pintura al óleo, arte para niños, libros de artista, así como astrología y educación activa.";
     			dd10 = element("dd");
     			dd10.textContent = "Actualmente vivo en pareja con el artista multidisciplinar Sergio Forés. Soy madre de dos hijos y, buscando formas alternativas de vida y educación, me trasladé en 2014 a un pequeño pueblo del Alt Penedès rodeado de viñedos y naturaleza.";
-    			attr_dev(dt0, "class", "svelte-jphaky");
-    			add_location(dt0, file$5, 435, 8, 9173);
-    			attr_dev(dt1, "class", "svelte-jphaky");
-    			add_location(dt1, file$5, 437, 8, 9234);
-    			attr_dev(dd0, "class", "svelte-jphaky");
-    			add_location(dd0, file$5, 438, 8, 9261);
-    			attr_dev(dt2, "class", "svelte-jphaky");
-    			add_location(dt2, file$5, 440, 8, 9452);
-    			attr_dev(dd1, "class", "svelte-jphaky");
-    			add_location(dd1, file$5, 441, 8, 9479);
-    			attr_dev(dt3, "class", "svelte-jphaky");
-    			add_location(dt3, file$5, 443, 8, 9563);
-    			attr_dev(dd2, "class", "svelte-jphaky");
-    			add_location(dd2, file$5, 444, 8, 9591);
-    			attr_dev(dt4, "class", "svelte-jphaky");
-    			add_location(dt4, file$5, 446, 8, 9697);
-    			attr_dev(dd3, "class", "svelte-jphaky");
-    			add_location(dd3, file$5, 447, 8, 9725);
-    			attr_dev(dt5, "class", "svelte-jphaky");
-    			add_location(dt5, file$5, 449, 8, 9805);
-    			attr_dev(dd4, "class", "svelte-jphaky");
-    			add_location(dd4, file$5, 450, 8, 9834);
-    			attr_dev(dd5, "class", "svelte-jphaky");
-    			add_location(dd5, file$5, 451, 8, 10080);
-    			attr_dev(dt6, "class", "svelte-jphaky");
-    			add_location(dt6, file$5, 453, 8, 10495);
-    			attr_dev(dd6, "class", "svelte-jphaky");
-    			add_location(dd6, file$5, 454, 8, 10523);
-    			attr_dev(dt7, "class", "svelte-jphaky");
-    			add_location(dt7, file$5, 456, 8, 10904);
-    			attr_dev(dd7, "class", "svelte-jphaky");
-    			add_location(dd7, file$5, 457, 8, 10932);
-    			attr_dev(dt8, "class", "svelte-jphaky");
-    			add_location(dt8, file$5, 459, 8, 11166);
-    			attr_dev(dd8, "class", "svelte-jphaky");
-    			add_location(dd8, file$5, 460, 8, 11189);
-    			attr_dev(dd9, "class", "svelte-jphaky");
-    			add_location(dd9, file$5, 462, 8, 11312);
-    			attr_dev(dd10, "class", "svelte-jphaky");
-    			add_location(dd10, file$5, 464, 8, 11594);
-    			attr_dev(dl, "class", "svelte-jphaky");
-    			add_location(dl, file$5, 434, 4, 9160);
+    			attr_dev(dt0, "class", "svelte-1qztj1x");
+    			add_location(dt0, file$5, 429, 8, 9081);
+    			attr_dev(dt1, "class", "svelte-1qztj1x");
+    			add_location(dt1, file$5, 431, 8, 9142);
+    			attr_dev(dd0, "class", "svelte-1qztj1x");
+    			add_location(dd0, file$5, 432, 8, 9169);
+    			attr_dev(dt2, "class", "svelte-1qztj1x");
+    			add_location(dt2, file$5, 434, 8, 9360);
+    			attr_dev(dd1, "class", "svelte-1qztj1x");
+    			add_location(dd1, file$5, 435, 8, 9387);
+    			attr_dev(dt3, "class", "svelte-1qztj1x");
+    			add_location(dt3, file$5, 437, 8, 9471);
+    			attr_dev(dd2, "class", "svelte-1qztj1x");
+    			add_location(dd2, file$5, 438, 8, 9499);
+    			attr_dev(dt4, "class", "svelte-1qztj1x");
+    			add_location(dt4, file$5, 440, 8, 9605);
+    			attr_dev(dd3, "class", "svelte-1qztj1x");
+    			add_location(dd3, file$5, 441, 8, 9633);
+    			attr_dev(dt5, "class", "svelte-1qztj1x");
+    			add_location(dt5, file$5, 443, 8, 9713);
+    			attr_dev(dd4, "class", "svelte-1qztj1x");
+    			add_location(dd4, file$5, 444, 8, 9742);
+    			attr_dev(dd5, "class", "svelte-1qztj1x");
+    			add_location(dd5, file$5, 445, 8, 9988);
+    			attr_dev(dt6, "class", "svelte-1qztj1x");
+    			add_location(dt6, file$5, 447, 8, 10403);
+    			attr_dev(dd6, "class", "svelte-1qztj1x");
+    			add_location(dd6, file$5, 448, 8, 10431);
+    			attr_dev(dt7, "class", "svelte-1qztj1x");
+    			add_location(dt7, file$5, 450, 8, 10812);
+    			attr_dev(dd7, "class", "svelte-1qztj1x");
+    			add_location(dd7, file$5, 451, 8, 10840);
+    			attr_dev(dt8, "class", "svelte-1qztj1x");
+    			add_location(dt8, file$5, 453, 8, 11074);
+    			attr_dev(dd8, "class", "svelte-1qztj1x");
+    			add_location(dd8, file$5, 454, 8, 11097);
+    			attr_dev(dd9, "class", "svelte-1qztj1x");
+    			add_location(dd9, file$5, 456, 8, 11220);
+    			attr_dev(dd10, "class", "svelte-1qztj1x");
+    			add_location(dd10, file$5, 458, 8, 11502);
+    			attr_dev(dl, "class", "svelte-1qztj1x");
+    			add_location(dl, file$5, 428, 4, 9068);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, dl, anchor);
@@ -3577,14 +3577,14 @@ var app = (function () {
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(434:4) {:else}",
+    		source: "(428:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (401:4) {#if idioma_switch}
+    // (395:4) {#if idioma_switch}
     function create_if_block$2(ctx) {
     	let dl;
     	let dt0;
@@ -3698,64 +3698,64 @@ var app = (function () {
     			dd9.textContent = "Paralelamente a mi actividad profesional mantengo una formación continua en el mundo del arte, con incursiones en diversas técnicas como esmalte, cerámica, escultura, pintura al óleo, arte para niños, libros de artista, así como astrología y educación activa.";
     			dt9 = element("dt");
     			dt9.textContent = "Actualmente vivo en pareja con el artista multidisciplinar Sergio Forés. Soy madre de dos hijos y, buscando formas alternativas de vida y educación, me trasladé en 2014 a un pequeño pueblo del Alt Penedès rodeado de viñedos y naturaleza.";
-    			attr_dev(dt0, "class", "svelte-jphaky");
-    			add_location(dt0, file$5, 402, 8, 6413);
-    			attr_dev(dt1, "class", "svelte-jphaky");
-    			add_location(dt1, file$5, 404, 8, 6468);
-    			attr_dev(i0, "class", "svelte-jphaky");
-    			add_location(i0, file$5, 405, 47, 6534);
-    			attr_dev(dd0, "class", "svelte-jphaky");
-    			add_location(dd0, file$5, 405, 8, 6495);
-    			attr_dev(dt2, "class", "svelte-jphaky");
-    			add_location(dt2, file$5, 407, 8, 6696);
-    			attr_dev(i1, "class", "svelte-jphaky");
-    			add_location(i1, file$5, 408, 23, 6738);
-    			attr_dev(dd1, "class", "svelte-jphaky");
-    			add_location(dd1, file$5, 408, 8, 6723);
-    			attr_dev(dt3, "class", "svelte-jphaky");
-    			add_location(dt3, file$5, 410, 8, 6814);
-    			attr_dev(i2, "class", "svelte-jphaky");
-    			add_location(i2, file$5, 411, 50, 6884);
-    			attr_dev(dd2, "class", "svelte-jphaky");
-    			add_location(dd2, file$5, 411, 8, 6842);
-    			attr_dev(dt4, "class", "svelte-jphaky");
-    			add_location(dt4, file$5, 413, 8, 6955);
-    			attr_dev(i3, "class", "svelte-jphaky");
-    			add_location(i3, file$5, 414, 52, 7027);
-    			attr_dev(dd3, "class", "svelte-jphaky");
-    			add_location(dd3, file$5, 414, 8, 6983);
-    			attr_dev(dt5, "class", "svelte-jphaky");
-    			add_location(dt5, file$5, 416, 8, 7069);
-    			attr_dev(i4, "class", "svelte-jphaky");
-    			add_location(i4, file$5, 417, 64, 7154);
-    			attr_dev(i5, "class", "svelte-jphaky");
-    			add_location(i5, file$5, 417, 101, 7191);
-    			attr_dev(dd4, "class", "svelte-jphaky");
-    			add_location(dd4, file$5, 417, 8, 7098);
-    			attr_dev(dd5, "class", "svelte-jphaky");
-    			add_location(dd5, file$5, 418, 8, 7358);
-    			attr_dev(dt6, "class", "svelte-jphaky");
-    			add_location(dt6, file$5, 420, 8, 7773);
-    			attr_dev(i6, "class", "svelte-jphaky");
-    			add_location(i6, file$5, 421, 80, 7873);
-    			attr_dev(dd6, "class", "svelte-jphaky");
-    			add_location(dd6, file$5, 421, 8, 7801);
-    			attr_dev(dt7, "class", "svelte-jphaky");
-    			add_location(dt7, file$5, 423, 8, 8189);
-    			attr_dev(i7, "class", "svelte-jphaky");
-    			add_location(i7, file$5, 424, 102, 8311);
-    			attr_dev(dd7, "class", "svelte-jphaky");
-    			add_location(dd7, file$5, 424, 8, 8217);
-    			attr_dev(dt8, "class", "svelte-jphaky");
-    			add_location(dt8, file$5, 426, 8, 8459);
-    			attr_dev(dd8, "class", "svelte-jphaky");
-    			add_location(dd8, file$5, 427, 8, 8482);
-    			attr_dev(dd9, "class", "svelte-jphaky");
-    			add_location(dd9, file$5, 429, 8, 8605);
-    			attr_dev(dt9, "class", "svelte-jphaky");
-    			add_location(dt9, file$5, 431, 8, 8887);
-    			attr_dev(dl, "class", "svelte-jphaky");
-    			add_location(dl, file$5, 401, 4, 6400);
+    			attr_dev(dt0, "class", "svelte-1qztj1x");
+    			add_location(dt0, file$5, 396, 8, 6321);
+    			attr_dev(dt1, "class", "svelte-1qztj1x");
+    			add_location(dt1, file$5, 398, 8, 6376);
+    			attr_dev(i0, "class", "svelte-1qztj1x");
+    			add_location(i0, file$5, 399, 47, 6442);
+    			attr_dev(dd0, "class", "svelte-1qztj1x");
+    			add_location(dd0, file$5, 399, 8, 6403);
+    			attr_dev(dt2, "class", "svelte-1qztj1x");
+    			add_location(dt2, file$5, 401, 8, 6604);
+    			attr_dev(i1, "class", "svelte-1qztj1x");
+    			add_location(i1, file$5, 402, 23, 6646);
+    			attr_dev(dd1, "class", "svelte-1qztj1x");
+    			add_location(dd1, file$5, 402, 8, 6631);
+    			attr_dev(dt3, "class", "svelte-1qztj1x");
+    			add_location(dt3, file$5, 404, 8, 6722);
+    			attr_dev(i2, "class", "svelte-1qztj1x");
+    			add_location(i2, file$5, 405, 50, 6792);
+    			attr_dev(dd2, "class", "svelte-1qztj1x");
+    			add_location(dd2, file$5, 405, 8, 6750);
+    			attr_dev(dt4, "class", "svelte-1qztj1x");
+    			add_location(dt4, file$5, 407, 8, 6863);
+    			attr_dev(i3, "class", "svelte-1qztj1x");
+    			add_location(i3, file$5, 408, 52, 6935);
+    			attr_dev(dd3, "class", "svelte-1qztj1x");
+    			add_location(dd3, file$5, 408, 8, 6891);
+    			attr_dev(dt5, "class", "svelte-1qztj1x");
+    			add_location(dt5, file$5, 410, 8, 6977);
+    			attr_dev(i4, "class", "svelte-1qztj1x");
+    			add_location(i4, file$5, 411, 64, 7062);
+    			attr_dev(i5, "class", "svelte-1qztj1x");
+    			add_location(i5, file$5, 411, 101, 7099);
+    			attr_dev(dd4, "class", "svelte-1qztj1x");
+    			add_location(dd4, file$5, 411, 8, 7006);
+    			attr_dev(dd5, "class", "svelte-1qztj1x");
+    			add_location(dd5, file$5, 412, 8, 7266);
+    			attr_dev(dt6, "class", "svelte-1qztj1x");
+    			add_location(dt6, file$5, 414, 8, 7681);
+    			attr_dev(i6, "class", "svelte-1qztj1x");
+    			add_location(i6, file$5, 415, 80, 7781);
+    			attr_dev(dd6, "class", "svelte-1qztj1x");
+    			add_location(dd6, file$5, 415, 8, 7709);
+    			attr_dev(dt7, "class", "svelte-1qztj1x");
+    			add_location(dt7, file$5, 417, 8, 8097);
+    			attr_dev(i7, "class", "svelte-1qztj1x");
+    			add_location(i7, file$5, 418, 102, 8219);
+    			attr_dev(dd7, "class", "svelte-1qztj1x");
+    			add_location(dd7, file$5, 418, 8, 8125);
+    			attr_dev(dt8, "class", "svelte-1qztj1x");
+    			add_location(dt8, file$5, 420, 8, 8367);
+    			attr_dev(dd8, "class", "svelte-1qztj1x");
+    			add_location(dd8, file$5, 421, 8, 8390);
+    			attr_dev(dd9, "class", "svelte-1qztj1x");
+    			add_location(dd9, file$5, 423, 8, 8513);
+    			attr_dev(dt9, "class", "svelte-1qztj1x");
+    			add_location(dt9, file$5, 425, 8, 8795);
+    			attr_dev(dl, "class", "svelte-1qztj1x");
+    			add_location(dl, file$5, 395, 4, 6308);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, dl, anchor);
@@ -3812,7 +3812,7 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(401:4) {#if idioma_switch}",
+    		source: "(395:4) {#if idioma_switch}",
     		ctx
     	});
 
@@ -3870,22 +3870,22 @@ var app = (function () {
     			if_block0.c();
     			t5 = space();
     			if_block1.c();
-    			attr_dev(img_1, "class", "Avatar svelte-jphaky");
+    			attr_dev(img_1, "class", "Avatar svelte-1qztj1x");
     			if (img_1.src !== (img_1_src_value = /*img*/ ctx[2])) attr_dev(img_1, "src", img_1_src_value);
     			attr_dev(img_1, "alt", "");
-    			add_location(img_1, file$5, 386, 4, 5981);
-    			attr_dev(br, "class", "svelte-jphaky");
-    			add_location(br, file$5, 389, 17, 6072);
-    			attr_dev(span, "class", "BannerTextoText svelte-jphaky");
-    			add_location(span, file$5, 390, 8, 6085);
-    			attr_dev(h2, "class", "BannerTextoHeader svelte-jphaky");
-    			add_location(h2, file$5, 388, 4, 6024);
-    			attr_dev(button, "class", "svelte-jphaky");
-    			add_location(button, file$5, 394, 8, 6187);
-    			attr_dev(div, "class", "idioma_switch svelte-jphaky");
-    			add_location(div, file$5, 393, 4, 6151);
-    			attr_dev(section, "class", "BannerTexto svelte-jphaky");
-    			add_location(section, file$5, 384, 0, 5946);
+    			add_location(img_1, file$5, 380, 4, 5889);
+    			attr_dev(br, "class", "svelte-1qztj1x");
+    			add_location(br, file$5, 383, 17, 5980);
+    			attr_dev(span, "class", "BannerTextoText svelte-1qztj1x");
+    			add_location(span, file$5, 384, 8, 5993);
+    			attr_dev(h2, "class", "BannerTextoHeader svelte-1qztj1x");
+    			add_location(h2, file$5, 382, 4, 5932);
+    			attr_dev(button, "class", "svelte-1qztj1x");
+    			add_location(button, file$5, 388, 8, 6095);
+    			attr_dev(div, "class", "idioma_switch svelte-1qztj1x");
+    			add_location(div, file$5, 387, 4, 6059);
+    			attr_dev(section, "class", "BannerTexto svelte-1qztj1x");
+    			add_location(section, file$5, 378, 0, 5854);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4316,7 +4316,7 @@ var app = (function () {
     			img_1 = element("img");
     			if (img_1.src !== (img_1_src_value = /*img*/ ctx[2])) attr_dev(img_1, "src", img_1_src_value);
     			attr_dev(img_1, "alt", "Imagen");
-    			attr_dev(img_1, "class", "svelte-6de7gm");
+    			attr_dev(img_1, "class", "svelte-1d5xbc1");
     			add_location(img_1, file$6, 12, 16, 342);
     		},
     		m: function mount(target, anchor) {
@@ -4382,15 +4382,15 @@ var app = (function () {
     			p = element("p");
     			t5 = space();
     			if (default_slot) default_slot.c();
-    			attr_dev(div0, "class", "BannerMedia svelte-6de7gm");
+    			attr_dev(div0, "class", "BannerMedia svelte-1d5xbc1");
     			add_location(div0, file$6, 9, 4, 247);
-    			attr_dev(h2, "class", "svelte-6de7gm");
+    			attr_dev(h2, "class", "svelte-1d5xbc1");
     			add_location(h2, file$6, 20, 8, 535);
-    			attr_dev(p, "class", "svelte-6de7gm");
+    			attr_dev(p, "class", "svelte-1d5xbc1");
     			add_location(p, file$6, 21, 8, 560);
-    			attr_dev(div1, "class", "SectionHalfText svelte-6de7gm");
+    			attr_dev(div1, "class", "SectionHalfText svelte-1d5xbc1");
     			add_location(div1, file$6, 19, 4, 497);
-    			attr_dev(section, "class", section_class_value = "SectionHalf " + /*modificador*/ ctx[4][/*variante*/ ctx[3]] + " svelte-6de7gm");
+    			attr_dev(section, "class", section_class_value = "SectionHalf " + /*modificador*/ ctx[4][/*variante*/ ctx[3]] + " svelte-1d5xbc1");
     			add_location(section, file$6, 8, 0, 189);
     		},
     		l: function claim(nodes) {
@@ -4471,7 +4471,7 @@ var app = (function () {
     				}
     			}
 
-    			if (!current || dirty & /*variante*/ 8 && section_class_value !== (section_class_value = "SectionHalf " + /*modificador*/ ctx[4][/*variante*/ ctx[3]] + " svelte-6de7gm")) {
+    			if (!current || dirty & /*variante*/ 8 && section_class_value !== (section_class_value = "SectionHalf " + /*modificador*/ ctx[4][/*variante*/ ctx[3]] + " svelte-1d5xbc1")) {
     				attr_dev(section, "class", section_class_value);
     			}
     		},
@@ -5115,15 +5115,15 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = space();
     			t6 = text(t6_value);
-    			attr_dev(nav, "class", "svelte-58z6kx");
+    			attr_dev(nav, "class", "svelte-1vahneu");
     			add_location(nav, file$7, 30, 2, 642);
     			if (img.src !== (img_src_value = /*selected*/ ctx[2])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = productos[/*currentIdx*/ ctx[5]].description);
-    			attr_dev(img, "class", "svelte-58z6kx");
+    			attr_dev(img, "class", "svelte-1vahneu");
     			add_location(img, file$7, 45, 6, 1134);
-    			attr_dev(figcaption, "class", "svelte-58z6kx");
+    			attr_dev(figcaption, "class", "svelte-1vahneu");
     			add_location(figcaption, file$7, 47, 6, 1270);
-    			attr_dev(figure, "class", "svelte-58z6kx");
+    			attr_dev(figure, "class", "svelte-1vahneu");
     			add_location(figure, file$7, 44, 4, 1119);
     		},
     		m: function mount(target, anchor) {
@@ -5216,7 +5216,7 @@ var app = (function () {
     			attr_dev(div, "role", "img");
     			attr_dev(div, "aria-label", /*d*/ ctx[13].title);
     			attr_dev(div, "data-selected", div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[13].imagen);
-    			attr_dev(div, "class", "image svelte-58z6kx");
+    			attr_dev(div, "class", "image svelte-1vahneu");
     			set_style(div, "background-image", "url(" + /*d*/ ctx[13].imagen + ")");
     			toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[13].imagen);
     			add_location(div, file$7, 56, 6, 1524);
@@ -5318,20 +5318,20 @@ var app = (function () {
     			t8 = text("—");
     			t9 = text(/*author_review*/ ctx[1]);
     			attr_dev(div0, "role", "group");
-    			attr_dev(div0, "class", "gallery svelte-58z6kx");
+    			attr_dev(div0, "class", "gallery svelte-1vahneu");
     			attr_dev(div0, "tabindex", 0);
     			add_location(div0, file$7, 54, 2, 1413);
-    			attr_dev(div1, "class", "image-viewer svelte-58z6kx");
+    			attr_dev(div1, "class", "image-viewer svelte-1vahneu");
     			add_location(div1, file$7, 20, 0, 495);
-    			attr_dev(h2, "class", "svelte-58z6kx");
+    			attr_dev(h2, "class", "svelte-1vahneu");
     			add_location(h2, file$7, 70, 2, 1856);
-    			attr_dev(p0, "class", "svelte-58z6kx");
+    			attr_dev(p0, "class", "svelte-1vahneu");
     			add_location(p0, file$7, 71, 2, 1876);
-    			attr_dev(p1, "class", "svelte-58z6kx");
+    			attr_dev(p1, "class", "svelte-1vahneu");
     			add_location(p1, file$7, 86, 2, 2834);
-    			attr_dev(p2, "class", "svelte-58z6kx");
+    			attr_dev(p2, "class", "svelte-1vahneu");
     			add_location(p2, file$7, 93, 2, 3651);
-    			attr_dev(section, "class", "LayoutObras svelte-58z6kx");
+    			attr_dev(section, "class", "LayoutObras svelte-1vahneu");
     			add_location(section, file$7, 69, 0, 1824);
     		},
     		l: function claim(nodes) {
@@ -5996,30 +5996,30 @@ var app = (function () {
     			attr_dev(circle0, "cx", "26.5");
     			attr_dev(circle0, "cy", "26.5");
     			attr_dev(circle0, "r", "25.5");
-    			attr_dev(circle0, "class", "svelte-umknd3");
-    			add_location(circle0, file$9, 350, 8, 5223);
+    			attr_dev(circle0, "class", "svelte-rzdpi4");
+    			add_location(circle0, file$9, 344, 8, 5131);
     			attr_dev(circle1, "cx", "26.83");
     			attr_dev(circle1, "cy", "17.83");
     			attr_dev(circle1, "r", "16.83");
-    			attr_dev(circle1, "class", "svelte-umknd3");
-    			add_location(circle1, file$9, 351, 8, 5270);
+    			attr_dev(circle1, "class", "svelte-rzdpi4");
+    			add_location(circle1, file$9, 345, 8, 5178);
     			attr_dev(circle2, "cx", "26.83");
     			attr_dev(circle2, "cy", "35.17");
     			attr_dev(circle2, "r", "16.83");
-    			attr_dev(circle2, "class", "svelte-umknd3");
-    			add_location(circle2, file$9, 352, 8, 5320);
+    			attr_dev(circle2, "class", "svelte-rzdpi4");
+    			add_location(circle2, file$9, 346, 8, 5228);
     			attr_dev(circle3, "cx", "27.25");
     			attr_dev(circle3, "cy", "26.25");
     			attr_dev(circle3, "r", "8.25");
-    			attr_dev(circle3, "class", "svelte-umknd3");
-    			add_location(circle3, file$9, 353, 8, 5370);
-    			attr_dev(g, "class", "svelte-umknd3");
-    			add_location(g, file$9, 349, 4, 5211);
-    			attr_dev(svg, "class", "logo svelte-umknd3");
+    			attr_dev(circle3, "class", "svelte-rzdpi4");
+    			add_location(circle3, file$9, 347, 8, 5278);
+    			attr_dev(g, "class", "svelte-rzdpi4");
+    			add_location(g, file$9, 343, 4, 5119);
+    			attr_dev(svg, "class", "logo svelte-rzdpi4");
     			attr_dev(svg, "width", "53");
     			attr_dev(svg, "height", "53");
     			attr_dev(svg, "viewBox", "0 0 53 53");
-    			add_location(svg, file$9, 347, 0, 5139);
+    			add_location(svg, file$9, 341, 0, 5047);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6121,32 +6121,32 @@ var app = (function () {
     			t4 = space();
     			a2 = element("a");
     			a2.textContent = "About";
-    			attr_dev(div0, "class", "ButtonNav svelte-h9woxj");
-    			add_location(div0, file$a, 414, 4, 6480);
-    			attr_dev(a0, "class", "NavItem svelte-h9woxj");
+    			attr_dev(div0, "class", "ButtonNav svelte-8ur80c");
+    			add_location(div0, file$a, 408, 4, 6388);
+    			attr_dev(a0, "class", "NavItem svelte-8ur80c");
     			attr_dev(a0, "id", "0");
     			attr_dev(a0, "role", "navigation");
     			attr_dev(a0, "href", "/");
     			toggle_class(a0, "active", active$1);
-    			add_location(a0, file$a, 419, 8, 6660);
-    			attr_dev(a1, "class", "NavItem svelte-h9woxj");
+    			add_location(a0, file$a, 413, 8, 6568);
+    			attr_dev(a1, "class", "NavItem svelte-8ur80c");
     			attr_dev(a1, "id", "1");
     			attr_dev(a1, "role", "navigation");
     			attr_dev(a1, "href", "/artwork");
-    			add_location(a1, file$a, 429, 8, 6837);
-    			attr_dev(a2, "class", "NavItem svelte-h9woxj");
+    			add_location(a1, file$a, 423, 8, 6745);
+    			attr_dev(a2, "class", "NavItem svelte-8ur80c");
     			attr_dev(a2, "id", "3");
     			attr_dev(a2, "role", "navigation");
     			attr_dev(a2, "href", "/about");
-    			add_location(a2, file$a, 432, 8, 6957);
+    			add_location(a2, file$a, 426, 8, 6865);
 
     			attr_dev(nav, "class", nav_class_value = "" + (null_to_empty(/*activemenu*/ ctx[1]
     			? "MainNav MainNavVisible"
-    			: "MainNav") + " svelte-h9woxj"));
+    			: "MainNav") + " svelte-8ur80c"));
 
-    			add_location(nav, file$a, 418, 4, 6586);
-    			attr_dev(div1, "class", "svelte-h9woxj");
-    			add_location(div1, file$a, 412, 0, 6417);
+    			add_location(nav, file$a, 412, 4, 6494);
+    			attr_dev(div1, "class", "svelte-8ur80c");
+    			add_location(div1, file$a, 406, 0, 6325);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6196,7 +6196,7 @@ var app = (function () {
 
     			if (!current || dirty & /*activemenu*/ 2 && nav_class_value !== (nav_class_value = "" + (null_to_empty(/*activemenu*/ ctx[1]
     			? "MainNav MainNavVisible"
-    			: "MainNav") + " svelte-h9woxj"))) {
+    			: "MainNav") + " svelte-8ur80c"))) {
     				attr_dev(nav, "class", nav_class_value);
     			}
     		},
@@ -6338,36 +6338,36 @@ var app = (function () {
     			circle = svg_element("circle");
     			path0 = svg_element("path");
     			path1 = svg_element("path");
-    			attr_dev(small, "class", "svelte-1ufime");
-    			add_location(small, file$b, 361, 4, 5505);
-    			attr_dev(title, "class", "svelte-1ufime");
-    			add_location(title, file$b, 366, 12, 5739);
+    			attr_dev(small, "class", "svelte-ufo1rw");
+    			add_location(small, file$b, 361, 4, 5508);
+    			attr_dev(title, "class", "svelte-ufo1rw");
+    			add_location(title, file$b, 366, 12, 5742);
     			attr_dev(circle, "cx", "12.145");
     			attr_dev(circle, "cy", "3.892");
     			attr_dev(circle, "r", "0.96");
-    			attr_dev(circle, "class", "svelte-1ufime");
-    			add_location(circle, file$b, 367, 12, 5776);
+    			attr_dev(circle, "class", "svelte-ufo1rw");
+    			add_location(circle, file$b, 367, 12, 5779);
     			attr_dev(path0, "d", "M8,12c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S10.206,12,8,12zM8,6C6.897,6,6,6.897,6,8s0.897,2,2,2s2-0.897,2-2S9.103,6,8,6z");
-    			attr_dev(path0, "class", "svelte-1ufime");
-    			add_location(path0, file$b, 368, 12, 5831);
+    			attr_dev(path0, "class", "svelte-ufo1rw");
+    			add_location(path0, file$b, 368, 12, 5834);
     			attr_dev(path1, "d", "M12,16H4c-2.056,0-4-1.944-4-4V4c0-2.056,1.944-4,4-4h8c2.056,0,4,1.944,4,4v8C16,14.056,14.056,16,12,16zM4,2C3.065,2,2,3.065,2,4v8c0,0.953,1.047,2,2,2h8c0.935,0,2-1.065,2-2V4c0-0.935-1.065-2-2-2H4z");
-    			attr_dev(path1, "class", "svelte-1ufime");
-    			add_location(path1, file$b, 369, 12, 5984);
+    			attr_dev(path1, "class", "svelte-ufo1rw");
+    			add_location(path1, file$b, 369, 12, 5987);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "viewBox", "0 0 16 16");
-    			attr_dev(svg, "class", "svelte-1ufime");
-    			add_location(svg, file$b, 365, 10, 5666);
+    			attr_dev(svg, "class", "svelte-ufo1rw");
+    			add_location(svg, file$b, 365, 10, 5669);
     			attr_dev(a, "href", "https://www.instagram.com/noelia__requena/");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener");
-    			attr_dev(a, "class", "svelte-1ufime");
-    			add_location(a, file$b, 364, 8, 5571);
-    			attr_dev(li, "class", "svelte-1ufime");
-    			add_location(li, file$b, 363, 6, 5558);
-    			attr_dev(ul, "class", "svelte-1ufime");
-    			add_location(ul, file$b, 362, 4, 5547);
-    			attr_dev(aside, "class", "Links svelte-1ufime");
-    			add_location(aside, file$b, 360, 0, 5479);
+    			attr_dev(a, "class", "svelte-ufo1rw");
+    			add_location(a, file$b, 364, 8, 5574);
+    			attr_dev(li, "class", "svelte-ufo1rw");
+    			add_location(li, file$b, 363, 6, 5561);
+    			attr_dev(ul, "class", "svelte-ufo1rw");
+    			add_location(ul, file$b, 362, 4, 5550);
+    			attr_dev(aside, "class", "Links svelte-ufo1rw");
+    			add_location(aside, file$b, 360, 0, 5482);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6470,47 +6470,47 @@ var app = (function () {
     			attr_dev(circle0, "cx", "100");
     			attr_dev(circle0, "cy", "100");
     			attr_dev(circle0, "r", "50");
-    			attr_dev(circle0, "class", "svelte-1ok3slh");
-    			add_location(circle0, file$c, 369, 8, 5646);
+    			attr_dev(circle0, "class", "svelte-x63efa");
+    			add_location(circle0, file$c, 363, 8, 5554);
     			attr_dev(circle1, "cx", "62.5");
     			attr_dev(circle1, "cy", "100");
     			attr_dev(circle1, "r", "12.5");
-    			attr_dev(circle1, "class", "svelte-1ok3slh");
-    			add_location(circle1, file$c, 371, 8, 5691);
+    			attr_dev(circle1, "class", "svelte-x63efa");
+    			add_location(circle1, file$c, 365, 8, 5599);
     			attr_dev(circle2, "cx", "88");
     			attr_dev(circle2, "cy", "100");
     			attr_dev(circle2, "r", "12.5");
-    			attr_dev(circle2, "class", "svelte-1ok3slh");
-    			add_location(circle2, file$c, 372, 8, 5738);
+    			attr_dev(circle2, "class", "svelte-x63efa");
+    			add_location(circle2, file$c, 366, 8, 5646);
     			attr_dev(circle3, "cx", "112.5");
     			attr_dev(circle3, "cy", "100");
     			attr_dev(circle3, "r", "12.5");
-    			attr_dev(circle3, "class", "svelte-1ok3slh");
-    			add_location(circle3, file$c, 373, 8, 5783);
+    			attr_dev(circle3, "class", "svelte-x63efa");
+    			add_location(circle3, file$c, 367, 8, 5691);
     			attr_dev(circle4, "cx", "138");
     			attr_dev(circle4, "cy", "100");
     			attr_dev(circle4, "r", "12.5");
-    			attr_dev(circle4, "class", "svelte-1ok3slh");
-    			add_location(circle4, file$c, 374, 8, 5831);
+    			attr_dev(circle4, "class", "svelte-x63efa");
+    			add_location(circle4, file$c, 368, 8, 5739);
     			attr_dev(circle5, "cx", "75");
     			attr_dev(circle5, "cy", "100");
     			attr_dev(circle5, "r", "25");
-    			attr_dev(circle5, "class", "svelte-1ok3slh");
-    			add_location(circle5, file$c, 376, 8, 5886);
+    			attr_dev(circle5, "class", "svelte-x63efa");
+    			add_location(circle5, file$c, 370, 8, 5794);
     			attr_dev(circle6, "cx", "125");
     			attr_dev(circle6, "cy", "100");
     			attr_dev(circle6, "r", "25");
-    			attr_dev(circle6, "class", "svelte-1ok3slh");
-    			add_location(circle6, file$c, 377, 8, 5929);
+    			attr_dev(circle6, "class", "svelte-x63efa");
+    			add_location(circle6, file$c, 371, 8, 5837);
     			attr_dev(text_1, "x", "85");
     			attr_dev(text_1, "y", "230");
-    			attr_dev(text_1, "class", "svelte-1ok3slh");
-    			add_location(text_1, file$c, 379, 8, 5974);
+    			attr_dev(text_1, "class", "svelte-x63efa");
+    			add_location(text_1, file$c, 373, 8, 5882);
     			attr_dev(svg, "viewBox", "0 0 300 300");
-    			attr_dev(svg, "class", "svelte-1ok3slh");
-    			add_location(svg, file$c, 368, 4, 5610);
-    			attr_dev(div, "class", "Loading svelte-1ok3slh");
-    			add_location(div, file$c, 367, 0, 5584);
+    			attr_dev(svg, "class", "svelte-x63efa");
+    			add_location(svg, file$c, 362, 4, 5518);
+    			attr_dev(div, "class", "Loading svelte-x63efa");
+    			add_location(div, file$c, 361, 0, 5492);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6604,7 +6604,7 @@ var app = (function () {
     const { console: console_1$3 } = globals;
     const file$d = "src/App.svelte";
 
-    // (379:1) {:else}
+    // (373:1) {:else}
     function create_else_block$3(ctx) {
     	let loading_1;
     	let current;
@@ -6637,14 +6637,14 @@ var app = (function () {
     		block,
     		id: create_else_block$3.name,
     		type: "else",
-    		source: "(379:1) {:else}",
+    		source: "(373:1) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (372:1) {#if loaded}
+    // (366:1) {#if loaded}
     function create_if_block$5(ctx) {
     	let nav;
     	let t0;
@@ -6704,7 +6704,7 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(372:1) {#if loaded}",
+    		source: "(366:1) {#if loaded}",
     		ctx
     	});
 
@@ -6743,18 +6743,18 @@ var app = (function () {
     			if_block.c();
     			attr_dev(meta0, "property", "og:title");
     			attr_dev(meta0, "content", "Sergio Forés");
-    			attr_dev(meta0, "class", "svelte-opetsh");
-    			add_location(meta0, file$d, 364, 2, 5646);
+    			attr_dev(meta0, "class", "svelte-167t69m");
+    			add_location(meta0, file$d, 358, 2, 5554);
     			attr_dev(meta1, "property", "og:type");
     			attr_dev(meta1, "content", "website");
-    			attr_dev(meta1, "class", "svelte-opetsh");
-    			add_location(meta1, file$d, 365, 2, 5700);
+    			attr_dev(meta1, "class", "svelte-167t69m");
+    			add_location(meta1, file$d, 359, 2, 5608);
     			attr_dev(meta2, "property", "og:url");
     			attr_dev(meta2, "content", "sergiofores.es");
-    			attr_dev(meta2, "class", "svelte-opetsh");
-    			add_location(meta2, file$d, 366, 2, 5748);
-    			attr_dev(main, "class", "svelte-opetsh");
-    			add_location(main, file$d, 370, 0, 5852);
+    			attr_dev(meta2, "class", "svelte-167t69m");
+    			add_location(meta2, file$d, 360, 2, 5656);
+    			attr_dev(main, "class", "svelte-167t69m");
+    			add_location(main, file$d, 364, 0, 5760);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
