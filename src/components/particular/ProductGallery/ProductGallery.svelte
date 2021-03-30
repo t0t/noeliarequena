@@ -112,7 +112,7 @@
     margin-top: -50px;
     
     @include media(s1) {
-      margin-top: -216px;
+      margin-top: -221px;
     }
     @include media(s2) {
       padding: 0 $h4;

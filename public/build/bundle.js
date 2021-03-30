@@ -2180,20 +2180,20 @@ var app = (function () {
     			t4 = space();
     			p = element("p");
     			t5 = text(/*text*/ ctx[2]);
-    			attr_dev(br, "class", "svelte-1boudcv");
-    			add_location(br, file, 405, 16, 6636);
-    			attr_dev(h2, "class", "CoverSubTitle svelte-1boudcv");
-    			add_location(h2, file, 407, 12, 6668);
-    			attr_dev(span, "class", "svelte-1boudcv");
-    			add_location(span, file, 406, 8, 6649);
-    			attr_dev(h1, "class", "CoverTitle svelte-1boudcv");
-    			add_location(h1, file, 404, 4, 6596);
-    			attr_dev(p, "class", "CoverText svelte-1boudcv");
-    			add_location(p, file, 410, 4, 6742);
-    			attr_dev(header, "class", "Cover svelte-1boudcv");
+    			attr_dev(br, "class", "svelte-18q8dm4");
+    			add_location(br, file, 409, 16, 6683);
+    			attr_dev(h2, "class", "CoverSubTitle svelte-18q8dm4");
+    			add_location(h2, file, 411, 12, 6715);
+    			attr_dev(span, "class", "svelte-18q8dm4");
+    			add_location(span, file, 410, 8, 6696);
+    			attr_dev(h1, "class", "CoverTitle svelte-18q8dm4");
+    			add_location(h1, file, 408, 4, 6643);
+    			attr_dev(p, "class", "CoverText svelte-18q8dm4");
+    			add_location(p, file, 414, 4, 6789);
+    			attr_dev(header, "class", "Cover svelte-18q8dm4");
     			set_style(header, "background-image", "url(" + /*img*/ ctx[3] + ")");
     			set_style(header, "opacity", 1 - Math.max(0, /*scrollY*/ ctx[6] / (/*innerHeight*/ ctx[5] / 2)));
-    			add_location(header, file, 401, 0, 6435);
+    			add_location(header, file, 405, 0, 6482);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5115,15 +5115,15 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = space();
     			t6 = text(t6_value);
-    			attr_dev(nav, "class", "svelte-1vahneu");
+    			attr_dev(nav, "class", "svelte-1g8ea3w");
     			add_location(nav, file$7, 30, 2, 642);
     			if (img.src !== (img_src_value = /*selected*/ ctx[2])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = productos[/*currentIdx*/ ctx[5]].description);
-    			attr_dev(img, "class", "svelte-1vahneu");
+    			attr_dev(img, "class", "svelte-1g8ea3w");
     			add_location(img, file$7, 45, 6, 1134);
-    			attr_dev(figcaption, "class", "svelte-1vahneu");
+    			attr_dev(figcaption, "class", "svelte-1g8ea3w");
     			add_location(figcaption, file$7, 47, 6, 1270);
-    			attr_dev(figure, "class", "svelte-1vahneu");
+    			attr_dev(figure, "class", "svelte-1g8ea3w");
     			add_location(figure, file$7, 44, 4, 1119);
     		},
     		m: function mount(target, anchor) {
@@ -5216,7 +5216,7 @@ var app = (function () {
     			attr_dev(div, "role", "img");
     			attr_dev(div, "aria-label", /*d*/ ctx[13].title);
     			attr_dev(div, "data-selected", div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[13].imagen);
-    			attr_dev(div, "class", "image svelte-1vahneu");
+    			attr_dev(div, "class", "image svelte-1g8ea3w");
     			set_style(div, "background-image", "url(" + /*d*/ ctx[13].imagen + ")");
     			toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[13].imagen);
     			add_location(div, file$7, 56, 6, 1524);
@@ -5318,20 +5318,20 @@ var app = (function () {
     			t8 = text("—");
     			t9 = text(/*author_review*/ ctx[1]);
     			attr_dev(div0, "role", "group");
-    			attr_dev(div0, "class", "gallery svelte-1vahneu");
+    			attr_dev(div0, "class", "gallery svelte-1g8ea3w");
     			attr_dev(div0, "tabindex", 0);
     			add_location(div0, file$7, 54, 2, 1413);
-    			attr_dev(div1, "class", "image-viewer svelte-1vahneu");
+    			attr_dev(div1, "class", "image-viewer svelte-1g8ea3w");
     			add_location(div1, file$7, 20, 0, 495);
-    			attr_dev(h2, "class", "svelte-1vahneu");
+    			attr_dev(h2, "class", "svelte-1g8ea3w");
     			add_location(h2, file$7, 70, 2, 1856);
-    			attr_dev(p0, "class", "svelte-1vahneu");
+    			attr_dev(p0, "class", "svelte-1g8ea3w");
     			add_location(p0, file$7, 71, 2, 1876);
-    			attr_dev(p1, "class", "svelte-1vahneu");
+    			attr_dev(p1, "class", "svelte-1g8ea3w");
     			add_location(p1, file$7, 86, 2, 2834);
-    			attr_dev(p2, "class", "svelte-1vahneu");
+    			attr_dev(p2, "class", "svelte-1g8ea3w");
     			add_location(p2, file$7, 93, 2, 3651);
-    			attr_dev(section, "class", "LayoutObras svelte-1vahneu");
+    			attr_dev(section, "class", "LayoutObras svelte-1g8ea3w");
     			add_location(section, file$7, 69, 0, 1824);
     		},
     		l: function claim(nodes) {
@@ -6338,35 +6338,35 @@ var app = (function () {
     			circle = svg_element("circle");
     			path0 = svg_element("path");
     			path1 = svg_element("path");
-    			attr_dev(small, "class", "svelte-ufo1rw");
+    			attr_dev(small, "class", "svelte-1b9t2pz");
     			add_location(small, file$b, 361, 4, 5508);
-    			attr_dev(title, "class", "svelte-ufo1rw");
+    			attr_dev(title, "class", "svelte-1b9t2pz");
     			add_location(title, file$b, 366, 12, 5742);
     			attr_dev(circle, "cx", "12.145");
     			attr_dev(circle, "cy", "3.892");
     			attr_dev(circle, "r", "0.96");
-    			attr_dev(circle, "class", "svelte-ufo1rw");
+    			attr_dev(circle, "class", "svelte-1b9t2pz");
     			add_location(circle, file$b, 367, 12, 5779);
     			attr_dev(path0, "d", "M8,12c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S10.206,12,8,12zM8,6C6.897,6,6,6.897,6,8s0.897,2,2,2s2-0.897,2-2S9.103,6,8,6z");
-    			attr_dev(path0, "class", "svelte-ufo1rw");
+    			attr_dev(path0, "class", "svelte-1b9t2pz");
     			add_location(path0, file$b, 368, 12, 5834);
     			attr_dev(path1, "d", "M12,16H4c-2.056,0-4-1.944-4-4V4c0-2.056,1.944-4,4-4h8c2.056,0,4,1.944,4,4v8C16,14.056,14.056,16,12,16zM4,2C3.065,2,2,3.065,2,4v8c0,0.953,1.047,2,2,2h8c0.935,0,2-1.065,2-2V4c0-0.935-1.065-2-2-2H4z");
-    			attr_dev(path1, "class", "svelte-ufo1rw");
+    			attr_dev(path1, "class", "svelte-1b9t2pz");
     			add_location(path1, file$b, 369, 12, 5987);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "viewBox", "0 0 16 16");
-    			attr_dev(svg, "class", "svelte-ufo1rw");
+    			attr_dev(svg, "class", "svelte-1b9t2pz");
     			add_location(svg, file$b, 365, 10, 5669);
     			attr_dev(a, "href", "https://www.instagram.com/noelia__requena/");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener");
-    			attr_dev(a, "class", "svelte-ufo1rw");
+    			attr_dev(a, "class", "svelte-1b9t2pz");
     			add_location(a, file$b, 364, 8, 5574);
-    			attr_dev(li, "class", "svelte-ufo1rw");
+    			attr_dev(li, "class", "svelte-1b9t2pz");
     			add_location(li, file$b, 363, 6, 5561);
-    			attr_dev(ul, "class", "svelte-ufo1rw");
+    			attr_dev(ul, "class", "svelte-1b9t2pz");
     			add_location(ul, file$b, 362, 4, 5550);
-    			attr_dev(aside, "class", "Links svelte-ufo1rw");
+    			attr_dev(aside, "class", "Links svelte-1b9t2pz");
     			add_location(aside, file$b, 360, 0, 5482);
     		},
     		l: function claim(nodes) {

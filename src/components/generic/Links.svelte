@@ -3,7 +3,7 @@
 
   .Links {
     padding-top: 0;
-    padding-bottom: $h2;
+    padding-bottom: $h3;
     background-color: $grey_5;
     display: grid;
     justify-items: center;

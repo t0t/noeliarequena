@@ -17,7 +17,6 @@
         height: 19vh;
         color: $white;
         background-size: cover;
-        background-attachment: fixed;
         background-position: top center;
         position: relative;
         background-color: $grey_5;
@@ -32,6 +31,9 @@
         @include media(s1) { 
             padding-top: 35px;
             height: 40vh;
+        }
+        @include media(s2) { 
+            background-attachment: fixed;
         }
         /* Tablets */
         @include media(s2) {
