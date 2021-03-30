@@ -7,7 +7,7 @@
 <nav>
     <!-- <button on:click={() => push('/artwork')}>Go somewhere</button> -->
     <a href="/artwork" use:link use:active>
-        <h2>Obra plástica 2020-2021</h2>
+        <h2>Obra plástica</h2>
         <p>Artwork</p>
     </a>
     <a href="/about" use:link use:active>
@@ -20,26 +20,40 @@
     @use "../../../sass/_index.scss"as *;
 
     nav {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax($h8, 1fr));
-        gap: $h4;
+        padding: $h1 0;
         justify-content: center;
         align-content: center;
-        background-color: $highlight;
         width: 100%;
-        padding: $h4;
         margin-left: auto;
         margin-right: auto;
+        background-color: $white;
+        
+        @include media(s1) {
+            background-color: $highlight;
+            padding: $h4;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax($h8, 1fr));
+            gap: $h4;
+        }
         
         a {
-            padding: $h4;
+            padding: 0;
             text-align: center;
             display: block;
-            border: 1px dashed black;
+            border: none;
             width: 100%;
             color: $grey_5;
+            &:nth-child(1) {
+                margin-bottom: $h0;
+            }
             p {
                 text-align: center;
+                margin-bottom: 0;
+                color: $grey_1;
+            }
+            @include media(s1) {
+                padding: $h4;
+                border: 1px dashed black;
             }
         }
     }

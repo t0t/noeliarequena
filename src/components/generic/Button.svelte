@@ -86,8 +86,11 @@
         }
     }
     .UnicodeIcon {
-        color: $highlight;
+        color: $white;
         border: none;
+        @include media(s2) {
+            color: $highlight;
+        }
         @include type-setting(2);
         &:hover {
             color: $grey_0;

@@ -104,8 +104,12 @@
     position: relative;
     padding: 0 $h2;
     width: 100%;
-    margin-top: -$h5;
+    margin-top: -50px;
+    
     @include media(s1) {
+      margin-top: -250px;
+    }
+    @include media(s2) {
       padding: 0 $h4;
       margin-top: 0;
       display: flex;
@@ -123,6 +127,16 @@
     height: 70px;
     background: center / cover no-repeat;
   }
+  figure {
+    height: 470px;
+    overflow-y: auto;
+    @include media(s1) {
+      height: 490px;
+    }
+    @include media(s2) {
+      background-color: red;
+    }
+  }
   figcaption {
     margin-bottom: $h2;
     margin-top: $h1;
@@ -130,23 +144,32 @@
 
   .gallery {
     display: grid;
-    gap: $h1;
     background-color: $grey_5;
-    grid-template-columns: repeat(auto-fit, 92px );
-    padding: $h2;
+    grid-template-columns: repeat(4, 73px );
+    height: $h7;
+    overflow: auto;
+    gap: $h0;
+    
     @include media(s1) {
+      grid-template-columns: repeat(5, 73px );
+    }
+    @include media(s2) {
+      gap: $h1;
+      padding: $h2;
+      overflow-y: auto;
       grid-template-columns: repeat(auto-fit, 92px );
       width: 100%;
       height: $h7;
-      overflow-y: auto;
       justify-content: space-evenly;
     }
   }
 
   .gallery > .image {
-    width: 100%;
-    height: 100px;
-    background-color: #fff;
+    width: 60px;
+    @include media(s1) {
+      width: 100%;
+      height: 100px;
+    }
   }
 
   nav {
@@ -154,9 +177,16 @@
     justify-content: space-between;
     width: $h5;
     padding-top: 0;
+    position: absolute;
+    top: -115px;
+    right: 42px;
+    color: white;
 
     @include media(s1) {
-      position: absolute;
+      top: -120px;
+      right: 38px;
+    }
+    @include media(s2) {
       top: $h7 - $h1;
       right: 12.5%;
     }

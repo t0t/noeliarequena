@@ -78,7 +78,7 @@
     }
 
     .Slide {
-        height: 600px;
+        height: 450px;
         position: relative;
         display: grid;
         place-content: center;
@@ -86,6 +86,10 @@
         background-position: center;
         mask: linear-gradient(to right,transparent, black 40%,black 70%,transparent);
         -webkit-mask: linear-gradient(to right,transparent, black 40%,black 70%,transparent);
+        
+        @include media(s1) {
+            height: 600px;
+        }
 
         .Caption {
             color: $grey_0;
