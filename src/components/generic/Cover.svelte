@@ -3,6 +3,8 @@
     export let subtitle = ""
     export let text = ""
     export let img = ""
+    export let is_home = false
+
     let innerWidth, innerHeight, scrollY, alphascroll;
 
     // $: if ( scrollY < (innerHeight / 2) ) {
@@ -12,9 +14,9 @@
 
 <style lang="scss">
     @use "../../sass/_index.scss" as *;
-
+    
     .Cover {
-        height: 19vh;
+        height: 100px;
         color: $white;
         background-size: cover;
         background-position: top center;
@@ -24,13 +26,12 @@
         flex-direction: column;
         align-items: start;
         background-repeat: no-repeat;
-        padding-top: 40px;
+        /* padding-top: 40px; */
         padding-left: 90px;
+        padding-top: 35px;
         
-        /* Mobiles normales */
         @include media(s1) { 
-            padding-top: 35px;
-            height: 40vh;
+            /* height: 40vh; */
         }
         @include media(s2) { 
             background-attachment: fixed;
@@ -76,13 +77,21 @@
             }
         }
     }
+    .is_home {
+        height: 27vh;
+        @include media(s2) {
+            height: 100vh;
+        }
+    }
 </style>
 
 <svelte:window bind:innerWidth bind:innerHeight bind:scrollY />
 
-<header class="Cover" style="
-                    background-image: url({img});
-                    opacity: {1 - Math.max(0, scrollY / (innerHeight/1.5))};">
+<header 
+    class="Cover"
+    class:is_home
+    style="background-image: url({img});
+    opacity: {1 - Math.max(0, scrollY / (innerHeight/1.5))};">
     <h1 class="CoverTitle">
         {title} <br>
         <span>

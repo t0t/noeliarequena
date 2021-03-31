@@ -36,8 +36,11 @@
             justify-content: center;
             background-color: $highlight;
             padding: $h4;
-            grid-template-columns: repeat(auto-fill, minmax($h8, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax($h7, 1fr));
             gap: $h4;
+        }
+        @include media(s3) {
+            grid-template-columns: repeat(auto-fill, minmax($h8, 1fr));
         }
         
         a {
@@ -47,6 +50,7 @@
             border: none;
             width: 100%;
             color: $grey_5;
+
             &:nth-child(1) {
                 margin-bottom: $h0;
             }

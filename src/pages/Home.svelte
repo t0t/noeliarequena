@@ -9,6 +9,7 @@
   import BannerTexto from "../components/generic/BannerTexto.svelte";
   import Button from "../components/generic/Button.svelte";
   export let current_page_name = "home";
+  let is_home = true;
 </script>
 
 <svelte:head>
@@ -17,7 +18,7 @@
 
 <Layout id={current_page_name}>
 
-  <Cover title={data[0].title} subtitle={data[0].subtitle} text={data[0].text} img={data[0].img} />
+  <Cover {is_home} title={data[0].title} subtitle={data[0].subtitle} text={data[0].text} img={data[0].img} />
 
   <NavSecondary />
 

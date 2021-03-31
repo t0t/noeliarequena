@@ -12,6 +12,8 @@
     duration: () => 2000,
     fallback: fade,
   });
+  let idioma_switch = false;
+
 
   $: currentIdx = selected
     ? productos.findIndex((d) => d.imagen === selected)
@@ -68,7 +70,15 @@
 </div>
 
 <section class="LayoutObras">
-  <h2>{titulo}</h2>
+  <div class="idioma_switch">
+    <button on:click={()=>{
+        idioma_switch = !idioma_switch;
+        console.log(idioma_switch)
+    }}>{#if idioma_switch}English{:else}Español{/if}</button>
+</div>
+
+<h2>{titulo}</h2>
+{#if idioma_switch}
   <p>
     "Un cuerpo en el espacio. Un temblor en el tiempo. Un proceso de luz y
     sombra. El cuerpo se desvela deconstruyéndose, desmoronándose. La
@@ -91,6 +101,11 @@
     el exterior. La tela recubre la forma como a una gasa el molde. La piel como impasto.
     La vida como un continuo instante de incertidumbre. ¿Somos libres o estamos encerrados, confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación, de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia se desnuda como una pregunta en el vacío, derramándose sobre el aire de la mañana, reflejándose en la luz que entra por la ventana. Y en este marco, en este espacio, celebramos el misterio de la vida."
   </p>
+  {:else}
+  <p>"A body in space. A tremor in time. A process of light and shade. Once revealed, the body disintegrates and is deconstructed. A spontaneous crystallisation of dynamic contrasts. A chiaroscuro of fragility and power, cold and heat. The body is a temple of tensions; hermetic, open and shut at the same time, existing only in the logic of membranes. Light that passes through, reflected like the nervous shade of something more. The ornament of the oils captures it like an insect in amber. Frozen but at the same time fluttering. An encrypted longing, like a puzzle in multiple dimensions. The precise and graceful line (a calligraphy of mysteries), unravelling the inexhaustible mystery of beauty. Ariadne’s thread entangling. A dark profession. The beauty of horror and the horror of beauty. We need the contrast. The balance in the contradiction. Always the light and the shade, the chiaroscuro...
+  </p>
+  <p>As in the Japanese technique, kintsugi, the lacquer repairs the cracks in the broken ceramic, which is the body. There is a beauty in the crack, like a latent sign of its interior life: vortex of a wound made manifest on the outside. Cloth covers the shape like  a gauze a mould. Skin as impasto. Life as a continuous moment of uncertainty. Are we free or are we confined within the coordinates of chance? This is the mystery of a body in a room, a body inhabiting a space, of a body being space. Existence is naked like a question in the void, spilling over the morning air, reflected in the light coming through the window. In this frame, in this space we celebrate the mystery of life."</p>
+  {/if}
   <p>—{author_review}</p>
 </section>
 
@@ -107,39 +122,30 @@
   }
   .image-viewer {
     position: relative;
-    padding: 0 $h2;
+    padding: 0;
     width: 100%;
-    margin-top: -50px;
-    
+    display: grid;
+    grid-template-rows: 1.5fr 0.5fr;
+    grid-template-areas:
+      "f g g g"
+      "f g g g";
+    /* justify-content: stretch; */
     @include media(s1) {
-      margin-top: -110px;
-      display: grid;
-      /* align-content: center; */
-      /* background-color: yellow; */
-      grid-template-rows: 0.7fr 0.3fr;
-      grid-template-areas: 
-      "f f f f f"
-      "g g g g g";
     }
     @include media(s2) {
-      /* padding: 0 $h4; */
-      /* margin-top: 0; */
-      display: grid;
-      grid-template-columns: repeat(autofill, minmax(200px, 1fr));
-      background-color: red;
     }
 
     img {
-      max-width: 100%;
+      width: 100%;
+      padding-right: $h0;
 
       @include media(s2) {
-        width: $h9;
         margin-right: $h4;
       }
+      @include media(s3) {}
     }
   }
   .image {
-    /* border-radius: 50%; */
     width: 50%;
     height: 70px;
     background: center / cover no-repeat;
@@ -149,85 +155,91 @@
     }
   }
   figure {
-    /* height: 470px; */
-    margin-bottom: $h1;
-
     overflow-x: hidden;
     overflow-y: auto;
 
     @include media(s1) {
-      max-height: 75vh;
-      /* background-color: blue; */
       grid-area: f;
-      align-self: end;
-    }
-    @include media(s3) {
-      height: 800px;
-      /* background-color: #fff; */
-    }
-  }
-  figcaption {
-    margin-bottom: $h2;
-    margin-top: $h1;
-  }
-
-  .gallery {
-    display: grid;
-    /* background-color: $grey_5; */
-    grid-template-columns: repeat(4, 73px );
-    height: 200px;
-    overflow-x: hidden;
-    gap: $h0;
-    /* mask: linear-gradient(to top,transparent, black 40%,black 70%,transparent);
-    -webkit-mask: linear-gradient(to top,transparent, black 40%,black 70%,transparent); */
-    
-    @include media(s1) {
-      grid-area: g;
       align-self: start;
     }
-    @include media(s2) {
-      gap: $h1;
-      padding: $h2;
-      overflow-y: auto;
-      grid-template-columns: repeat(auto-fit, 92px );
-      width: 500px;
-      height: 50vh;
-      justify-content: space-evenly;
-    }
+    /* @include media(s3) {
+      height: 800px;
+    } */
+  }
+  figcaption {
+    max-width: 90%;
+    margin-top: $h1;
+    margin-left: $h1;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-area: g;
+    width: 100vw;
+    grid-template-columns: repeat(auto-fill, minmax(34px, 90px));
+    gap: $h0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    mask: linear-gradient(to top,transparent, black 40%,black 70%,transparent);
+    -webkit-mask: linear-gradient(to top,transparent, black 40%,black 70%,transparent);
+    
     @include media(s3) {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 73px) );
+      gap: $h1;
+      padding: $h1;
     }
   }
-
-  .gallery > .image {
-    width: 60px;
-    @include media(s1) {
+  figure + .gallery {
+    grid-template-columns: repeat(1, 73px );
+    width: inherit;
+    height: 50vh;
+    @include media(s2) {
       width: 100%;
+      grid-template-columns: repeat(3, 73px );  
+    }
+    @include media(s3) {
+      grid-template-columns: repeat(4, 100px); 
+    }
+  }
+  .gallery > .image {
+    width: 100%;
+    @include media(s1) {
       height: 100px;
     }
   }
 
   nav {
-    display: none;
+    display: flex;
     justify-content: space-between;
     width: $h5;
     padding-top: 0;
     position: absolute;
     top: -115px;
-    right: 42px;
+    right: $h2;
     color: white;
 
-    @include media(s1) {
-      top: -120px;
-      right: 38px;
-    }
     @include media(s2) {
-      display: flex;
-      top: 28.942rem;
-      right: 62.5%;
+      top: 21.942rem;
     }
   }
   .active {
     border: $h0 solid $highlight;
   }
+  .idioma_switch {
+        position: relative;
+        margin-bottom: $h1;
+        display: flex;
+        justify-items: flex-end;
+        button:nth-child(1) {
+            position: absolute;
+            right: 0;
+            top: 0;
+            border: none;
+            background-color: transparent;
+            color: $highlight;
+            &:hover {
+                color: $grey_2;
+                cursor: pointer;
+            }
+        }
+    }
 </style>

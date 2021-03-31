@@ -86,7 +86,7 @@
         background-position: center;
         
         @include media(s1) {
-            height: 420px;
+            height: $h7;
         }
         @include media(s2) {
             height: 600px;

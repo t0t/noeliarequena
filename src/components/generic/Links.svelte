@@ -2,7 +2,7 @@
   @use "../../sass/_index.scss" as *;
 
   .Links {
-    padding-top: $h0;
+    padding-top: $h3;
     padding-bottom: $h3;
     background-color: $grey_5;
     display: grid;
