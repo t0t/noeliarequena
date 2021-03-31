@@ -55,8 +55,6 @@
 
         .BannerMedia {
             grid-area: media;
-            /* display: grid; */
-            /* place-content: center; */
         }
 
         .SectionHalfText {

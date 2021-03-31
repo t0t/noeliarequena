@@ -17,7 +17,7 @@
     
     .Cover {
         height: 100px;
-        color: $white;
+        color: $highlight;
         background-size: cover;
         background-position: top center;
         position: relative;
@@ -30,13 +30,10 @@
         padding-left: 90px;
         padding-top: 35px;
         
-        @include media(s1) { 
-            /* height: 40vh; */
-        }
         @include media(s2) { 
             background-attachment: fixed;
         }
-        /* Tablets */
+
         @include media(s2) {
             padding: $h3;
             justify-content: center;

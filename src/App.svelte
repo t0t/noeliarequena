@@ -30,6 +30,7 @@
 		box-sizing: border-box;
 		position: relative;
 		width: 100%;
+		overflow-x: hidden;
 	}
 	:global(html) {
 		font-size: $base_font_size;
