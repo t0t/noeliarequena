@@ -5115,15 +5115,15 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = space();
     			t6 = text(t6_value);
-    			attr_dev(nav, "class", "svelte-kxta0j");
+    			attr_dev(nav, "class", "svelte-bhtpsh");
     			add_location(nav, file$7, 30, 2, 642);
     			if (img.src !== (img_src_value = /*selected*/ ctx[2])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = productos[/*currentIdx*/ ctx[5]].description);
-    			attr_dev(img, "class", "svelte-kxta0j");
+    			attr_dev(img, "class", "svelte-bhtpsh");
     			add_location(img, file$7, 45, 6, 1134);
-    			attr_dev(figcaption, "class", "svelte-kxta0j");
+    			attr_dev(figcaption, "class", "svelte-bhtpsh");
     			add_location(figcaption, file$7, 47, 6, 1270);
-    			attr_dev(figure, "class", "svelte-kxta0j");
+    			attr_dev(figure, "class", "svelte-bhtpsh");
     			add_location(figure, file$7, 44, 4, 1119);
     		},
     		m: function mount(target, anchor) {
@@ -5216,7 +5216,7 @@ var app = (function () {
     			attr_dev(div, "role", "img");
     			attr_dev(div, "aria-label", /*d*/ ctx[13].title);
     			attr_dev(div, "data-selected", div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[13].imagen);
-    			attr_dev(div, "class", "image svelte-kxta0j");
+    			attr_dev(div, "class", "image svelte-bhtpsh");
     			set_style(div, "background-image", "url(" + /*d*/ ctx[13].imagen + ")");
     			toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[13].imagen);
     			add_location(div, file$7, 56, 6, 1524);
@@ -5318,20 +5318,20 @@ var app = (function () {
     			t8 = text("—");
     			t9 = text(/*author_review*/ ctx[1]);
     			attr_dev(div0, "role", "group");
-    			attr_dev(div0, "class", "gallery svelte-kxta0j");
+    			attr_dev(div0, "class", "gallery svelte-bhtpsh");
     			attr_dev(div0, "tabindex", 0);
     			add_location(div0, file$7, 54, 2, 1413);
-    			attr_dev(div1, "class", "image-viewer svelte-kxta0j");
+    			attr_dev(div1, "class", "image-viewer svelte-bhtpsh");
     			add_location(div1, file$7, 20, 0, 495);
-    			attr_dev(h2, "class", "svelte-kxta0j");
+    			attr_dev(h2, "class", "svelte-bhtpsh");
     			add_location(h2, file$7, 70, 2, 1856);
-    			attr_dev(p0, "class", "svelte-kxta0j");
+    			attr_dev(p0, "class", "svelte-bhtpsh");
     			add_location(p0, file$7, 71, 2, 1876);
-    			attr_dev(p1, "class", "svelte-kxta0j");
+    			attr_dev(p1, "class", "svelte-bhtpsh");
     			add_location(p1, file$7, 86, 2, 2834);
-    			attr_dev(p2, "class", "svelte-kxta0j");
+    			attr_dev(p2, "class", "svelte-bhtpsh");
     			add_location(p2, file$7, 93, 2, 3651);
-    			attr_dev(section, "class", "LayoutObras svelte-kxta0j");
+    			attr_dev(section, "class", "LayoutObras svelte-bhtpsh");
     			add_location(section, file$7, 69, 0, 1824);
     		},
     		l: function claim(nodes) {

@@ -112,13 +112,23 @@
     margin-top: -50px;
     
     @include media(s1) {
-      margin-top: -200px;
+      margin-top: -110px;
+      display: grid;
+      /* align-content: center; */
+      /* background-color: yellow; */
+      grid-template-rows: 0.7fr 0.3fr;
+      grid-template-areas: 
+      "f f f f f"
+      "g g g g g";
     }
     @include media(s2) {
-      padding: 0 $h4;
-      margin-top: 0;
-      display: flex;
+      /* padding: 0 $h4; */
+      /* margin-top: 0; */
+      display: grid;
+      grid-template-columns: repeat(autofill, minmax(200px, 1fr));
+      background-color: red;
     }
+
     img {
       max-width: 100%;
 
@@ -139,13 +149,21 @@
     }
   }
   figure {
-    height: 470px;
+    /* height: 470px; */
     margin-bottom: $h1;
 
     overflow-x: hidden;
     overflow-y: auto;
+
     @include media(s1) {
-      height: 490px;
+      max-height: 75vh;
+      /* background-color: blue; */
+      grid-area: f;
+      align-self: end;
+    }
+    @include media(s3) {
+      height: 800px;
+      /* background-color: #fff; */
     }
   }
   figcaption {
@@ -164,7 +182,8 @@
     -webkit-mask: linear-gradient(to top,transparent, black 40%,black 70%,transparent); */
     
     @include media(s1) {
-      grid-template-columns: repeat(auto-fill, 73px );
+      grid-area: g;
+      align-self: start;
     }
     @include media(s2) {
       gap: $h1;
@@ -189,7 +208,7 @@
   }
 
   nav {
-    display: flex;
+    display: none;
     justify-content: space-between;
     width: $h5;
     padding-top: 0;
@@ -203,8 +222,9 @@
       right: 38px;
     }
     @include media(s2) {
-      top: $h7 - $h1;
-      right: 12.5%;
+      display: flex;
+      top: 28.942rem;
+      right: 62.5%;
     }
   }
   .active {
