@@ -24,12 +24,11 @@
 
   .LayoutObras {
     padding: $h2;
-    @include media(s1) {
-    }
     @include media(s2) {
       padding: $h4;
     }
   }
+
   .image-viewer {
     position: relative;
     padding: 0;
@@ -45,6 +44,7 @@
       }
     }
   }
+
   .image {
     width: 50%;
     height: 70px;
@@ -97,7 +97,7 @@
     }
     @include media(s3) {
       height: 75vh;
-      justify-content: right;
+      justify-content: center;
       grid-template-columns: repeat(3, 100px);
     }
   }
@@ -122,7 +122,7 @@
       top: 21.942rem;
     }
     @include media(s3) {
-      justify-self: end;
+      justify-self: center;
       position: unset;
     }
   }

@@ -16,6 +16,12 @@
   <title>Noelia Requena - {current_page_name}</title>
 </svelte:head>
 
+<!-- {#if is_home}
+  is home
+{:else}
+  no es home
+{/if} -->
+
 <Layout id={current_page_name}>
 
   <Cover {is_home} title={data[0].title} subtitle={data[0].subtitle} text={data[0].text} img={data[0].img} />

@@ -2180,21 +2180,25 @@ var app = (function () {
     			t4 = space();
     			p = element("p");
     			t5 = text(/*text*/ ctx[2]);
-    			attr_dev(br, "class", "svelte-grt7s1");
-    			add_location(br, file, 412, 16, 6658);
-    			attr_dev(h2, "class", "CoverSubTitle svelte-grt7s1");
-    			add_location(h2, file, 414, 12, 6690);
-    			attr_dev(span, "class", "svelte-grt7s1");
-    			add_location(span, file, 413, 8, 6671);
-    			attr_dev(h1, "class", "CoverTitle svelte-grt7s1");
-    			add_location(h1, file, 411, 4, 6618);
-    			attr_dev(p, "class", "CoverText svelte-grt7s1");
-    			add_location(p, file, 417, 4, 6764);
-    			attr_dev(header, "class", "Cover svelte-grt7s1");
-    			set_style(header, "background-image", "url(" + /*img*/ ctx[3] + ")");
-    			set_style(header, "opacity", 1 - Math.max(0, /*scrollY*/ ctx[7] / (/*innerHeight*/ ctx[6] / 1.5)));
+    			attr_dev(br, "class", "svelte-7grur6");
+    			add_location(br, file, 415, 16, 6747);
+    			attr_dev(h2, "class", "CoverSubTitle svelte-7grur6");
+    			add_location(h2, file, 417, 12, 6779);
+    			attr_dev(span, "class", "svelte-7grur6");
+    			add_location(span, file, 416, 8, 6760);
+    			attr_dev(h1, "class", "CoverTitle svelte-7grur6");
+    			add_location(h1, file, 414, 4, 6707);
+    			attr_dev(p, "class", "CoverText svelte-7grur6");
+    			add_location(p, file, 420, 4, 6853);
+    			attr_dev(header, "class", "Cover svelte-7grur6");
+    			set_style(header, "opacity", 1 - Math.max(0, /*y*/ ctx[7] / (/*innerHeight*/ ctx[6] / 1.5)));
+
+    			set_style(header, "background-image", "url( " + (/*innerWidth*/ ctx[5] > 769 || /*is_home*/ ctx[4]
+    			? /*img*/ ctx[3]
+    			: "") + ")\n    ");
+
     			toggle_class(header, "is_home", /*is_home*/ ctx[4]);
-    			add_location(header, file, 406, 0, 6465);
+    			add_location(header, file, 406, 0, 6511);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2228,10 +2232,10 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*scrollY*/ 128 && !scrolling) {
+    			if (dirty & /*y*/ 128 && !scrolling) {
     				scrolling = true;
     				clearTimeout(scrolling_timeout);
-    				scrollTo(window.pageXOffset, /*scrollY*/ ctx[7]);
+    				scrollTo(window.pageXOffset, /*y*/ ctx[7]);
     				scrolling_timeout = setTimeout(clear_scrolling, 100);
     			}
 
@@ -2239,12 +2243,14 @@ var app = (function () {
     			if (dirty & /*subtitle*/ 2) set_data_dev(t3, /*subtitle*/ ctx[1]);
     			if (dirty & /*text*/ 4) set_data_dev(t5, /*text*/ ctx[2]);
 
-    			if (dirty & /*img*/ 8) {
-    				set_style(header, "background-image", "url(" + /*img*/ ctx[3] + ")");
+    			if (dirty & /*y, innerHeight*/ 192) {
+    				set_style(header, "opacity", 1 - Math.max(0, /*y*/ ctx[7] / (/*innerHeight*/ ctx[6] / 1.5)));
     			}
 
-    			if (dirty & /*scrollY, innerHeight*/ 192) {
-    				set_style(header, "opacity", 1 - Math.max(0, /*scrollY*/ ctx[7] / (/*innerHeight*/ ctx[6] / 1.5)));
+    			if (dirty & /*innerWidth, is_home, img*/ 56) {
+    				set_style(header, "background-image", "url( " + (/*innerWidth*/ ctx[5] > 769 || /*is_home*/ ctx[4]
+    				? /*img*/ ctx[3]
+    				: "") + ")\n    ");
     			}
 
     			if (dirty & /*is_home*/ 16) {
@@ -2279,7 +2285,7 @@ var app = (function () {
     	let { text = "" } = $$props;
     	let { img = "" } = $$props;
     	let { is_home = false } = $$props;
-    	let innerWidth, innerHeight, scrollY, alphascroll;
+    	let innerWidth, innerHeight, y;
     	const writable_props = ["title", "subtitle", "text", "img", "is_home"];
 
     	Object.keys($$props).forEach(key => {
@@ -2292,7 +2298,7 @@ var app = (function () {
     	}
 
     	function onwindowscroll() {
-    		$$invalidate(7, scrollY = window.pageYOffset);
+    		$$invalidate(7, y = window.pageYOffset);
     	}
 
     	$$self.$$set = $$props => {
@@ -2311,8 +2317,7 @@ var app = (function () {
     		is_home,
     		innerWidth,
     		innerHeight,
-    		scrollY,
-    		alphascroll
+    		y
     	});
 
     	$$self.$inject_state = $$props => {
@@ -2323,8 +2328,7 @@ var app = (function () {
     		if ("is_home" in $$props) $$invalidate(4, is_home = $$props.is_home);
     		if ("innerWidth" in $$props) $$invalidate(5, innerWidth = $$props.innerWidth);
     		if ("innerHeight" in $$props) $$invalidate(6, innerHeight = $$props.innerHeight);
-    		if ("scrollY" in $$props) $$invalidate(7, scrollY = $$props.scrollY);
-    		if ("alphascroll" in $$props) alphascroll = $$props.alphascroll;
+    		if ("y" in $$props) $$invalidate(7, y = $$props.y);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -2339,7 +2343,7 @@ var app = (function () {
     		is_home,
     		innerWidth,
     		innerHeight,
-    		scrollY,
+    		y,
     		onwindowresize,
     		onwindowscroll
     	];
@@ -4142,7 +4146,7 @@ var app = (function () {
 
     /* src/pages/Home.svelte generated by Svelte v3.32.1 */
 
-    // (19:0) <Layout id={current_page_name}>
+    // (25:0) <Layout id={current_page_name}>
     function create_default_slot(ctx) {
     	let cover;
     	let t0;
@@ -4208,7 +4212,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(19:0) <Layout id={current_page_name}>",
+    		source: "(25:0) <Layout id={current_page_name}>",
     		ctx
     	});
 
@@ -5221,16 +5225,16 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = space();
     			t6 = text(t6_value);
-    			attr_dev(nav, "class", "svelte-b17cl4");
-    			add_location(nav, file$7, 494, 4, 7765);
+    			attr_dev(nav, "class", "svelte-1gerkg5");
+    			add_location(nav, file$7, 494, 4, 7769);
     			if (img.src !== (img_src_value = /*selected*/ ctx[2])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = productos[/*currentIdx*/ ctx[6]].description);
-    			attr_dev(img, "class", "svelte-b17cl4");
-    			add_location(img, file$7, 513, 6, 8313);
-    			attr_dev(figcaption, "class", "svelte-b17cl4");
-    			add_location(figcaption, file$7, 518, 6, 8474);
-    			attr_dev(figure, "class", "svelte-b17cl4");
-    			add_location(figure, file$7, 512, 4, 8298);
+    			attr_dev(img, "class", "svelte-1gerkg5");
+    			add_location(img, file$7, 513, 6, 8317);
+    			attr_dev(figcaption, "class", "svelte-1gerkg5");
+    			add_location(figcaption, file$7, 518, 6, 8478);
+    			attr_dev(figure, "class", "svelte-1gerkg5");
+    			add_location(figure, file$7, 512, 4, 8302);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, nav, anchor);
@@ -5322,10 +5326,10 @@ var app = (function () {
     			attr_dev(div, "role", "img");
     			attr_dev(div, "aria-label", /*d*/ ctx[15].title);
     			attr_dev(div, "data-selected", div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[15].imagen);
-    			attr_dev(div, "class", "image svelte-b17cl4");
+    			attr_dev(div, "class", "image svelte-1gerkg5");
     			set_style(div, "background-image", "url(" + /*d*/ ctx[15].imagen + ")");
     			toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[15].imagen);
-    			add_location(div, file$7, 526, 6, 8720);
+    			add_location(div, file$7, 526, 6, 8724);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -5432,10 +5436,10 @@ var app = (function () {
     			t1 = space();
     			p1 = element("p");
     			p1.textContent = "As in the Japanese technique, kintsugi, the lacquer repairs the cracks in the broken ceramic, which is the body. There is a beauty in the crack, like a latent sign of its interior life: vortex of a wound made manifest on the outside. Cloth covers the shape like a gauze a mould. Skin as impasto. Life as a continuous moment of uncertainty. Are we free or are we confined within the coordinates of chance? This is the mystery of a body in a room, a body inhabiting a space, of a body being space. Existence is naked like a question in the void, spilling over the morning air, reflected in the light coming through the window. In this frame, in this space we celebrate the mystery of life.\"";
-    			attr_dev(p0, "class", "svelte-b17cl4");
-    			add_location(p0, file$7, 565, 4, 11091);
-    			attr_dev(p1, "class", "svelte-b17cl4");
-    			add_location(p1, file$7, 568, 4, 12014);
+    			attr_dev(p0, "class", "svelte-1gerkg5");
+    			add_location(p0, file$7, 565, 4, 11095);
+    			attr_dev(p1, "class", "svelte-1gerkg5");
+    			add_location(p1, file$7, 568, 4, 12018);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -5473,10 +5477,10 @@ var app = (function () {
     			t1 = space();
     			p1 = element("p");
     			p1.textContent = "Como en la técnica japonesa kintsugi, el barniz de la pintura repara las\n      fracturas de la cerámica rota que es el cuerpo. Hay una belleza en la\n      fractura, como un signo latente de su vida interior: vórtice de una herida\n      que se despliega en el exterior. La tela recubre la forma como a una gasa\n      el molde. La piel como impasto. La vida como un continuo instante de\n      incertidumbre. ¿Somos libres o estamos encerrados, confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación, de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia se desnuda como una pregunta en el vacío, derramándose sobre el\n      aire de la mañana, reflejándose en la luz que entra por la ventana. Y en\n      este marco, en este espacio, celebramos el misterio de la vida.\"";
-    			attr_dev(p0, "class", "svelte-b17cl4");
-    			add_location(p0, file$7, 551, 4, 9316);
-    			attr_dev(p1, "class", "svelte-b17cl4");
-    			add_location(p1, file$7, 554, 4, 10232);
+    			attr_dev(p0, "class", "svelte-1gerkg5");
+    			add_location(p0, file$7, 551, 4, 9320);
+    			attr_dev(p1, "class", "svelte-1gerkg5");
+    			add_location(p1, file$7, 554, 4, 10236);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -5576,21 +5580,21 @@ var app = (function () {
     			t6 = text("—");
     			t7 = text(/*author_review*/ ctx[1]);
     			attr_dev(div0, "role", "group");
-    			attr_dev(div0, "class", "gallery svelte-b17cl4");
+    			attr_dev(div0, "class", "gallery svelte-1gerkg5");
     			attr_dev(div0, "tabindex", 0);
-    			add_location(div0, file$7, 524, 2, 8609);
-    			attr_dev(div1, "class", "image-viewer svelte-b17cl4");
-    			add_location(div1, file$7, 486, 0, 7623);
-    			attr_dev(button, "class", "svelte-b17cl4");
-    			add_location(button, file$7, 540, 4, 9078);
-    			attr_dev(div2, "class", "idioma_switch svelte-b17cl4");
-    			add_location(div2, file$7, 539, 2, 9046);
-    			attr_dev(h2, "class", "svelte-b17cl4");
-    			add_location(h2, file$7, 549, 2, 9272);
-    			attr_dev(p, "class", "svelte-b17cl4");
-    			add_location(p, file$7, 572, 2, 12732);
-    			attr_dev(section, "class", "LayoutObras svelte-b17cl4");
-    			add_location(section, file$7, 538, 0, 9014);
+    			add_location(div0, file$7, 524, 2, 8613);
+    			attr_dev(div1, "class", "image-viewer svelte-1gerkg5");
+    			add_location(div1, file$7, 486, 0, 7627);
+    			attr_dev(button, "class", "svelte-1gerkg5");
+    			add_location(button, file$7, 540, 4, 9082);
+    			attr_dev(div2, "class", "idioma_switch svelte-1gerkg5");
+    			add_location(div2, file$7, 539, 2, 9050);
+    			attr_dev(h2, "class", "svelte-1gerkg5");
+    			add_location(h2, file$7, 549, 2, 9276);
+    			attr_dev(p, "class", "svelte-1gerkg5");
+    			add_location(p, file$7, 572, 2, 12736);
+    			attr_dev(section, "class", "LayoutObras svelte-1gerkg5");
+    			add_location(section, file$7, 538, 0, 9018);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

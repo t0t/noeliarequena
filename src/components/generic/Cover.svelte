@@ -5,8 +5,8 @@
     export let img = ""
     export let is_home = false
 
-    let innerWidth, innerHeight, scrollY, alphascroll;
-
+    let innerWidth, innerHeight, y;
+    // $: has_bg = innerWidth > 500 ? has_bg : has_bg == false
     // $: if ( scrollY < (innerHeight / 2) ) {
     //     topescroll = scrollY + 150
     // }
@@ -21,14 +21,14 @@
         background-size: cover;
         background-position: top center;
         position: relative;
-        background-color: $grey_5;
+        background-color: $grey_4;
         display: flex;
         flex-direction: column;
         align-items: start;
         background-repeat: no-repeat;
-        /* padding-top: 40px; */
         padding-left: 90px;
         padding-top: 35px;
+        background-image: none;
         
         @include media(s2) { 
             background-attachment: fixed;
@@ -41,9 +41,7 @@
             background-position: center;
             display: grid;
             align-items: end;
-            grid-template-areas: 
-            "title"
-            "text";
+            grid-template-areas: "title" "text";
             text-align: center;
         }
         
@@ -82,13 +80,16 @@
     }
 </style>
 
-<svelte:window bind:innerWidth bind:innerHeight bind:scrollY />
+<svelte:window bind:innerWidth bind:innerHeight bind:scrollY={y} />
 
 <header 
     class="Cover"
     class:is_home
-    style="background-image: url({img});
-    opacity: {1 - Math.max(0, scrollY / (innerHeight/1.5))};">
+    style=" 
+    opacity: { 1 - Math.max(0, y / (innerHeight/1.5))};
+    background-image: url( { innerWidth > 769 || is_home ? img : ''})
+    ">
+
     <h1 class="CoverTitle">
         {title} <br>
         <span>
@@ -96,4 +97,5 @@
         </span>
     </h1>
     <p class="CoverText">{text}</p>
+
 </header>
