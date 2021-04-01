@@ -13,6 +13,7 @@
     fallback: fade,
   })
   let idioma_switch = false
+  let innerWidth, innerHeight;
 
   $: currentIdx = selected
     ? productos.findIndex((d) => d.imagen === selected)
@@ -34,19 +35,18 @@
     padding: 0;
     display: grid;
     grid-template-areas: 'figure gallery';
-    justify-content: center;
-
+    
     @include media(s2) {
       margin-top: $h3;
       margin-right: $h3;
       margin-bottom: $h3;
       margin-left: $h3;
+      justify-content: center;
     }
 
     img {
-      width: 100%;
+      max-width: 100%;
       @include media(s2) {
-        width: unset;
         max-height: 73vh;
       }
     }
@@ -66,7 +66,6 @@
   } */
   figure {
     overflow-x: hidden;
-    /* overflow-y: auto; */
 
     @include media(s1) {
       grid-area: figure;
@@ -119,12 +118,12 @@
     justify-content: space-between;
     width: $h5;
     padding-top: 0;
-    position: absolute;
     top: -115px;
     right: $h2;
     color: white;
-
+    
     @include media(s2) {
+      position: absolute;
       align-items: flex-end;
       justify-self: center;
       padding-top: 0;
@@ -156,6 +155,8 @@
   }
 </style>
 
+<svelte:window bind:innerWidth bind:innerHeight />
+
 <div
   class="image-viewer"
   on:click={(e) => {
@@ -184,6 +185,9 @@
     </nav>
     <figure>
       <img
+        style="
+        max-height: { innerWidth > 769 ? '' : '73vh' };
+        "
         in:receive={{ key: selected }}
         out:send={{ key: selected }}
         src={selected}
