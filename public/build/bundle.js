@@ -2747,6 +2747,58 @@ var app = (function () {
 
     const file$1 = "src/components/generic/Cover.svelte";
 
+    // (423:4) {#if is_products_page}
+    function create_if_block$2(ctx) {
+    	let div;
+    	let button;
+    	let current;
+
+    	button = new Button({
+    			props: { variante: 5, text: "ᐯ" },
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*click_handler*/ ctx[11]);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			create_component(button.$$.fragment);
+    			attr_dev(div, "class", "CoverText svelte-i0sdm5");
+    			add_location(div, file$1, 423, 4, 6873);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			mount_component(button, div, null);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_component(button);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$2.name,
+    		type: "if",
+    		source: "(423:4) {#if is_products_page}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment$2(ctx) {
     	let scrolling = false;
 
@@ -2765,20 +2817,12 @@ var app = (function () {
     	let h2;
     	let t3;
     	let t4;
-    	let div;
-    	let button;
     	let current;
     	let mounted;
     	let dispose;
-    	add_render_callback(/*onwindowresize*/ ctx[8]);
-    	add_render_callback(/*onwindowscroll*/ ctx[9]);
-
-    	button = new Button({
-    			props: { variante: 5, text: "ᐯ" },
-    			$$inline: true
-    		});
-
-    	button.$on("click", /*click_handler*/ ctx[10]);
+    	add_render_callback(/*onwindowresize*/ ctx[9]);
+    	add_render_callback(/*onwindowscroll*/ ctx[10]);
+    	let if_block = /*is_products_page*/ ctx[4] && create_if_block$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -2792,27 +2836,24 @@ var app = (function () {
     			h2 = element("h2");
     			t3 = text(/*subtitle*/ ctx[1]);
     			t4 = space();
-    			div = element("div");
-    			create_component(button.$$.fragment);
+    			if (if_block) if_block.c();
     			attr_dev(br, "class", "svelte-i0sdm5");
-    			add_location(br, file$1, 415, 16, 6699);
+    			add_location(br, file$1, 416, 16, 6739);
     			attr_dev(h2, "class", "CoverSubTitle svelte-i0sdm5");
-    			add_location(h2, file$1, 417, 12, 6731);
+    			add_location(h2, file$1, 418, 12, 6771);
     			attr_dev(span, "class", "svelte-i0sdm5");
-    			add_location(span, file$1, 416, 8, 6712);
+    			add_location(span, file$1, 417, 8, 6752);
     			attr_dev(h1, "class", "CoverTitle svelte-i0sdm5");
-    			add_location(h1, file$1, 414, 4, 6659);
-    			attr_dev(div, "class", "CoverText svelte-i0sdm5");
-    			add_location(div, file$1, 421, 4, 6806);
+    			add_location(h1, file$1, 415, 4, 6699);
     			attr_dev(header, "class", "Cover svelte-i0sdm5");
-    			set_style(header, "opacity", 1 - Math.max(0, /*y*/ ctx[6] / (/*innerHeight*/ ctx[5] / 1.5)));
+    			set_style(header, "opacity", 1 - Math.max(0, /*y*/ ctx[7] / (/*innerHeight*/ ctx[6] / 1.5)));
 
-    			set_style(header, "background-image", "url( " + (/*innerWidth*/ ctx[4] > 769 || /*is_home*/ ctx[3]
+    			set_style(header, "background-image", "url( " + (/*innerWidth*/ ctx[5] > 769 || /*is_home*/ ctx[3]
     			? /*img*/ ctx[2]
     			: "") + ")\n    ");
 
     			toggle_class(header, "is_home", /*is_home*/ ctx[3]);
-    			add_location(header, file$1, 406, 0, 6463);
+    			add_location(header, file$1, 407, 0, 6503);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2828,18 +2869,17 @@ var app = (function () {
     			append_dev(span, h2);
     			append_dev(h2, t3);
     			append_dev(header, t4);
-    			append_dev(header, div);
-    			mount_component(button, div, null);
+    			if (if_block) if_block.m(header, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(window, "resize", /*onwindowresize*/ ctx[8]),
+    					listen_dev(window, "resize", /*onwindowresize*/ ctx[9]),
     					listen_dev(window, "scroll", () => {
     						scrolling = true;
     						clearTimeout(scrolling_timeout);
     						scrolling_timeout = setTimeout(clear_scrolling, 100);
-    						/*onwindowscroll*/ ctx[9]();
+    						/*onwindowscroll*/ ctx[10]();
     					})
     				];
 
@@ -2847,22 +2887,45 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*y*/ 64 && !scrolling) {
+    			if (dirty & /*y*/ 128 && !scrolling) {
     				scrolling = true;
     				clearTimeout(scrolling_timeout);
-    				scrollTo(window.pageXOffset, /*y*/ ctx[6]);
+    				scrollTo(window.pageXOffset, /*y*/ ctx[7]);
     				scrolling_timeout = setTimeout(clear_scrolling, 100);
     			}
 
     			if (!current || dirty & /*title*/ 1) set_data_dev(t0, /*title*/ ctx[0]);
     			if (!current || dirty & /*subtitle*/ 2) set_data_dev(t3, /*subtitle*/ ctx[1]);
 
-    			if (!current || dirty & /*y, innerHeight*/ 96) {
-    				set_style(header, "opacity", 1 - Math.max(0, /*y*/ ctx[6] / (/*innerHeight*/ ctx[5] / 1.5)));
+    			if (/*is_products_page*/ ctx[4]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*is_products_page*/ 16) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block$2(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(header, null);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
     			}
 
-    			if (!current || dirty & /*innerWidth, is_home, img*/ 28) {
-    				set_style(header, "background-image", "url( " + (/*innerWidth*/ ctx[4] > 769 || /*is_home*/ ctx[3]
+    			if (!current || dirty & /*y, innerHeight*/ 192) {
+    				set_style(header, "opacity", 1 - Math.max(0, /*y*/ ctx[7] / (/*innerHeight*/ ctx[6] / 1.5)));
+    			}
+
+    			if (!current || dirty & /*innerWidth, is_home, img*/ 44) {
+    				set_style(header, "background-image", "url( " + (/*innerWidth*/ ctx[5] > 769 || /*is_home*/ ctx[3]
     				? /*img*/ ctx[2]
     				: "") + ")\n    ");
     			}
@@ -2873,16 +2936,16 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(button.$$.fragment, local);
+    			transition_in(if_block);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(button.$$.fragment, local);
+    			transition_out(if_block);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(header);
-    			destroy_component(button);
+    			if (if_block) if_block.d();
     			mounted = false;
     			run_all(dispose);
     		}
@@ -2907,34 +2970,36 @@ var app = (function () {
     	let { text = "" } = $$props;
     	let { img = "" } = $$props;
     	let { is_home = false } = $$props;
+    	let { is_products_page = false } = $$props;
     	let innerWidth, innerHeight, y;
-    	const writable_props = ["title", "subtitle", "text", "img", "is_home"];
+    	const writable_props = ["title", "subtitle", "text", "img", "is_home", "is_products_page"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Cover> was created with unknown prop '${key}'`);
     	});
 
     	function onwindowresize() {
-    		$$invalidate(4, innerWidth = window.innerWidth);
-    		$$invalidate(5, innerHeight = window.innerHeight);
+    		$$invalidate(5, innerWidth = window.innerWidth);
+    		$$invalidate(6, innerHeight = window.innerHeight);
     	}
 
     	function onwindowscroll() {
-    		$$invalidate(6, y = window.pageYOffset);
+    		$$invalidate(7, y = window.pageYOffset);
     	}
 
     	const click_handler = () => scrollTo$1({
     		element: "#content",
     		offset: -105,
     		duration: 1800
-    	}); // easing: backIn
+    	});
 
     	$$self.$$set = $$props => {
     		if ("title" in $$props) $$invalidate(0, title = $$props.title);
     		if ("subtitle" in $$props) $$invalidate(1, subtitle = $$props.subtitle);
-    		if ("text" in $$props) $$invalidate(7, text = $$props.text);
+    		if ("text" in $$props) $$invalidate(8, text = $$props.text);
     		if ("img" in $$props) $$invalidate(2, img = $$props.img);
     		if ("is_home" in $$props) $$invalidate(3, is_home = $$props.is_home);
+    		if ("is_products_page" in $$props) $$invalidate(4, is_products_page = $$props.is_products_page);
     	};
 
     	$$self.$capture_state = () => ({
@@ -2945,6 +3010,7 @@ var app = (function () {
     		text,
     		img,
     		is_home,
+    		is_products_page,
     		innerWidth,
     		innerHeight,
     		y
@@ -2953,12 +3019,13 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ("title" in $$props) $$invalidate(0, title = $$props.title);
     		if ("subtitle" in $$props) $$invalidate(1, subtitle = $$props.subtitle);
-    		if ("text" in $$props) $$invalidate(7, text = $$props.text);
+    		if ("text" in $$props) $$invalidate(8, text = $$props.text);
     		if ("img" in $$props) $$invalidate(2, img = $$props.img);
     		if ("is_home" in $$props) $$invalidate(3, is_home = $$props.is_home);
-    		if ("innerWidth" in $$props) $$invalidate(4, innerWidth = $$props.innerWidth);
-    		if ("innerHeight" in $$props) $$invalidate(5, innerHeight = $$props.innerHeight);
-    		if ("y" in $$props) $$invalidate(6, y = $$props.y);
+    		if ("is_products_page" in $$props) $$invalidate(4, is_products_page = $$props.is_products_page);
+    		if ("innerWidth" in $$props) $$invalidate(5, innerWidth = $$props.innerWidth);
+    		if ("innerHeight" in $$props) $$invalidate(6, innerHeight = $$props.innerHeight);
+    		if ("y" in $$props) $$invalidate(7, y = $$props.y);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -2970,6 +3037,7 @@ var app = (function () {
     		subtitle,
     		img,
     		is_home,
+    		is_products_page,
     		innerWidth,
     		innerHeight,
     		y,
@@ -2987,9 +3055,10 @@ var app = (function () {
     		init(this, options, instance$2, create_fragment$2, safe_not_equal, {
     			title: 0,
     			subtitle: 1,
-    			text: 7,
+    			text: 8,
     			img: 2,
-    			is_home: 3
+    			is_home: 3,
+    			is_products_page: 4
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -3037,6 +3106,14 @@ var app = (function () {
     	}
 
     	set is_home(value) {
+    		throw new Error("<Cover>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get is_products_page() {
+    		throw new Error("<Cover>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set is_products_page(value) {
     		throw new Error("<Cover>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -4068,7 +4145,7 @@ var app = (function () {
     }
 
     // (395:4) {#if idioma_switch}
-    function create_if_block$2(ctx) {
+    function create_if_block$3(ctx) {
     	let dl;
     	let dt0;
     	let dt1;
@@ -4293,7 +4370,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$2.name,
+    		id: create_if_block$3.name,
     		type: "if",
     		source: "(395:4) {#if idioma_switch}",
     		ctx
@@ -4329,7 +4406,7 @@ var app = (function () {
     	let if_block0 = current_block_type(ctx);
 
     	function select_block_type_1(ctx, dirty) {
-    		if (/*idioma_switch*/ ctx[3]) return create_if_block$2;
+    		if (/*idioma_switch*/ ctx[3]) return create_if_block$3;
     		return create_else_block$2;
     	}
 
@@ -4747,7 +4824,7 @@ var app = (function () {
     const get_hasimage_slot_context = ctx => ({});
 
     // (11:8) {#if img}
-    function create_if_block$3(ctx) {
+    function create_if_block$4(ctx) {
     	let current;
     	const hasimage_slot_template = /*#slots*/ ctx[6].hasimage;
     	const hasimage_slot = create_slot(hasimage_slot_template, ctx, /*$$scope*/ ctx[5], get_hasimage_slot_context);
@@ -4791,7 +4868,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block$4.name,
     		type: "if",
     		source: "(11:8) {#if img}",
     		ctx
@@ -4851,7 +4928,7 @@ var app = (function () {
     	let t5;
     	let section_class_value;
     	let current;
-    	let if_block = /*img*/ ctx[2] && create_if_block$3(ctx);
+    	let if_block = /*img*/ ctx[2] && create_if_block$4(ctx);
     	const hasvideo_slot_template = /*#slots*/ ctx[6].hasvideo;
     	const hasvideo_slot = create_slot(hasvideo_slot_template, ctx, /*$$scope*/ ctx[5], get_hasvideo_slot_context);
     	const hasSVG_slot_template = /*#slots*/ ctx[6].hasSVG;
@@ -4930,7 +5007,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$3(ctx);
+    					if_block = create_if_block$4(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div0, t0);
@@ -5559,7 +5636,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (492:2) {#if selected}
+    // (497:2) {#if selected}
     function create_if_block_2(ctx) {
     	let nav;
     	let button0;
@@ -5611,16 +5688,16 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = space();
     			t6 = text(t6_value);
-    			attr_dev(nav, "class", "svelte-ej80z8");
-    			add_location(nav, file$8, 492, 4, 7784);
+    			attr_dev(nav, "class", "svelte-exffrh");
+    			add_location(nav, file$8, 497, 4, 7871);
     			if (img.src !== (img_src_value = /*selected*/ ctx[2])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = productos[/*currentIdx*/ ctx[6]].description);
-    			attr_dev(img, "class", "svelte-ej80z8");
-    			add_location(img, file$8, 511, 6, 8332);
-    			attr_dev(figcaption, "class", "svelte-ej80z8");
-    			add_location(figcaption, file$8, 516, 6, 8493);
-    			attr_dev(figure, "class", "svelte-ej80z8");
-    			add_location(figure, file$8, 510, 4, 8317);
+    			attr_dev(img, "class", "svelte-exffrh");
+    			add_location(img, file$8, 516, 6, 8419);
+    			attr_dev(figcaption, "class", "svelte-exffrh");
+    			add_location(figcaption, file$8, 521, 6, 8580);
+    			attr_dev(figure, "class", "svelte-exffrh");
+    			add_location(figure, file$8, 515, 4, 8404);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, nav, anchor);
@@ -5686,14 +5763,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(492:2) {#if selected}",
+    		source: "(497:2) {#if selected}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (524:4) {#each productos as d (d.title)}
+    // (529:4) {#each productos as d (d.title)}
     function create_each_block$1(key_1, ctx) {
     	let div;
     	let div_data_selected_value;
@@ -5712,10 +5789,10 @@ var app = (function () {
     			attr_dev(div, "role", "img");
     			attr_dev(div, "aria-label", /*d*/ ctx[15].title);
     			attr_dev(div, "data-selected", div_data_selected_value = /*selected*/ ctx[2] === /*d*/ ctx[15].imagen);
-    			attr_dev(div, "class", "image svelte-ej80z8");
+    			attr_dev(div, "class", "image svelte-exffrh");
     			set_style(div, "background-image", "url(" + /*d*/ ctx[15].imagen + ")");
     			toggle_class(div, "active", /*selected*/ ctx[2] === /*d*/ ctx[15].imagen);
-    			add_location(div, file$8, 524, 6, 8739);
+    			add_location(div, file$8, 529, 6, 8826);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -5748,14 +5825,14 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(524:4) {#each productos as d (d.title)}",
+    		source: "(529:4) {#each productos as d (d.title)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (544:32) {:else}
+    // (549:32) {:else}
     function create_else_block_1$1(ctx) {
     	let t;
 
@@ -5775,14 +5852,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1$1.name,
     		type: "else",
-    		source: "(544:32) {:else}",
+    		source: "(549:32) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (544:6) {#if idioma_switch}
+    // (549:6) {#if idioma_switch}
     function create_if_block_1$2(ctx) {
     	let t;
 
@@ -5802,14 +5879,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(544:6) {#if idioma_switch}",
+    		source: "(549:6) {#if idioma_switch}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (563:2) {:else}
+    // (568:2) {:else}
     function create_else_block$3(ctx) {
     	let p0;
     	let t1;
@@ -5822,10 +5899,10 @@ var app = (function () {
     			t1 = space();
     			p1 = element("p");
     			p1.textContent = "As in the Japanese technique, kintsugi, the lacquer repairs the cracks in the broken ceramic, which is the body. There is a beauty in the crack, like a latent sign of its interior life: vortex of a wound made manifest on the outside. Cloth covers the shape like a gauze a mould. Skin as impasto. Life as a continuous moment of uncertainty. Are we free or are we confined within the coordinates of chance? This is the mystery of a body in a room, a body inhabiting a space, of a body being space. Existence is naked like a question in the void, spilling over the morning air, reflected in the light coming through the window. In this frame, in this space we celebrate the mystery of life.\"";
-    			attr_dev(p0, "class", "svelte-ej80z8");
-    			add_location(p0, file$8, 563, 4, 11110);
-    			attr_dev(p1, "class", "svelte-ej80z8");
-    			add_location(p1, file$8, 566, 4, 12033);
+    			attr_dev(p0, "class", "svelte-exffrh");
+    			add_location(p0, file$8, 568, 4, 11197);
+    			attr_dev(p1, "class", "svelte-exffrh");
+    			add_location(p1, file$8, 571, 4, 12120);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -5843,15 +5920,15 @@ var app = (function () {
     		block,
     		id: create_else_block$3.name,
     		type: "else",
-    		source: "(563:2) {:else}",
+    		source: "(568:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (549:2) {#if idioma_switch}
-    function create_if_block$4(ctx) {
+    // (554:2) {#if idioma_switch}
+    function create_if_block$5(ctx) {
     	let p0;
     	let t1;
     	let p1;
@@ -5863,10 +5940,10 @@ var app = (function () {
     			t1 = space();
     			p1 = element("p");
     			p1.textContent = "Como en la técnica japonesa kintsugi, el barniz de la pintura repara las\n      fracturas de la cerámica rota que es el cuerpo. Hay una belleza en la\n      fractura, como un signo latente de su vida interior: vórtice de una herida\n      que se despliega en el exterior. La tela recubre la forma como a una gasa\n      el molde. La piel como impasto. La vida como un continuo instante de\n      incertidumbre. ¿Somos libres o estamos encerrados, confinados en las coordenadas del azar? Este es el misterio de un cuerpo en una habitación, de un cuerpo habitando el espacio, de un cuerpo siendo espacio. La existencia se desnuda como una pregunta en el vacío, derramándose sobre el\n      aire de la mañana, reflejándose en la luz que entra por la ventana. Y en\n      este marco, en este espacio, celebramos el misterio de la vida.\"";
-    			attr_dev(p0, "class", "svelte-ej80z8");
-    			add_location(p0, file$8, 549, 4, 9335);
-    			attr_dev(p1, "class", "svelte-ej80z8");
-    			add_location(p1, file$8, 552, 4, 10251);
+    			attr_dev(p0, "class", "svelte-exffrh");
+    			add_location(p0, file$8, 554, 4, 9422);
+    			attr_dev(p1, "class", "svelte-exffrh");
+    			add_location(p1, file$8, 557, 4, 10338);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -5882,9 +5959,9 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$4.name,
+    		id: create_if_block$5.name,
     		type: "if",
-    		source: "(549:2) {#if idioma_switch}",
+    		source: "(554:2) {#if idioma_switch}",
     		ctx
     	});
 
@@ -5933,7 +6010,7 @@ var app = (function () {
     	let if_block1 = current_block_type(ctx);
 
     	function select_block_type_1(ctx, dirty) {
-    		if (/*idioma_switch*/ ctx[5]) return create_if_block$4;
+    		if (/*idioma_switch*/ ctx[5]) return create_if_block$5;
     		return create_else_block$3;
     	}
 
@@ -5966,21 +6043,21 @@ var app = (function () {
     			t6 = text("—");
     			t7 = text(/*author_review*/ ctx[1]);
     			attr_dev(div0, "role", "group");
-    			attr_dev(div0, "class", "gallery svelte-ej80z8");
+    			attr_dev(div0, "class", "gallery svelte-exffrh");
     			attr_dev(div0, "tabindex", 0);
-    			add_location(div0, file$8, 522, 2, 8628);
-    			attr_dev(div1, "class", "image-viewer svelte-ej80z8");
-    			add_location(div1, file$8, 484, 0, 7642);
-    			attr_dev(button, "class", "svelte-ej80z8");
-    			add_location(button, file$8, 538, 4, 9097);
-    			attr_dev(div2, "class", "idioma_switch svelte-ej80z8");
-    			add_location(div2, file$8, 537, 2, 9065);
-    			attr_dev(h2, "class", "svelte-ej80z8");
-    			add_location(h2, file$8, 547, 2, 9291);
-    			attr_dev(p, "class", "svelte-ej80z8");
-    			add_location(p, file$8, 570, 2, 12751);
-    			attr_dev(section, "class", "LayoutObras svelte-ej80z8");
-    			add_location(section, file$8, 536, 0, 9033);
+    			add_location(div0, file$8, 527, 2, 8715);
+    			attr_dev(div1, "class", "image-viewer svelte-exffrh");
+    			add_location(div1, file$8, 489, 0, 7729);
+    			attr_dev(button, "class", "svelte-exffrh");
+    			add_location(button, file$8, 543, 4, 9184);
+    			attr_dev(div2, "class", "idioma_switch svelte-exffrh");
+    			add_location(div2, file$8, 542, 2, 9152);
+    			attr_dev(h2, "class", "svelte-exffrh");
+    			add_location(h2, file$8, 552, 2, 9378);
+    			attr_dev(p, "class", "svelte-exffrh");
+    			add_location(p, file$8, 575, 2, 12838);
+    			attr_dev(section, "class", "LayoutObras svelte-exffrh");
+    			add_location(section, file$8, 541, 0, 9120);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6320,6 +6397,7 @@ var app = (function () {
 
     	cover = new Cover({
     			props: {
+    				is_products_page: /*is_products_page*/ ctx[1],
     				title: data[12].title,
     				subtitle: data[12].subtitle,
     				text: data[12].text,
@@ -6357,7 +6435,7 @@ var app = (function () {
     			t1 = space();
     			create_component(sectionhalf.$$.fragment);
     			attr_dev(div, "id", "content");
-    			add_location(div, file$9, 34, 4, 967);
+    			add_location(div, file$9, 34, 4, 1017);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cover, target, anchor);
@@ -6371,7 +6449,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const sectionhalf_changes = {};
 
-    			if (dirty & /*$$scope*/ 4) {
+    			if (dirty & /*$$scope*/ 8) {
     				sectionhalf_changes.$$scope = { dirty, ctx };
     			}
 
@@ -6428,8 +6506,8 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const default_slot_template = /*#slots*/ ctx[1].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[2], null);
+    	const default_slot_template = /*#slots*/ ctx[2].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[3], null);
 
     	const block = {
     		c: function create() {
@@ -6460,15 +6538,15 @@ var app = (function () {
     			const layout_changes = {};
     			if (dirty & /*current_page_name*/ 1) layout_changes.id = /*current_page_name*/ ctx[0];
 
-    			if (dirty & /*$$scope*/ 4) {
+    			if (dirty & /*$$scope*/ 8) {
     				layout_changes.$$scope = { dirty, ctx };
     			}
 
     			layout.$set(layout_changes);
 
     			if (default_slot) {
-    				if (default_slot.p && dirty & /*$$scope*/ 4) {
-    					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[2], dirty, null, null);
+    				if (default_slot.p && dirty & /*$$scope*/ 8) {
+    					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[3], dirty, null, null);
     				}
     			}
     		},
@@ -6506,6 +6584,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Artwork", slots, ['default']);
     	let { current_page_name = "artwork" } = $$props;
+    	let is_products_page = true;
 
     	onMount(() => {
     		console.log("MOUNTED COMPONENT");
@@ -6523,7 +6602,7 @@ var app = (function () {
 
     	$$self.$$set = $$props => {
     		if ("current_page_name" in $$props) $$invalidate(0, current_page_name = $$props.current_page_name);
-    		if ("$$scope" in $$props) $$invalidate(2, $$scope = $$props.$$scope);
+    		if ("$$scope" in $$props) $$invalidate(3, $$scope = $$props.$$scope);
     	};
 
     	$$self.$capture_state = () => ({
@@ -6535,18 +6614,20 @@ var app = (function () {
     		Cover,
     		SectionHalf,
     		Button,
-    		current_page_name
+    		current_page_name,
+    		is_products_page
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("current_page_name" in $$props) $$invalidate(0, current_page_name = $$props.current_page_name);
+    		if ("is_products_page" in $$props) $$invalidate(1, is_products_page = $$props.is_products_page);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [current_page_name, slots, $$scope];
+    	return [current_page_name, is_products_page, slots, $$scope];
     }
 
     class Artwork extends SvelteComponentDev {
@@ -7342,7 +7423,7 @@ var app = (function () {
     }
 
     // (367:1) {#if loaded}
-    function create_if_block$5(ctx) {
+    function create_if_block$6(ctx) {
     	let nav;
     	let t0;
     	let router;
@@ -7399,7 +7480,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$5.name,
+    		id: create_if_block$6.name,
     		type: "if",
     		source: "(367:1) {#if loaded}",
     		ctx
@@ -7419,7 +7500,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	const if_block_creators = [create_if_block$5, create_else_block$4];
+    	const if_block_creators = [create_if_block$6, create_else_block$4];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {

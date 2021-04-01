@@ -9,7 +9,7 @@
     import SectionHalf from "../components/generic/SectionHalf.svelte";
     import Button from '../components/generic/Button.svelte';
     export let current_page_name = "artwork";
-
+    let is_products_page = true
     onMount(() => {
         console.log('MOUNTED COMPONENT');
     });
@@ -25,7 +25,7 @@
 
 <Layout id={current_page_name}>
     
-    <Cover
+    <Cover {is_products_page}
         title={data[12].title}
         subtitle={data[12].subtitle}
         text={data[12].text}

@@ -9,6 +9,7 @@
     export let text = ""
     export let img = ""
     export let is_home = false
+    export let is_products_page = false
 
     let innerWidth, innerHeight, y;
 </script>
@@ -98,14 +99,14 @@
         </span>
     </h1>
 
+    {#if is_products_page}
     <div class="CoverText">
         <Button variante={5} text="ᐯ"
         on:click={() => animateScroll.scrollTo({
-            element: '#content',
-            offset: -105,
-            duration: 1800
-            // easing: backIn
-        })}
-        />
+                        element: '#content',
+                        offset: -105,
+                        duration: 1800
+        })}/>
     </div>
+    {/if}
 </header>

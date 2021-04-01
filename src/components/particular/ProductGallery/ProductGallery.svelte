@@ -32,17 +32,21 @@
   .image-viewer {
     position: relative;
     padding: 0;
-    margin-top: $h3;
-    margin-bottom: $h3;
-    margin-left: $h3;
     display: grid;
     grid-template-areas: 'figure gallery';
     justify-content: center;
 
+    @include media(s2) {
+      margin-top: $h3;
+      margin-right: $h3;
+      margin-bottom: $h3;
+      margin-left: $h3;
+    }
+
     img {
       width: 100%;
       @include media(s2) {
-        width: auto;
+        width: unset;
         max-height: 73vh;
       }
     }
