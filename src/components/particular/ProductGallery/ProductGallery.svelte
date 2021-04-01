@@ -15,9 +15,7 @@
   let idioma_switch = false
   let innerWidth, innerHeight;
 
-  $: currentIdx = selected
-    ? productos.findIndex((d) => d.imagen === selected)
-    : -1
+  $: currentIdx = selected ? productos.findIndex((d) => d.imagen === selected) : -1
 </script>
 
 <style lang="scss">
@@ -185,9 +183,6 @@
     </nav>
     <figure>
       <img
-        style="
-        max-height: { innerWidth > 769 ? '' : '73vh' };
-        "
         in:receive={{ key: selected }}
         out:send={{ key: selected }}
         src={selected}
@@ -198,11 +193,11 @@
     </figure>
   {/if}
 
-  <div role="group" bind:this={gallery} class="gallery" tabindex={0}>
-    {#each productos as d (d.title)}
+  <div role="group" bind:this={gallery} class="gallery">
+    {#each productos as d (d.ref)}
       <div
         role="img"
-        aria-label={d.title}
+        aria-label={d.ref}
         data-selected={selected === d.imagen}
         class:active={selected === d.imagen}
         on:click={() => (selected = d.imagen)}
@@ -217,7 +212,6 @@
     <button
       on:click={() => {
         idioma_switch = !idioma_switch
-        console.log(idioma_switch)
       }}>
       {#if idioma_switch}English{:else}Español{/if}
     </button>
