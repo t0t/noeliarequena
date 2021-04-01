@@ -1,7 +1,3 @@
-<script>
-
-</script>
-
 <style lang="scss">
     @use "../../sass/_index.scss" as *;
     body {

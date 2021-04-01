@@ -6,10 +6,6 @@
     export let is_home = false
 
     let innerWidth, innerHeight, y;
-    // $: has_bg = innerWidth > 500 ? has_bg : has_bg == false
-    // $: if ( scrollY < (innerHeight / 2) ) {
-    //     topescroll = scrollY + 150
-    // }
 </script>
 
 <style lang="scss">
@@ -97,5 +93,4 @@
         </span>
     </h1>
     <p class="CoverText">{text}</p>
-
 </header>

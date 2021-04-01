@@ -38,7 +38,7 @@
 
     img {
       width: 100%;
-      @include media(s3) {
+      @include media(s2) {
         width: auto;
         max-height: 73vh;
       }
@@ -82,7 +82,7 @@
     overflow-x: hidden;
     outline: none;
 
-    @include media(s3) {
+    @include media(s2) {
       gap: $h1;
       padding-left: $h0;
     }
@@ -91,11 +91,9 @@
     grid-template-columns: repeat(1, 73px);
     width: inherit;
     height: 50vh;
+
     @include media(s2) {
       width: 100%;
-      grid-template-columns: repeat(3, 73px);
-    }
-    @include media(s3) {
       height: 75vh;
       justify-content: center;
       grid-template-columns: repeat(3, 100px);
@@ -119,9 +117,6 @@
     color: white;
 
     @include media(s2) {
-      top: 21.942rem;
-    }
-    @include media(s3) {
       justify-self: center;
       position: unset;
     }
