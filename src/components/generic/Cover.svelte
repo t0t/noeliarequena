@@ -1,4 +1,9 @@
 <script>
+    import * as animateScroll from "svelte-scrollto";
+    // import { backIn } from 'svelte/easing';
+    import Button from './Button.svelte';
+
+
     export let title = ""
     export let subtitle = ""
     export let text = ""
@@ -64,7 +69,7 @@
                 display: inherit;
                 padding-top: $h2;
                 grid-area: text;
-                border-top: 1px dotted $grey_0;
+                // border-top: 1px dotted $grey_0;
             }
         }
     }
@@ -92,5 +97,15 @@
             <h2 class="CoverSubTitle"> {subtitle} </h2>
         </span>
     </h1>
-    <p class="CoverText">{text}</p>
+
+    <div class="CoverText">
+        <Button variante={5} text="ᐯ"
+        on:click={() => animateScroll.scrollTo({
+            element: '#content',
+            offset: -105,
+            duration: 1800
+            // easing: backIn
+        })}
+        />
+    </div>
 </header>

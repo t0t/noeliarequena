@@ -20,7 +20,9 @@
 
   <Cover {is_home} title={data[0].title} subtitle={data[0].subtitle} text={data[0].text} img={data[0].img} />
 
-  <NavSecondary />
+  <div id="content">
+    <NavSecondary />
+  </div>
 
   <Slider {slides} />
 

@@ -1,6 +1,7 @@
 <script>
     export let text = "";
     export let url = "";
+    export let is_submit = false;
     export let target = "_blank";
     export let variante = 0;
     let modificador = [
@@ -8,7 +9,8 @@
         "Dark",
         "Colored",
         "ColoredInvert",
-        "UnicodeIcon"
+        "UnicodeIcon",
+        "ScrollTo"
     ];
 </script>
 
@@ -88,10 +90,24 @@
     .UnicodeIcon {
         color: $white;
         border: none;
+        margin: 0;
         @include media(s2) {
             color: $highlight;
         }
         @include type-setting(2);
+        &:hover {
+            color: $grey_0;
+        }
+    }
+    .ScrollTo {
+        color: $black;
+        border: none;
+        text-align: center;
+        margin: 0;
+
+        @include type-setting(2);
+        display: block;
+        background-color: transparent;
         &:hover {
             color: $grey_0;
         }
@@ -102,8 +118,12 @@
     <a href="{url}" target="{target}" class="{modificador[variante]}">
         {text}
     </a>
-{:else}
+{:else if is_submit}
     <button on:click type="submit" class="{modificador[variante]}">
+        {text}
+    </button>
+{:else}
+    <button on:click class="{modificador[variante]}">
         {text}
     </button>
 {/if}

@@ -32,10 +32,12 @@
         img={data[12].img}
     />
 
-    <ProductGallery
+    <div id="content">
+        <ProductGallery
         titulo={data[3].title}
         author_review={data[3].author_review}
-    />
+        />
+    </div>
 
     <SectionHalf
         variante={1}

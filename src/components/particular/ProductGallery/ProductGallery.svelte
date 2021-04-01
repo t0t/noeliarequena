@@ -32,6 +32,9 @@
   .image-viewer {
     position: relative;
     padding: 0;
+    margin-top: $h3;
+    margin-bottom: $h3;
+    margin-left: $h3;
     display: grid;
     grid-template-areas: 'figure gallery';
     justify-content: center;
@@ -97,6 +100,7 @@
       height: 75vh;
       justify-content: center;
       grid-template-columns: repeat(3, 100px);
+      margin-left: $h3;
     }
   }
   .gallery > .image {
@@ -117,8 +121,12 @@
     color: white;
 
     @include media(s2) {
+      align-items: flex-end;
       justify-self: center;
-      position: unset;
+      padding-top: 0;
+      bottom: -50px;
+      left: auto;
+      right: auto;
     }
   }
   .active {
