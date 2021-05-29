@@ -186,7 +186,9 @@
         in:receive={{ key: selected }}
         out:send={{ key: selected }}
         src={selected}
-        alt={productos[currentIdx].description} />
+        alt={productos[currentIdx].description} 
+        on:click={transitionImage}
+        />
       <figcaption>
         REF: {productos[currentIdx].ref} {productos[currentIdx].description}
       </figcaption>

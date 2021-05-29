@@ -48,13 +48,19 @@
 </svelte:head>
 <svelte:window on:load={loading} />
 
-<main>
+<main style="
+text-align: center;
+padding-top: 100px;
+
+">
 	{#if loaded} 
-		<Nav />
+		<h1>noeliarequena.com</h1>
+		<h2>Web disponible próximamente</h2>
+		<!-- <Nav />
 		<Router 
 		{routes} 
 		restoreScrollState={true} 
-		/>
+		/> -->
 		<Links />
 	{:else} <Loading /> {/if}
 	<!-- {#if loaded} <Loading /> {/if} -->
