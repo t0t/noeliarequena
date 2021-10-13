@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obras</title>
-  <script src="https://unpkg.com/alpinejs@3.3.4/dist/cdn.min.js"></script>
-  <link rel="stylesheet" href="../css/global.css">
+  <!-- <script src="https://unpkg.com/alpinejs@3.3.4/dist/cdn.min.js"></script> -->
   <link rel="stylesheet" href="../css/lightbox.css">
+  <link rel="stylesheet" href="../css/global.css">
 </head>
 
 <body>
@@ -22,24 +22,132 @@
     </nav>
   </header>
 
-  <main class="conPaddings">
-      <div class="lightbox" x-data="{lightboxOpen: false, imgSrc: ''}" x-show="lightboxOpen" x-transition
-      @lightbox.window="lightboxOpen = true; imgSrc = $event.detail; console.log($event.detail)">
-      <div class="lightbox-container">
-        <img :src="imgSrc" @click.away="lightboxOpen = false">
+  <main class="muchoPadding">
+    <div class="row">
+      <div class="col">
+       <img src="../images/obras/01_ref.042019 42x29.5.jpg" onclick="openLightbox();toSlide(1)" class="hover-shadow preview">
+        <p>serfserfr ver tvertb eetrbert b</p>
       </div>
-    </div>
-
-    <div x-data class="gallery">
-      <img src="../images/obras/01_ref.042019 42x29.5.jpg"
-        @click="$dispatch('lightbox', '../images/obras/01_ref.042019 42x29.5.jpg')" />
-      <img src="https://picsum.photos/id/2/160/160"
-        @click="$dispatch('lightbox', 'https://picsum.photos/id/2/640/360')" />
-      <img src="https://picsum.photos/id/3/160/160"
-        @click="$dispatch('lightbox', 'https://picsum.photos/id/3/640/360')" />
-      <img src="https://picsum.photos/id/4/160/160"
-        @click="$dispatch('lightbox', 'https://picsum.photos/id/4/640/360')" />
-    </div>
+      <div class="col">
+       <img src="../images/obras/02_ref.042020_ 02_31x23.jpg" onclick="openLightbox();toSlide(2)" class="hover-shadow preview">
+      </div>
+      <div class="col">
+       <img src="../images/obras/03_ref.042021_31x23.jpg" onclick="openLightbox();toSlide(3)" class="hover-shadow preview">
+      </div>
+      <div class="col">
+       <img src="../images/obras/03_ref.042021_31x23.jpg" onclick="openLightbox();toSlide(4)" class="hover-shadow preview">
+      </div>
+      <div class="col">
+       <img src="../images/obras/03_ref.042021_31x23.jpg" onclick="openLightbox();toSlide(5)" class="hover-shadow preview">
+      </div>
+      <div class="col">
+       <img src="../images/obras/03_ref.042021_31x23.jpg" onclick="openLightbox();toSlide(6)" class="hover-shadow preview">
+      </div>
+      <div class="col">
+       <img src="../images/obras/03_ref.042021_31x23.jpg" onclick="openLightbox();toSlide(7)" class="hover-shadow preview">
+      </div>
+      <div class="col">
+       <img src="../images/obras/03_ref.042021_31x23.jpg" onclick="openLightbox();toSlide(8)" class="hover-shadow preview">
+      </div>
+      <div class="col">
+       <img src="../images/obras/03_ref.042021_31x23.jpg" onclick="openLightbox();toSlide(9)" class="hover-shadow preview">
+      </div>
+      <div class="col">
+       <img src="../images/obras/03_ref.042021_31x23.jpg" onclick="openLightbox();toSlide(10)" class="hover-shadow preview">
+      </div>
+      <div class="col">
+       <img src="../images/obras/03_ref.042021_31x23.jpg" onclick="openLightbox();toSlide(11)" class="hover-shadow preview">
+      </div>
+      <div class="col">
+       <img src="../images/obras/03_ref.042021_31x23.jpg" onclick="openLightbox();toSlide(12)" class="hover-shadow preview">
+      </div>
+     </div>
+     
+     <div id="Lightbox" class="modal">
+     
+      <span class="close pointer" onclick="closeLightbox()">&times;</span>
+      <div class="modal-content">
+       <div class="slide">
+        <img src="../images/obras/01_ref.042019 42x29.5.jpg" class="image-slide" alt="Toy car on the road." />
+       </div>
+       <div class="slide">
+        <img src="../images/obras/02_ref.042020_ 02_31x23.jpg" class="image-slide" alt="Toy car exploring offroad." />
+         <p>ewrf wrefw ervw erv ervwer vwrev werv wer</p>
+       </div>
+       <div class="slide">
+        <img src="../images/obras/03_ref.042021_31x23.jpg" class="image-slide" alt="Toy car in the city." />
+       </div>
+       <div class="slide">
+        <img src="../images/obras/03_ref.042021_31x23.jpg" class="image-slide" alt="Toy car in the city." />
+       </div>
+       <div class="slide">
+        <img src="../images/obras/03_ref.042021_31x23.jpg" class="image-slide" alt="Toy car in the city." />
+       </div>
+       <div class="slide">
+        <img src="../images/obras/03_ref.042021_31x23.jpg" class="image-slide" alt="Toy car in the city." />
+       </div>
+       <div class="slide">
+        <img src="../images/obras/03_ref.042021_31x23.jpg" class="image-slide" alt="Toy car in the city." />
+       </div>
+       <div class="slide">
+        <img src="../images/obras/03_ref.042021_31x23.jpg" class="image-slide" alt="Toy car in the city." />
+       </div>
+       <div class="slide">
+        <img src="../images/obras/03_ref.042021_31x23.jpg" class="image-slide" alt="Toy car in the city." />
+       </div>
+       <div class="slide">
+        <img src="../images/obras/03_ref.042021_31x23.jpg" class="image-slide" alt="Toy car in the city." />
+       </div>
+       <div class="slide">
+        <img src="../images/obras/03_ref.042021_31x23.jpg" class="image-slide" alt="Toy car in the city." />
+       </div>
+       <div class="slide">
+        <img src="../images/obras/03_ref.042021_31x23.jpg" class="image-slide" alt="Toy car in the city." />
+       </div>
+     
+       <a class="previous" onclick="changeSlide(-1)">&#10094;</a>
+       <a class="next" onclick="changeSlide(1)">&#10095;</a>
+     
+       <div class="dots">
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(1)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/02_ref.042020_ 02_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(2)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(3)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(4)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(5)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(6)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(7)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(8)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(9)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(10)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(11)" alt="Toy Car Touring City">
+        </div>
+        <div class="col">
+         <img src="../images/obras/03_ref.042021_31x23.jpg" class="modal-preview hover-shadow" onclick="toSlide(12)" alt="Toy Car Touring City">
+        </div>
+       </div>
+      </div>
+     </div>
 
     <section>
       <h3>Review</h3>
@@ -82,6 +190,8 @@
       </svg>
     </a>
   </footer>
+  <script src="../js/lightbox.js"></script>
+
 </body>
 
 </html>
