@@ -223,7 +223,7 @@ a.selected {
 .muchoPadding {
 	padding-top: var(--padding-huge);
 	padding-right: var(--padding-big);
-	padding-bottom: var(--padding-normal);
+	padding-bottom: var(--padding-big);
 	padding-left: var(--padding-big);
 }
 
