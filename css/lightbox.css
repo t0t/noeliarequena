@@ -8,29 +8,110 @@
   gap: var(--size-2);
 }
 
-@media screen and (min-width: 800px) {
-  
+@media screen and (min-width: 426px) {
   .gallery {
     grid-template-areas: 
-    ". . ."
-    ". alargada alargada"
-    ". . ."
-    ". . vertical"
-    ". . vertical"
-    ". vertical2 ."
-    ". vertical2 ."
+      "prim feli terc"
+      "cato nuev nuev"
+      "invi invi esti"
+      "invi invi vert"
+      "vert2 roto vert"
+      "vert2 vent vein"
+      "ulti ulti deca"
+      "ulti ulti clar"
+      "ulti ulti rayo"
+      ".... .... mano"
     ;
   }
-  
-  .gallery__item:nth-child(9) {
-    grid-area: alargada;
+}
+@media screen and (min-width: 1023px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+      "prim feli terc cuat"
+      "nuev nuev nuev cinc"
+      "invi invi diez seis"
+      "rayo siet cato esti"
+      "roto roto deca vert"
+      "roto roto mano vert"
+      "ulti . vein vert2"
+      "ulti vent doble vert2"
+      "ulti quin clar ."
+    ;
   }
-  .gallery__item:nth-child(19) {
-    grid-area: vertical;
-  }
-  .gallery__item:nth-child(20) {
-    grid-area: vertical2;
-  }
+}
+
+.gallery__item:nth-child(1) {
+  grid-area: prim;
+}
+.gallery__item:nth-child(2) {
+  grid-area: feli;
+}
+.gallery__item:nth-child(3) {
+  grid-area: terc;
+}
+.gallery__item:nth-child(4) {
+  grid-area: cuat;
+}
+.gallery__item:nth-child(5) {
+  grid-area: cinc;
+}
+.gallery__item:nth-child(6) {
+  grid-area: seis;
+}
+.gallery__item:nth-child(7) {
+  grid-area: siet;
+}
+.gallery__item:nth-child(8) {
+  grid-area: invi;
+}
+.gallery__item:nth-child(9) {
+  grid-area: nuev;
+}
+.gallery__item:nth-child(10) {
+  grid-area: diez;
+}
+.gallery__item:nth-child(11) {
+  grid-area: esti;
+}
+.gallery__item:nth-child(14) {
+  grid-area: cato;
+}
+.gallery__item:nth-child(15) {
+  grid-area: quin;
+}
+.gallery__item:nth-child(16) {
+  grid-area: doble;
+}
+.gallery__item:nth-child(17) {
+  grid-area: vent;
+}
+.gallery__item:nth-child(18) {
+  grid-area: deca;
+}
+.gallery__item:nth-child(19) {
+  grid-area: vert;
+}
+.gallery__item:nth-child(20) {
+  grid-area: vert2;
+}
+.gallery__item:nth-child(21) {
+  grid-area: vein;
+}
+.gallery__item:nth-child(22) {
+  grid-area: mano;
+}
+.gallery__item:nth-child(23) {
+  grid-area: rayo;
+}
+.gallery__item:nth-child(24) {
+  grid-area: roto;
+}
+.gallery__item:nth-child(25) {
+  grid-area: clar;
+}
+.gallery__item:nth-child(26) {
+  grid-area: ulti;
 }
 
 .modal {
