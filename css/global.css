@@ -176,6 +176,11 @@ html {
 h1 {
 	color: var(--secondary-color);
 }
+@media screen and (max-width: 500px) {
+	h1 {
+		  text-shadow: 0 0 1em var(--primary-color), 0 0 0.5em var(--primary-color);
+	}
+}
 
 footer svg path {
 	fill: var(--secondary-color);
@@ -204,6 +209,7 @@ main {
 h1 {
 	font-size: var(--size-3);
 	font-weight: var(--negrita);
+	line-height: 1.2;
 }
 
 h2,
@@ -227,11 +233,6 @@ small {
 }
 .tal {
 	text-align: left;
-}
-
-/* Menu */
-.menu a {
-	text-decoration: none;
 }
 
 /* Spacing/Sizing */
@@ -383,15 +384,23 @@ hr {
 	text-align: center;
 }
 
-section.cover {
+.cover {
+	display: grid;
 	background-image: url("../images/bg4.jpeg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	align-items: end;
+}
+@media screen and (max-width: 500px) {
+	.cover {
+		padding-left: var(--size-1);
+		padding-right: var(--size-1);
+	}
 }
 
-section.franja {
+.franja {
 	color: var(--primary-color);
 	background-color: var(--secondary-color);
 }
