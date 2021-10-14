@@ -25,7 +25,13 @@
 }
 @media screen and (max-width: 500px) {
   #navbar a {
-    padding: 0;
+    padding: var(--size-0);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
+  #navbar a:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
   }
 }
 

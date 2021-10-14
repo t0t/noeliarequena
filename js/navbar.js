@@ -1,6 +1,3 @@
-
-
-
 function isMobileDevice() {
   let check = false;
   (function (a) {
