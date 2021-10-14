@@ -292,6 +292,10 @@ small {
 	padding-top: var(--size-4);
 }
 
+.pt-5 {
+	padding-top: var(--size-5);
+}
+
 blockquote {
 	font-style: italic;
 	color: var(--secondary-color);
