@@ -134,17 +134,30 @@ table {
 	border-spacing: 0;
 }
 
+html {
+	box-sizing: border-box;
+	overflow-x: none;
+}
 
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
 
 
 :root {
 	--primary-color: #2a2929;
 	--secondary-color: #e8b28a;
 	--white-color: #fff;
-	--padding-normal: 1.5rem;
-	--padding-big: 3rem;
-	--padding-huge: 8rem;
 	--negrita: 600;
+	--size-0: 0.61rem;
+	--size-1: 1rem;
+	--size-2: 1.6rem;
+	--size-3: 2.59rem;
+	--size-4: 4.1rem;
+	--size-5: 6.64rem;
+	--size-6: 10.7rem;
 }
 
 
@@ -159,14 +172,13 @@ h1 {
 	color: var(--secondary-color);
 }
 
-.menu a {
-	color: var(--white-color);
-}
-
 footer svg path {
 	fill: var(--secondary-color);
 }
 
+small {
+	color: var(--secondary-color);
+}
 
 /* FUENTES */
 html {
@@ -181,119 +193,140 @@ body {
 }
 
 main {
-	font-size: 1rem;
+	font-size: var(--size-1);
 }
 
 h1 {
-	font-size: 4.236rem;
+	font-size: var(--size-3);
 	font-weight: var(--negrita);
 }
 
-h2 {
-	font-size: 2rem;
+h2,
+h3 {
+	font-size: var(--size-2);
 }
 
 dt {
 	font-weight: var(--negrita);
 }
 
+small {
+	font-size: var(--size-0);
+}
+
+.tar {
+	text-align: right;
+}
+.tac {
+	text-align: center;
+}
+.tal {
+	text-align: left;
+}
 
 /* Menu */
-.menu {
-	
-}
 
 .menu a {
 	text-decoration: none;
 }
 
-a.selected {
-	/* text-decoration: underline; */
-	font-weight: var(--negrita);
-}
-
-
 
 
 
 /* Spacing/Sizing */
-.conPaddings {
-	padding: var(--padding-big);
-}
+
 .muchoPadding {
-	padding-top: var(--padding-huge);
-	padding-right: var(--padding-big);
-	padding-bottom: var(--padding-big);
-	padding-left: var(--padding-big);
+	padding-top: var(--size-6);
+	padding-right: var(--size-4);
+	padding-bottom: var(--size-4);
+	padding-left: var(--size-4);
+}
+
+.p-4 {
+	padding: var(--size-4);
+}
+
+.p-5 {
+	padding: var(--size-5);
+}
+
+.pr-4 {
+	padding-right: var(--size-4);
+}
+
+.pb-3 {
+	padding-bottom: var(--size-3);
+}
+
+.pb-4 {
+	padding-bottom: var(--size-4);
+}
+
+.pt-4 {
+	padding-top: var(--size-4);
 }
 
 blockquote {
 	font-style: italic;
 	color: var(--secondary-color);
-	font-size: var(--padding-normal);
+	font-size: var(--size-2);
 	text-align: center;
 }
-cite {
 
-}
-
-nav.menu {
-	/* padding: var(--padding-big) var(--padding-big) 0; */
-}
-
-header {
-	/* padding-bottom: var(--padding-big); */
+small {
+	margin-bottom: var(--size-2);
 }
 
 section {
 	min-height: 25vh;
 }
 
-
 footer {
-	padding: var(--padding-big);
+	padding: var(--size-4);
 	text-align: center;
 }
 
 blockquote {
-	padding-bottom: var(--padding-big);
+	padding-bottom: var(--size-4);
 }
 
 footer svg {
-	width: var(--padding-big);
+	width: var(--size-4);
 }
 
 .full-height {
 	min-height: 100vh;
 }
+
 .mid-height {
 	min-height: 50vh;
 }
+
 h3,
 dd,
-p, 
+p,
 dt {
-	padding-bottom: var(--padding-normal);	
+	padding-bottom: var(--size-2);
 }
 
 dd {
-	padding-left: var(--padding-normal);	
+	padding-left: var(--size-2);
 }
+
 p,
 dd,
 small {
 	max-width: 800px;
 }
+
 p,
 small {
 	margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
 }
 
 
 /* GRID */
-body {
-}
 
 section {
 	display: grid;
@@ -301,48 +334,35 @@ section {
 	/* align-content: center;
 	justify-content: center; */
 }
-.siteheader--opaco {	
-	background-color:rgba(42, 41, 41, 0.89);
-}
+
+/* .siteheader--opaco {
+	background-color: rgba(42, 41, 41, 0.89);
+} */
+
 .siteheader {
-	display: grid;
 	position: fixed;
 	z-index: 1;
-	width: 100%;
-	grid-template-columns: 1fr 1fr 1fr;
 }
-.siteheader nav {
-	text-align: center;
-	display: grid;
-	place-content: center;
-	/* text-align: right; */
-	grid-template-columns: 1fr 1fr;
-	/* place-content: center; */
-}
-
 
 /* Helpers */
 .rounded {
 	border-radius: 50%;
 }
+
 hr {
 	width: 3vw;
 }
+
 .centered {
 	text-align: center;
 }
-
-
-
-
-
 
 section.cover {
 	background-image: url("../images/bg4.jpeg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-attachment: fixed;	
+	background-attachment: fixed;
 }
 
 section.franja {
@@ -352,7 +372,7 @@ section.franja {
 
 img.logo {
 	min-width: auto;
-	width: var(--padding-big);
-	height: var(--padding-big);
-	margin: var(--padding-normal);
+	width: var(--size-4);
+	height: var(--size-4);
+	margin: var(--size-2);
 }
