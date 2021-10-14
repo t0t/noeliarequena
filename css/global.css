@@ -176,11 +176,11 @@ html {
 h1 {
 	color: var(--secondary-color);
 }
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
 	h1 {
 		  text-shadow: 0 0 1em var(--primary-color), 0 0 0.5em var(--primary-color);
 	}
-}
+} */
 
 footer svg path {
 	fill: var(--secondary-color);
@@ -395,6 +395,7 @@ hr {
 }
 @media screen and (max-width: 500px) {
 	.cover {
+		background-attachment: inherit;
 		padding-left: var(--size-1);
 		padding-right: var(--size-1);
 	}
