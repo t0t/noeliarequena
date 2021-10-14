@@ -149,7 +149,8 @@ html {
 :root {
 	--primary-color: #2a2929;
 	--secondary-color: #e8b28a;
-	--white-color: #fff;
+	--tertiary-color: #BD7976;
+	--white-color: #ffffffbf;
 	--negrita: 600;
 	--size-0: 0.61rem;
 	--size-1: 1rem;
@@ -160,7 +161,11 @@ html {
 	--size-6: 10.7rem;
 }
 
-
+/* SVG's */
+circle,
+path {
+	stroke-width: 1.5px;
+}
 
 /* Colores */
 html {
@@ -346,7 +351,6 @@ section {
 
 .siteheader svg circle {
 	stroke: var(--secondary-color);
-	stroke-width: 1.5px;
 	fill: none;
 }
 @media screen and (max-width: 900px) {
@@ -359,6 +363,16 @@ section {
 /* Helpers */
 .rounded {
 	border-radius: 50%;
+}
+
+#scrollDownBtn {
+	width: var(--size-4);
+	stroke: var(--secondary-color);
+	align-self: end;
+}
+
+#scrollDownBtn:hover {
+	cursor: pointer;
 }
 
 hr {

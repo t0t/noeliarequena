@@ -41,13 +41,22 @@
     <main>
         <section class="cover full-height tac">
             <h1>Noelia Requena</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+            id="scrollDownBtn"
+            class="pb-3">
+                <g fill="none" stroke-linecap="square" stroke-miterlimit="10">
+                    <path d="M24.5 3.5v27M14.5 30.5h20l-10 14-10-14z" 
+                    vector-effect="non-scaling-stroke"/>
+                </g>
+            </svg>
         </section>
 
         <section class="franja">
             <h2>☽□♇</h2>
         </section>
 
-        <section class="slideshow-container">
+        <section class="slideshow-container"
+        id="content">
             
             <div class="mySlides fade"
             style="background-image: url('../images/bg8.jpg');"
@@ -76,7 +85,9 @@
               <div class="numbertext">4 / 4</div>
               <span class="text">El cuerpo como un templo de tensiones, <br>como un templo hermético abierto <br>y cerrado al mismo tiempo...</span>
             </div>
-            
+        
+            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
         </section>
             
         <div class="tac">
@@ -108,6 +119,14 @@
 
     <script src="js/slider.js"></script>
     <script src="js/navbar.js"></script>
+    <script>
+        const btn = document.getElementById('scrollDownBtn');
+
+        btn.addEventListener('click', () => window.scrollTo({
+        top: 600,
+        behavior: 'smooth',
+        }));
+    </script>
 </body>
 
 </html>
