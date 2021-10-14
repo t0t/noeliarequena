@@ -394,7 +394,6 @@ hr {
 }
 @media screen and (max-width: 500px) {
 	.cover {
-		align-items: center;
 		background-size: inherit;
 		background-position: 52% top;
 		
