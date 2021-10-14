@@ -176,11 +176,11 @@ html {
 h1 {
 	color: var(--secondary-color);
 }
-/* @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
 	h1 {
-		  text-shadow: 0 0 1em var(--primary-color), 0 0 0.5em var(--primary-color);
+		color: var(--primary-color);
 	}
-} */
+}
 
 footer svg path {
 	fill: var(--secondary-color);
@@ -210,6 +210,13 @@ h1 {
 	font-size: var(--size-3);
 	font-weight: var(--negrita);
 	line-height: 1.2;
+}
+@media screen and (max-width: 500px) {
+	h1 {
+		color: var(--primary-color);
+		font-weight: 500;
+		  /* text-shadow: 0 0 1em var(--primary-color), 0 0 0.5em var(--primary-color); */
+	}
 }
 
 h2,
@@ -368,7 +375,7 @@ section {
 
 #scrollDownBtn {
 	width: var(--size-4);
-	stroke: var(--secondary-color);
+	stroke: var(--primary-color);
 	align-self: end;
 }
 
