@@ -1,6 +1,6 @@
 #navbar {
   display: grid;
-  top: 0;
+  /* top: 0; */
   grid-template-columns: 1fr 1fr;
   position: fixed;
   /* width: 100%; */
