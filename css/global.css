@@ -326,16 +326,22 @@ small {
 section {
 	display: grid;
 	place-items: center;
-	/* align-content: center;
-	justify-content: center; */
 }
 
 .siteheader {
+	position: fixed;
+	z-index: 1;
 	padding: var(--size-2);
 }
 
 .siteheader svg {
 	width: var(--size-4);
+	transition: transform 1s;
+}
+
+.siteheader svg:hover {
+	transform: rotate(360deg) scale(1.3);
+	transition: transform 1s;
 }
 
 .siteheader svg circle {
@@ -349,10 +355,6 @@ section {
 	}
 }
 
-.siteheader {
-	position: fixed;
-	z-index: 1;
-}
 
 /* Helpers */
 .rounded {
@@ -378,11 +380,4 @@ section.cover {
 section.franja {
 	color: var(--primary-color);
 	background-color: var(--secondary-color);
-}
-
-img.logo {
-	min-width: auto;
-	width: var(--size-4);
-	height: var(--size-4);
-	margin: var(--size-2);
 }
