@@ -182,7 +182,8 @@ h1 {
 	}
 } */
 
-footer svg path {
+footer path,
+footer circle {
 	fill: var(--secondary-color);
 }
 
@@ -214,7 +215,7 @@ h1 {
 @media screen and (max-width: 500px) {
 	h1 {
 		/* color: var(--primary-color); */
-		font-weight: 500;
+		/* font-weight: 500; */
 	}
 }
 
@@ -248,7 +249,9 @@ small {
 	padding-bottom: var(--size-4);
 	padding-left: var(--size-4);
 }
-
+.p-0 {
+	padding: 0;
+}
 .p-4 {
 	padding: var(--size-4);
 }
@@ -298,7 +301,7 @@ blockquote {
 }
 
 footer svg {
-	width: var(--size-4);
+	width: var(--size-3);
 }
 
 .full-height {
@@ -377,6 +380,11 @@ section {
 	stroke: var(--primary-color);
 	align-self: end;
 }
+@media screen and (max-width: 500px;) {
+	#scrollDownBtn {
+		align-self: center;		
+	}
+}
 
 #scrollDownBtn:hover {
 	cursor: pointer;
@@ -400,12 +408,13 @@ hr {
 }
 @media screen and (max-width: 500px) {
 	.cover {
-		align-items: center;
+		/* align-items: center; */
 		background-size: inherit;
 		background-position: 52% top;
-		
 		background-attachment: inherit;
 		background-repeat: no-repeat;
+
+		grid-template-rows: 1fr 0.4fr;
 
 		padding-left: var(--size-1);
 		padding-right: var(--size-1);
