@@ -225,16 +225,11 @@ small {
 }
 
 /* Menu */
-
 .menu a {
 	text-decoration: none;
 }
 
-
-
-
 /* Spacing/Sizing */
-
 .muchoPadding {
 	padding-top: var(--size-6);
 	padding-right: var(--size-4);
@@ -335,9 +330,24 @@ section {
 	justify-content: center; */
 }
 
-/* .siteheader--opaco {
-	background-color: rgba(42, 41, 41, 0.89);
-} */
+.siteheader {
+	padding: var(--size-2);
+}
+
+.siteheader svg {
+	width: var(--size-4);
+}
+
+.siteheader svg circle {
+	stroke: var(--secondary-color);
+	stroke-width: 1.5px;
+	fill: none;
+}
+@media screen and (max-width: 900px) {
+	.siteheader svg circle {
+		stroke-width: 1px;
+	}
+}
 
 .siteheader {
 	position: fixed;

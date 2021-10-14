@@ -94,7 +94,7 @@
   z-index: 1;
   left: 0;
   top: 0;
-  /* width: 90vw; */
+  width: 100vw;
   height: 100%;
   overflow: auto;
   background-color: rgba(42, 41, 41, 0.89);
@@ -147,11 +147,13 @@ img.hover-shadow {
 
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: alias;
+  border: 1px solid var(--secondary-color);
 } 
 
 .close {
   color: rgb(255 255 255 / 50%);
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 10px;
   font-size: var(--size-3);
@@ -160,9 +162,13 @@ img.hover-shadow {
 
 .close:hover,
 .close:focus {
-  color: #999;
+  color: var(--secondary-color);
   text-decoration: none;
   cursor: pointer;
+}
+
+.close:hover {
+  transform: scale(1.25);
 }
 
 .previous,

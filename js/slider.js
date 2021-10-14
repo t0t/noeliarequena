@@ -1,55 +1,19 @@
-const slider = document.querySelector('div#slider');
-const right = document.querySelector('div#right');
-const left = document.querySelector('div#left');
+var slideIndex = 0;
+showSlides();
 
-/*const balls = document.querySelector('div#balls');
-for(let a = 1 ; a<=slider.children.length ; a++){
-  let element = document.createElement('div');
-  element.classList.add("ball");
-  balls.appendChild(element);
-}*/
-
-right.addEventListener("click", event => {
-  let scroll = (slider.scrollWidth -slider.scrollLeft)*slider.children.length;
-  console.log(scroll);
-  console.log(slider.scrollLeft)
-  console.log(slider.scrollWidth)
-  
-  slider.scrollBy(300, 0);
-})
-
-left.addEventListener("click", event => {
-  slider.scrollBy(-300, 0);
-})
-
-slider.addEventListener("wheel", event => {
-  if(event.deltaY > 0){
-    event.target.scrollBy(300, 0);
-  }else{
-    event.target.scrollBy(-300, 0);
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
   }
-});
-
-document.addEventListener("keydown", event => {
-  const keyPressed = event.key;
-  const move = moveSlider()[keyPressed];
-  move();
-})
-
-function moveSlider(){
-  const acceptMoves = {
-    ArrowUp() {
-      slider.scrollBy(300, 0);
-    },  
-    ArrowDown() {
-      slider.scrollBy(-300, 0);
-    },
-    ArrowRight() {
-      slider.scrollBy(300, 0);
-    },
-    ArrowLeft() {
-      slider.scrollBy(-300, 0);
-    }
-  } 
-  return acceptMoves;
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "grid";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 6000); // Change image every 2 seconds
 }
