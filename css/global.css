@@ -398,7 +398,7 @@ section {
 #scrollDownBtn {
 	width: var(--size-4);
 	stroke: var(--primary-color);
-	align-self: end;
+	align-self: center;
 }
 @media screen and (max-width: 500px;) {
 	#scrollDownBtn {
@@ -434,7 +434,7 @@ hr {
 		background-attachment: inherit;
 		background-repeat: no-repeat;
 
-		grid-template-rows: 1fr 0.4fr;
+		grid-template-rows: 1fr 0.5fr;
 
 		padding-left: var(--size-1);
 		padding-right: var(--size-1);
