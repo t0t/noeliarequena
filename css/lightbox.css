@@ -3,13 +3,13 @@
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--size-2);
 }
 
 @media screen and (min-width: 426px) {
   .gallery {
+    display: grid;
+    gap: var(--size-2);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-template-areas: 
       "prim feli terc"
       "cato nuev nuev"
