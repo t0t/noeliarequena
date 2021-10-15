@@ -8,12 +8,12 @@ function isMobileDevice() {
 }
 
 // Safari 3.0+ "[object HTMLElementConstructor]" 
-var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
-console.log(isSafari);
+const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 
-// Muestra efecto navbar si no es mobil
-if (!isMobileDevice() || isSafari) {
+// Muestra efecto navbar si no es mobil NI Safari
+if ( !isSafari && !isMobileDevice()) {
 
+  console.log(`No es SAFARI porque da ${isSafari}`);
   var prevScrollpos = window.pageYOffset;
 
   window.onscroll = function () {
@@ -27,4 +27,4 @@ if (!isMobileDevice() || isSafari) {
     
     prevScrollpos = currentScrollPos;
   };
-}
+};
