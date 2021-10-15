@@ -7,16 +7,19 @@ function isMobileDevice() {
   return check;
 }
 
+// Safari 3.0+ "[object HTMLElementConstructor]" 
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
+console.log(isSafari);
 
 // Muestra efecto navbar si no es mobil
-if (!isMobileDevice()) {
+if (!isMobileDevice() || isSafari) {
 
   var prevScrollpos = window.pageYOffset;
 
   window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
   
-    if (prevScrollpos > currentScrollPos) {
+    if (prevScrollpos > currentScrollPos)  {
       document.getElementById("navbar").style.top = "0";
     } else {
       document.getElementById("navbar").style.top = "-100px";
