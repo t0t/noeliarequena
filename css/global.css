@@ -188,7 +188,7 @@ footer circle {
 }
 
 small {
-	color: var(--secondary-color);
+	color: var(--tertiary-color);
 }
 
 /* FUENTES */
@@ -229,7 +229,7 @@ dt {
 }
 
 small {
-	font-size: var(--size-0);
+	font-size: var(--size-1);
 }
 
 .tar {
