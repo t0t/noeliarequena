@@ -150,7 +150,8 @@ html {
 	--primary-color: #2a2929;
 	--secondary-color: #e8b28a;
 	--tertiary-color: #BD7976;
-	--white-color: #ffffffbf;
+	--white-color: #ffffff;
+	--black-color: #000000;
 	--negrita: 600;
 	--size-0: 0.61rem;
 	--size-1: 1rem;
@@ -169,7 +170,7 @@ path {
 
 /* Colores */
 html {
-	color: var(--primary-color);
+	color: var(--white-color);
 	background-color: var(--black-color);
 }
 
