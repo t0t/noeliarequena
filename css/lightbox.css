@@ -1,7 +1,7 @@
 .preview {
 	width: 100%;
   object-fit: cover;
-  min-height: 470px;
+  height: 470px;
   /* padding-bottom: var(--size-2); */
 }
 
