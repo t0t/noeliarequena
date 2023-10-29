@@ -33,6 +33,7 @@
       "veinte veinte veintiuno veintidos"
       "veintitres veintitres veinticuatro veinticuatro"
       "veinticinco veinticinco veintiseis veintiseis"
+      "veintisiete veintisiete . ."
     ;
   }
 }
@@ -48,6 +49,7 @@
       "catorce quince dieciseis diecisiete diecisiete"
       "dieciocho dieciocho diecinueve veinte veintiuno"
       "veintidos veintitres veinticuatro veinticinco veintiseis"
+      "veintisiete . . . ."
     ;
   }
 }
@@ -130,9 +132,9 @@
 .gallery__item:nth-child(26) {
   grid-area: veintiseis;
 }
-/* .gallery__item:nth-child(27) {
+.gallery__item:nth-child(27) {
   grid-area: veintisiete;
-} */
+}
 
 .modal {
   display: none;
