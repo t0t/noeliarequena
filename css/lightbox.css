@@ -207,7 +207,7 @@ img.hover-shadow {
   position: fixed;
   top: 0;
   right: 10px;
-  font-size: var(--size-3);
+  font-size: var(--size-4);
   z-index: 1;
 }
 
@@ -229,8 +229,7 @@ img.hover-shadow {
   top: 40%;
   width: auto;
   margin-top: -100px;
-  color: rgb(255 255 255 / 50%);
-  /* font-weight: bold; */
+  color: var(--grey-color);
   font-size: var(--size-3);
   transition: 0.6s ease;
   user-select: none;
@@ -249,5 +248,8 @@ img.hover-shadow {
 
 .previous:hover,
 .next:hover {
-  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  color: var(--secondary-color);
+  font-size: var(--size-3);
+  top: 38%;
 }

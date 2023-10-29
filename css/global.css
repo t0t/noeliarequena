@@ -152,6 +152,7 @@ html {
 	--tertiary-color: #BD7976;
 	--white-color: #ffffff;
 	--black-color: #000000;
+	--grey-color: #555;
 	--negrita: 600;
 	--size-0: 0.61rem;
 	--size-1: 1rem;
@@ -168,6 +169,10 @@ path {
 	stroke-width: 1.5px;
 }
 
+.biografia {
+	background-color: var(--white-color);
+	color: var(--black-color);
+}
 /* Colores */
 html {
 	color: var(--white-color);
