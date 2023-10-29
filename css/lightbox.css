@@ -1,15 +1,15 @@
 .preview {
 	width: 100%;
   object-fit: cover;
-  /* min-height: 470px; */
+  min-height: 470px;
   /* padding-bottom: var(--size-2); */
 }
 
 .gallery {
 }
 .gallery__item {
-  width: 100%;
-  min-height: 470px;
+  /* width: 100%; */
+  /* min-height: 470px; */
 }
 
 @media screen and (min-width: 426px) {
