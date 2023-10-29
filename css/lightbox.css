@@ -21,7 +21,7 @@
   .gallery {
     display: grid;
     gap: var(--size-2);
-    grid-template-columns: repeat( auto-fit, 50px, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     grid-template-areas: 
       "uno dos tres cuatro"
       "cinco seis siete siete"
@@ -37,22 +37,29 @@
     ;
   }
 }
-/* @media screen and (min-width: 1023px) {
+@media screen and (min-width: 1023px) {
   .gallery {
-    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    gap: var(--size-2);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-areas: 
-      "prim feli terc cuat"
-      "nuev nuev nuev cinc"
-      "invi invi diez seis"
-      "rayo siet cato esti"
-      "roto roto deca vert"
-      "roto roto mano vert"
-      "ulti . vein vert2"
-      "ulti vent doble vert2"
-      "ulti quin clar ."
+      "uno dos tres cuatro cinco"
+      "seis siete ocho nueve diez"
+      "once doce trece catorce quince"
+      "dieciseis diecisiete dieciocho diecinueve"
+      "veinte veintiuno veintidos veintitres"
+      /* "ocho ocho ocho ocho" */
+      /* "nueve diez diez diez" */
+      /* "once once doce doce" */
+      /* "trece catorce quince quince" */
+      /* "dieciseis dieciseis diecisiete diecisiete" */
+      /* "dieciocho diecinueve veinte veinte" */
+      /* "veintiuno veintiuno veintidos veintidos" */
+      /* "veintitres veinticuatro veinticuatro veinticinco" */
+      /* "veintiseis veintiseis veintiseis veintiseis" */
     ;
   }
-} */
+}
 
 .gallery__item:nth-child(1) {
   grid-area: uno;
