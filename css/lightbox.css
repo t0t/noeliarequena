@@ -1,8 +1,13 @@
 .preview {
-	width: 100%;
+  width: 100%;
   object-fit: cover;
-  height: 470px;
-  /* padding-bottom: var(--size-2); */
+  padding-bottom: var(--size-2);
+}
+@media screen and (min-width: 426px) {
+  .preview {
+    height: 100%;
+    padding-bottom: inherit;
+  }
 }
 
 .gallery {
@@ -16,22 +21,23 @@
   .gallery {
     display: grid;
     gap: var(--size-2);
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat( auto-fit, 50px, 1fr);
     grid-template-areas: 
-      "prim feli terc"
-      "cato nuev nuev"
-      "invi invi esti"
-      "invi invi vert"
-      "vert2 roto vert"
-      "vert2 vent vein"
-      "ulti ulti deca"
-      "ulti ulti clar"
-      "ulti ulti rayo"
-      ".... .... mano"
+      "uno dos tres cuatro"
+      "cinco seis siete siete"
+      "ocho ocho ocho ocho"
+      "nueve diez diez diez"
+      "once once doce doce"
+      "trece catorce quince quince"
+      "dieciseis dieciseis diecisiete diecisiete"
+      "dieciocho diecinueve veinte veinte"
+      "veintiuno veintiuno veintidos veintidos"
+      "veintitres veinticuatro veinticuatro veinticinco"
+      "veintiseis veintiseis veintiseis veintiseis"
     ;
   }
 }
-@media screen and (min-width: 1023px) {
+/* @media screen and (min-width: 1023px) {
   .gallery {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
@@ -46,79 +52,88 @@
       "ulti quin clar ."
     ;
   }
-}
+} */
 
 .gallery__item:nth-child(1) {
-  grid-area: prim;
+  grid-area: uno;
 }
 .gallery__item:nth-child(2) {
-  grid-area: feli;
+  grid-area: dos;
 }
 .gallery__item:nth-child(3) {
-  grid-area: terc;
+  grid-area: tres;
 }
 .gallery__item:nth-child(4) {
-  grid-area: cuat;
+  grid-area: cuatro;
 }
 .gallery__item:nth-child(5) {
-  grid-area: cinc;
+  grid-area: cinco;
 }
 .gallery__item:nth-child(6) {
   grid-area: seis;
 }
 .gallery__item:nth-child(7) {
-  grid-area: siet;
+  grid-area: siete;
 }
 .gallery__item:nth-child(8) {
-  grid-area: invi;
+  grid-area: ocho;
 }
 .gallery__item:nth-child(9) {
-  grid-area: nuev;
+  grid-area: nueve;
 }
 .gallery__item:nth-child(10) {
   grid-area: diez;
 }
 .gallery__item:nth-child(11) {
-  grid-area: esti;
+  grid-area: once;
+}
+.gallery__item:nth-child(12) {
+  grid-area: doce;
+}
+.gallery__item:nth-child(13) {
+  grid-area: trece;
 }
 .gallery__item:nth-child(14) {
-  grid-area: cato;
+  grid-area: catorce;
 }
 .gallery__item:nth-child(15) {
-  grid-area: quin;
+  grid-area: quince;
 }
 .gallery__item:nth-child(16) {
-  grid-area: doble;
+  grid-area: dieciseis;
 }
 .gallery__item:nth-child(17) {
-  grid-area: vent;
+  grid-area: diecisiete;
 }
 .gallery__item:nth-child(18) {
-  grid-area: deca;
+  grid-area: dieciocho;
 }
 .gallery__item:nth-child(19) {
-  grid-area: vert;
+  grid-area: diecinueve;
 }
 .gallery__item:nth-child(20) {
-  grid-area: vert2;
+  grid-area: veinte;
 }
 .gallery__item:nth-child(21) {
-  grid-area: vein;
+  grid-area: veintiuno;
 }
 .gallery__item:nth-child(22) {
-  grid-area: mano;
+  grid-area: veintidos;
 }
 .gallery__item:nth-child(23) {
-  grid-area: rayo;
+  grid-area: veintitres;
 }
 .gallery__item:nth-child(24) {
-  grid-area: roto;
+  grid-area: veinticuatro;
 }
 .gallery__item:nth-child(25) {
-  grid-area: clar;
+  grid-area: veinticinco;
 }
 .gallery__item:nth-child(26) {
-  grid-area: ulti;
+  grid-area: veintiseis;
+}
+.gallery__item:nth-child(27) {
+  grid-area: veintisiete;
 }
 
 .modal {
