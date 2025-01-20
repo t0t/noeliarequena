@@ -1,6 +1,8 @@
-
 var slideIndex = 1;
-showSlide(slideIndex);
+// Solo inicializar el lightbox si hay slides
+if (document.getElementsByClassName('slide').length > 0) {
+  showSlide(slideIndex);
+}
 
 function openLightbox() {
   document.getElementById('Lightbox').style.display = 'grid';
@@ -11,31 +13,32 @@ function closeLightbox() {
 }
 
 function changeSlide(n) {
-	showSlide(slideIndex += n);
+  showSlide(slideIndex += n);
 }
 
 function toSlide(n) {
-	showSlide(slideIndex = n);
+  showSlide(slideIndex = n);
 }
 
 function showSlide(n) {
-
   const slides = document.getElementsByClassName('slide');
   let modalPreviews = document.getElementsByClassName('modal-preview');
+
+  if (!slides.length || !modalPreviews.length) return;
 
   if (n > slides.length) {
     slideIndex = 1;	
   }
   
   if (n < 1) {
-  	slideIndex = slides.length;
+    slideIndex = slides.length;
   }
 
   for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    slides[i].style.display = "none";
   }
   for (let i = 0; i < modalPreviews.length; i++) {
-      modalPreviews[i].className = modalPreviews[i].className.replace(' active', '');
+    modalPreviews[i].className = modalPreviews[i].className.replace(' active', '');
   }
   
   slides[slideIndex - 1].style.display = 'grid';
