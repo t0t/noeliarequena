@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="../css/grid-system.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/lightbox.css">
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 </head>
 
 <body>
@@ -40,94 +42,36 @@
     <a href="../bio/">bio</a>
   </nav>
 
-  <main class="container pt-5">
-    <section class="grid gap-5">
-      <div class="col-span-12">
-        <div class="grid-masonry">
-          <div class="gallery__item">
-            <img src="../images/obras/img1.jpg" alt="Artwork 1" onclick="openLightbox(); toSlide(1)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img2.jpg" alt="Artwork 2" onclick="openLightbox(); toSlide(2)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img3.jpg" alt="Artwork 3" onclick="openLightbox(); toSlide(3)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img4.jpg" alt="Artwork 4" onclick="openLightbox(); toSlide(4)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img5.jpg" alt="Artwork 5" onclick="openLightbox(); toSlide(5)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img6.jpg" alt="Artwork 6" onclick="openLightbox(); toSlide(6)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img7.jpg" alt="Artwork 7" onclick="openLightbox(); toSlide(7)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img8.jpg" alt="Artwork 8" onclick="openLightbox(); toSlide(8)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img9.jpg" alt="Artwork 9" onclick="openLightbox(); toSlide(9)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img10.jpg" alt="Artwork 10" onclick="openLightbox(); toSlide(10)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img11.jpg" alt="Artwork 11" onclick="openLightbox(); toSlide(11)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img12.jpg" alt="Artwork 12" onclick="openLightbox(); toSlide(12)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img13.jpg" alt="Artwork 13" onclick="openLightbox(); toSlide(13)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img14.jpg" alt="Artwork 14" onclick="openLightbox(); toSlide(14)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img15.jpg" alt="Artwork 15" onclick="openLightbox(); toSlide(15)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img16.jpg" alt="Artwork 16" onclick="openLightbox(); toSlide(16)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img17.jpg" alt="Artwork 17" onclick="openLightbox(); toSlide(17)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img18.jpg" alt="Artwork 18" onclick="openLightbox(); toSlide(18)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img19.jpg" alt="Artwork 19" onclick="openLightbox(); toSlide(19)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img20.jpg" alt="Artwork 20" onclick="openLightbox(); toSlide(20)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img21.jpg" alt="Artwork 21" onclick="openLightbox(); toSlide(21)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img22.jpg" alt="Artwork 22" onclick="openLightbox(); toSlide(22)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img23.jpg" alt="Artwork 23" onclick="openLightbox(); toSlide(23)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img24.jpg" alt="Artwork 24" onclick="openLightbox(); toSlide(24)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img25.jpg" alt="Artwork 25" onclick="openLightbox(); toSlide(25)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img26.jpg" alt="Artwork 26" onclick="openLightbox(); toSlide(26)">
-          </div>
-          <div class="gallery__item">
-            <img src="../images/obras/img27.jpg" alt="Artwork 27" onclick="openLightbox(); toSlide(27)">
-          </div>
-        </div>
-      </div>
-    </section>
+  <main>
+    <div class="masonry">
+      <div class="masonry-item"><img src="../images/obras/img1.jpg" alt="Artwork 1" onclick="openLightbox(); toSlide(1)"></div>
+      <div class="masonry-item"><img src="../images/obras/img2.jpg" alt="Artwork 2" onclick="openLightbox(); toSlide(2)"></div>
+      <div class="masonry-item"><img src="../images/obras/img3.jpg" alt="Artwork 3" onclick="openLightbox(); toSlide(3)"></div>
+      <div class="masonry-item"><img src="../images/obras/img4.jpg" alt="Artwork 4" onclick="openLightbox(); toSlide(4)"></div>
+      <div class="masonry-item"><img src="../images/obras/img5.jpg" alt="Artwork 5" onclick="openLightbox(); toSlide(5)"></div>
+      <div class="masonry-item"><img src="../images/obras/img6.jpg" alt="Artwork 6" onclick="openLightbox(); toSlide(6)"></div>
+      <div class="masonry-item"><img src="../images/obras/img7.jpg" alt="Artwork 7" onclick="openLightbox(); toSlide(7)"></div>
+      <div class="masonry-item"><img src="../images/obras/img8.jpg" alt="Artwork 8" onclick="openLightbox(); toSlide(8)"></div>
+      <div class="masonry-item"><img src="../images/obras/img9.jpg" alt="Artwork 9" onclick="openLightbox(); toSlide(9)"></div>
+      <div class="masonry-item"><img src="../images/obras/img10.jpg" alt="Artwork 10" onclick="openLightbox(); toSlide(10)"></div>
+      <div class="masonry-item"><img src="../images/obras/img11.jpg" alt="Artwork 11" onclick="openLightbox(); toSlide(11)"></div>
+      <div class="masonry-item"><img src="../images/obras/img12.jpg" alt="Artwork 12" onclick="openLightbox(); toSlide(12)"></div>
+      <div class="masonry-item"><img src="../images/obras/img13.jpg" alt="Artwork 13" onclick="openLightbox(); toSlide(13)"></div>
+      <div class="masonry-item"><img src="../images/obras/img14.jpg" alt="Artwork 14" onclick="openLightbox(); toSlide(14)"></div>
+      <div class="masonry-item"><img src="../images/obras/img15.jpg" alt="Artwork 15" onclick="openLightbox(); toSlide(15)"></div>
+      <div class="masonry-item"><img src="../images/obras/img16.jpg" alt="Artwork 16" onclick="openLightbox(); toSlide(16)"></div>
+      <div class="masonry-item"><img src="../images/obras/img17.jpg" alt="Artwork 17" onclick="openLightbox(); toSlide(17)"></div>
+      <div class="masonry-item"><img src="../images/obras/img18.jpg" alt="Artwork 18" onclick="openLightbox(); toSlide(18)"></div>
+      <div class="masonry-item"><img src="../images/obras/img19.jpg" alt="Artwork 19" onclick="openLightbox(); toSlide(19)"></div>
+      <div class="masonry-item"><img src="../images/obras/img20.jpg" alt="Artwork 20" onclick="openLightbox(); toSlide(20)"></div>
+      <div class="masonry-item"><img src="../images/obras/img21.jpg" alt="Artwork 21" onclick="openLightbox(); toSlide(21)"></div>
+      <div class="masonry-item"><img src="../images/obras/img22.jpg" alt="Artwork 22" onclick="openLightbox(); toSlide(22)"></div>
+      <div class="masonry-item"><img src="../images/obras/img23.jpg" alt="Artwork 23" onclick="openLightbox(); toSlide(23)"></div>
+      <div class="masonry-item"><img src="../images/obras/img24.jpg" alt="Artwork 24" onclick="openLightbox(); toSlide(24)"></div>
+      <div class="masonry-item"><img src="../images/obras/img25.jpg" alt="Artwork 25" onclick="openLightbox(); toSlide(25)"></div>
+      <div class="masonry-item"><img src="../images/obras/img26.jpg" alt="Artwork 26" onclick="openLightbox(); toSlide(26)"></div>
+      <div class="masonry-item"><img src="../images/obras/img27.jpg" alt="Artwork 27" onclick="openLightbox(); toSlide(27)"></div>
+    </div>
   </main>
 
   <!-- Lightbox -->

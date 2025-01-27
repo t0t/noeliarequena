@@ -58,3 +58,30 @@ document.addEventListener('keydown', function(event) {
     changeSlide(1);
   }
 });
+
+// Initialize Masonry
+document.addEventListener('DOMContentLoaded', function() {
+  var grid = document.querySelector('.masonry');
+  
+  function initMasonry() {
+    var width = window.innerWidth;
+    return new Masonry(grid, {
+      itemSelector: '.masonry-item',
+      columnWidth: width > 1200 ? 200 : width > 992 ? 180 : width > 768 ? 160 : 140,
+      gutter: 0,
+      fitWidth: true,
+      horizontalOrder: true
+    });
+  }
+
+  // Initialize Masonry after all images are loaded
+  imagesLoaded(grid, function() {
+    var masonry = initMasonry();
+    
+    // Reinicializar Masonry cuando cambie el tamaño de la ventana
+    window.addEventListener('resize', function() {
+      masonry.destroy();
+      masonry = initMasonry();
+    });
+  });
+});
