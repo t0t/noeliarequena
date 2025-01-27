@@ -1,0 +1,165 @@
+/* Grid System Variables */
+:root {
+    --grid-columns: 12;
+    --grid-gap: 2rem;
+    --container-max-width: 1400px;
+    --container-padding: 2rem;
+    
+    /* Breakpoints */
+    --bp-sm: 576px;
+    --bp-md: 768px;
+    --bp-lg: 992px;
+    --bp-xl: 1200px;
+    --bp-xxl: 1400px;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0 var(--container-padding);
+}
+
+/* Grid System */
+.grid {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+}
+
+/* Column Spans */
+.col-span-1 { grid-column: span 1; }
+.col-span-2 { grid-column: span 2; }
+.col-span-3 { grid-column: span 3; }
+.col-span-4 { grid-column: span 4; }
+.col-span-5 { grid-column: span 5; }
+.col-span-6 { grid-column: span 6; }
+.col-span-7 { grid-column: span 7; }
+.col-span-8 { grid-column: span 8; }
+.col-span-9 { grid-column: span 9; }
+.col-span-10 { grid-column: span 10; }
+.col-span-11 { grid-column: span 11; }
+.col-span-12 { grid-column: span 12; }
+
+/* Column Start Positions */
+.col-start-1 { grid-column-start: 1; }
+.col-start-2 { grid-column-start: 2; }
+.col-start-3 { grid-column-start: 3; }
+.col-start-4 { grid-column-start: 4; }
+.col-start-5 { grid-column-start: 5; }
+.col-start-6 { grid-column-start: 6; }
+.col-start-7 { grid-column-start: 7; }
+.col-start-8 { grid-column-start: 8; }
+.col-start-9 { grid-column-start: 9; }
+.col-start-10 { grid-column-start: 10; }
+.col-start-11 { grid-column-start: 11; }
+.col-start-12 { grid-column-start: 12; }
+
+/* Grid Gaps */
+.gap-0 { gap: 0; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 1rem; }
+.gap-4 { gap: 1.5rem; }
+.gap-5 { gap: 2rem; }
+.gap-6 { gap: 3rem; }
+
+/* Responsive Grid */
+@media (min-width: 576px) {
+    .sm\:col-span-1 { grid-column: span 1; }
+    .sm\:col-span-2 { grid-column: span 2; }
+    .sm\:col-span-3 { grid-column: span 3; }
+    .sm\:col-span-4 { grid-column: span 4; }
+    .sm\:col-span-6 { grid-column: span 6; }
+    .sm\:col-span-12 { grid-column: span 12; }
+}
+
+@media (min-width: 768px) {
+    .md\:col-span-1 { grid-column: span 1; }
+    .md\:col-span-2 { grid-column: span 2; }
+    .md\:col-span-3 { grid-column: span 3; }
+    .md\:col-span-4 { grid-column: span 4; }
+    .md\:col-span-6 { grid-column: span 6; }
+    .md\:col-span-8 { grid-column: span 8; }
+    .md\:col-span-12 { grid-column: span 12; }
+}
+
+@media (min-width: 992px) {
+    .lg\:col-span-1 { grid-column: span 1; }
+    .lg\:col-span-2 { grid-column: span 2; }
+    .lg\:col-span-3 { grid-column: span 3; }
+    .lg\:col-span-4 { grid-column: span 4; }
+    .lg\:col-span-6 { grid-column: span 6; }
+    .lg\:col-span-8 { grid-column: span 8; }
+    .lg\:col-span-9 { grid-column: span 9; }
+    .lg\:col-span-12 { grid-column: span 12; }
+}
+
+/* Layout Components */
+.grid-gallery {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-masonry {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+    .grid-masonry {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-masonry {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Utility Classes */
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.center-content {
+    place-items: center;
+}
+
+.stretch-content {
+    align-items: stretch;
+}
+
+/* Grid Areas */
+.grid-areas {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+}
+
+@media (max-width: 768px) {
+    .grid-areas {
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+}
+
+.area-header { grid-area: header; }
+.area-main { grid-area: main; }
+.area-sidebar { grid-area: sidebar; }
+.area-footer { grid-area: footer; }

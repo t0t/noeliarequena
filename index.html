@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/grid-system.css">
 </head>
 
 <body>
@@ -30,56 +30,60 @@
         </a>
     </header>
 
-    <nav id="navbar">
+    <nav id="navbar" class="menu">
         <a href="/exposiciones/">expo</a>
         <a href="/artworks/">artworks</a>
         <a href="/bio/">bio</a>
     </nav>
 
     <main>
-        <section class="cover full-height tac">
-            <h1>Noelia Requena</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
-            id="scrollDownBtn"
-            class="pb-3">
-                <path fill="none" stroke-linecap="square" stroke-miterlimit="10" d="m45.5 17.5-21 14-21-14"
-                vector-effect="non-scaling-stroke"/>
-            </svg>
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
-            id="scrollDownBtn"
-            class="pb-3">
-                <g fill="none" stroke-linecap="square" stroke-miterlimit="10">
-                    <path d="M24.5 3.5v27M14.5 30.5h20l-10 14-10-14z" 
-                    vector-effect="non-scaling-stroke"/>
-                </g>
-            </svg> -->
+        <section class="cover container-fluid">
+            <div class="grid gap-4">
+                <div class="col-span-12 text-center">
+                    <h1>Noelia Requena</h1>
+                    <!-- <h2>Artista plástica</h2> -->
+                    <svg id="scrollDownBtn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+                    </svg>
+                </div>
+            </div>
         </section>
 
-        <section class="franja">
-            <h2>☽□♇</h2>
+        <section class="resumen container">
+            <div class="grid">
+                <div class="col-span-12">
+                    <blockquote>
+                        <h2>☽ □ ♇</h2>
+                        <p>
+                            Soy una artista plástica que busca expresar la complejidad de las emociones humanas a través
+                            del arte. Mi trabajo se centra en explorar la relación entre el cuerpo, la identidad y la
+                            experiencia vivida.
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
         </section>
 
-        <section class="slideshow-container"
-        id="content">
+        <section class="slideshow-container grid" id="content">
             
-            <div class="mySlides fade" style="background-image: url('images/bg8.jpg');">
+            <div class="mySlides fade col-span-12" style="background-image: url('images/bg8.jpg');">
               <div class="numbertext">1 / 4</div>
-              <span class="text">Un anhelo cifrado, <br>un enigma de muchas dimensiones...</span>
+              <span class="text text-center">Un anhelo cifrado, <br>un enigma de muchas dimensiones...</span>
             </div>
             
-            <div class="mySlides fade" style="background-image: url('images/bg6.jpg');">
+            <div class="mySlides fade col-span-12" style="background-image: url('images/bg6.jpg');">
               <div class="numbertext">2 / 4</div>
-              <span class="text">La existencia se desnuda, <br> una pregunta en el vacío...</span>
+              <span class="text text-center">La existencia se desnuda, <br> una pregunta en el vacío...</span>
             </div>
             
-            <div class="mySlides fade" style="background-image: url('images/bg3.jpg');">
+            <div class="mySlides fade col-span-12" style="background-image: url('images/bg3.jpg');">
               <div class="numbertext">3 / 4</div>
-              <span class="text">El cuerpo como un temblor en el tiempo, <br>como un proceso de luz y sombra.</span>
+              <span class="text text-center">El cuerpo como un temblor en el tiempo, <br>como un proceso de luz y sombra.</span>
             </div>
 
-            <div class="mySlides fade" style="background-image: url('images/bg5.jpg');">
+            <div class="mySlides fade col-span-12" style="background-image: url('images/bg5.jpg');">
               <div class="numbertext">4 / 4</div>
-              <span class="text">El cuerpo como un templo de tensiones, <br>como un templo hermético abierto <br>y cerrado al mismo tiempo...</span>
+              <span class="text text-center">El cuerpo como un templo de tensiones, <br>como un templo hermético abierto <br>y cerrado al mismo tiempo...</span>
             </div>
         
             <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
