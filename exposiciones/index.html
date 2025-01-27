@@ -181,10 +181,10 @@
         <!-- Can Puget Exhibition -->
         <section class="grid gap-5 pt-5">
             <div class="col-span-12 lg:col-span-4">
-                <img src="../images/expos/cartel_v1.jpeg" alt="Cartel de la exposición" class="img-100" loading="lazy">
+                <img src="../images/expos/cartel_v1.jpeg" alt="Cartel de la exposición" class="img-100" loading="lazy" onclick="openLightbox();toSlide(1)">
                 
                 <div class="video-container video-916" id="video-container-1">
-                    <video controls preload="none" playsinline poster="../images/expos/video_expo_6_poster.jpg" data-title="Exposición Individual" data-description="Sala de exposiciones Manlleu, 2023" onclick="openLightbox(); toSlide(1)">
+                    <video controls preload="none" playsinline poster="../images/expos/video_expo_6_poster.jpg" onclick="openLightbox();toSlide(2)">
                         <source src="../images/expos/video_expo_6.webm" type="video/webm">
                         <source src="../images/expos/video_expo_6.mp4" type="video/mp4">
                         Tu navegador no soporta el elemento video.
@@ -205,7 +205,7 @@
                     <p>Los procesos pictóricos son un espejo, generando un espacio donde mis carencias y miedos se van viendo revelados tímidamente, donde danzan mis dualidades internas. Espacio donde es posible un encuentro conmigo misma, un encuentro en el que mi hacer caótico y desbordado busca contener(se) de todo lo que va quedando fijado.</p>
                 </div>
                 <div class="video-container">
-                    <video controls preload="none" playsinline poster="../images/expos/video_expo_5_poster.jpg" data-title="Exposición Individual" data-description="Sala de exposiciones Manlleu, 2023" onclick="openLightbox(); toSlide(2)">
+                    <video controls preload="none" playsinline poster="../images/expos/video_expo_5_poster.jpg" onclick="openLightbox();toSlide(3)">
                         <source src="../images/expos/video_expo_5.webm" type="video/webm">
                         <source src="../images/expos/video_expo_5.mp4" type="video/mp4">
                         Tu navegador no soporta el elemento video.
@@ -218,7 +218,7 @@
         <section class="grid gap-5 pt-5">
             <div class="col-span-12 lg:col-span-4">
                 <div class="video-container video-916" id="video-container-2">
-                    <video controls preload="none" playsinline poster="../images/expos/video_expo_7_poster.jpg" data-title="Exposición Colectiva" data-description="Muestra de arte contemporáneo MGA, 2024" onclick="openLightbox(); toSlide(3)">
+                    <video controls preload="none" playsinline poster="../images/expos/video_expo_7_poster.jpg" onclick="openLightbox();toSlide(4)">
                         <source src="../images/expos/video_expo_7.webm" type="video/webm">
                         <source src="../images/expos/video_expo_7.mp4" type="video/mp4">
                         Tu navegador no soporta el elemento video.
@@ -250,16 +250,16 @@
                 <a class="next" onclick="changeSlide(1)">&#10095;</a>
                 
                 <div class="slide">
+                    <img src="../images/expos/cartel_v1.jpeg" alt="Cartel de la exposición" style="max-height: calc(100vh - 100px); max-width: 100%; object-fit: contain;">
+                </div>
+
+                <div class="slide">
                     <div class="video-container">
                         <video controls poster="../images/expos/video_expo_6_poster.jpg">
                             <source src="../images/expos/video_expo_6.webm" type="video/webm">
                             <source src="../images/expos/video_expo_6.mp4" type="video/mp4">
                             Tu navegador no soporta el elemento video.
                         </video>
-                    </div>
-                    <div class="video-description">
-                        <h3>Exposición Individual</h3>
-                        <p>Sala de exposiciones Manlleu, 2023</p>
                     </div>
                 </div>
 
@@ -271,10 +271,6 @@
                             Tu navegador no soporta el elemento video.
                         </video>
                     </div>
-                    <div class="video-description">
-                        <h3>Exposición Individual</h3>
-                        <p>Sala de exposiciones Manlleu, 2023</p>
-                    </div>
                 </div>
 
                 <div class="slide">
@@ -284,10 +280,6 @@
                             <source src="../images/expos/video_expo_7.mp4" type="video/mp4">
                             Tu navegador no soporta el elemento video.
                         </video>
-                    </div>
-                    <div class="video-description">
-                        <h3>Exposición Colectiva</h3>
-                        <p>Muestra de arte contemporáneo MGA, 2024</p>
                     </div>
                 </div>
             </div>
@@ -316,17 +308,17 @@
         let currentVideo = null;
 
         function openLightbox() {
-            document.getElementById('lightbox').style.display = 'block';
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'block';
             document.body.style.overflow = 'hidden';
-            showSlides(slideIndex);
         }
 
         function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
             document.body.style.overflow = 'auto';
             if (currentVideo) {
                 currentVideo.pause();
-                currentVideo = null;
             }
         }
 
@@ -335,7 +327,8 @@
         }
 
         function toSlide(n) {
-            showSlides(slideIndex = n);
+            slideIndex = n;
+            showSlides(slideIndex);
         }
 
         function showSlides(n) {
@@ -351,22 +344,18 @@
             // Pausar video actual si existe
             if (currentVideo) {
                 currentVideo.pause();
-                currentVideo = null;
             }
 
             // Ocultar todas las slides
-            Array.from(slides).forEach(slide => {
-                slide.style.display = "none";
-                slide.classList.remove('active');
-            });
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
 
             // Mostrar la slide actual
-            const currentSlide = slides[slideIndex - 1];
-            currentSlide.style.display = "flex";
-            currentSlide.classList.add('active');
+            slides[slideIndex - 1].style.display = "flex";
 
             // Manejar video en la slide actual
-            currentVideo = currentSlide.querySelector('video');
+            currentVideo = slides[slideIndex - 1].querySelector('video');
             if (currentVideo) {
                 currentVideo.controls = true;
             }
@@ -375,7 +364,6 @@
         // Event Listeners
         document.addEventListener('DOMContentLoaded', function() {
             const lightbox = document.getElementById('lightbox');
-            const modalContent = lightbox.querySelector('.modal-content');
 
             // Cerrar con Escape
             document.addEventListener('keydown', function(e) {
@@ -401,13 +389,6 @@
                     closeLightbox();
                 }
             });
-
-            // Prevenir cierre al hacer click en el contenido
-            if (modalContent) {
-                modalContent.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-            }
         });
     </script>
 </body>

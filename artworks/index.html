@@ -266,52 +266,15 @@
   <script src="../js/tabs.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const grid = document.querySelector('.masonry');
-      const masonry = new Masonry(grid, {
-        itemSelector: '.masonry-item',
-        columnWidth: '.masonry-item',
-        percentPosition: true,
-        gutter: 0,
-        transitionDuration: '0.3s',
-        initLayout: false,
-        resize: true,
-        fitWidth: false
-      });
-
-      // Manejar la carga de imágenes
-      grid.classList.add('is-loading');
-      
+      var grid = document.querySelector('.masonry');
       imagesLoaded(grid, function() {
-        // Iniciar animación de entrada
-        setTimeout(() => {
-          grid.classList.remove('is-loading');
-          grid.classList.add('is-loaded');
-          masonry.layout();
-        }, 100);
-
-        // Recalcular layout cuando cambie el tamaño de la ventana
-        let resizeTimer;
-        window.addEventListener('resize', function() {
-          clearTimeout(resizeTimer);
-          grid.style.opacity = '0';
-          resizeTimer = setTimeout(function() {
-            masonry.layout();
-            grid.style.opacity = '1';
-          }, 250);
+        var msnry = new Masonry(grid, {
+          itemSelector: '.masonry-item',
+          columnWidth: '.masonry-item',
+          percentPosition: true,
+          gutter: 10
         });
       });
-
-      // Optimizar la carga de imágenes
-      const images = grid.getElementsByTagName('img');
-      for (let img of images) {
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        
-        // Asegurar que las imágenes mantienen su proporción
-        img.addEventListener('load', function() {
-          masonry.layout();
-        });
-      }
     });
   </script>
   <script>

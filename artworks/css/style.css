@@ -1,22 +1,24 @@
 /* Contenedor principal */
 .masonry {
     width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1rem;
     box-sizing: border-box;
 }
 
 /* Grid items */
 .masonry-item {
-    width: 100%;
+    width: calc(33.333% - 10px);
     padding: 8px;
+    margin-bottom: 15px;
     box-sizing: border-box;
 }
 
 .masonry-item img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
     border-radius: 4px;
     transition: opacity 0.3s ease;
     object-fit: cover;
@@ -36,7 +38,7 @@
         padding: 0 8px;
     }
     .masonry-item {
-        width: 50%;
+        width: calc(33.333% - 10px);
     }
 }
 
@@ -45,7 +47,7 @@
         padding: 0 12px;
     }
     .masonry-item {
-        width: 33.333%;
+        width: calc(33.333% - 10px);
     }
 }
 
@@ -56,7 +58,7 @@
         margin: 0 auto;
     }
     .masonry-item {
-        width: 25%;
+        width: calc(33.333% - 10px);
     }
 }
 
@@ -65,7 +67,19 @@
         padding: 0 20px;
     }
     .masonry-item {
-        width: 20%;
+        width: calc(33.333% - 10px);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .masonry-item {
+        width: calc(50% - 10px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .masonry-item {
+        width: 100%;
     }
 }
 
