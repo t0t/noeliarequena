@@ -1,0 +1,91 @@
+/* Contenedor principal */
+.masonry {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grid items */
+.masonry-item {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+    object-fit: cover;
+}
+
+.masonry-item:hover {
+    transform: translateY(-2px);
+}
+
+.masonry-item img:hover {
+    opacity: 0.9;
+}
+
+/* Responsive breakpoints con ajuste de ancho */
+@media (min-width: 576px) {
+    .masonry {
+        padding: 0 8px;
+    }
+    .masonry-item {
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .masonry {
+        padding: 0 12px;
+    }
+    .masonry-item {
+        width: 33.333%;
+    }
+}
+
+@media (min-width: 992px) {
+    .masonry {
+        padding: 0 16px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .masonry-item {
+        width: 25%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .masonry {
+        padding: 0 20px;
+    }
+    .masonry-item {
+        width: 20%;
+    }
+}
+
+/* Estados de carga */
+.masonry.is-loading {
+    opacity: 0;
+}
+
+.masonry.is-loaded {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.masonry-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.masonry.is-loaded .masonry-item {
+    opacity: 1;
+    transform: translateY(0);
+}

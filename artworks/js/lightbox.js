@@ -1,104 +1,123 @@
 let slideIndex = 1;
-let isLightboxOpen = false;
-let masonry = null;
-let resizeTimeout = null;
+let currentVideo = null;
 
 function openLightbox() {
-  document.getElementById('lightbox').style.display = "block";
-  isLightboxOpen = true;
+    document.getElementById('lightbox').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    showSlides(slideIndex);
 }
 
 function closeLightbox() {
-  document.getElementById('lightbox').style.display = "none";
-  isLightboxOpen = false;
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    
+    // Pausar todos los videos al cerrar
+    const videos = lightbox.getElementsByTagName('video');
+    Array.from(videos).forEach(video => {
+        video.pause();
+    });
 }
 
 function changeSlide(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 }
 
 function toSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  const slides = document.getElementsByClassName("slide");
-  
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  
-  slides[slideIndex-1].style.display = "block";
+    const slides = document.getElementsByClassName('slide');
+    
+    // Validar índice
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+
+    // Pausar video actual si existe
+    if (currentVideo) {
+        currentVideo.pause();
+    }
+
+    // Ocultar todas las slides
+    Array.from(slides).forEach(slide => {
+        slide.style.display = 'none';
+    });
+
+    // Mostrar y preparar la slide actual
+    const currentSlide = slides[slideIndex - 1];
+    currentSlide.style.display = 'block';
+
+    // Manejar video en la slide actual
+    currentVideo = currentSlide.querySelector('video');
+    if (currentVideo) {
+        // Asegurarse de que el video esté cargado
+        if (currentVideo.readyState === 0) {
+            currentVideo.load();
+        }
+        
+        // Actualizar controles y atributos
+        currentVideo.controls = true;
+        currentVideo.style.maxWidth = '100%';
+        currentVideo.style.height = 'auto';
+    }
+
+    // Actualizar descripción
+    updateDescription(slideIndex);
 }
 
-// Inicializar Masonry de manera optimizada
-function initMasonry() {
-  const grid = document.querySelector('.masonry');
-  if (!grid) return;
-
-  const options = {
-    itemSelector: '.masonry-item',
-    columnWidth: '.masonry-item',
-    percentPosition: true,
-    gutter: 20,
-    transitionDuration: '0.2s'
-  };
-
-  // Destruir instancia anterior si existe
-  if (masonry) {
-    masonry.destroy();
-  }
-
-  // Crear nueva instancia
-  masonry = new Masonry(grid, options);
-
-  // Recargar layout cuando las imágenes estén cargadas
-  imagesLoaded(grid).on('progress', () => {
-    masonry.layout();
-  });
+function updateDescription(index) {
+    const currentSlide = document.getElementsByClassName('slide')[index - 1];
+    const video = currentSlide.querySelector('video');
+    
+    if (video) {
+        const title = video.getAttribute('data-title') || '';
+        const description = video.getAttribute('data-description') || '';
+        
+        const descriptionContainer = currentSlide.querySelector('.video-description');
+        if (descriptionContainer) {
+            descriptionContainer.innerHTML = `
+                <h3>${title}</h3>
+                <p>${description}</p>
+            `;
+        }
+    }
 }
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
-  // Inicializar Masonry
-  initMasonry();
+    const lightbox = document.getElementById('lightbox');
 
-  // Manejar resize con debounce
-  window.addEventListener('resize', function() {
-    if (resizeTimeout) {
-      clearTimeout(resizeTimeout);
-    }
-    resizeTimeout = setTimeout(initMasonry, 250);
-  });
+    // Cerrar con Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.style.display === 'block') {
+            closeLightbox();
+        }
+    });
 
-  // Cerrar lightbox al hacer clic fuera
-  document.getElementById('lightbox').addEventListener('click', function(event) {
-    if (event.target === this) {
-      closeLightbox();
-    }
-  });
+    // Navegación con flechas
+    document.addEventListener('keydown', function(e) {
+        if (lightbox.style.display === 'block') {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        }
+    });
 
-  // Navegación por teclado
-  document.addEventListener('keydown', function(event) {
-    if (!isLightboxOpen) return;
-    
-    switch(event.key) {
-      case 'Escape':
-        closeLightbox();
-        break;
-      case 'ArrowLeft':
-        changeSlide(-1);
-        break;
-      case 'ArrowRight':
-        changeSlide(1);
-        break;
+    // Cerrar al hacer click fuera
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Prevenir cierre al hacer click en el contenido
+    const modalContent = lightbox.querySelector('.modal-content');
+    if (modalContent) {
+        modalContent.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
     }
-  });
 });
