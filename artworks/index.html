@@ -42,7 +42,7 @@
     <a href="../bio/">bio</a>
   </nav>
 
-  <main>
+  <main class="pt-5">
     <div class="masonry">
       <div class="masonry-item"><img src="../images/obras/img1.jpg" alt="Artwork 1" onclick="openLightbox(); toSlide(1)"></div>
       <div class="masonry-item"><img src="../images/obras/img2.jpg" alt="Artwork 2" onclick="openLightbox(); toSlide(2)"></div>
@@ -264,6 +264,20 @@
   <script src="../js/navbar.js"></script>
   <script src="./js/lightbox.js"></script>
   <script src="../js/tabs.js"></script>
+  <script>
+    // Manejo de errores global
+    window.addEventListener('error', function(e) {
+      console.error('Error en la página:', e.message);
+      if (e.error && e.error.stack) {
+        console.error('Stack trace:', e.error.stack);
+      }
+    });
+
+    // Manejo de promesas rechazadas
+    window.addEventListener('unhandledrejection', function(e) {
+      console.error('Promesa rechazada:', e.reason);
+    });
+  </script>
 </body>
 
 </html>

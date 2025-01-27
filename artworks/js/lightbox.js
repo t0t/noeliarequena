@@ -1,5 +1,7 @@
 let slideIndex = 1;
 let isLightboxOpen = false;
+let masonry = null;
+let resizeTimeout = null;
 
 function openLightbox() {
   document.getElementById('lightbox').style.display = "block";
@@ -36,52 +38,67 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
 }
 
-// Close lightbox when clicking outside of the image
-document.addEventListener('click', function(event) {
-  const lightbox = document.getElementById('lightbox');
-  const modalContent = document.querySelector('.modal-content');
-  
-  if (isLightboxOpen && event.target === lightbox) {
-    closeLightbox();
-  }
-});
+// Inicializar Masonry de manera optimizada
+function initMasonry() {
+  const grid = document.querySelector('.masonry');
+  if (!grid) return;
 
-// Keyboard navigation
-document.addEventListener('keydown', function(event) {
-  if (!isLightboxOpen) return;
-  
-  if (event.key === 'Escape') {
-    closeLightbox();
-  } else if (event.key === 'ArrowLeft') {
-    changeSlide(-1);
-  } else if (event.key === 'ArrowRight') {
-    changeSlide(1);
-  }
-});
+  const options = {
+    itemSelector: '.masonry-item',
+    columnWidth: '.masonry-item',
+    percentPosition: true,
+    gutter: 20,
+    transitionDuration: '0.2s'
+  };
 
-// Initialize Masonry
+  // Destruir instancia anterior si existe
+  if (masonry) {
+    masonry.destroy();
+  }
+
+  // Crear nueva instancia
+  masonry = new Masonry(grid, options);
+
+  // Recargar layout cuando las imágenes estén cargadas
+  imagesLoaded(grid).on('progress', () => {
+    masonry.layout();
+  });
+}
+
+// Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
-  var grid = document.querySelector('.masonry');
-  
-  function initMasonry() {
-    var width = window.innerWidth;
-    return new Masonry(grid, {
-      itemSelector: '.masonry-item',
-      columnWidth: width > 1200 ? 200 : width > 992 ? 180 : width > 768 ? 160 : 140,
-      gutter: 0,
-      fitWidth: true,
-      horizontalOrder: true
-    });
-  }
+  // Inicializar Masonry
+  initMasonry();
 
-  // Initialize Masonry after all images are loaded
-  imagesLoaded(grid, function() {
-    var masonry = initMasonry();
+  // Manejar resize con debounce
+  window.addEventListener('resize', function() {
+    if (resizeTimeout) {
+      clearTimeout(resizeTimeout);
+    }
+    resizeTimeout = setTimeout(initMasonry, 250);
+  });
+
+  // Cerrar lightbox al hacer clic fuera
+  document.getElementById('lightbox').addEventListener('click', function(event) {
+    if (event.target === this) {
+      closeLightbox();
+    }
+  });
+
+  // Navegación por teclado
+  document.addEventListener('keydown', function(event) {
+    if (!isLightboxOpen) return;
     
-    // Reinicializar Masonry cuando cambie el tamaño de la ventana
-    window.addEventListener('resize', function() {
-      masonry.destroy();
-      masonry = initMasonry();
-    });
+    switch(event.key) {
+      case 'Escape':
+        closeLightbox();
+        break;
+      case 'ArrowLeft':
+        changeSlide(-1);
+        break;
+      case 'ArrowRight':
+        changeSlide(1);
+        break;
+    }
   });
 });

@@ -12,6 +12,11 @@
     width: 100%;
     background: #000;
     overflow: hidden;
+    /* Prevenir reflow */
+    contain: content;
+    /* Forzar hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .video-container video {
@@ -19,10 +24,30 @@
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
+    /* Optimizaciones de rendimiento */
+    object-fit: cover;
+    loading: "lazy";
 }
 
 .video-container.video-916 video {
     aspect-ratio: 9/16;
+}
+
+/* Placeholder para videos no cargados */
+.video-container::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    background: #1a1a1a;
+}
+
+.video-container.video-916::before {
+    padding-top: 177.78%; /* 9:16 aspect ratio */
+}
+
+.video-container.loaded::before {
+    display: none;
 }
 
 /* Responsive breakpoints */
