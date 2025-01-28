@@ -39,6 +39,7 @@ export class Navigation {
                 this.isMenuOpen = !this.isMenuOpen;
                 hamburger.classList.toggle(styles.active);
                 this.container.querySelector(`.${styles.menuItems}`).classList.toggle(styles.active);
+                document.body.classList.toggle('menu-active');
             });
         }
 
@@ -50,6 +51,7 @@ export class Navigation {
                     this.isMenuOpen = false;
                     hamburger.classList.remove(styles.active);
                     this.container.querySelector(`.${styles.menuItems}`).classList.remove(styles.active);
+                    document.body.classList.remove('menu-active');
                 }
             });
         });
@@ -67,6 +69,7 @@ export class Navigation {
                     this.isMenuOpen = false;
                     hamburger.classList.remove(styles.active);
                     this.container.querySelector(`.${styles.menuItems}`).classList.remove(styles.active);
+                    document.body.classList.remove('menu-active');
                 }
             } else {
                 // Scrolling up
