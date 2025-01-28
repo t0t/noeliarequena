@@ -110,6 +110,10 @@
         background: none;
     }
 
+    .menu.hidden {
+        transform: none;
+    }
+
     .hamburger {
         display: block;
         position: relative;

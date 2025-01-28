@@ -59,23 +59,25 @@ export class Navigation {
         // Cerrar menú al hacer scroll
         let lastScroll = window.scrollY;
         window.addEventListener('scroll', () => {
-            const currentScroll = window.scrollY;
-            const navbar = document.getElementById('navbar');
-            
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                // Scrolling down
-                navbar.classList.add(styles.hidden);
-                if (this.isMenuOpen) {
-                    this.isMenuOpen = false;
-                    hamburger.classList.remove(styles.active);
-                    this.container.querySelector(`.${styles.menuItems}`).classList.remove(styles.active);
-                    document.body.classList.remove('menu-active');
+            if (window.innerWidth > 768) {
+                const currentScroll = window.scrollY;
+                const navbar = document.getElementById('navbar');
+                
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    // Scrolling down
+                    navbar.classList.add(styles.hidden);
+                    if (this.isMenuOpen) {
+                        this.isMenuOpen = false;
+                        hamburger.classList.remove(styles.active);
+                        this.container.querySelector(`.${styles.menuItems}`).classList.remove(styles.active);
+                        document.body.classList.remove('menu-active');
+                    }
+                } else {
+                    // Scrolling up
+                    navbar.classList.remove(styles.hidden);
                 }
-            } else {
-                // Scrolling up
-                navbar.classList.remove(styles.hidden);
+                lastScroll = currentScroll;
             }
-            lastScroll = currentScroll;
         });
 
         // Actualizar el enlace activo cuando cambia la ruta
