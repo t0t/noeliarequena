@@ -77,15 +77,14 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: none;
-    border: none;
+    background: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 2rem;
-    cursor: pointer;
+    border: none;
     padding: 1rem;
-    z-index: 1001;
-    width: 44px;
-    height: 44px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    min-width: 44px;
+    min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,6 +96,31 @@
 
 .gallery-lightbox-next {
     right: 1rem;
+}
+
+.gallery-lightbox-prev:hover:not(:disabled),
+.gallery-lightbox-next:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.gallery-lightbox-prev:focus-visible:not(:disabled),
+.gallery-lightbox-next:focus-visible:not(:disabled) {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.gallery-lightbox-prev:disabled,
+.gallery-lightbox-next:disabled {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-lightbox-prev,
+    .gallery-lightbox-next {
+        transition: none;
+    }
 }
 
 @media (max-width: 768px) {
