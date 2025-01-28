@@ -1,5 +1,9 @@
 .exposiciones {
-    padding: 8rem 1rem;
+    padding: var(--space-lg) 0;
+}
+
+.exposicionesContent {
+    composes: container from '../../css/main.css';
 }
 
 .expoBlock {
@@ -35,7 +39,7 @@
 
 .description {
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: var(--line-height-base);
     margin-bottom: 1.5rem;
 }
 

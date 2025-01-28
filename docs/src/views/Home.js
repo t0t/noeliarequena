@@ -35,13 +35,15 @@ export class Home extends BaseView {
             </section>
 
             <section class="${styles.intro}">
-                <div class="${styles.introContent}">
-                    <div class="${styles.symbols}">
-                        ☽ □ ♇
+                <div class="container">
+                    <div class="${styles.introContent}">
+                        <div class="${styles.symbols}">
+                            ☽ □ ♇
+                        </div>
+                        <p class="emphasis">Soy una artista plástica que busca expresar la complejidad de las emociones humanas a través
+                                del arte. Mi trabajo se centra en explorar la relación entre el cuerpo, la identidad y la
+                                experiencia vivida.</p>
                     </div>
-                    <p class="emphasis">Soy una artista plástica que busca expresar la complejidad de las emociones humanas a través
-                            del arte. Mi trabajo se centra en explorar la relación entre el cuerpo, la identidad y la
-                            experiencia vivida.</p>
                 </div>
             </section>
 

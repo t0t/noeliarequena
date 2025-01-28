@@ -7,7 +7,8 @@
 
 .cover h1 {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-lg);
+    letter-spacing: var(--letter-spacing-md);
 }
 
 #scrollDownBtn {
@@ -28,7 +29,21 @@
 }
 
 .resumen {
-    padding: 4rem 0;
+    padding: var(--section-spacing-md) 0;
+    text-align: center;
+}
+
+.resumen h2 {
+    margin-bottom: var(--space-lg);
+    letter-spacing: var(--letter-spacing-sm);
+}
+
+.resumen p {
+    margin-bottom: var(--space-md);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 .resumen blockquote {
@@ -131,7 +146,7 @@
 .slideText {
     font-size: 2rem;
     line-height: 1.4;
-    letter-spacing: var(--spacing-sm);
+    letter-spacing: var(--letter-spacing-sm);
     font-style: italic;
 }
 
@@ -183,7 +198,7 @@
 .introContent p {
     font-size: 2rem;
     margin: 1rem 0;
-    letter-spacing: var(--spacing-sm);
+    letter-spacing: var(--letter-spacing-sm);
 }
 
 .symbols {
@@ -208,6 +223,6 @@
 .hero h1 {
     color: white;
     font-size: 4rem;
-    letter-spacing: var(--spacing-xl);
+    letter-spacing: var(--letter-spacing-md);
     /* text-transform: uppercase; */
 }

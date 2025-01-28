@@ -10,7 +10,7 @@
     z-index: 100;
     transition: all 0.3s ease;
     font-weight: 500;
-    letter-spacing: var(--spacing-xl);
+    letter-spacing: var(--letter-spacing-xl);
 }
 
 .menu.hidden {
@@ -24,7 +24,7 @@
     text-transform: lowercase;
     transition: all 0.3s ease;
     position: relative;
-    letter-spacing: var(--spacing-xl);
+    letter-spacing: var(--letter-spacing-md);
 }
 
 .menu a::after {

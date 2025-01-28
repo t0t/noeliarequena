@@ -1,11 +1,15 @@
 .bio {
-    padding: 8rem 1rem 4rem;
+    padding: var(--space-lg) 0;
+}
+
+.bioContent {
+    composes: container from '../../css/main.css';
 }
 
 .avatarContainer {
     width: 200px;
     height: 200px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 0;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -91,7 +95,7 @@
 .bioTabs :global(.tab-buttons) {
     display: flex;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-sm);
 }
 
 .bioTabs :global(.tab-buttons button) {
