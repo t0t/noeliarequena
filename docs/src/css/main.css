@@ -1,6 +1,7 @@
 :root {
     --background-color: #ffffff;
     --text-color: #000000;
+    --text-color-emphasis: #e8b28a;
     --primary-color: #333333;
     --secondary-color: #666666;
     --transition-duration: 0.3s;
@@ -75,6 +76,24 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+.emphasis {
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    color: var(--text-color-emphasis);
+    margin: 3rem 0;
+    padding: 0 2rem;
+    font-style: italic;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.emphasis:hover {
+    opacity: 1;
+    border-left-width: 4px;
 }
 
 /* Utilities */

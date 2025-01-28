@@ -35,7 +35,7 @@ export class Home extends BaseView {
                     <div class="${styles.symbols}">
                         ☽ □ ♇
                     </div>
-                    <p>Soy una artista plástica que busca expresar la complejidad de las emociones humanas a través
+                    <p class="emphasis">Soy una artista plástica que busca expresar la complejidad de las emociones humanas a través
                             del arte. Mi trabajo se centra en explorar la relación entre el cuerpo, la identidad y la
                             experiencia vivida.</p>
                 </div>

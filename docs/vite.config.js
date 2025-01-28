@@ -2,7 +2,13 @@ export default {
   root: 'src',
   build: {
     outDir: '../dist',
-    emptyOutDir: true
+    emptyOutDir: true,
+    sourcemap: true, // Habilitar source maps en producción
+    rollupOptions: {
+      output: {
+        sourcemap: true
+      }
+    }
   },
   server: {
     open: true
@@ -12,7 +18,8 @@ export default {
       localsConvention: 'camelCase',
       scopeBehavior: 'local',
       generateScopedName: '[name]__[local]___[hash:base64:5]'
-    }
+    },
+    devSourcemap: true // Habilitar source maps CSS en desarrollo
   },
   publicDir: '../public'
 }

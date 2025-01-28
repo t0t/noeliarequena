@@ -27,9 +27,9 @@ export class Bio extends BaseView {
                     
                     <div class="col-span-12 md:col-span-6">
                         <div class="${styles.bioContent}">
-                            <h2>
+                            <blockquote class="emphasis">
                                 "When one becomes aware of the mystery of existence and does not understand it, but out of sheer sincerity and inner coherence, she needs answers even to the pain, then one finds her golden and wonderful Ariadna's thread"
-                            </h2>
+                            </blockquote>
                             <p class="${styles.quoteAuthor}">
                                 — Blas Cubells
                             </p>

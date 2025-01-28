@@ -208,6 +208,5 @@
     color: white;
     font-size: 4rem;
     letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* text-transform: uppercase; */
 }
