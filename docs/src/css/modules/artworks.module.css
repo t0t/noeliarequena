@@ -21,7 +21,7 @@
 }
 
 .artwork:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
 }
 
 .aspectRatioBox {
@@ -41,34 +41,6 @@
     display: block;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.artwork:hover .info {
-    transform: translateY(0);
-}
-
-.info h2 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: #333;
-}
-
-.info p {
-    margin: 0.5rem 0 0;
-    font-size: 0.9rem;
-    color: #666;
-    opacity: 0.8;
 }
 
 @media (max-width: 768px) {

@@ -187,7 +187,7 @@ export class GalleryStore {
         const currentItem = this.getCurrentItem();
         const lightbox = document.createElement('div');
         lightbox.id = 'gallery-lightbox';
-        lightbox.className = 'gallery-lightbox';
+        lightbox.className = 'gallery-lightbox active';
         
         lightbox.innerHTML = `
             <div class="gallery-lightbox-content">
@@ -219,6 +219,9 @@ export class GalleryStore {
 
         // Add keyboard navigation
         document.addEventListener('keydown', this.handleKeyPress);
+
+        // Force reflow to trigger animation
+        setTimeout(() => lightbox.classList.add('active'), 0);
     }
 
     handleKeyPress = (e) => {

@@ -6,122 +6,103 @@ export class Home extends BaseView {
     constructor(container) {
         super(container);
         this._cleanupFunctions = [];
+        this.currentSlide = 0;
+        this.slides = [
+            {
+                image: '/images/bg1.jpg',
+                text: 'Texto del primer slide'
+            },
+            {
+                image: '/images/bg2.jpg',
+                text: 'Texto del segundo slide'
+            },
+            {
+                image: '/images/bg3.jpg',
+                text: 'Texto del tercer slide'
+            }
+        ];
     }
 
     async render() {
         this.setTitle('Home');
         this.container.innerHTML = `
-            <section class="${styles.cover} container-fluid parallax">
-                <div class="parallax-bg" style="background-image: url('/images/bg1.jpg')"></div>
-                <div class="grid gap-4">
-                    <div class="col-span-12 text-center">
-                        <h1 class="typewriter">Noelia Requena</h1>
-                        <svg id="scrollDownBtn" class="hover-lift" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+            <section class="${styles.hero}">
+                <h1>Noelia Requena</h1>
+            </section>
+
+            <section class="${styles.intro}">
+                <div class="${styles.introContent}">
+                    <div class="${styles.symbols}">
+                        ☽ □ ♇
+                    </div>
+                    <p>Soy una artista plástica que busca expresar la complejidad de las emociones humanas a través
+                            del arte. Mi trabajo se centra en explorar la relación entre el cuerpo, la identidad y la
+                            experiencia vivida.</p>
+                </div>
+            </section>
+
+            <div class="${styles.slideshow}">
+                ${this.slides.map((slide, index) => `
+                    <section class="${styles.slide} ${index === 0 ? styles.active : ''}" 
+                             style="background-image: url('${slide.image}')">
+                        <div class="${styles.slideContent}">
+                            <div class="${styles.slideText}">
+                                ${slide.text}
+                            </div>
+                        </div>
+                    </section>
+                `).join('')}
+                
+                <div class="${styles.slideNav}">
+                    <button class="${styles.prevSlide}">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
                         </svg>
-                    </div>
+                    </button>
+                    <button class="${styles.nextSlide}">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                        </svg>
+                    </button>
                 </div>
-            </section>
-            
-            <section class="${styles.about} container">
-                <div class="grid gap-4">
-                    <div class="col-span-12 md:col-span-6">
-                        <h2>About Me</h2>
-                        <p>I am a visual artist based in Spain...</p>
-                    </div>
-                    <div class="col-span-12 md:col-span-6">
-                        <img src="/images/avatar.jpg" alt="Noelia Requena" class="img-hover-zoom">
-                    </div>
-                </div>
-            </section>
-            
-            <section class="${styles.featured} container">
-                <h2>Featured Works</h2>
-                <div class="grid gap-4">
-                    <div class="col-span-12 md:col-span-4">
-                        <div class="img-hover-zoom">
-                            <img src="/images/obras/img1.jpg" alt="Obra 1">
-                        </div>
-                    </div>
-                    <div class="col-span-12 md:col-span-4">
-                        <div class="img-hover-zoom">
-                            <img src="/images/obras/img2.jpg" alt="Obra 2">
-                        </div>
-                    </div>
-                    <div class="col-span-12 md:col-span-4">
-                        <div class="img-hover-zoom">
-                            <img src="/images/obras/img3.jpg" alt="Obra 3">
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </div>
         `;
 
-        // Initialize animations
-        this.initializeAnimations();
+        this.initializeSlideshow();
     }
 
-    async afterRender() {
-        // Initialize animations
-        this.initializeAnimations();
-    }
+    initializeSlideshow() {
+        const slideshow = this.container.querySelector(`.${styles.slideshow}`);
+        const slides = this.container.querySelectorAll(`.${styles.slide}`);
+        const prevBtn = this.container.querySelector(`.${styles.prevSlide}`);
+        const nextBtn = this.container.querySelector(`.${styles.nextSlide}`);
 
-    initializeAnimations() {
-        // Parallax effect for cover image
-        const parallaxBg = this.container.querySelector('.parallax-bg');
-        if (parallaxBg) {
-            const cleanup = Animator.parallax(parallaxBg, window, {
-                speed: 0.5,
-                direction: 'vertical',
-                min: -50,
-                max: 50
-            });
-            this._cleanupFunctions.push(cleanup);
-        }
+        const goToSlide = (index) => {
+            slides.forEach(slide => slide.classList.remove(styles.active));
+            this.currentSlide = (index + slides.length) % slides.length;
+            slides[this.currentSlide].classList.add(styles.active);
+        };
 
-        // Scroll animations
-        const sections = this.container.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-enter', 'visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+        // Event listeners
+        prevBtn.addEventListener('click', () => goToSlide(this.currentSlide - 1));
+        nextBtn.addEventListener('click', () => goToSlide(this.currentSlide + 1));
 
-        sections.forEach(section => {
-            section.classList.add('fade-enter');
-            observer.observe(section);
-        });
+        // Auto advance
+        const autoAdvance = setInterval(() => {
+            goToSlide(this.currentSlide + 1);
+        }, 5000);
 
+        // Cleanup
         this._cleanupFunctions.push(() => {
-            observer.disconnect();
+            clearInterval(autoAdvance);
+            prevBtn.removeEventListener('click', () => {});
+            nextBtn.removeEventListener('click', () => {});
         });
-
-        // Scroll down button animation
-        const scrollDownBtn = this.container.querySelector('#scrollDownBtn');
-        if (scrollDownBtn) {
-            const handleClick = () => {
-                const aboutSection = this.container.querySelector(`.${styles.about}`);
-                if (aboutSection) {
-                    aboutSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            };
-            
-            scrollDownBtn.addEventListener('click', handleClick);
-            this._cleanupFunctions.push(() => {
-                scrollDownBtn.removeEventListener('click', handleClick);
-            });
-        }
     }
 
     destroy() {
-        // Clean up all animations and observers
         this._cleanupFunctions.forEach(cleanup => cleanup());
         this._cleanupFunctions = [];
-        
         super.destroy();
     }
 }

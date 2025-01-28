@@ -6,50 +6,14 @@ import { GalleryStore } from '../js/store/gallery.js';
 export class Artworks extends BaseView {
     constructor(container) {
         super(container);
-        this.artworks = [
-            {
-                src: '/images/obras/img1.jpg',
-                title: 'Obra 1',
-                description: 'Descripción de la obra.',
-                width: 800,
-                height: 1200
-            },
-            {
-                src: '/images/obras/img2.jpg',
-                title: 'Obra 2',
-                description: 'Descripción de la obra.',
-                width: 1200,
-                height: 800
-            },
-            {
-                src: '/images/obras/img3.jpg',
-                title: 'Obra 3',
-                description: 'Descripción de la obra.',
-                width: 800,
-                height: 1200
-            },
-            {
-                src: '/images/obras/img4.jpg',
-                title: 'Obra 4',
-                description: 'Descripción de la obra.',
-                width: 1200,
-                height: 800
-            },
-            {
-                src: '/images/obras/img5.jpg',
-                title: 'Obra 5',
-                description: 'Descripción de la obra.',
-                width: 800,
-                height: 1200
-            },
-            {
-                src: '/images/obras/img6.jpg',
-                title: 'Obra 6',
-                description: 'Descripción de la obra.',
-                width: 1200,
-                height: 800
-            }
-        ];
+        this.artworks = Array.from({ length: 41 }, (_, i) => ({
+            src: `/images/obras/img${i + 1}.jpg`,
+            title: `Obra ${i + 1}`,
+            description: 'Descripción de la obra.',
+            // Alternamos entre dimensiones verticales y horizontales
+            width: (i % 2 === 0) ? 800 : 1200,
+            height: (i % 2 === 0) ? 1200 : 800
+        }));
         this.galleryStore = new GalleryStore();
         this.resizeObserver = null;
         this._boundResizeHandler = this.handleResize.bind(this);
@@ -63,9 +27,6 @@ export class Artworks extends BaseView {
             <section class="${styles.artworks}">
                 <div class="container">
                     <div class="grid gap-4">
-                        <div class="col-span-12">
-                            <h1>Obras</h1>
-                        </div>
                     </div>
                 </div>
                 <div class="${styles.masonryGrid}">
@@ -81,12 +42,16 @@ export class Artworks extends BaseView {
         this.setupGalleryEvents();
         window.addEventListener('resize', this._boundResizeHandler);
 
-        // Cargar y redimensionar imágenes
-        try {
-            await this.loadAndResizeImages();
-        } catch (error) {
-            console.warn('Error loading images:', error);
-        }
+        // Asegurarnos de que las imágenes se cargan y el masonry se inicializa
+        requestAnimationFrame(async () => {
+            try {
+                await this.loadAndResizeImages();
+                // Forzar un reflow para asegurar que el masonry se calcula correctamente
+                this.handleResize();
+            } catch (error) {
+                console.warn('Error loading images:', error);
+            }
+        });
 
         return this;
     }
@@ -114,10 +79,6 @@ export class Artworks extends BaseView {
                             height="${artwork.height}"
                         />
                     </div>
-                    <div class="${styles.info}">
-                        <h2>${artwork.title}</h2>
-                        <p>${artwork.description}</p>
-                    </div>
                 </div>
             `;
         }).join('');
@@ -125,6 +86,9 @@ export class Artworks extends BaseView {
 
     async loadAndResizeImages() {
         const items = this.container.querySelectorAll(`.${styles.artwork}`);
+        
+        // Primero configuramos el ResizeObserver
+        this.setupResizeObserver();
         
         const imageLoadPromises = Array.from(items).map(item => {
             return new Promise((resolve) => {
@@ -146,7 +110,6 @@ export class Artworks extends BaseView {
         });
 
         await Promise.all(imageLoadPromises);
-        this.setupResizeObserver();
     }
 
     resizeGridItem(item) {
@@ -188,9 +151,12 @@ export class Artworks extends BaseView {
     setupGalleryEvents() {
         const artworks = this.container.querySelectorAll(`.${styles.artwork}`);
         artworks.forEach(artwork => {
-            artwork.addEventListener('click', () => {
+            artwork.addEventListener('click', (e) => {
+                e.preventDefault();
                 const index = parseInt(artwork.dataset.index);
-                this.galleryStore.open(index);
+                if (!isNaN(index)) {
+                    this.galleryStore.open(index);
+                }
             });
         });
     }
