@@ -131,7 +131,8 @@
 .slideText {
     font-size: 2rem;
     line-height: 1.4;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: var(--spacing-sm);
+    font-style: italic;
 }
 
 .slideNav {
@@ -182,7 +183,7 @@
 .introContent p {
     font-size: 2rem;
     margin: 1rem 0;
-    letter-spacing: 0.1em;
+    letter-spacing: var(--spacing-sm);
 }
 
 .symbols {
@@ -207,6 +208,6 @@
 .hero h1 {
     color: white;
     font-size: 4rem;
-    letter-spacing: 0.2em;
+    letter-spacing: var(--spacing-xl);
     /* text-transform: uppercase; */
 }
