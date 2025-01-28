@@ -4,9 +4,9 @@
     left: 0;
     right: 0;
     display: flex;
-    justify-content: flex-end;
-    gap: 2rem;
-    padding: 2rem;
+    justify-content: center;
+    gap: 4rem;
+    padding: 1rem;
     z-index: 100;
     transition: all 0.3s ease;
     background: rgba(var(--color-bg-rgb), 0.95);
@@ -20,7 +20,7 @@
 .menu a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-transform: lowercase;
     transition: all 0.3s ease;
     position: relative;
@@ -44,6 +44,12 @@
 
 .menu a.active {
     font-weight: 500;
+}
+
+.menuItems {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
 }
 
 .hamburger {
@@ -133,6 +139,5 @@
         padding: 0.5rem;
         width: auto;
         text-align: center;
-        color: var(--color-text);
     }
 }

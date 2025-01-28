@@ -129,6 +129,10 @@ export class GalleryStore {
         this.isOpen = false;
         this.items = [];
         this.onChangeCallbacks = [];
+        this.touchStartX = 0;
+        this.touchStartY = 0;
+        this.touchEndX = 0;
+        this.touchEndY = 0;
     }
 
     static getInstance() {
@@ -150,6 +154,36 @@ export class GalleryStore {
         this.notifyChange();
     }
 
+    handleTouchStart = (e) => {
+        this.touchStartX = e.touches[0].clientX;
+        this.touchStartY = e.touches[0].clientY;
+    }
+
+    handleTouchMove = (e) => {
+        e.preventDefault(); // Prevenir scroll mientras se desliza
+    }
+
+    handleTouchEnd = (e) => {
+        this.touchEndX = e.changedTouches[0].clientX;
+        this.touchEndY = e.changedTouches[0].clientY;
+
+        const deltaX = this.touchEndX - this.touchStartX;
+        const deltaY = this.touchEndY - this.touchStartY;
+
+        // Solo procesar si el deslizamiento es más horizontal que vertical
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            const minSwipeDistance = 50; // Distancia mínima para considerar un swipe
+
+            if (Math.abs(deltaX) > minSwipeDistance) {
+                if (deltaX > 0) {
+                    this.previous(); // Deslizar a la derecha -> imagen anterior
+                } else {
+                    this.next(); // Deslizar a la izquierda -> imagen siguiente
+                }
+            }
+        }
+    }
+
     open(index = 0) {
         this.isOpen = true;
         this.currentIndex = index;
@@ -161,6 +195,19 @@ export class GalleryStore {
         this.isOpen = false;
         this.notifyChange();
         this.removeLightbox();
+        
+        // Asegurar que la página de artworks es visible
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.height = '';
+        document.documentElement.style.overflow = '';
+        document.documentElement.style.position = '';
+        document.documentElement.style.width = '';
+        document.documentElement.style.height = '';
+
+        // Forzar un reflow para asegurar que todo se renderiza correctamente
+        window.scrollTo(0, window.scrollY);
     }
 
     next() {
@@ -220,6 +267,12 @@ export class GalleryStore {
         // Add keyboard navigation
         document.addEventListener('keydown', this.handleKeyPress);
 
+        // Add touch navigation
+        const content = lightbox.querySelector('.gallery-lightbox-content');
+        content.addEventListener('touchstart', this.handleTouchStart, { passive: true });
+        content.addEventListener('touchmove', this.handleTouchMove, { passive: false });
+        content.addEventListener('touchend', this.handleTouchEnd, { passive: true });
+
         // Force reflow to trigger animation
         setTimeout(() => lightbox.classList.add('active'), 0);
     }
@@ -254,6 +307,10 @@ export class GalleryStore {
     removeLightbox() {
         const lightbox = document.getElementById('gallery-lightbox');
         if (lightbox) {
+            const content = lightbox.querySelector('.gallery-lightbox-content');
+            content.removeEventListener('touchstart', this.handleTouchStart);
+            content.removeEventListener('touchmove', this.handleTouchMove);
+            content.removeEventListener('touchend', this.handleTouchEnd);
             document.body.removeChild(lightbox);
             document.body.style.overflow = '';
         }
