@@ -213,16 +213,16 @@ export class GalleryStore {
     next() {
         if (this.currentIndex < this.items.length - 1) {
             this.currentIndex++;
-            this.notifyChange();
             this.updateLightboxContent();
+            this.notifyChange();
         }
     }
 
     previous() {
         if (this.currentIndex > 0) {
             this.currentIndex--;
-            this.notifyChange();
             this.updateLightboxContent();
+            this.notifyChange();
         }
     }
 
@@ -232,6 +232,7 @@ export class GalleryStore {
 
     renderLightbox() {
         const currentItem = this.getCurrentItem();
+        const isLastItem = this.currentIndex === this.items.length - 1;
         const lightbox = document.createElement('div');
         lightbox.id = 'gallery-lightbox';
         lightbox.className = 'gallery-lightbox active';
@@ -243,9 +244,11 @@ export class GalleryStore {
                     <h2>${currentItem.title}</h2>
                     <p>${currentItem.description}</p>
                 </div>
-                <button class="gallery-lightbox-close">&times;</button>
-                <button class="gallery-lightbox-prev">&lt;</button>
-                <button class="gallery-lightbox-next">&gt;</button>
+                <button class="gallery-lightbox-close" aria-label="Cerrar galería">&times;</button>
+                <button class="gallery-lightbox-prev ${this.currentIndex === 0 ? 'hidden' : ''}" 
+                        aria-label="Imagen anterior">&lt;</button>
+                <button class="gallery-lightbox-next ${isLastItem ? 'hidden' : ''}" 
+                        aria-label="Imagen siguiente">&gt;</button>
             </div>
         `;
 
@@ -254,8 +257,17 @@ export class GalleryStore {
 
         // Add event listeners
         lightbox.querySelector('.gallery-lightbox-close').addEventListener('click', () => this.close());
-        lightbox.querySelector('.gallery-lightbox-prev').addEventListener('click', () => this.previous());
-        lightbox.querySelector('.gallery-lightbox-next').addEventListener('click', () => this.next());
+        
+        const prevButton = lightbox.querySelector('.gallery-lightbox-prev');
+        const nextButton = lightbox.querySelector('.gallery-lightbox-next');
+        
+        if (!prevButton.classList.contains('hidden')) {
+            prevButton.addEventListener('click', () => this.previous());
+        }
+        
+        if (!nextButton.classList.contains('hidden')) {
+            nextButton.addEventListener('click', () => this.next());
+        }
         
         // Close on background click
         lightbox.addEventListener('click', (e) => {
@@ -277,6 +289,33 @@ export class GalleryStore {
         setTimeout(() => lightbox.classList.add('active'), 0);
     }
 
+    updateLightboxContent() {
+        const lightbox = document.getElementById('gallery-lightbox');
+        if (!lightbox) return;
+
+        const currentItem = this.getCurrentItem();
+        const isLastItem = this.currentIndex === this.items.length - 1;
+        const content = lightbox.querySelector('.gallery-lightbox-content');
+        
+        content.querySelector('img').src = currentItem.src;
+        content.querySelector('img').alt = currentItem.title;
+        content.querySelector('h2').textContent = currentItem.title;
+        content.querySelector('p').textContent = currentItem.description;
+
+        // Actualizar estado de los botones
+        const prevButton = content.querySelector('.gallery-lightbox-prev');
+        const nextButton = content.querySelector('.gallery-lightbox-next');
+        
+        if (prevButton) {
+            prevButton.classList.toggle('hidden', this.currentIndex === 0);
+        }
+        
+        if (nextButton) {
+            nextButton.classList.toggle('hidden', isLastItem);
+            console.log('Next button state:', { isLastItem, currentIndex: this.currentIndex, totalItems: this.items.length });
+        }
+    }
+
     handleKeyPress = (e) => {
         switch(e.key) {
             case 'Escape':
@@ -289,19 +328,6 @@ export class GalleryStore {
                 this.next();
                 break;
         }
-    }
-
-    updateLightboxContent() {
-        const lightbox = document.getElementById('gallery-lightbox');
-        if (!lightbox) return;
-
-        const currentItem = this.getCurrentItem();
-        const content = lightbox.querySelector('.gallery-lightbox-content');
-        
-        content.querySelector('img').src = currentItem.src;
-        content.querySelector('img').alt = currentItem.title;
-        content.querySelector('h2').textContent = currentItem.title;
-        content.querySelector('p').textContent = currentItem.description;
     }
 
     removeLightbox() {
