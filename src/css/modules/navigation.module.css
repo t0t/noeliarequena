@@ -21,7 +21,6 @@
 
 .menu a {
     color: var(--text-color);
-    text-decoration: none;
     font-size: 1.5rem;
     text-transform: lowercase;
     transition: all 0.3s ease;
@@ -56,13 +55,7 @@
     font-weight: 500;
 }
 
-.menu a:hover,
-.menu a:focus,
-.menu a.active {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-}
-
+/* Solo mantener el outline para accesibilidad */
 .menu a:focus-visible {
     outline: 2px solid var(--text-color);
     outline-offset: 4px;
