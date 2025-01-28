@@ -3,6 +3,8 @@ export class TabLink {
         this.container = container;
         this.tabs = tabs;
         this.activeTab = 0;
+        this.buttons = [];
+        this.contentContainer = null;
         this.render();
         this.addEventListeners();
     }
@@ -11,7 +13,7 @@ export class TabLink {
         // Create tab buttons
         const tabButtons = document.createElement('div');
         tabButtons.className = 'tab-buttons';
-        tabButtons.style.cssText = 'margin-bottom: 2rem;';
+        tabButtons.style.cssText = 'margin-bottom: 2rem; display: flex; gap: 1rem;';
 
         this.tabs.forEach((tab, index) => {
             const button = document.createElement('button');
@@ -19,40 +21,54 @@ export class TabLink {
             button.dataset.tab = index;
             button.style.cssText = `
                 padding: 0.5rem 1rem;
-                margin-right: 0.5rem;
-                border: none;
-                background: none;
+                border: 1px solid var(--color-text);
+                background: ${index === this.activeTab ? 'var(--color-text)' : 'none'};
+                color: ${index === this.activeTab ? 'var(--color-bg)' : 'var(--color-text)'};
                 cursor: pointer;
                 font-size: 1rem;
-                color: var(--color-text);
-                opacity: ${index === this.activeTab ? '1' : '0.5'};
+                transition: all 0.3s ease;
             `;
+            this.buttons.push(button);
             tabButtons.appendChild(button);
         });
 
-        // Create content container
-        const contentContainer = document.createElement('div');
-        contentContainer.className = 'tab-content';
-        contentContainer.innerHTML = this.tabs[this.activeTab].content;
+        // Create content container if it doesn't exist
+        if (!this.contentContainer) {
+            this.contentContainer = document.createElement('div');
+            this.contentContainer.className = 'tab-content';
+        }
+        
+        // Update content
+        this.contentContainer.innerHTML = this.tabs[this.activeTab].content;
 
-        // Clear and append new content
-        this.container.innerHTML = '';
-        this.container.appendChild(tabButtons);
-        this.container.appendChild(contentContainer);
+        // Clear and append new content only if necessary
+        if (!this.container.contains(tabButtons)) {
+            this.container.innerHTML = '';
+            this.container.appendChild(tabButtons);
+            this.container.appendChild(this.contentContainer);
+        }
     }
 
     addEventListeners() {
-        const buttons = this.container.querySelectorAll('button');
-        buttons.forEach(button => {
+        this.buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const tabIndex = parseInt(button.dataset.tab);
-                this.setActiveTab(tabIndex);
+                if (tabIndex !== this.activeTab) {
+                    this.setActiveTab(tabIndex);
+                }
             });
         });
     }
 
     setActiveTab(index) {
+        // Update buttons styles
+        this.buttons.forEach((button, i) => {
+            button.style.background = i === index ? 'var(--color-text)' : 'none';
+            button.style.color = i === index ? 'var(--color-bg)' : 'var(--color-text)';
+        });
+
+        // Update content
         this.activeTab = index;
-        this.render();
+        this.contentContainer.innerHTML = this.tabs[this.activeTab].content;
     }
 }
