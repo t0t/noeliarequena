@@ -27,6 +27,13 @@
     transition: all 0.3s ease;
     position: relative;
     letter-spacing: var(--letter-spacing-md);
+    padding: 8px;
+    margin: 4px;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu a::after {
@@ -49,6 +56,19 @@
     font-weight: 500;
 }
 
+.menu a:hover,
+.menu a:focus,
+.menu a.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.menu a:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 .menuItems {
     display: flex;
     gap: var(--space-lg);
@@ -65,6 +85,8 @@
     width: 40px;
     height: 40px;
     position: relative;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .hamburger span {
@@ -101,6 +123,12 @@
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg);
     top: 22px;
+}
+
+.hamburger:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 4px;
+    border-radius: 2px;
 }
 
 @media (max-width: 768px) {
@@ -159,6 +187,30 @@
     .menuItems.active a {
         opacity: 1;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu,
+    .menuItems,
+    .menu a,
+    .hamburger span {
+        transition: none;
+    }
+}
+
+:global(.skip-link) {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--text-color-emphasis);
+    color: var(--text-color);
+    padding: 8px;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+:global(.skip-link:focus) {
+    top: 0;
 }
 
 :global(body.menu-active) {

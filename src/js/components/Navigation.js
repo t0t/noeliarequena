@@ -13,16 +13,19 @@ export class Navigation {
 
     render() {
         this.container.innerHTML = `
-            <nav id="navbar" class="${styles.menu}">
-                <button class="${styles.hamburger}">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <nav id="navbar" class="${styles.menu}" aria-label="Menú principal">
+                <button class="${styles.hamburger}" 
+                        aria-expanded="false"
+                        aria-controls="main-menu"
+                        aria-label="Abrir menú">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </button>
-                <div class="${styles.menuItems}">
-                    <a href="/exposiciones" data-link>expo</a>
-                    <a href="/artworks" data-link>artworks</a>
-                    <a href="/bio" data-link>bio</a>
+                <div id="main-menu" class="${styles.menuItems}" role="menu">
+                    <a href="/exposiciones" data-link role="menuitem">expo</a>
+                    <a href="/artworks" data-link role="menuitem">artworks</a>
+                    <a href="/bio" data-link role="menuitem">bio</a>
                 </div>
             </nav>
         `;
@@ -38,8 +41,17 @@ export class Navigation {
             hamburger.addEventListener('click', () => {
                 this.isMenuOpen = !this.isMenuOpen;
                 hamburger.classList.toggle(styles.active);
+                hamburger.setAttribute('aria-expanded', this.isMenuOpen);
                 this.container.querySelector(`.${styles.menuItems}`).classList.toggle(styles.active);
                 document.body.classList.toggle('menu-active');
+            });
+
+            // Soporte para teclado
+            hamburger.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    hamburger.click();
+                }
             });
         }
 
@@ -50,11 +62,45 @@ export class Navigation {
                 if (this.isMenuOpen) {
                     this.isMenuOpen = false;
                     hamburger.classList.remove(styles.active);
+                    hamburger.setAttribute('aria-expanded', 'false');
                     this.container.querySelector(`.${styles.menuItems}`).classList.remove(styles.active);
                     document.body.classList.remove('menu-active');
                 }
             });
+
+            // Soporte para teclado en los enlaces
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    item.click();
+                }
+            });
         });
+
+        // Gestionar el foco dentro del menú
+        const handleTabKey = (e) => {
+            if (!this.isMenuOpen) return;
+            
+            const focusableElements = this.container.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            if (e.key === 'Tab') {
+                if (e.shiftKey) {
+                    if (document.activeElement === firstElement) {
+                        e.preventDefault();
+                        lastElement.focus();
+                    }
+                } else {
+                    if (document.activeElement === lastElement) {
+                        e.preventDefault();
+                        firstElement.focus();
+                    }
+                }
+            }
+        };
+
+        this.container.addEventListener('keydown', handleTabKey);
 
         // Cerrar menú al hacer scroll
         let lastScroll = window.scrollY;
@@ -69,6 +115,7 @@ export class Navigation {
                     if (this.isMenuOpen) {
                         this.isMenuOpen = false;
                         hamburger.classList.remove(styles.active);
+                        hamburger.setAttribute('aria-expanded', 'false');
                         this.container.querySelector(`.${styles.menuItems}`).classList.remove(styles.active);
                         document.body.classList.remove('menu-active');
                     }
