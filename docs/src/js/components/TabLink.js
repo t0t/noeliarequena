@@ -10,24 +10,14 @@ export class TabLink {
     }
 
     render() {
-        // Create tab buttons
+        // Create tab buttons container
         const tabButtons = document.createElement('div');
         tabButtons.className = 'tab-buttons';
-        tabButtons.style.cssText = 'margin-bottom: 2rem; display: flex; gap: 1rem;';
 
         this.tabs.forEach((tab, index) => {
             const button = document.createElement('button');
             button.textContent = tab.label;
-            button.dataset.tab = index;
-            button.style.cssText = `
-                padding: 0.5rem 1rem;
-                border: 1px solid var(--color-text);
-                background: ${index === this.activeTab ? 'var(--color-text)' : 'none'};
-                color: ${index === this.activeTab ? 'var(--color-bg)' : 'var(--color-text)'};
-                cursor: pointer;
-                font-size: 1rem;
-                transition: all 0.3s ease;
-            `;
+            button.className = index === this.activeTab ? 'active' : '';
             this.buttons.push(button);
             tabButtons.appendChild(button);
         });
@@ -50,11 +40,10 @@ export class TabLink {
     }
 
     addEventListeners() {
-        this.buttons.forEach(button => {
+        this.buttons.forEach((button, index) => {
             button.addEventListener('click', () => {
-                const tabIndex = parseInt(button.dataset.tab);
-                if (tabIndex !== this.activeTab) {
-                    this.setActiveTab(tabIndex);
+                if (index !== this.activeTab) {
+                    this.setActiveTab(index);
                 }
             });
         });
@@ -63,8 +52,7 @@ export class TabLink {
     setActiveTab(index) {
         // Update buttons styles
         this.buttons.forEach((button, i) => {
-            button.style.background = i === index ? 'var(--color-text)' : 'none';
-            button.style.color = i === index ? 'var(--color-bg)' : 'var(--color-text)';
+            button.className = i === index ? 'active' : '';
         });
 
         // Update content

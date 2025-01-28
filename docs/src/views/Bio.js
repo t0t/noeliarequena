@@ -29,7 +29,7 @@ export class Bio extends BaseView {
                     
                     <div class="col-span-12 md:col-span-6">
                         <div class="${styles.bioContent}">
-                            <div id="bio-tabs"></div>
+                            <div id="bio-tabs" class="${styles.bioTabs}"></div>
                         </div>
                     </div>
                 </div>
@@ -38,6 +38,11 @@ export class Bio extends BaseView {
 
         // Initialize tabs
         const tabsContainer = this.container.querySelector('#bio-tabs');
+        if (!tabsContainer) {
+            console.error('Bio tabs container not found');
+            return this;
+        }
+
         const tabs = [
             {
                 label: 'EN',
