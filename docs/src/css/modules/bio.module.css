@@ -1,0 +1,71 @@
+.bio {
+    padding: 8rem 1rem 4rem;
+}
+
+.avatarContainer {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.bioContent {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.bioContent h2 {
+    margin: 2rem 0 1rem;
+    font-size: 1.25rem;
+}
+
+.bioContent p {
+    margin-bottom: 1.5rem;
+}
+
+.bioContent ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bioContent li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.bioContent li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .bio {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .bioContent {
+        font-size: 1rem;
+    }
+
+    .bioContent h2 {
+        font-size: 1.1rem;
+        margin: 1.5rem 0 0.75rem;
+    }
+}
