@@ -132,10 +132,14 @@
         transition: transform 0.3s ease;
         z-index: 101;
         padding: var(--space-xl);
+        visibility: hidden;
+        pointer-events: none;
     }
 
     .menuItems.active {
         transform: translateX(0);
+        visibility: visible;
+        pointer-events: all;
     }
 
     .menu a {
@@ -144,6 +148,12 @@
         width: auto;
         text-align: center;
         color: var(--text-color);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .menuItems.active a {
+        opacity: 1;
     }
 }
 
