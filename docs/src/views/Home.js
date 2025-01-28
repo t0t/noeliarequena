@@ -10,15 +10,19 @@ export class Home extends BaseView {
         this.slides = [
             {
                 image: '/images/bg1.jpg',
-                text: 'Texto del primer slide'
+                text: 'Un anhelo cifrado, <br>un enigma de muchas dimensiones...'
             },
             {
                 image: '/images/bg2.jpg',
-                text: 'Texto del segundo slide'
+                text: 'La existencia se desnuda, <br> una pregunta en el vacío...'
             },
             {
                 image: '/images/bg3.jpg',
-                text: 'Texto del tercer slide'
+                text: 'El cuerpo como un temblor en el tiempo, <br>como un proceso de luz y sombra.'
+            },
+            {
+                image: '/images/bg4.jpg',
+                text: 'El cuerpo como un templo de tensiones, <br>como un templo hermético abierto <br>y cerrado al mismo tiempo...'
             }
         ];
     }

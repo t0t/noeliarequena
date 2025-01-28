@@ -6,13 +6,291 @@ import { GalleryStore } from '../js/store/gallery.js';
 export class Artworks extends BaseView {
     constructor(container) {
         super(container);
-        this.artworks = Array.from({ length: 41 }, (_, i) => ({
-            src: `/images/obras/img${i + 1}.jpg`,
-            title: `Obra ${i + 1}`,
-            description: 'Descripción de la obra.',
-            // Alternamos entre dimensiones verticales y horizontales
-            width: (i % 2 === 0) ? 800 : 1200,
-            height: (i % 2 === 0) ? 1200 : 800
+        this.artworks = [
+            {
+                src: '/images/obras/img1.jpg',
+                title: 'Obra 1',
+                description: 'Óleo sobre madera. 58x44cm, 2022',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img2.jpg',
+                title: 'Obra 2',
+                description: 'Óleo sobre lienzo. 31x23cm, 2019',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img3.jpg',
+                title: 'Obra 3',
+                description: 'Óleo sobre lienzo. 31x23cm, 2019',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img4.jpg',
+                title: 'Obra 4',
+                description: 'Óleo sobre papel. 31x21cm, 2019',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img5.jpg',
+                title: 'Obra 5',
+                description: 'Óleo sobre madera. 61x50cm, 2019',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img6.jpg',
+                title: 'Obra 6',
+                description: 'Óleo sobre madera. 41x33cm, 2019',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img7.jpg',
+                title: 'Obra 7',
+                description: 'Óleo sobre madera. 50x50cm',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img8.jpg',
+                title: 'Obra 8',
+                description: 'Óleo sobre madera. 100x100cm, 2019',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img9.jpg',
+                title: 'Obra 9',
+                description: 'Óleo sobre madera. 122x60.5cm, 2019',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img10.jpg',
+                title: 'Obra 10',
+                description: 'Óleo sobre lienzo. 116x81cm, 2019',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img11.jpg',
+                title: 'Obra 11',
+                description: 'Óleo sobre lienzo. 116x81cm, 2019',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img12.jpg',
+                title: 'Obra 12',
+                description: 'Óleo sobre madera. 73x55cm, 2019',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img13.jpg',
+                title: 'Obra 13',
+                description: 'Óleo sobre madera. 73x55cm, 2019',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img14.jpg',
+                title: 'Obra 14',
+                description: 'Óleo sobre madera. 80x65cm, 2020',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img15.jpg',
+                title: 'Obra 15',
+                description: 'Óleo sobre madera. 92x73cm, 2020',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img16.jpg',
+                title: 'Obra 16',
+                description: 'Óleo sobre lienzo. 100x100cm, 2020',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img17.jpg',
+                title: 'Obra 17',
+                description: 'Óleo sobre madera, 2020',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img18.jpg',
+                title: 'Obra 18',
+                description: 'Óleo sobre lienzo. 100x100cm, 2020',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img19.jpg',
+                title: 'Obra 19',
+                description: 'Óleo sobre madera. 100x40cm, 2020',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img20.jpg',
+                title: 'Obra 20',
+                description: 'Óleo sobre madera. 122x60.5cm, 2020',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img21.jpg',
+                title: 'Obra 21',
+                description: 'Óleo sobre madera. 92x73cm, 2020',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img22.jpg',
+                title: 'Obra 22',
+                description: 'Óleo sobre madera. 58x44cm, 2021',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img23.jpg',
+                title: 'Obra 23',
+                description: 'Óleo sobre lienzo. 90x73cm, 2021',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img24.jpg',
+                title: 'Obra 24',
+                description: 'Óleo sobre lienzo. 92x73cm, 2021',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img25.jpg',
+                title: 'Obra 25',
+                description: 'Óleo sobre lienzo. 100x100cm, 2021',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img26.jpg',
+                title: 'Obra 26',
+                description: 'Óleo sobre madera. 100x100cm, 2021',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img27.jpg',
+                title: 'Obra 27',
+                description: 'Óleo sobre lienzo. 140x81cm, 2021',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img28.jpg',
+                title: 'Obra 28',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img29.jpg',
+                title: 'Obra 29',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img30.jpg',
+                title: 'Obra 30',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img31.jpg',
+                title: 'Obra 31',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img32.jpg',
+                title: 'Obra 32',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img33.jpg',
+                title: 'Obra 33',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img34.jpg',
+                title: 'Obra 34',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img35.jpg',
+                title: 'Obra 35',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img36.jpg',
+                title: 'Obra 36',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img38.jpg',
+                title: 'Obra 38',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img39.jpg',
+                title: 'Obra 39',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 1200,
+                height: 800
+            },
+            {
+                src: '/images/obras/img40.jpg',
+                title: 'Obra 40',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 800,
+                height: 1200
+            },
+            {
+                src: '/images/obras/img41.jpg',
+                title: 'Obra 41',
+                description: 'Óleo sobre lienzo, 2023',
+                width: 1200,
+                height: 800
+            }
+        ].map((artwork, index) => ({
+            ...artwork,
+            width: (index % 2 === 0) ? 800 : 1200,
+            height: (index % 2 === 0) ? 1200 : 800
         }));
         this.galleryStore = new GalleryStore();
         this.resizeObserver = null;

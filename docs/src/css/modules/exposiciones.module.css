@@ -1,5 +1,5 @@
 .exposiciones {
-    padding: 8rem 1rem 4rem;
+    padding: 8rem 1rem;
 }
 
 .expoBlock {
@@ -14,23 +14,37 @@
 
 .content {
     margin-bottom: 2rem;
+    height: 100%;
 }
 
 .content h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-bottom: 0.5rem;
 }
 
 .date {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #666;
     margin-bottom: 1rem;
 }
 
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
 .description {
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 1.5rem;
+}
+
+.description p {
+    margin-bottom: 1.5rem;
+}
+
+.description p:last-child {
+    margin-bottom: 0;
 }
 
 .mediaContainer {
@@ -64,9 +78,31 @@
     background: #000;
 }
 
+/* Grid System */
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.gap-8 {
+    gap: 4rem;
+}
+
+.grid-cols-12 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.col-span-4 {
+    grid-column: span 4;
+}
+
+.col-span-8 {
+    grid-column: span 8;
+}
+
 @media (max-width: 768px) {
     .exposiciones {
-        padding: 6rem 1rem 3rem;
+        padding: 6rem 1rem;
     }
 
     .expoBlock {
@@ -88,5 +124,22 @@
 
     .mediaContainer {
         margin-bottom: 1.5rem;
+    }
+
+    .grid {
+        gap: 2rem;
+    }
+
+    .gap-8 {
+        gap: 2rem;
+    }
+
+    .col-span-4,
+    .col-span-8 {
+        grid-column: span 12;
+    }
+
+    .content {
+        margin-top: 2rem;
     }
 }
