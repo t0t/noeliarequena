@@ -36,6 +36,12 @@
     margin-bottom: 1.5rem;
 }
 
+.quoteAuthor {
+    font-style: italic;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
 .bioContent ul {
     list-style: none;
     padding: 0;
