@@ -312,7 +312,6 @@ export class GalleryStore {
         
         if (nextButton) {
             nextButton.classList.toggle('hidden', isLastItem);
-            console.log('Next button state:', { isLastItem, currentIndex: this.currentIndex, totalItems: this.items.length });
         }
     }
 

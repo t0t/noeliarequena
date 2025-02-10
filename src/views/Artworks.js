@@ -346,7 +346,6 @@ export class Artworks extends BaseView {
             try {
                 await this.loadAndResizeImages();
             } catch (error) {
-                console.warn('Error loading images:', error);
             }
         });
 
@@ -405,7 +404,6 @@ export class Artworks extends BaseView {
                         resolve();
                     };
                     img.onerror = () => {
-                        console.error('Error loading image:', img.src);
                         resolve();
                     };
                 }

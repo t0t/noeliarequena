@@ -71,13 +71,12 @@ export class Exposiciones extends BaseView {
         this.currentExpo = null;
         this._cleanupFunctions = [];
         this._isExpoClick = false;
+        this.resizeObserver = null;
     }
 
     async init() {
         await super.init();
         this.setTitle('Exposiciones');
-        
-        console.log('Initializing with currentExpo:', this.currentExpo);
         
         if (this.currentExpo) {
             this.renderExpo(this.currentExpo);
@@ -90,7 +89,6 @@ export class Exposiciones extends BaseView {
     }
 
     renderGrid() {
-        console.log('Rendering grid with expos:', this.exposiciones.length);
         this.container.innerHTML = `
             <section class="${styles.exposicionesGrid}">
                 <div class="container">
@@ -110,7 +108,6 @@ export class Exposiciones extends BaseView {
                 </div>
             </section>
         `;
-        console.log('Grid rendered');
     }
 
     renderExpo(expo) {
@@ -124,41 +121,76 @@ export class Exposiciones extends BaseView {
                             ${expo.content.description.map(paragraph => `
                                 <p>${paragraph}</p>
                             `).join('')}
-                            ${expo.content.media.map(media => `
-                                <div class="${styles.mediaContainer}">
-                                    ${media.type === 'video' ? `
-                                        <video 
-                                            class="${styles.video}" 
-                                            controls 
-                                            preload="none"
-                                            playsinline
-                                            poster="${media.poster}"
-                                        >
-                                            ${media.sources.map(source => `
-                                                <source src="${source.src}" type="${source.type}">
-                                            `).join('')}
-                                            Tu navegador no soporta el elemento video.
-                                        </video>
-                                    ` : `
-                                        <img 
-                                            src="${media.src}" 
-                                            alt="${media.alt || ''}" 
-                                            class="${styles.image}"
-                                            loading="lazy"
-                                        />
-                                    `}
-                                </div>
-                            `).join('')}
-                            ${expo.content.details ? `
-                                <div class="${styles.details}">
-                                    <p>${expo.content.details}</p>
-                                </div>
-                            ` : ''}
                         </div>
+                        <div class="${styles.mediaContainer}">
+                            ${expo.content.media.map(media => `
+                                ${media.type === 'video' ? `
+                                    <video 
+                                        class="${styles.video}" 
+                                        controls 
+                                        preload="none"
+                                        playsinline
+                                        poster="${media.poster}"
+                                    >
+                                        ${media.sources.map(source => `
+                                            <source src="${source.src}" type="${source.type}">
+                                        `).join('')}
+                                        Tu navegador no soporta el elemento video.
+                                    </video>
+                                ` : `
+                                    <img 
+                                        src="${media.src}" 
+                                        alt="${media.alt || ''}" 
+                                        class="${styles.image}"
+                                        loading="lazy"
+                                    />
+                                `}
+                            `).join('')}
+                        </div>
+                        ${expo.content.details ? `
+                            <div class="${styles.details}">
+                                <p>${expo.content.details}</p>
+                            </div>
+                        ` : ''}
                     </div>
                 </div>
             </section>
         `;
+
+        // Configurar el ResizeObserver para los elementos multimedia
+        this.setupResizeObserver();
+    }
+
+    setupResizeObserver() {
+        if (this.resizeObserver) {
+            this.resizeObserver.disconnect();
+        }
+
+        this.resizeObserver = new ResizeObserver(entries => {
+            entries.forEach(entry => {
+                this.resizeGridItem(entry.target);
+            });
+        });
+
+        const mediaItems = this.container.querySelectorAll(`.${styles.image}, .${styles.video}`);
+        mediaItems.forEach(item => {
+            this.resizeObserver.observe(item);
+        });
+    }
+
+    resizeGridItem(item) {
+        if (!item || !this.container) return;
+
+        const container = item.closest(`.${styles.mediaContainer}`);
+        if (!container) return;
+
+        const rowHeight = 1;
+        const rowGap = parseInt(window.getComputedStyle(container).rowGap) || 10;
+        
+        const contentHeight = item.getBoundingClientRect().height;
+        const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
+        
+        item.style.setProperty('--span', rowSpan);
     }
 
     setupEvents() {
@@ -168,24 +200,17 @@ export class Exposiciones extends BaseView {
 
         // Eventos para el grid
         const items = this.container.querySelectorAll(`.${styles.expoItem}`);
-        console.log('Found expo items:', items.length);
         
         items.forEach(item => {
-            console.log('Setting up click handler for item:', item.dataset.expoId);
-            
             const handler = (e) => {
-                console.log('Click event triggered for expo:', item.dataset.expoId);
                 e.preventDefault();
                 e.stopPropagation();
                 const id = parseInt(item.dataset.expoId);
-                console.log('Looking for expo with id:', id);
                 this.currentExpo = this.exposiciones.find(expo => expo.id === id);
-                console.log('Found expo:', this.currentExpo);
-                this._isExpoClick = true;  // Marcar que este init es por un clic
+                this._isExpoClick = true;
                 this.init();
             };
 
-            // Asegurarnos de que el elemento es clickeable
             item.style.cursor = 'pointer';
             item.addEventListener('click', handler, true);
             this._cleanupFunctions.push(() => item.removeEventListener('click', handler, true));
@@ -193,10 +218,8 @@ export class Exposiciones extends BaseView {
 
         // Manejar el botón de exposiciones del menú
         const expoHandler = (e) => {
-            console.log('Click event detected');
             const link = e.target.closest('a[href="/exposiciones"]');
             if (link) {
-                console.log('EXPO button clicked');
                 e.preventDefault();
                 e.stopPropagation();
                 this.currentExpo = null;
@@ -204,7 +227,6 @@ export class Exposiciones extends BaseView {
             }
         };
 
-        // Usar capturing phase para asegurarnos de que nuestro handler se ejecuta primero
         document.addEventListener('click', expoHandler, true);
         this._cleanupFunctions.push(() => document.removeEventListener('click', expoHandler, true));
     }

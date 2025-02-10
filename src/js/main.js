@@ -21,14 +21,6 @@ export const store = new Store();
 store.addReducer('ui', uiReducer);
 store.addReducer('gallery', galleryReducer);
 
-// Add middleware for logging
-store.addMiddleware(store => next => action => {
-    console.log('Dispatching:', action);
-    const result = next(action);
-    console.log('Next State:', store.getState());
-    return result;
-});
-
 // Add middleware for async actions
 store.addMiddleware(store => next => action => {
     if (typeof action === 'function') {
