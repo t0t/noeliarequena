@@ -140,6 +140,16 @@ export class Navigation {
             }
             
             window.router.navigate(href);
+
+            // Cerrar el menú después de navegar
+            if (window.innerWidth <= 768) {
+                this.isMenuOpen = false;
+                const hamburger = this.container.querySelector(`.${styles.hamburger}`);
+                hamburger.classList.remove(styles.active);
+                hamburger.setAttribute('aria-expanded', 'false');
+                this.container.querySelector(`.${styles.menuItems}`).classList.remove(styles.active);
+                document.body.classList.remove('menu-active');
+            }
         }
     }
 

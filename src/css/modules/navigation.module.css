@@ -6,12 +6,12 @@
     display: flex;
     justify-content: end;
     /* gap: var(--space-xl); */
-    padding: var(--space-md) var(--space-xl);
+    padding: var(--space-sm) var(--space-md) var(--space-sm);
     z-index: 101;
     transition: all 0.3s ease;
     font-weight: 500;
     letter-spacing: var(--letter-spacing-xl);
-    background-color: var(--text-color-emphasis);
+    background-color: var(--nav-background-color);
     width: fit-content;
 }
 
