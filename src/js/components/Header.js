@@ -14,7 +14,12 @@ export class Header {
         this.container.innerHTML = `
             <header class="${styles.header}">
                 <a href="/" class="${styles.logo}" data-link>
-                    <img src="/images/logo.svg" alt="Noelia Requena" />
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:bevel;stroke-miterlimit:1.5" viewBox="0 0 408 409">
+                        <circle cx="102436" cy="13938.8" r="553.055" style="fill:none;stroke-width:22.12px" transform="matrix(.36163 0 0 .36163 -36839.796 -4836.64)"/>
+                        <circle cx="102436" cy="13938.8" r="553.055" style="fill:none;stroke-width:33.18px" transform="matrix(.2411 0 0 .2411 -24493.885 -3223.357)"/>
+                        <circle cx="102436" cy="13938.8" r="553.055" style="fill:none;stroke-width:66.36px" transform="translate(-12144.912 -1476.333) scale(.12055)"/>
+                        <circle cx="102436" cy="13938.8" r="553.055" style="fill:none;stroke-width:33.18px" transform="matrix(.2411 0 0 .2411 -24493.885 -3090.011)"/>
+                    </svg>
                 </a>
             </header>
         `;
