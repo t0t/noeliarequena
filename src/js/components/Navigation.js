@@ -58,21 +58,13 @@ export class Navigation {
         // Cerrar menú al hacer click en un enlace
         const menuItems = this.container.querySelectorAll(`.${styles.menuItems} a`);
         menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                if (this.isMenuOpen) {
-                    this.isMenuOpen = false;
-                    hamburger.classList.remove(styles.active);
-                    hamburger.setAttribute('aria-expanded', 'false');
-                    this.container.querySelector(`.${styles.menuItems}`).classList.remove(styles.active);
-                    document.body.classList.remove('menu-active');
-                }
-            });
+            item.addEventListener('click', (e) => this.handleClick(e));
 
             // Soporte para teclado en los enlaces
             item.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    item.click();
+                    this.handleClick(e);
                 }
             });
         });
@@ -134,6 +126,21 @@ export class Navigation {
                 setTimeout(() => this.updateActiveLink(), 0);
             }
         });
+    }
+
+    handleClick(e) {
+        const link = e.target.closest('[data-link]');
+        if (link) {
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            
+            // Si estamos en la misma ruta, disparar un evento de reseteo
+            if (href === window.location.pathname) {
+                window.dispatchEvent(new CustomEvent('resetView'));
+            }
+            
+            window.router.navigate(href);
+        }
     }
 
     updateActiveLink() {
