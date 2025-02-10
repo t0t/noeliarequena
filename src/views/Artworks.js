@@ -345,8 +345,6 @@ export class Artworks extends BaseView {
         requestAnimationFrame(async () => {
             try {
                 await this.loadAndResizeImages();
-                // Forzar un reflow para asegurar que el masonry se calcula correctamente
-                this.handleResize();
             } catch (error) {
                 console.warn('Error loading images:', error);
             }
@@ -355,78 +353,24 @@ export class Artworks extends BaseView {
         return this;
     }
 
-    handleResize() {
-        if (this.resizeObserver) {
-            const items = this.container.querySelectorAll(`.${styles.artwork}`);
-            items.forEach(item => this.resizeGridItem(item));
-        }
-    }
-
-    generateArtworksHTML() {
-        return this.artworks.map((artwork, index) => {
-            const aspectRatio = (artwork.height / artwork.width) * 100;
-            
-            return `
-                <div class="${styles.artwork}" data-index="${index}">
-                    <div class="${styles.aspectRatioBox}" style="padding-bottom: ${aspectRatio}%">
-                        <img 
-                            class="${styles.artworkImage}"
-                            src="${artwork.src}"
-                            alt="${artwork.title}"
-                            loading="lazy"
-                            width="${artwork.width}"
-                            height="${artwork.height}"
-                        />
-                    </div>
-                </div>
-            `;
-        }).join('');
-    }
-
-    async loadAndResizeImages() {
-        const items = this.container.querySelectorAll(`.${styles.artwork}`);
-        
-        // Primero configuramos el ResizeObserver
-        this.setupResizeObserver();
-        
-        const imageLoadPromises = Array.from(items).map(item => {
-            return new Promise((resolve) => {
-                const img = item.querySelector('img');
-                if (img.complete) {
-                    this.resizeGridItem(item);
-                    resolve();
-                } else {
-                    img.onload = () => {
-                        this.resizeGridItem(item);
-                        resolve();
-                    };
-                    img.onerror = () => {
-                        console.error('Error loading image:', img.src);
-                        resolve();
-                    };
-                }
-            });
-        });
-
-        await Promise.all(imageLoadPromises);
-    }
-
     resizeGridItem(item) {
         if (!item || !this.container) return;
 
         const grid = this.container.querySelector(`.${styles.masonryGrid}`);
         if (!grid) return;
 
-        const rowHeight = parseInt(window.getComputedStyle(grid).gridAutoRows) || 10;
-        const rowGap = parseInt(window.getComputedStyle(grid).rowGap) || 16;
+        const rowHeight = parseInt(window.getComputedStyle(grid).gridAutoRows) || 1;
+        const rowGap = parseInt(window.getComputedStyle(grid).rowGap) || 10;
         
-        const aspectRatioBox = item.querySelector(`.${styles.aspectRatioBox}`);
-        if (!aspectRatioBox) return;
-
-        const contentHeight = aspectRatioBox.getBoundingClientRect().height;
+        const contentHeight = item.getBoundingClientRect().height;
         const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
         
         item.style.setProperty('--span', rowSpan);
+    }
+
+    handleResize() {
+        const images = this.container.querySelectorAll(`.${styles.artworkImage}`);
+        images.forEach(image => this.resizeGridItem(image));
     }
 
     setupResizeObserver() {
@@ -436,23 +380,63 @@ export class Artworks extends BaseView {
 
         this.resizeObserver = new ResizeObserver(entries => {
             entries.forEach(entry => {
-                const item = entry.target;
-                this.resizeGridItem(item);
+                this.resizeGridItem(entry.target);
             });
         });
 
-        const items = this.container.querySelectorAll(`.${styles.artwork}`);
-        items.forEach(item => {
-            this.resizeObserver.observe(item);
+        const images = this.container.querySelectorAll(`.${styles.artworkImage}`);
+        images.forEach(image => {
+            this.resizeObserver.observe(image);
         });
     }
 
+    async loadAndResizeImages() {
+        const imageLoadPromises = [];
+        const images = this.container.querySelectorAll(`.${styles.artworkImage}`);
+        
+        images.forEach(img => {
+            imageLoadPromises.push(new Promise(resolve => {
+                if (img.complete) {
+                    this.resizeGridItem(img);
+                    resolve();
+                } else {
+                    img.onload = () => {
+                        this.resizeGridItem(img);
+                        resolve();
+                    };
+                    img.onerror = () => {
+                        console.error('Error loading image:', img.src);
+                        resolve();
+                    };
+                }
+            }));
+        });
+
+        await Promise.all(imageLoadPromises);
+    }
+
+    generateArtworksHTML() {
+        return this.artworks.map((artwork, index) => {
+            return `
+                <img 
+                    class="${styles.artworkImage}"
+                    src="${artwork.src}"
+                    alt="${artwork.title}"
+                    loading="lazy"
+                    width="${artwork.width}"
+                    height="${artwork.height}"
+                    data-index="${index}"
+                />
+            `;
+        }).join('');
+    }
+
     setupGalleryEvents() {
-        const artworks = this.container.querySelectorAll(`.${styles.artwork}`);
-        artworks.forEach(artwork => {
-            artwork.addEventListener('click', (e) => {
+        const images = this.container.querySelectorAll(`.${styles.artworkImage}`);
+        images.forEach(image => {
+            image.addEventListener('click', (e) => {
                 e.preventDefault();
-                const index = parseInt(artwork.dataset.index);
+                const index = parseInt(image.dataset.index);
                 if (!isNaN(index)) {
                     this.galleryStore.open(index);
                 }
@@ -490,9 +474,9 @@ export class Artworks extends BaseView {
 
         window.removeEventListener('resize', this._boundResizeHandler);
 
-        const artworks = this.container.querySelectorAll(`.${styles.artwork}`);
-        artworks.forEach(artwork => {
-            artwork.removeEventListener('click', () => {});
+        const images = this.container.querySelectorAll(`.${styles.artworkImage}`);
+        images.forEach(image => {
+            image.removeEventListener('click', () => {});
         });
         
         super.destroy();
