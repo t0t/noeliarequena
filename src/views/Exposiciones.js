@@ -45,7 +45,7 @@ export class Exposiciones extends BaseView {
                 id: 2,
                 title: 'Exposición colectiva',
                 date: 'Muestra de arte contemporáneo MGA, 2024',
-                thumbnail: '/images/expos/video_expo_7_poster.jpg',
+                thumbnail: '/images/expos/expo2_3.jpg',
                 subtitle: 'Autocensura',
                 content: {
                     description: [
@@ -53,7 +53,7 @@ export class Exposiciones extends BaseView {
                         'Experimentando un deterioro',
                         'y una deformación.'
                     ],
-                    details: 'óleo sobre lienzo, 130x89cm',
+                    details: 'Autocensura. Óleo sobre lienzo, 130x89cm, 2024',
                     media: [
                         {
                             type: 'video',
@@ -62,6 +62,21 @@ export class Exposiciones extends BaseView {
                                 { src: '/images/expos/video_expo_7.webm', type: 'video/webm' },
                                 { src: '/images/expos/video_expo_7.mp4', type: 'video/mp4' }
                             ]
+                        },
+                        {
+                            type: 'image',
+                            src: '/images/expos/expo2_1.jpg',
+                            alt: 'Exposición colectiva - Imagen 1'
+                        },
+                        {
+                            type: 'image',
+                            src: '/images/expos/expo2_2.jpg',
+                            alt: 'Exposición colectiva - Imagen 2'
+                        },
+                        {
+                            type: 'image',
+                            src: '/images/expos/expo2_3.jpg',
+                            alt: 'Exposición colectiva - Imagen 3'
                         }
                     ]
                 }

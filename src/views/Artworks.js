@@ -52,7 +52,7 @@ export class Artworks extends BaseView {
             {
                 src: '/images/obras/img7.jpg',
                 title: 'Obra 7',
-                description: 'Óleo sobre madera. 50x50cm',
+                description: 'Óleo sobre madera. 50x50cm, 2019',
                 width: 800,
                 height: 1200
             },
@@ -111,27 +111,6 @@ export class Artworks extends BaseView {
                 description: 'Óleo sobre madera. 92x73cm, 2020',
                 width: 800,
                 height: 1200
-            },
-            {
-                src: '/images/obras/img16.jpg',
-                title: 'Obra 16',
-                description: 'Óleo sobre lienzo. 100x100cm, 2020',
-                width: 1200,
-                height: 800
-            },
-            {
-                src: '/images/obras/img17.jpg',
-                title: 'Obra 17',
-                description: 'Óleo sobre madera, 2020',
-                width: 800,
-                height: 1200
-            },
-            {
-                src: '/images/obras/img18.jpg',
-                title: 'Obra 18',
-                description: 'Óleo sobre lienzo. 100x100cm, 2020',
-                width: 1200,
-                height: 800
             },
             {
                 src: '/images/obras/img19.jpg',
@@ -199,91 +178,98 @@ export class Artworks extends BaseView {
             {
                 src: '/images/obras/img28.jpg',
                 title: 'Obra 28',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 120x100cm, 2021',
                 width: 1200,
                 height: 800
             },
             {
                 src: '/images/obras/img29.jpg',
                 title: 'Obra 29',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 146x97cm, 2023',
                 width: 800,
                 height: 1200
             },
             {
                 src: '/images/obras/img30.jpg',
                 title: 'Obra 30',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 146x89cm, 2023',
                 width: 1200,
                 height: 800
             },
             {
                 src: '/images/obras/img31.jpg',
                 title: 'Obra 31',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 146x89cm, 2023',
                 width: 800,
                 height: 1200
             },
             {
                 src: '/images/obras/img32.jpg',
                 title: 'Obra 32',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 130x89cm, 2022',
                 width: 1200,
                 height: 800
             },
             {
                 src: '/images/obras/img33.jpg',
                 title: 'Obra 33',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 146x97cm, 2023',
                 width: 800,
                 height: 1200
             },
             {
                 src: '/images/obras/img34.jpg',
                 title: 'Obra 34',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 130x89cm, 2022',
                 width: 1200,
                 height: 800
             },
             {
                 src: '/images/obras/img35.jpg',
                 title: 'Obra 35',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo,100x100cm, 2021',
                 width: 800,
                 height: 1200
             },
             {
                 src: '/images/obras/img36.jpg',
                 title: 'Obra 36',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo,130x89cm, 2023',
                 width: 1200,
                 height: 800
             },
             {
+                src: '/images/obras/img37.jpg',
+                title: 'Obra 37',
+                description: 'Óleo sobre lienzo, 146x114cm, 2024',
+                width: 800,
+                height: 1200
+            },
+            {
                 src: '/images/obras/img38.jpg',
                 title: 'Obra 38',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 146x114cm, 2024',
                 width: 800,
                 height: 1200
             },
             {
                 src: '/images/obras/img39.jpg',
                 title: 'Obra 39',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 130x89cm, 2023',
                 width: 1200,
                 height: 800
             },
             {
                 src: '/images/obras/img40.jpg',
                 title: 'Obra 40',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 150x90cm, 2023',
                 width: 800,
                 height: 1200
             },
             {
                 src: '/images/obras/img41.jpg',
                 title: 'Obra 41',
-                description: 'Óleo sobre lienzo, 2023',
+                description: 'Óleo sobre lienzo, 130x80cm, 2023',
                 width: 1200,
                 height: 800
             }
