@@ -5,11 +5,7 @@ export default {
     outDir: '../docs',
     emptyOutDir: true,
     sourcemap: true, // Habilitar source maps en producción
-    rollupOptions: {
-      output: {
-        sourcemap: true
-      }
-    }
+
   },
   server: {
     open: true
