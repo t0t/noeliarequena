@@ -22,6 +22,7 @@ export const loadImages = Store.createAsyncAction(
                 id: 1,
                 src: '../images/obras/artwork1.jpg',
                 title: 'Artwork 1',
+                alt: 'Óleo sobre lienzo de una figura femenina sentada, con un dramático juego de luces y sombras estilo claroscuro.',
                 category: 'painting',
                 width: 1200,
                 height: 800
@@ -30,6 +31,7 @@ export const loadImages = Store.createAsyncAction(
                 id: 2,
                 src: '../images/obras/artwork2.jpg',
                 title: 'Artwork 2',
+                alt: 'Escultura de un torso femenino reclinado, capturando la tensión y la calma del cuerpo.',
                 category: 'sculpture',
                 width: 800,
                 height: 1200
@@ -38,6 +40,7 @@ export const loadImages = Store.createAsyncAction(
                 id: 3,
                 src: '../images/obras/artwork3.jpg',
                 title: 'Artwork 3',
+                alt: 'Pintura al óleo de un cuerpo de mujer tumbado, donde la luz resalta la textura de la piel sobre un fondo oscuro.',
                 category: 'painting',
                 width: 1200,
                 height: 800
@@ -46,6 +49,7 @@ export const loadImages = Store.createAsyncAction(
                 id: 4,
                 src: '../images/obras/artwork4.jpg',
                 title: 'Artwork 4',
+                alt: 'Técnica mixta que representa una silueta femenina en reposo, con un fuerte contraste de claroscuro que define las formas.',
                 category: 'mixed',
                 width: 800,
                 height: 1200
@@ -239,7 +243,7 @@ export class GalleryStore {
         
         lightbox.innerHTML = `
             <div class="gallery-lightbox-content">
-                <img src="${currentItem.src}" alt="${currentItem.title}" />
+                <img src="${currentItem.src}" alt="${currentItem.alt}" />
                 <div class="gallery-lightbox-info">
                     <h2>${currentItem.title}</h2>
                     <p>${currentItem.description}</p>
@@ -298,7 +302,7 @@ export class GalleryStore {
         const content = lightbox.querySelector('.gallery-lightbox-content');
         
         content.querySelector('img').src = currentItem.src;
-        content.querySelector('img').alt = currentItem.title;
+        content.querySelector('img').alt = currentItem.alt;
         content.querySelector('h2').textContent = currentItem.title;
         content.querySelector('p').textContent = currentItem.description;
 
