@@ -1,6 +1,6 @@
 export default {
   root: 'src',
-  base: './', // Rutas relativas para file:// protocolo
+  base: '/noeliarequena/',
   build: {
     outDir: '../dist',
     emptyOutDir: true,
